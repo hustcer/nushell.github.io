@@ -55,28 +55,27 @@ print "Hello world!"
 
 首先，源代码被解析器分析并转换为中间表示（IR），在 Nushell 的例子中，中间表示只是一些数据结构。然后，这些数据结构被传递给引擎，引擎对它们进行评估并产生结果。这并没有什么不寻常的。例如，Python 的源代码在评估前通常被转换成[字节码](https://en.wikipedia.org/wiki/Bytecode)。
 
-### Compiled Languages
+### 编译型语言
 
-On the other side are languages that are typically "compiled", such as C, C++, or Rust. Assuming a simple ["hello world"](https://doc.rust-lang.org/stable/book/ch01-02-hello-world.html) in Rust
+另一些则是典型的需要“编译”的语言，例如 C、C++ 或 Rust。假设在 Rust 中有一个简单的["hello world"](https://doc.rust-lang.org/stable/book/ch01-02-hello-world.html)：
 
 ```rust
 // main.rs
-
 fn main() {
-    println!("Hello, world!");
+   println!("Hello, world!");
 }
 ```
 
-you first need to _compile_ the program into [machine code instructions](https://en.wikipedia.org/wiki/Machine_code) and store the binary file to a disk (`rustc main.rs`). Then, to produce a result, you need to run the binary (`./main`), which passes the instructions to the CPU:
+你需要首先将程序 _编译_ 成[机器码](https://en.wikipedia.org/wiki/Machine_code)指令并将二进制文件存储到磁盘上（`rustc main.rs`）。然后，为了产生结果，你需要运行这个二进制文件（`./main`），它会将指令传给 CPU：
 
 ```
-1. source code --> compiler --> machine code
-2. machine code --> CPU --> result
+1. 源码 --> 编译器 --> 机器码
+2. 机器码 --> CPU --> 结果
 ```
 
-You can see the compile-run sequence is not that much different from the parse-evaluate sequence of an interpreter. You begin with a source code, parse (or compile) it into some IR (or machine code), then evaluate (or run) the IR to get a result. You could think of machine code as just another type of IR and the CPU as its interpreter.
+你可以看到编译和运行的顺序与解释器的解析和评估顺序没有太大区别。你从源码开始，将其解析（或编译）成某些 IR（或机器码），然后评估（或运行）IR 以获得结果。你可以把机器码看作是另一种类型的 IR，并且 CPU 就是它的解释器。
 
-One big difference, however, between interpreted and compiled languages is that interpreted languages typically implement an _eval function_ while compiled languages do not. What does it mean?
+然而，在解释型语言和编译型语言之间存在一个很大的区别：解释型语言通常实现了 _eval 函数_ 而编译型语言则没有。这意味着什么？
 
 ### Eval Function
 
