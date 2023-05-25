@@ -1,0 +1,31 @@
+# complete
+
+**version**: 0.80.0
+
+## **usage**:
+
+Capture the outputs and exit code from an external piped in command in a nushell table.
+
+## Signature
+
+`> complete `
+
+## Notes
+
+```text
+In order to capture stdout, stderr, and exit_code, externally piped in commands need to be wrapped with `do`
+```
+
+## Examples
+
+Run the external command to completion, capturing stdout and exit_code
+
+```bash
+> ^external arg1 | complete
+```
+
+Run external command to completion, capturing, stdout, stderr and exit_code
+
+```bash
+> do { ^external arg1 } | complete
+```
