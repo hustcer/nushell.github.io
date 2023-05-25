@@ -1,0 +1,17 @@
+# from
+
+**version**: 0.80.0
+
+## **usage**:
+
+Parse a string or binary data into structured data.
+
+## Signature
+
+`> from `
+
+## Notes
+
+```text
+You must use one of the following subcommands. Using this command as-is will only produce this help message.
+```

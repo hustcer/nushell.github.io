@@ -1,0 +1,19 @@
+# is-admin
+
+**version**: 0.80.0
+
+## **usage**:
+
+Check if nushell is running with administrator or root privileges.
+
+## Signature
+
+`> is-admin `
+
+## Examples
+
+Return 'iamroot' if nushell is running with admin/root privileges, and 'iamnotroot' if not.
+
+```bash
+> if is-admin { "iamroot" } else { "iamnotroot" }
+```

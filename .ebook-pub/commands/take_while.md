@@ -1,0 +1,35 @@
+# take while
+
+**version**: 0.80.0
+
+## **usage**:
+
+Take elements of the input while a predicate is true.
+
+## Signature
+
+`> take while (predicate)`
+
+## Parameters
+
+- `predicate`: the predicate that element(s) must match
+
+## Examples
+
+Take while the element is negative
+
+```bash
+> [-1 -2 9 1] | take while {|x| $x < 0 }
+```
+
+Take while the element is negative using stored condition
+
+```bash
+> let cond = {|x| $x < 0 }; [-1 -2 9 1] | take while $cond
+```
+
+Take while the field value is negative
+
+```bash
+> [{a: -1} {a: -2} {a: 9} {a: 1}] | take while {|x| $x.a < 0 }
+```
