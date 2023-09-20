@@ -1,6 +1,6 @@
 # dfr get
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Creates dataframe with the selected columns.
 ## Parameters
 
 - `...rest`: column names to sort dataframe
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

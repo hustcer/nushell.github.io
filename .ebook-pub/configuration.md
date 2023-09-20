@@ -2,11 +2,17 @@
 
 ## Nushell Configuration with `env.nu` and `config.nu`
 
-Nushell uses a configuration system that loads+runs two Nushell script files at launch time:
-First, `env.nu`, then `config.nu`.
-Paths to these files can be found by calling `echo $nu.env-path` and `echo $nu.config-path`.
-`env.nu` is meant to define the environment variables which are then available within `config.nu`.
-`config.nu` can be used to add definitions, aliases, and more to the global namespace.
+Nushell uses a configuration system that loads and runs two Nushell script files at launch time:
+
+- `env.nu` is used to define environment variables. These typically get used in the second config file, config.nu.
+- `config.nu` is used to add definitions, aliases, and more to the global namespace. It can use the environment variables defined in `env.nu`, which is why there's two separate files.
+
+You can check where Nushell is reading these config files from by calling `$nu.env-path` and `$nu.config-path`.
+
+```
+> $nu.env-path
+/Users/FirstNameLastName/Library/Application Support/nushell/env.nu
+```
 
 _(You can think of the Nushell config loading sequence as executing two [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) lines on startup: `source /path/to/env.nu` and `source /path/to/config.nu`. Therefore, using `env.nu` for environment and `config.nu` for other config is just a convention.)_
 
@@ -19,7 +25,7 @@ You can browse the default files for default values of environment variables and
 Nushell's main settings are kept in the `config` environment variable as a record. This record can be created using:
 
 ```
-let-env config = {
+$env.config = {
   ...
 }
 ```
@@ -27,17 +33,17 @@ let-env config = {
 You can also shadow `$env.config` and update it:
 
 ```
-let-env config = ($env.config | upsert <field name> <field value>)
+$env.config = ($env.config | upsert <field name> <field value>)
 ```
 
 By convention, this variable is defined in the `config.nu` file.
 
 ### Environment
 
-You can set environment variables for the duration of a Nushell session using [`let-env`](/commands/docs/let-env.html) calls inside the `env.nu` file. For example:
+You can set environment variables for the duration of a Nushell session using the `$env.<var> = <val>` structure inside the `env.nu` file. For example:
 
 ```
-let-env FOO = 'BAR'
+$env.FOO = 'BAR'
 ```
 
 _(Although $env.config is an environment variable, it is still defined by convention inside config.nu.)_
@@ -61,7 +67,8 @@ Nushell follows underneath orders to locate the editor:
 1. `$config.buffer_editor`
 2. `$env.EDITOR`
 3. `$env.VISUAL`
-4. If 1~3 not found, then launch `notepad` for windows, otherwise run `nano`
+
+Note: Previous versions of Nushell were launching `notepad` on windows, otherwise `nano` when these variables weren't found. We removed defaulting to `notepad` on Windows since `notepad` is now distributed via the Windows Store and there will be a possibility of not having `notepad` at all.
 
 ### Color Config section
 
@@ -69,7 +76,7 @@ You can learn more about setting up colors and theming in the [associated chapte
 
 ## Remove Welcome Message
 
-To remove the welcome message, you need to edit your `config.nu` by typing `config nu` in your terminal, then you go to the global configuration `let-env config` and set `show_banner` option to false, like this:
+To remove the welcome message, you need to edit your `config.nu` by typing `config nu` in your terminal, then you go to the global configuration `$env.config` and set `show_banner` option to false, like this:
 
 ## Configuring Nu as a login shell
 
@@ -77,13 +84,13 @@ To use Nu as a login shell, you'll need to configure the `$env` variable. This s
 
 To get an idea of which environment variables are set up by your current login shell, start a new shell session, then run nu in that shell.
 
-You can then configure `let-env` commands that setup the same environment variables in your nu login shell. Use this command to generate `let-env` commands for all the environment variables:
+You can then configure some `$env.<var> = <val>` that setup the same environment variables in your nu login shell. Use this command to generate some `$env.<var> = <val>` for all the environment variables:
 
 ```nu
-$env | reject config | transpose key val | each {|r| echo $"let-env ($r.key) = '($r.val)'"} | str join (char nl)
+$env | reject config | transpose key val | each {|r| echo $"$env.($r.key) = '($r.val)'"} | str join (char nl)
 ```
 
-This will print out [`let-env`](/commands/docs/let-env.html) lines, one for each environment variable along with its setting. You may not need all of them, for instance the `PS1` variable is bash specific.
+This will print out `$env.<var> = <val>` lines, one for each environment variable along with its setting. You may not need all of them, for instance the `PS1` variable is bash specific.
 
 Next, on some distros you'll also need to ensure Nu is in the /etc/shells list:
 
@@ -120,12 +127,15 @@ def nuopen [arg, --raw (-r)] { if $raw { open -r $arg } else { open $arg } }
 alias open = ^open
 ```
 
+The `^` symbol _escapes_ the Nushell `open` command, which invokes the operating system's `open` command.
+For more about escape and `^` see the [chapter about escapes](escaping.md).
+
 ## PATH configuration
 
-In Nushell, [the PATH environment variable](<https://en.wikipedia.org/wiki/PATH_(variable)>) (Path on Windows) is a list of paths. To append a new path to it, you can use [`let-env`](/commands/docs/let-env.html) and [`append`](/commands/docs/append.html) in `env.nu`:
+In Nushell, [the PATH environment variable](<https://en.wikipedia.org/wiki/PATH_(variable)>) (Path on Windows) is a list of paths. To append a new path to it, you can use `$env.<var> = <val>` and [`append`](/commands/docs/append.html) in `env.nu`:
 
 ```
-let-env PATH = ($env.PATH | split row (char esep) | append '/some/path')
+$env.PATH = ($env.PATH | split row (char esep) | append '/some/path')
 ```
 
 This will append `/some/path` to the end of PATH; you can also use [`prepend`](/commands/docs/prepend.html) to add entries to the start of PATH.
@@ -138,8 +148,8 @@ Note the `split row (char esep)` step. We need to add it because in `env.nu`, th
 
 ```
 # macOS ARM64 (Apple Silicon)
-let-env PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/bin')
+$env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/bin')
 
 # Linux
-let-env PATH = ($env.PATH | split row (char esep) | prepend '/home/linuxbrew/.linuxbrew/bin')
+$env.PATH = ($env.PATH | split row (char esep) | prepend '/home/linuxbrew/.linuxbrew/bin')
 ```

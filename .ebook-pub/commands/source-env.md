@@ -1,6 +1,6 @@
 # source-env
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Source the environment from a source file into the current environment.
 ## Parameters
 
 - `filename`: the filepath to the script file to source the environment from
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

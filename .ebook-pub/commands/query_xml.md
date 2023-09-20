@@ -1,6 +1,6 @@
 # query xml
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,3 +13,9 @@ execute xpath query on xml
 ## Parameters
 
 - `query`: xpath query
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |

@@ -1,6 +1,6 @@
 # date now
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -10,12 +10,18 @@ Get the current date.
 
 `> date now `
 
+## Input/output types:
+
+| input   | output   |
+| ------- | -------- |
+| nothing | datetime |
+
 ## Examples
 
 Get the current date and display it in a given format string.
 
 ```bash
-> date now | date format "%Y-%m-%d %H:%M:%S"
+> date now | format date "%Y-%m-%d %H:%M:%S"
 ```
 
 Get the time duration from 2019-04-30 to now

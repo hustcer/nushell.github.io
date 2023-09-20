@@ -1,6 +1,6 @@
 # ls
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -20,6 +20,12 @@ List the filenames, sizes, and modification times of items in a directory.
 - `--du`: Display the apparent directory size ("disk usage") in place of the directory metadata size
 - `--directory`: List the specified directory itself instead of its contents
 - `--mime-type`: Show mime-type in type column instead of 'file' (based on filenames only; files' contents are not examined)
+
+## Input/output types:
+
+| input   | output |
+| ------- | ------ |
+| nothing | table  |
 
 ## Examples
 

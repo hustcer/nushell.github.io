@@ -1,6 +1,6 @@
 # fmt
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Format a number.
 ## Signature
 
 `> fmt `
+
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| number | record |
 
 ## Examples
 

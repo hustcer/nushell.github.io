@@ -1,6 +1,6 @@
 # path exists
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -8,18 +8,14 @@ Check whether a path exists.
 
 ## Signature
 
-`> path exists --columns`
+`> path exists `
 
-## Parameters
+## Input/output types:
 
-- `--columns {table}`: For a record or table input, check strings at the given columns, and replace with result
-
-## Notes
-
-```text
-This only checks if it is possible to either `open` or `cd` to the given path.
-If you need to distinguish dirs and files, please use `path type`.
-```
+| input          | output       |
+| -------------- | ------------ |
+| list\<string\> | list\<bool\> |
+| string         | bool         |
 
 ## Examples
 
@@ -29,8 +25,15 @@ Check if a file exists
 > '/home/joe/todo.txt' | path exists
 ```
 
-Check if a file exists in a column
+Check if files in list exist
 
 ```bash
-> ls | path exists -c [ name ]
+> [ /home/joe/todo.txt, /home/doe/todo.txt ] | path exists
+```
+
+## Notes
+
+```text
+This only checks if it is possible to either `open` or `cd` to the given path.
+If you need to distinguish dirs and files, please use `path type`.
 ```

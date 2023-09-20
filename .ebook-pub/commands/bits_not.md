@@ -1,6 +1,6 @@
 # bits not
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,13 @@ Performs logical negation on each bit.
 
 - `--signed`: always treat input number as a signed number
 - `--number-bytes {string}`: the size of unsigned number in bytes, it can be 1, 2, 4, 8, auto
+
+## Input/output types:
+
+| input       | output      |
+| ----------- | ----------- |
+| int         | int         |
+| list\<int\> | list\<int\> |
 
 ## Examples
 

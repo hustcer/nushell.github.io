@@ -1,6 +1,6 @@
 # to html
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -19,11 +19,11 @@ Convert table into simple HTML.
 - `--theme {string}`: the name of the theme to use (github, blulocolight, ...)
 - `--list`: produce a color table of all available themes
 
-## Notes
+## Input/output types:
 
-```text
-Screenshots of the themes can be browsed here: https://github.com/mbadolato/iTerm2-Color-Schemes.
-```
+| input | output |
+| ----- | ------ |
+| any   | string |
 
 ## Examples
 
@@ -43,4 +43,10 @@ Optionally, output the string with a dark background
 
 ```bash
 > [[foo bar]; [1 2]] | to html --dark
+```
+
+## Notes
+
+```text
+Screenshots of the themes can be browsed here: https://github.com/mbadolato/iTerm2-Color-Schemes.
 ```

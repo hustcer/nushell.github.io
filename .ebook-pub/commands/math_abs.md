@@ -1,6 +1,6 @@
 # math abs
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,15 @@ Returns the absolute value of a number.
 ## Signature
 
 `> math abs `
+
+## Input/output types:
+
+| input            | output           |
+| ---------------- | ---------------- |
+| duration         | duration         |
+| list\<duration\> | list\<duration\> |
+| list\<number\>   | list\<number\>   |
+| number           | number           |
 
 ## Examples
 

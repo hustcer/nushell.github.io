@@ -1,6 +1,6 @@
 # collect
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,12 @@ Collect the stream and pass it to a block.
 
 - `closure`: the closure to run once the stream is collected
 - `--keep-env`: let the block affect environment variables
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

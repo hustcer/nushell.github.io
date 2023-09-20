@@ -1,6 +1,6 @@
 # sort
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -16,6 +16,13 @@ Sort in increasing order.
 - `--ignore-case`: Sort string-based data case-insensitively
 - `--values`: If input is a single record, sort the record by values; ignored if input is not a single record
 - `--natural`: Sort alphanumeric string-based values naturally (1, 9, 10, 99, 100, ...)
+
+## Input/output types:
+
+| input       | output      |
+| ----------- | ----------- |
+| list\<any\> | list\<any\> |
+| record      | record      |
 
 ## Examples
 

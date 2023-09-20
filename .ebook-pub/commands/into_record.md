@@ -1,6 +1,6 @@
 # into record
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,17 @@ Convert value to record.
 ## Signature
 
 `> into record `
+
+## Input/output types:
+
+| input       | output |
+| ----------- | ------ |
+| datetime    | record |
+| duration    | record |
+| list\<any\> | record |
+| range       | record |
+| record      | record |
+| table       | record |
 
 ## Examples
 
@@ -30,10 +41,10 @@ Convert from range to record
 > 0..2 | into record
 ```
 
-convert duration to record
+convert duration to record (weeks max)
 
 ```bash
-> -500day | into record
+> (-500day - 4hr - 5sec) | into record
 ```
 
 convert record to record

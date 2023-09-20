@@ -1,6 +1,6 @@
 # describe
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Describe the type and structure of the value(s) piped in.
 ## Parameters
 
 - `--no-collect`: do not collect streams of structured data
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | string |
 
 ## Examples
 

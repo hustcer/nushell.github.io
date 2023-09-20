@@ -1,6 +1,6 @@
 # str camel-case
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,15 @@ Convert a string to camelCase.
 ## Parameters
 
 - `...rest`: For a data structure input, convert strings at the given cell paths
+
+## Input/output types:
+
+| input          | output         |
+| -------------- | -------------- |
+| list\<string\> | list\<string\> |
+| record         | record         |
+| string         | string         |
+| table          | table          |
 
 ## Examples
 

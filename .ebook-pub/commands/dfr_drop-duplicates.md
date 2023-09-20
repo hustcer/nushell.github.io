@@ -1,6 +1,6 @@
 # dfr drop-duplicates
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -15,6 +15,12 @@ Drops duplicate values in dataframe.
 - `subset`: subset of columns to drop duplicates
 - `--maintain`: maintain order
 - `--last`: keeps last duplicate value (by default keeps first)
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

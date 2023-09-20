@@ -1,6 +1,6 @@
 # where
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,13 +14,13 @@ Filter values based on a row condition.
 
 - `row_condition`: Filter condition
 
-## Notes
+## Input/output types:
 
-```text
-This command works similar to 'filter' but allows extra shorthands for working with
-tables, known as "row conditions". On the other hand, reading the condition from a variable is
-not supported.
-```
+| input       | output      |
+| ----------- | ----------- |
+| list\<any\> | list\<any\> |
+| range       | any         |
+| table       | table       |
 
 ## Examples
 
@@ -64,4 +64,24 @@ Find files whose filenames don't begin with the correct sequential number
 
 ```bash
 > ls | where type == file | sort-by name -n | enumerate | where {|e| $e.item.name !~ $'^($e.index + 1)' } | each {|| get item }
+```
+
+Find case-insensitively files called "readme", without an explicit closure
+
+```bash
+> ls | where ($it.name | str downcase) =~ readme
+```
+
+same as above but with regex only
+
+```bash
+> ls | where name =~ '(?i)readme'
+```
+
+## Notes
+
+```text
+This command works similar to 'filter' but allows extra shorthands for working with
+tables, known as "row conditions". On the other hand, reading the condition from a variable is
+not supported.
 ```

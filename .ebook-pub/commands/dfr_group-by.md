@@ -1,6 +1,6 @@
 # dfr group-by
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Creates a group-by object that can be used for other aggregations.
 ## Parameters
 
 - `...rest`: Expression(s) that define the lazy group-by
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # transpose
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -18,6 +18,13 @@ Transposes the table contents so rows become columns and columns become rows.
 - `--as-record`: transfer to record if the result is a table and contains only one row
 - `--keep-last`: on repetition of record fields due to `header-row`, keep the last value obtained
 - `--keep-all`: on repetition of record fields due to `header-row`, keep all the values obtained
+
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| record | table  |
+| table  | any    |
 
 ## Examples
 

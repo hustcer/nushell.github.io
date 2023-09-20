@@ -1,6 +1,6 @@
 # url join
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Converts a record to url.
 ## Signature
 
 `> url join `
+
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| record | string |
 
 ## Examples
 

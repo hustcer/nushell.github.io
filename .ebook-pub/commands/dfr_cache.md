@@ -1,6 +1,6 @@
 # dfr cache
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Caches operations in a new LazyFrame
 ## Signature
 
 `> dfr cache `
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # fill
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -15,6 +15,20 @@ Fill and Align.
 - `--width {int}`: The width of the output. Defaults to 1
 - `--alignment {string}`: The alignment of the output. Defaults to Left (Left(l), Right(r), Center(c/m), MiddleRight(cr/mr))
 - `--character {string}`: The character to fill with. Defaults to ' ' (space)
+
+## Input/output types:
+
+| input            | output         |
+| ---------------- | -------------- |
+| filesize         | string         |
+| int              | string         |
+| list\<any\>      | list\<string\> |
+| list\<filesize\> | list\<string\> |
+| list\<int\>      | list\<string\> |
+| list\<number\>   | list\<string\> |
+| list\<string\>   | list\<string\> |
+| number           | string         |
+| string           | string         |
 
 ## Examples
 

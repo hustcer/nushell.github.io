@@ -1,6 +1,6 @@
 # glob
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -17,13 +17,13 @@ Creates a list of files and/or folders based on the glob pattern provided.
 - `--no-dir`: Whether to filter out directories from the returned paths
 - `--no-file`: Whether to filter out files from the returned paths
 - `--no-symlink`: Whether to filter out symlinks from the returned paths
-- `--not {string}`: Pattern to exclude from the results
+- `--not {list<string>}`: Patterns to exclude from the results
 
-## Notes
+## Input/output types:
 
-```text
-For more glob pattern help, please refer to https://github.com/olson-sean-k/wax
-```
+| input   | output         |
+| ------- | -------------- |
+| nothing | list\<string\> |
 
 ## Examples
 
@@ -84,5 +84,17 @@ Search for folders that begin with an uppercase ASCII letter, ignoring files and
 Search for files named tsconfig.json that are not in node_modules directories
 
 ```bash
-> glob **/tsconfig.json --not **/node_modules/**
+> glob **/tsconfig.json --not [**/node_modules/**]
+```
+
+Search for all files that are not in the target nor .git directories
+
+```bash
+> glob **/* --not [**/target/** **/.git/** */]
+```
+
+## Notes
+
+```text
+For more glob pattern help, please refer to https://github.com/olson-sean-k/wax
 ```

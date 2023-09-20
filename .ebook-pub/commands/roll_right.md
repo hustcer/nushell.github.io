@@ -1,6 +1,6 @@
 # roll right
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,13 @@ Roll table columns right.
 
 - `--by {int}`: Number of columns to roll
 - `--cells-only`: rotates columns leaving headers fixed
+
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| record | record |
+| table  | table  |
 
 ## Examples
 

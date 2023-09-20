@@ -1,6 +1,6 @@
 # bytes add
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -16,6 +16,15 @@ Add specified bytes to the input.
 - `...rest`: for a data structure input, add bytes to the data at the given cell paths
 - `--index {int}`: index to insert binary data
 - `--end`: add to the end of binary
+
+## Input/output types:
+
+| input          | output         |
+| -------------- | -------------- |
+| binary         | binary         |
+| list\<binary\> | list\<binary\> |
+| record         | record         |
+| table          | table          |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # split-by
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Create a new table split.
 ## Parameters
 
 - `splitter`: the splitter value to use
+
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| record | record |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # dfr as
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Creates an alias expression.
 ## Parameters
 
 - `Alias name`: Alias name for the expression
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

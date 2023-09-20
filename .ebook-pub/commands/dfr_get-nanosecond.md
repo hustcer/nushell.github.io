@@ -1,6 +1,6 @@
 # dfr get-nanosecond
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Gets nanosecond from date.
 ## Signature
 
 `> dfr get-nanosecond `
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

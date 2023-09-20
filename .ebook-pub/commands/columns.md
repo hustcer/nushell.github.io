@@ -1,6 +1,6 @@
 # columns
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -10,11 +10,12 @@ Given a record or table, produce a list of its columns' names.
 
 `> columns `
 
-## Notes
+## Input/output types:
 
-```text
-This is a counterpart to `values`, which produces a list of columns' values.
-```
+| input  | output         |
+| ------ | -------------- |
+| record | list\<string\> |
+| table  | list\<string\> |
 
 ## Examples
 
@@ -40,4 +41,10 @@ Get the second column from the table
 
 ```bash
 > [[name,age,grade]; [bill,20,a]] | columns | select 1
+```
+
+## Notes
+
+```text
+This is a counterpart to `values`, which produces a list of columns' values.
 ```

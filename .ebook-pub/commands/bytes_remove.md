@@ -1,6 +1,6 @@
 # bytes remove
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -17,6 +17,14 @@ Remove bytes.
 - `--end`: remove from end of binary
 - `--all`: remove occurrences of finding binary
 
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| binary | binary |
+| record | record |
+| table  | table  |
+
 ## Examples
 
 Remove contents
@@ -25,10 +33,10 @@ Remove contents
 > 0x[10 AA FF AA FF] | bytes remove 0x[10 AA]
 ```
 
-Remove all occurrences of find binary
+Remove all occurrences of find binary in record field
 
 ```bash
-> 0x[10 AA 10 BB 10] | bytes remove -a 0x[10]
+> { data: 0x[10 AA 10 BB 10] } | bytes remove -a 0x[10] data
 ```
 
 Remove occurrences of find binary from end

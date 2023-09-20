@@ -1,6 +1,6 @@
 # math log
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,13 @@ Returns the logarithm for an arbitrary base.
 ## Parameters
 
 - `base`: Base for which the logarithm should be computed
+
+## Input/output types:
+
+| input          | output         |
+| -------------- | -------------- |
+| list\<number\> | list\<number\> |
+| number         | number         |
 
 ## Examples
 

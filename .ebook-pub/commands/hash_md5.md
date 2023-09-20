@@ -1,6 +1,6 @@
 # hash md5
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,14 @@ Hash a value using the md5 hash algorithm
 
 - `...rest`: optionally md5 hash data by cell path
 - `--binary`: Output binary instead of hexadecimal representation
+
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| record | record |
+| string | string |
+| table  | table  |
 
 ## Examples
 

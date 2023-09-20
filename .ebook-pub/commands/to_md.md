@@ -1,6 +1,6 @@
 # to md
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,12 @@ Convert table into simple Markdown.
 
 - `--pretty`: Formats the Markdown table to vertically align items
 - `--per-element`: treat each row as markdown syntax element
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | string |
 
 ## Examples
 

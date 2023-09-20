@@ -1,6 +1,6 @@
 # dfr shape
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Shows column and row size for a dataframe.
 ## Signature
 
 `> dfr shape `
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

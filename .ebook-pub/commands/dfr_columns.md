@@ -1,6 +1,6 @@
 # dfr columns
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Show dataframe columns.
 ## Signature
 
 `> dfr columns `
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # random integer
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Generate a random integer [min..max].
 ## Parameters
 
 - `range`: Range of values
+
+## Input/output types:
+
+| input   | output |
+| ------- | ------ |
+| nothing | int    |
 
 ## Examples
 

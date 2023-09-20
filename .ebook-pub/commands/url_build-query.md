@@ -1,6 +1,6 @@
 # url build-query
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,13 @@ Converts record or table into query string applying percent-encoding.
 ## Signature
 
 `> url build-query `
+
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| record | string |
+| table  | string |
 
 ## Examples
 

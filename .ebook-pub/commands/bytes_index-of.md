@@ -1,6 +1,6 @@
 # bytes index-of
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -16,6 +16,14 @@ Returns start index of first occurrence of pattern in bytes, or -1 if no match.
 - `...rest`: for a data structure input, find the indexes at the given cell paths
 - `--all`: returns all matched index
 - `--end`: search from the end of the binary
+
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| binary | int    |
+| record | record |
+| table  | table  |
 
 ## Examples
 

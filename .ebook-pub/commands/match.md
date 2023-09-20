@@ -1,6 +1,6 @@
 # match
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,12 @@ Conditionally run a block on a matched value.
 
 - `value`: value to check
 - `match_block`: block to run if check succeeds
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 
@@ -45,4 +51,14 @@ Match against pipeline input
 
 ```bash
 > {a: {b: 3}} | match $in {{a: { $b }} => ($b + 10) }
+```
+
+Match with a guard
+
+```bash
+> match [1 2 3] {
+        [$x, ..$y] if $x == 1 => { 'good list' },
+        _ => { 'not a very good list' }
+    }
+
 ```

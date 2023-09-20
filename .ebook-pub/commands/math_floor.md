@@ -1,6 +1,6 @@
 # math floor
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,13 @@ Returns the floor of a number (largest integer less than or equal to that number
 ## Signature
 
 `> math floor `
+
+## Input/output types:
+
+| input          | output      |
+| -------------- | ----------- |
+| list\<number\> | list\<int\> |
+| number         | int         |
 
 ## Examples
 

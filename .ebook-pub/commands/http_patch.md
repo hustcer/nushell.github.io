@@ -1,6 +1,6 @@
 # http patch
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -24,11 +24,11 @@ Patch a body to a URL.
 - `--full`: returns the full response instead of only the body
 - `--allow-errors`: do not fail if the server returns an error code
 
-## Notes
+## Input/output types:
 
-```text
-Performs HTTP PATCH operation.
-```
+| input   | output |
+| ------- | ------ |
+| nothing | any    |
 
 ## Examples
 
@@ -54,4 +54,10 @@ Patch content to example.com, with JSON body
 
 ```bash
 > http patch -t application/json https://www.example.com { field: value }
+```
+
+## Notes
+
+```text
+Performs HTTP PATCH operation.
 ```

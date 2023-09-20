@@ -1,6 +1,6 @@
 # rm
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -21,6 +21,12 @@ Remove files and directories.
 - `--verbose`: print names of deleted files
 - `--interactive`: ask user to confirm action
 - `--interactive-once`: ask user to confirm action only once
+
+## Input/output types:
+
+| input   | output  |
+| ------- | ------- |
+| nothing | nothing |
 
 ## Examples
 

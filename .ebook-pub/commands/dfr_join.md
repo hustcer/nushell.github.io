@@ -1,6 +1,6 @@
 # dfr join
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -20,6 +20,12 @@ Joins a lazy frame with other lazy frame.
 - `--outer`: outer join between lazyframes
 - `--cross`: cross join between lazyframes
 - `--suffix {string}`: Suffix to use on columns with same name
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

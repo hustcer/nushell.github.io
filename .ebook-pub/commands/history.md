@@ -1,6 +1,6 @@
 # history
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,12 @@ Get the command history.
 
 - `--clear`: Clears out the history entries
 - `--long`: Show long listing of entries for sqlite history
+
+## Input/output types:
+
+| input   | output |
+| ------- | ------ |
+| nothing | table  |
 
 ## Examples
 
@@ -32,5 +38,11 @@ Show last 5 commands you have ran
 Search all the commands from history that contains 'cargo'
 
 ```bash
-> history | wrap cmd | where cmd =~ cargo
+> history | where command =~ cargo | get command
 ```
+
+## Subcommands:
+
+| name                                                   | type    | usage                            |
+| ------------------------------------------------------ | ------- | -------------------------------- |
+| [`history session`](/commands/docs/history_session.md) | Builtin | Get the command history session. |

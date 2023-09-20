@@ -1,18 +1,21 @@
 # length
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
-Count the number of elements in the input.
+Count the number of items in an input list or rows in a table.
 
 ## Signature
 
-`> length --column`
+`> length `
 
-## Parameters
+## Input/output types:
 
-- `--column`: Show the number of columns in a table
+| input       | output |
+| ----------- | ------ |
+| list\<any\> | int    |
+| table       | int    |
 
 ## Examples
 
@@ -22,8 +25,8 @@ Count the number of items in a list
 > [1 2 3 4 5] | length
 ```
 
-Count the number of columns in a table
+Count the number of rows in a table
 
 ```bash
-> [{columnA: A0 columnB: B0}] | length -c
+> [{a:1 b:2}, {a:2 b:3}] | length
 ```

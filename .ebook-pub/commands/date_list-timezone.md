@@ -1,6 +1,6 @@
 # date list-timezone
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ List supported time zones.
 ## Signature
 
 `> date list-timezone `
+
+## Input/output types:
+
+| input   | output |
+| ------- | ------ |
+| nothing | table  |
 
 ## Examples
 

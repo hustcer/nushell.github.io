@@ -1,6 +1,6 @@
 # explore
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -17,11 +17,11 @@ Explore acts as a table pager, just like `less` does for text.
 - `--reverse`: Start with the viewport scrolled to the bottom
 - `--peek`: When quitting, output the value of the cell the cursor was on
 
-## Notes
+## Input/output types:
 
-```text
-Press `:` then `h` to get a help menu.
-```
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 
@@ -47,4 +47,10 @@ Explore a JSON file, then save the last visited sub-structure to a file
 
 ```bash
 > open file.json | explore -p | to json | save part.json
+```
+
+## Notes
+
+```text
+Press `:` then `h` to get a help menu.
 ```

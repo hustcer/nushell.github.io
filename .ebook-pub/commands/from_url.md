@@ -1,6 +1,6 @@
 # from url
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Parse url-encoded string as a record.
 ## Signature
 
 `> from url `
+
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| string | record |
 
 ## Examples
 

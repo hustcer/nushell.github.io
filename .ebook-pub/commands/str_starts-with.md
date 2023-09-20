@@ -1,6 +1,6 @@
 # str starts-with
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -15,6 +15,15 @@ Check if an input starts with a string.
 - `string`: the string to match
 - `...rest`: For a data structure input, check strings at the given cell paths, and replace with result
 - `--ignore-case`: search is case insensitive
+
+## Input/output types:
+
+| input          | output       |
+| -------------- | ------------ |
+| list\<string\> | list\<bool\> |
+| record         | record       |
+| string         | bool         |
+| table          | table        |
 
 ## Examples
 

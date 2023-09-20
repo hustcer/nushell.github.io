@@ -1,6 +1,6 @@
 # to toml
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Convert record into .toml text.
 ## Signature
 
 `> to toml `
+
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| record | string |
 
 ## Examples
 

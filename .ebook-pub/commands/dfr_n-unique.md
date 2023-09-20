@@ -1,6 +1,6 @@
 # dfr n-unique
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -10,6 +10,12 @@ Counts unique values.
 
 `> dfr n-unique `
 
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
+
 ## Examples
 
 Counts unique values
@@ -17,20 +23,6 @@ Counts unique values
 ```bash
 > [1 1 2 2 3 3 4] | dfr into-df | dfr n-unique
 ```
-
-# dfr n-unique
-
-**version**: 0.80.0
-
-## **usage**:
-
-creates a n-unique expression
-
-## Signature
-
-`> dfr n-unique `
-
-## Examples
 
 Creates a is n-unique expression from a column
 

@@ -1,6 +1,6 @@
 # bytes ends-with
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,14 @@ Check if bytes ends with a pattern.
 
 - `pattern`: the pattern to match
 - `...rest`: for a data structure input, check if bytes at the given cell paths end with the pattern
+
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| binary | bool   |
+| record | record |
+| table  | table  |
 
 ## Examples
 

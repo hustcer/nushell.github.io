@@ -1,6 +1,6 @@
 # dfr not
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Inverts boolean mask.
 ## Signature
 
 `> dfr not `
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

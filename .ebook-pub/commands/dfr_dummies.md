@@ -1,6 +1,6 @@
 # dfr dummies
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -8,7 +8,17 @@ Creates a new dataframe with dummy variables.
 
 ## Signature
 
-`> dfr dummies `
+`> dfr dummies --drop-first`
+
+## Parameters
+
+- `--drop-first`: Drop first row
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

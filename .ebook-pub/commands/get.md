@@ -1,6 +1,6 @@
 # get
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -17,13 +17,13 @@ Extract data using a cell path.
 - `--ignore-errors`: ignore missing data (make all cell path members optional)
 - `--sensitive`: get path in a case sensitive manner
 
-## Notes
+## Input/output types:
 
-```text
-This is equivalent to using the cell path access syntax: `$env.OS` is the same as `$env | get OS`.
-
-If multiple cell paths are given, this will produce a list of values.
-```
+| input       | output |
+| ----------- | ------ |
+| list\<any\> | any    |
+| record      | any    |
+| table       | any    |
 
 ## Examples
 
@@ -73,4 +73,12 @@ Getting Path in a case sensitive way, won't work for 'PATH'
 
 ```bash
 > $env | get -s Path
+```
+
+## Notes
+
+```text
+This is equivalent to using the cell path access syntax: `$env.OS` is the same as `$env | get OS`.
+
+If multiple cell paths are given, this will produce a list of values.
 ```

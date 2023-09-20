@@ -1,6 +1,6 @@
 # nu-check
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -16,6 +16,13 @@ Validate and parse input content.
 - `--as-module`: Parse content as module
 - `--debug`: Show error messages
 - `--all`: Parse content as script first, returns result if success, otherwise, try with module
+
+## Input/output types:
+
+| input       | output |
+| ----------- | ------ |
+| list\<any\> | bool   |
+| string      | bool   |
 
 ## Examples
 

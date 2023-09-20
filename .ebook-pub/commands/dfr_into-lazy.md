@@ -1,6 +1,6 @@
 # dfr into-lazy
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Converts a dataframe into a lazy dataframe.
 ## Signature
 
 `> dfr into-lazy `
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

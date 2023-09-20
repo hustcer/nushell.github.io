@@ -1,6 +1,6 @@
 # from xml
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -15,6 +15,23 @@ Parse text as .xml and create record.
 - `--keep-comments`: add comment nodes to result
 - `--keep-pi`: add processing instruction nodes to result
 
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| string | record |
+
+## Examples
+
+Converts xml formatted string to record
+
+```bash
+> '<?xml version="1.0" encoding="UTF-8"?>
+<note>
+  <remember>Event</remember>
+</note>' | from xml
+```
+
 ## Notes
 
 ```text
@@ -27,15 +44,4 @@ To represent different types of entries different values are written to this fie
 
 Unlike to xml command all null values are always present and text is never represented via plain
 string. This way content of every tag is always a table and is easier to parse
-```
-
-## Examples
-
-Converts xml formatted string to record
-
-```bash
-> '<?xml version="1.0" encoding="UTF-8"?>
-<note>
-  <remember>Event</remember>
-</note>' | from xml
 ```

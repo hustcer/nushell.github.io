@@ -1,6 +1,6 @@
 # let
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -15,12 +15,11 @@ Create a variable and give it a value.
 - `var_name`: variable name
 - `initial_value`: equals sign followed by value
 
-## Notes
+## Input/output types:
 
-```text
-This command is a parser keyword. For details, check:
-  https://www.nushell.sh/book/thinking_in_nu.html
-```
+| input | output  |
+| ----- | ------- |
+| any   | nothing |
 
 ## Examples
 
@@ -40,4 +39,11 @@ Set a variable based on the condition
 
 ```bash
 > let x = if false { -1 } else { 1 }
+```
+
+## Notes
+
+```text
+This command is a parser keyword. For details, check:
+  https://www.nushell.sh/book/thinking_in_nu.html
 ```

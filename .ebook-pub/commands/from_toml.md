@@ -1,6 +1,6 @@
 # from toml
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Parse text as .toml and create record.
 ## Signature
 
 `> from toml `
+
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| string | record |
 
 ## Examples
 

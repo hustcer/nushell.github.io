@@ -1,6 +1,6 @@
 # timeit
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,13 @@ Time the running time of a block.
 ## Parameters
 
 - `command`: the command or block to run
+
+## Input/output types:
+
+| input   | output   |
+| ------- | -------- |
+| any     | duration |
+| nothing | duration |
 
 ## Examples
 

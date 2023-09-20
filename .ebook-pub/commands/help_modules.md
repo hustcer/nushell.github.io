@@ -1,6 +1,6 @@
 # help modules
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -15,13 +15,11 @@ Show help on nushell modules.
 - `...rest`: the name of module to get help on
 - `--find {string}`: string to find in module names and usage
 
-## Notes
+## Input/output types:
 
-```text
-When requesting help for a single module, its commands and aliases will be highlighted if they
-are also available in the current scope. Commands/aliases that were imported under a different name
-(such as with a prefix after `use some-module`) will be highlighted in parentheses.
-```
+| input   | output |
+| ------- | ------ |
+| nothing | table  |
 
 ## Examples
 
@@ -41,4 +39,12 @@ search for string in module names and usages
 
 ```bash
 > help modules --find my-module
+```
+
+## Notes
+
+```text
+When requesting help for a single module, its commands and aliases will be highlighted if they
+are also available in the current scope. Commands/aliases that were imported under a different name
+(such as with a prefix after `use some-module`) will be highlighted in parentheses.
 ```

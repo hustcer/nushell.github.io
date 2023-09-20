@@ -1,6 +1,6 @@
 # for
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -17,12 +17,11 @@ Loop over a range.
 - `block`: the block to run
 - `--numbered`: return a numbered item ($it.index and $it.item)
 
-## Notes
+## Input/output types:
 
-```text
-This command is a parser keyword. For details, check:
-  https://www.nushell.sh/book/thinking_in_nu.html
-```
+| input   | output  |
+| ------- | ------- |
+| nothing | nothing |
 
 ## Examples
 
@@ -42,4 +41,11 @@ Number each item and echo a message
 
 ```bash
 > for $it in ['bob' 'fred'] --numbered { print $"($it.index) is ($it.item)" }
+```
+
+## Notes
+
+```text
+This command is a parser keyword. For details, check:
+  https://www.nushell.sh/book/thinking_in_nu.html
 ```

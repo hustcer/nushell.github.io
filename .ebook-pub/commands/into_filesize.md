@@ -1,6 +1,6 @@
 # into filesize
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,12 +14,28 @@ Convert value to filesize.
 
 - `...rest`: for a data structure input, convert data at the given cell paths
 
+## Input/output types:
+
+| input            | output           |
+| ---------------- | ---------------- |
+| filesize         | filesize         |
+| int              | filesize         |
+| list\<any\>      | list\<filesize\> |
+| list\<filesize\> | list\<filesize\> |
+| list\<int\>      | list\<filesize\> |
+| list\<number\>   | list\<filesize\> |
+| list\<string\>   | list\<filesize\> |
+| number           | filesize         |
+| record           | record           |
+| string           | filesize         |
+| table            | table            |
+
 ## Examples
 
 Convert string to filesize in table
 
 ```bash
-> [[bytes]; ['5'] [3.2] [4] [2kb]] | into filesize bytes
+> [[device size]; ["/dev/sda1" "200"] ["/dev/loop0" "50"]] | into filesize size
 ```
 
 Convert string to filesize
@@ -28,7 +44,7 @@ Convert string to filesize
 > '2' | into filesize
 ```
 
-Convert decimal to filesize
+Convert float to filesize
 
 ```bash
 > 8.3 | into filesize

@@ -1,6 +1,6 @@
 # cal
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -18,6 +18,12 @@ Display a calendar.
 - `--full-year {int}`: Display a year-long calendar for the specified year
 - `--week-start {string}`: Display the calendar with the specified day as the first day of the week
 - `--month-names`: Display the month names instead of integers
+
+## Input/output types:
+
+| input   | output |
+| ------- | ------ |
+| nothing | table  |
 
 ## Examples
 

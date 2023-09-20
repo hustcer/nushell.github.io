@@ -1,6 +1,6 @@
 # into bool
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,18 @@ Convert value to boolean.
 ## Parameters
 
 - `...rest`: for a data structure input, convert data at the given cell paths
+
+## Input/output types:
+
+| input       | output |
+| ----------- | ------ |
+| bool        | bool   |
+| int         | bool   |
+| list\<any\> | table  |
+| number      | bool   |
+| record      | record |
+| string      | bool   |
+| table       | table  |
 
 ## Examples
 
@@ -34,13 +46,13 @@ convert integer to boolean
 > 1 | into bool
 ```
 
-convert decimal to boolean
+convert float to boolean
 
 ```bash
 > 0.3 | into bool
 ```
 
-convert decimal string to boolean
+convert float string to boolean
 
 ```bash
 > '0.0' | into bool

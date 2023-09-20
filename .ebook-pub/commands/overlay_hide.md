@@ -1,6 +1,6 @@
 # overlay hide
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -16,12 +16,11 @@ Hide an active overlay.
 - `--keep-custom`: Keep all newly added commands and aliases in the next activated overlay
 - `--keep-env {list<string>}`: List of environment variables to keep in the next activated overlay
 
-## Notes
+## Input/output types:
 
-```text
-This command is a parser keyword. For details, check:
-  https://www.nushell.sh/book/thinking_in_nu.html
-```
+| input   | output  |
+| ------- | ------- |
+| nothing | nothing |
 
 ## Examples
 
@@ -47,7 +46,7 @@ Hide an overlay created from a file
 Hide the last activated overlay
 
 ```bash
-> module spam { export-env { let-env FOO = "foo" } }
+> module spam { export-env { $env.FOO = "foo" } }
     overlay use spam
     overlay hide
 ```
@@ -58,4 +57,11 @@ Keep the current working directory when removing an overlay
 > overlay new spam
     cd some-dir
     overlay hide --keep-env [ PWD ] spam
+```
+
+## Notes
+
+```text
+This command is a parser keyword. For details, check:
+  https://www.nushell.sh/book/thinking_in_nu.html
 ```

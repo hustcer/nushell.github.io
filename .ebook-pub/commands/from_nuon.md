@@ -1,6 +1,6 @@
 # from nuon
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Convert from nuon to structured data.
 ## Signature
 
 `> from nuon `
+
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| string | any    |
 
 ## Examples
 

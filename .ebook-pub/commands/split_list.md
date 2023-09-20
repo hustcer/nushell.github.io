@@ -1,6 +1,6 @@
 # split list
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,12 @@ Split a list into multiple lists using a separator.
 
 - `separator`: the value that denotes what separates the list
 - `--regex`: separator is a regular expression, matching values that can be coerced into a string
+
+## Input/output types:
+
+| input       | output              |
+| ----------- | ------------------- |
+| list\<any\> | list\<list\<any\>\> |
 
 ## Examples
 

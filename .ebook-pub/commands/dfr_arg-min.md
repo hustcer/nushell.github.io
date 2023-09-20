@@ -1,6 +1,6 @@
 # dfr arg-min
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Return index for min value in series.
 ## Signature
 
 `> dfr arg-min `
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

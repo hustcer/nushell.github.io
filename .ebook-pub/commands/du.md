@@ -1,6 +1,6 @@
 # du
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -18,6 +18,12 @@ Find disk usage sizes of specified items.
 - `--exclude {glob}`: Exclude these file names
 - `--max-depth {int}`: Directory recursion limit
 - `--min-size {int}`: Exclude files below this size
+
+## Input/output types:
+
+| input   | output |
+| ------- | ------ |
+| nothing | table  |
 
 ## Examples
 

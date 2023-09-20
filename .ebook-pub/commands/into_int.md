@@ -1,6 +1,6 @@
 # into int
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -8,13 +8,34 @@ Convert value to integer.
 
 ## Signature
 
-`> into int ...rest --radix --little-endian`
+`> into int ...rest --radix --endian`
 
 ## Parameters
 
 - `...rest`: for a data structure input, convert data at the given cell paths
 - `--radix {number}`: radix of integer
-- `--little-endian`: use little-endian byte decoding
+- `--endian {string}`: byte encode endian, available options: native(default), little, big
+
+## Input/output types:
+
+| input            | output      |
+| ---------------- | ----------- |
+| binary           | int         |
+| bool             | int         |
+| datetime         | int         |
+| duration         | int         |
+| filesize         | int         |
+| list\<any\>      | list\<int\> |
+| list\<bool\>     | list\<int\> |
+| list\<datetime\> | list\<int\> |
+| list\<duration\> | list\<int\> |
+| list\<filesize\> | list\<int\> |
+| list\<number\>   | list\<int\> |
+| list\<string\>   | list\<int\> |
+| number           | int         |
+| record           | record      |
+| string           | int         |
+| table            | table       |
 
 ## Examples
 
@@ -30,7 +51,7 @@ Convert string to integer
 > '2' | into int
 ```
 
-Convert decimal to integer
+Convert float to integer
 
 ```bash
 > 5.9 | into int

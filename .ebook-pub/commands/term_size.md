@@ -1,6 +1,6 @@
 # term size
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Returns a record containing the number of columns (width) and rows (height) of t
 ## Signature
 
 `> term size `
+
+## Input/output types:
+
+| input   | output                            |
+| ------- | --------------------------------- |
+| nothing | record\<columns: int, rows: int\> |
 
 ## Examples
 

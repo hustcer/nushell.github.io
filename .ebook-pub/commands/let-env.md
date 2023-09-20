@@ -1,10 +1,10 @@
 # let-env
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
-Create an environment variable and give it a value.
+`let-env FOO = ...` has been removed, use `$env.FOO = ...` instead.
 
 ## Signature
 
@@ -15,10 +15,8 @@ Create an environment variable and give it a value.
 - `var_name`: variable name
 - `initial_value`: equals sign followed by value
 
-## Examples
+## Input/output types:
 
-Create an environment variable and display it
-
-```bash
-> let-env MY_ENV_VAR = 1; $env.MY_ENV_VAR
-```
+| input   | output  |
+| ------- | ------- |
+| nothing | nothing |

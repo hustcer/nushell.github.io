@@ -1,6 +1,6 @@
 # http get
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -22,11 +22,11 @@ Fetch the contents from a URL.
 - `--full`: returns the full response instead of only the body
 - `--allow-errors`: do not fail if the server returns an error code
 
-## Notes
+## Input/output types:
 
-```text
-Performs HTTP GET operation.
-```
+| input   | output |
+| ------- | ------ |
+| nothing | any    |
 
 ## Examples
 
@@ -46,4 +46,16 @@ Get content from example.com, with custom header
 
 ```bash
 > http get -H [my-header-key my-header-value] https://www.example.com
+```
+
+Get content from example.com, with custom headers
+
+```bash
+> http get -H [my-header-key-A my-header-value-A my-header-key-B my-header-value-B] https://www.example.com
+```
+
+## Notes
+
+```text
+Performs HTTP GET operation.
 ```

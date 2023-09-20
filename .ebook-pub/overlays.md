@@ -29,6 +29,12 @@ To create a new overlay, you first need a module:
 
 We'll use this module throughout the chapter, so whenever you see `overlay use spam`, assume `spam` is referring to this module.
 
+:::tip The module can be created by any of the three methods described in [Modules](modules.md):
+
+- "inline" modules (used in this example)
+- file
+- directory :::
+
 To create the overlay, call [`overlay use`](/commands/docs/overlay_use.md):
 
 ```
@@ -129,7 +135,7 @@ The solution can be to create a new empty overlay that would be used just for re
 
 (spam)> module scratchpad { }
 
-(spam)> overlay new scratchpad
+(spam)> overlay use scratchpad
 
 (scratchpad)> def eggs [] { "eggs" }
 ```
@@ -208,7 +214,7 @@ One can also keep a list of environment variables that were defined inside an ov
 ```
 (zero)> module spam {
     export def foo [] { "foo" }
-    export-env { let-env FOO = "foo" }
+    export-env { $env.FOO = "foo" }
 }
 
 (zero)> overlay use spam

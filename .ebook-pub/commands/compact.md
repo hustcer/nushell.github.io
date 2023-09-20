@@ -1,6 +1,6 @@
 # compact
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,13 @@ Creates a table with non-empty rows.
 ## Parameters
 
 - `...rest`: the columns to compact from the table
+
+## Input/output types:
+
+| input       | output      |
+| ----------- | ----------- |
+| list\<any\> | list\<any\> |
+| table       | table       |
 
 ## Examples
 

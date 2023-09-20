@@ -1,16 +1,28 @@
 # dfr sum
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
-Creates a sum expression for an aggregation
+Creates a sum expression for an aggregation or aggregates columns to their sum value
 
 ## Signature
 
 `> dfr sum `
 
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
+
 ## Examples
+
+Sums all columns in a dataframe
+
+```bash
+> [[a b]; [6 2] [1 4] [4 1]] | dfr into-df | dfr sum
+```
 
 Sum aggregation for a group-by
 
@@ -19,24 +31,4 @@ Sum aggregation for a group-by
     | dfr into-df
     | dfr group-by a
     | dfr agg (dfr col b | dfr sum)
-```
-
-# dfr sum
-
-**version**: 0.80.0
-
-## **usage**:
-
-Aggregates columns to their sum value
-
-## Signature
-
-`> dfr sum `
-
-## Examples
-
-Sums all columns in a dataframe
-
-```bash
-> [[a b]; [6 2] [1 4] [4 1]] | dfr into-df | dfr sum
 ```

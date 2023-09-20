@@ -1,6 +1,6 @@
 # dfr summary
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ For a dataframe, produces descriptive statistics (summary statistics) for its nu
 ## Parameters
 
 - `--quantiles {table}`: provide optional quantiles
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

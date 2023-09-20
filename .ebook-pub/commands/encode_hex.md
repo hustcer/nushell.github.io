@@ -1,6 +1,6 @@
 # encode hex
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,15 @@ Encode a binary value using hex.
 ## Parameters
 
 - `...rest`: For a data structure input, encode data at the given cell paths
+
+## Input/output types:
+
+| input          | output         |
+| -------------- | -------------- |
+| binary         | string         |
+| list\<binary\> | list\<string\> |
+| record         | record         |
+| table          | table          |
 
 ## Examples
 

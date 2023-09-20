@@ -1,6 +1,6 @@
 # dfr cumulative
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,12 @@ Cumulative calculation for a series.
 
 - `type`: rolling operation
 - `--reverse`: Reverse cumulative calculation
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

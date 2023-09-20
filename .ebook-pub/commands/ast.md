@@ -1,6 +1,6 @@
 # ast
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -15,6 +15,12 @@ Print the abstract syntax tree (ast) for a pipeline.
 - `pipeline`: the pipeline to print the ast for
 - `--json`: serialize to json
 - `--minify`: minify the nuon or json output
+
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| string | record |
 
 ## Examples
 

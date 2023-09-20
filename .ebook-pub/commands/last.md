@@ -1,6 +1,6 @@
 # last
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,16 +14,29 @@ Return only the last several rows of the input. Counterpart of `first`. Opposite
 
 - `rows`: starting from the back, the number of rows to return
 
+## Input/output types:
+
+| input       | output      |
+| ----------- | ----------- |
+| binary      | binary      |
+| list\<any\> | list\<any\> |
+
 ## Examples
 
-Get the last 2 items
+Return the last 2 items of a list/table
 
 ```bash
 > [1,2,3] | last 2
 ```
 
-Get the last item
+Return the last item of a list/table
 
 ```bash
 > [1,2,3] | last
+```
+
+Return the last 2 bytes of a binary value
+
+```bash
+> 0x[01 23 45] | last 2
 ```

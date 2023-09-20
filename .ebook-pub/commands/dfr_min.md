@@ -1,16 +1,28 @@
 # dfr min
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
-Creates a min expression
+Creates a min expression or aggregates columns to their min value
 
 ## Signature
 
 `> dfr min `
 
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
+
 ## Examples
+
+Min value from columns in a dataframe
+
+```bash
+> [[a b]; [6 2] [1 4] [4 1]] | dfr into-df | dfr min
+```
 
 Min aggregation for a group-by
 
@@ -19,24 +31,4 @@ Min aggregation for a group-by
     | dfr into-df
     | dfr group-by a
     | dfr agg (dfr col b | dfr min)
-```
-
-# dfr min
-
-**version**: 0.80.0
-
-## **usage**:
-
-Aggregates columns to their min value
-
-## Signature
-
-`> dfr min `
-
-## Examples
-
-Min value from columns in a dataframe
-
-```bash
-> [[a b]; [6 2] [1 4] [4 1]] | dfr into-df | dfr min
 ```

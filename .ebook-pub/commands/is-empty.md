@@ -1,6 +1,6 @@
 # is-empty
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Check for empty values.
 ## Parameters
 
 - `...rest`: the names of the columns to check emptiness
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | bool   |
 
 ## Examples
 

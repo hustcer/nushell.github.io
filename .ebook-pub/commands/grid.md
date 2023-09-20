@@ -1,6 +1,6 @@
 # grid
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -16,16 +16,13 @@ Renders the output to a textual terminal grid.
 - `--color`: draw output with color
 - `--separator {string}`: character to separate grid with
 
-## Notes
+## Input/output types:
 
-```text
-grid was built to give a concise gridded layout for ls. however,
-it determines what to put in the grid by looking for a column named
-'name'. this works great for tables and records but for lists we
-need to do something different. such as with '[one two three] | grid'
-it creates a fake column called 'name' for these values so that it
-prints out the list properly.
-```
+| input       | output |
+| ----------- | ------ |
+| list\<any\> | string |
+| record      | string |
+| table       | string |
 
 ## Examples
 
@@ -57,4 +54,15 @@ Render a table with 'name' column in it to a grid
 
 ```bash
 > [[name patch]; [0.1.0 false] [0.1.1 true] [0.2.0 false]] | grid
+```
+
+## Notes
+
+```text
+grid was built to give a concise gridded layout for ls. however,
+it determines what to put in the grid by looking for a column named
+'name'. this works great for tables and records but for lists we
+need to do something different. such as with '[one two three] | grid'
+it creates a fake column called 'name' for these values so that it
+prints out the list properly.
 ```

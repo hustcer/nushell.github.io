@@ -1,6 +1,6 @@
 # dfr arg-max
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Return index for max value in series.
 ## Signature
 
 `> dfr arg-max `
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

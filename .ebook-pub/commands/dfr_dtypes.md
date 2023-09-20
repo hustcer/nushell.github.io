@@ -1,6 +1,6 @@
 # dfr dtypes
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Show dataframe data types.
 ## Signature
 
 `> dfr dtypes `
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # def-env
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -16,18 +16,24 @@ Define a custom command, which participates in the caller environment.
 - `params`: parameters
 - `block`: body of the definition
 
-## Notes
+## Input/output types:
 
-```text
-This command is a parser keyword. For details, check:
-  https://www.nushell.sh/book/thinking_in_nu.html
-
-```
+| input   | output  |
+| ------- | ------- |
+| nothing | nothing |
 
 ## Examples
 
 Set environment variable by call a custom command
 
 ```bash
-> def-env foo [] { let-env BAR = "BAZ" }; foo; $env.BAR
+> def-env foo [] { $env.BAR = "BAZ" }; foo; $env.BAR
+```
+
+## Notes
+
+```text
+This command is a parser keyword. For details, check:
+  https://www.nushell.sh/book/thinking_in_nu.html
+
 ```

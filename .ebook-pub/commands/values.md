@@ -1,6 +1,6 @@
 # values
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -10,11 +10,12 @@ Given a record or table, produce a list of its columns' values.
 
 `> values `
 
-## Notes
+## Input/output types:
 
-```text
-This is a counterpart to `columns`, which produces a list of columns' names.
-```
+| input  | output      |
+| ------ | ----------- |
+| record | list\<any\> |
+| table  | list\<any\> |
 
 ## Examples
 
@@ -34,4 +35,10 @@ Get the values from the table (produce a list of lists)
 
 ```bash
 > [[name meaning]; [ls list] [mv move] [cd 'change directory']] | values
+```
+
+## Notes
+
+```text
+This is a counterpart to `columns`, which produces a list of columns' names.
 ```

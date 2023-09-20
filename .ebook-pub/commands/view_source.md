@@ -1,6 +1,6 @@
 # view source
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ View a block, module, or a definition.
 ## Parameters
 
 - `item`: name or block to view
+
+## Input/output types:
+
+| input   | output |
+| ------- | ------ |
+| nothing | string |
 
 ## Examples
 
@@ -31,13 +37,19 @@ View the source of a custom command
 View the source of a custom command, which participates in the caller environment
 
 ```bash
-> def-env foo [] { let-env BAR = 'BAZ' }; view source foo
+> def-env foo [] { $env.BAR = 'BAZ' }; view source foo
+```
+
+View the source of a custom command with flags and arguments
+
+```bash
+> def test [a?:any --b:int ...rest:string] { echo 'test' }; view source test
 ```
 
 View the source of a module
 
 ```bash
-> module mod-foo { export-env { let-env FOO_ENV = 'BAZ' } }; view source mod-foo
+> module mod-foo { export-env { $env.FOO_ENV = 'BAZ' } }; view source mod-foo
 ```
 
 View the source of an alias

@@ -1,6 +1,6 @@
 # dfr set-with-idx
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,12 @@ Sets value in the given index.
 
 - `value`: value to be inserted in series
 - `--indices {any}`: list of indices indicating where to set the value
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

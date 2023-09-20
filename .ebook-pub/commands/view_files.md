@@ -1,6 +1,6 @@
 # view files
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -10,11 +10,11 @@ View the files registered in nushell's EngineState memory.
 
 `> view files `
 
-## Notes
+## Input/output types:
 
-```text
-These are files parsed and loaded at runtime.
-```
+| input   | output |
+| ------- | ------ |
+| nothing | string |
 
 ## Examples
 
@@ -22,4 +22,10 @@ View the files registered in nushell's EngineState memory
 
 ```bash
 > view files
+```
+
+## Notes
+
+```text
+These are files parsed and loaded at runtime.
 ```

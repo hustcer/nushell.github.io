@@ -1,6 +1,6 @@
 # random dice
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,12 @@ Generate a random dice roll.
 
 - `--dice {int}`: The amount of dice being rolled
 - `--sides {int}`: The amount of sides a die has
+
+## Input/output types:
+
+| input   | output      |
+| ------- | ----------- |
+| nothing | list\<any\> |
 
 ## Examples
 

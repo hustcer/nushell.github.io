@@ -1,6 +1,6 @@
 # every
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,12 @@ Show (or skip) every n-th row, starting from the first one.
 
 - `stride`: how many rows to skip between (and including) each row returned
 - `--skip`: skip the rows that would be returned, instead of selecting them
+
+## Input/output types:
+
+| input       | output      |
+| ----------- | ----------- |
+| list\<any\> | list\<any\> |
 
 ## Examples
 

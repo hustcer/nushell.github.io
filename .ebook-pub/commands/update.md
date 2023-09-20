@@ -1,6 +1,6 @@
 # update
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,14 @@ Update an existing column to have a new value.
 
 - `field`: the name of the column to update
 - `replacement value`: the new value to give the cell(s), or a closure to create the value
+
+## Input/output types:
+
+| input       | output      |
+| ----------- | ----------- |
+| list\<any\> | list\<any\> |
+| record      | record      |
+| table       | table       |
 
 ## Examples
 
@@ -40,3 +48,9 @@ You can also use a simple command to update 'authors' to a single string
 ```bash
 > [[project, authors]; ['nu', ['Andrés', 'JT', 'Yehuda']]] | update authors {|| str join ','}
 ```
+
+## Subcommands:
+
+| name                                             | type    | usage                   |
+| ------------------------------------------------ | ------- | ----------------------- |
+| [`update cells`](/commands/docs/update_cells.md) | Builtin | Update the table cells. |

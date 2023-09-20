@@ -1,6 +1,6 @@
 # mv
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -8,7 +8,7 @@ Move files or directories.
 
 ## Signature
 
-`> mv (source) (destination) --verbose --force --interactive`
+`> mv (source) (destination) --verbose --force --interactive --update`
 
 ## Parameters
 
@@ -17,6 +17,13 @@ Move files or directories.
 - `--verbose`: make mv to be verbose, showing files been moved.
 - `--force`: overwrite the destination.
 - `--interactive`: ask user to confirm action
+- `--update`: move only when the SOURCE file is newer than the destination file(with -f) or when the destination file is missing
+
+## Input/output types:
+
+| input   | output  |
+| ------- | ------- |
+| nothing | nothing |
 
 ## Examples
 

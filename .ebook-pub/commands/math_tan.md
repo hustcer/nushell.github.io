@@ -1,6 +1,6 @@
 # math tan
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,12 +14,19 @@ Returns the tangent of the number.
 
 - `--degrees`: Use degrees instead of radians
 
+## Input/output types:
+
+| input          | output         |
+| -------------- | -------------- |
+| list\<number\> | list\<number\> |
+| number         | number         |
+
 ## Examples
 
 Apply the tangent to π/4
 
 ```bash
-> (math pi) / 4 | math tan
+> 3.141592 / 4 | math tan | math round --precision 4
 ```
 
 Apply the tangent to a list of angles in degrees

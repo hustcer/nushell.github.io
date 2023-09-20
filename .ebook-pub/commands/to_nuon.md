@@ -1,6 +1,6 @@
 # to nuon
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -15,6 +15,12 @@ Converts table data into Nuon (Nushell Object Notation) text.
 - `--raw`: remove all of the whitespace (default behaviour and overwrites -i and -t)
 - `--indent {number}`: specify indentation width
 - `--tabs {number}`: specify indentation tab quantity
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | string |
 
 ## Examples
 

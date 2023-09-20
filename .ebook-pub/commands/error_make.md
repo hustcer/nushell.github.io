@@ -1,6 +1,6 @@
 # error make
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,12 @@ Create an error.
 
 - `error_struct`: the error to create
 - `--unspanned`: remove the origin label from the error
+
+## Input/output types:
+
+| input   | output |
+| ------- | ------ |
+| nothing | any    |
 
 ## Examples
 

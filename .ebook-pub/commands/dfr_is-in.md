@@ -1,31 +1,6 @@
 # dfr is-in
 
-**version**: 0.80.0
-
-## **usage**:
-
-Checks if elements from a series are contained in right series.
-
-## Signature
-
-`> dfr is-in (other)`
-
-## Parameters
-
-- `other`: right series
-
-## Examples
-
-Checks if elements from a series are contained in right series
-
-```bash
-> let other = ([1 3 6] | dfr into-df);
-    [5 6 6 6 8 8 8] | dfr into-df | dfr is-in $other
-```
-
-# dfr is-in
-
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -38,6 +13,12 @@ Creates an is-in expression.
 ## Parameters
 
 - `list`: List to check if values are in
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

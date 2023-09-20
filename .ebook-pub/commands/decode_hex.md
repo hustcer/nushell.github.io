@@ -1,6 +1,6 @@
 # decode hex
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,15 @@ Hex decode a value.
 ## Parameters
 
 - `...rest`: For a data structure input, decode data at the given cell paths
+
+## Input/output types:
+
+| input          | output         |
+| -------------- | -------------- |
+| list\<string\> | list\<binary\> |
+| record         | record         |
+| string         | binary         |
+| table          | table          |
 
 ## Examples
 

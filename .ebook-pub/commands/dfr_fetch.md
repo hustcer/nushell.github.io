@@ -1,6 +1,6 @@
 # dfr fetch
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ collects the lazyframe to the selected rows.
 ## Parameters
 
 - `rows`: number of rows to be fetched from lazyframe
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

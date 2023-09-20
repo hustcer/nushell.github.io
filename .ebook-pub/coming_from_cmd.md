@@ -37,15 +37,15 @@ This table was last updated for Nu 0.67.0.
 | `MKLINK`                             |                                                                                     | Create symbolic links                                                 |
 | `MOVE`                               | `mv`                                                                                | Move files                                                            |
 | `PATH`                               | `$env.Path`                                                                         | Display the current path variable                                     |
-| `PATH <path>;%PATH%`                 | `let-env Path = ($env.Path \| prepend <path>`)                                      | Edit the path variable                                                |
-| `PATH %PATH%;<path>`                 | `let-env Path = ($env.Path \| prepend <path>`)                                      | Edit the path variable                                                |
+| `PATH <path>;%PATH%`                 | `$env.Path = ($env.Path \| prepend <path>`)                                         | Edit the path variable                                                |
+| `PATH %PATH%;<path>`                 | `$env.Path = ($env.Path \| prepend <path>`)                                         | Edit the path variable                                                |
 | `PAUSE`                              | `input "Press any key to continue . . ."`                                           | Pause script execution                                                |
-| `PROMPT <template>`                  | `let-env PROMPT_COMMAND = { <command> }`                                            | Change the terminal prompt                                            |
+| `PROMPT <template>`                  | `$env.PROMPT_COMMAND = { <command> }`                                               | Change the terminal prompt                                            |
 | `PUSHD <path>`/`POPD`                | `enter <path>`/`exit`                                                               | Change working directory temporarily                                  |
 | `REM`                                | `#`                                                                                 | Comments                                                              |
 | `REN` or `RENAME`                    | `mv`                                                                                | Rename files                                                          |
 | `RD` or `RMDIR`                      | `rm`                                                                                | Remove directory                                                      |
-| `SET <var>=<string>`                 | `let-env <var> = <string>`                                                          | Set environment variables                                             |
+| `SET <var>=<string>`                 | `$env.<var> = <string>`                                                             | Set environment variables                                             |
 | `SETLOCAL`                           | (default behavior)                                                                  | Localize environment changes to a script                              |
 | `START <path>`                       | `explorer <path>`                                                                   | Open a file as if double-clicked in File Explorer                     |
 | `TIME /T`                            | `date now \| date format "%H:%M:%S"`                                                | Get the current time                                                  |

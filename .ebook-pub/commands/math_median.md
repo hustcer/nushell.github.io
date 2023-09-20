@@ -1,6 +1,6 @@
 # math median
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,15 @@ Computes the median of a list of numbers.
 ## Signature
 
 `> math median `
+
+## Input/output types:
+
+| input            | output   |
+| ---------------- | -------- |
+| list\<duration\> | duration |
+| list\<filesize\> | filesize |
+| list\<number\>   | number   |
+| table            | record   |
 
 ## Examples
 

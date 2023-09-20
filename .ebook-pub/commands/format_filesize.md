@@ -1,6 +1,6 @@
 # format filesize
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,14 @@ Converts a column of filesizes to some specified format.
 
 - `format value`: the format into which convert the file sizes
 - `...rest`: For a data structure input, format filesizes at the given cell paths
+
+## Input/output types:
+
+| input    | output |
+| -------- | ------ |
+| filesize | string |
+| record   | record |
+| table    | table  |
 
 ## Examples
 

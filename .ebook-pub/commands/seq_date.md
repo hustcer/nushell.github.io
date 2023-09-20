@@ -1,6 +1,6 @@
 # seq date
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -19,6 +19,12 @@ Print sequences of dates.
 - `--increment {int}`: increment dates by this number
 - `--days {int}`: number of days to print
 - `--reverse`: print dates in reverse
+
+## Input/output types:
+
+| input   | output         |
+| ------- | -------------- |
+| nothing | list\<string\> |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # gstat
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,3 +13,9 @@ Get the git status of a repo
 ## Parameters
 
 - `path`: path to repo
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |

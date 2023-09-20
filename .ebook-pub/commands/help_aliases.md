@@ -1,6 +1,6 @@
 # help aliases
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,12 @@ Show help on nushell aliases.
 
 - `...rest`: the name of alias to get help on
 - `--find {string}`: string to find in alias names and usage
+
+## Input/output types:
+
+| input   | output |
+| ------- | ------ |
+| nothing | table  |
 
 ## Examples
 

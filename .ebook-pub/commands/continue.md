@@ -1,6 +1,6 @@
 # continue
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Continue a loop from the next iteration.
 ## Signature
 
 `> continue `
+
+## Input/output types:
+
+| input   | output  |
+| ------- | ------- |
+| nothing | nothing |
 
 ## Examples
 

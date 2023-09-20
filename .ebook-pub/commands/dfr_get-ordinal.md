@@ -1,6 +1,6 @@
 # dfr get-ordinal
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Gets ordinal from date.
 ## Signature
 
 `> dfr get-ordinal `
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

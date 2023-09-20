@@ -1,6 +1,6 @@
 # path basename
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -8,12 +8,18 @@ Get the final component of a path.
 
 ## Signature
 
-`> path basename --columns --replace`
+`> path basename --replace`
 
 ## Parameters
 
-- `--columns {table}`: For a record or table input, convert strings in the given columns to their basename
 - `--replace {string}`: Return original path with basename replaced by this string
+
+## Input/output types:
+
+| input          | output         |
+| -------------- | -------------- |
+| list\<string\> | list\<string\> |
+| string         | string         |
 
 ## Examples
 
@@ -23,10 +29,10 @@ Get basename of a path
 > '/home/joe/test.txt' | path basename
 ```
 
-Get basename of a path by column
+Get basename of a list of paths
 
 ```bash
-> [[name];[/home/joe]] | path basename -c [ name ]
+> [ /home/joe, /home/doe ] | path basename
 ```
 
 Replace basename of a path

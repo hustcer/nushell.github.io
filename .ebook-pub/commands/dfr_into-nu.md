@@ -1,10 +1,10 @@
 # dfr into-nu
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
-Converts a section of the dataframe into nushell Table.
+Converts a dataframe or an expression into into nushell value for access and exploration.
 
 ## Signature
 
@@ -14,6 +14,12 @@ Converts a section of the dataframe into nushell Table.
 
 - `--rows {number}`: number of rows to be shown
 - `--tail`: shows tail rows
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 
@@ -28,20 +34,6 @@ Shows tail rows from dataframe
 ```bash
 > [[a b]; [1 2] [5 6] [3 4]] | dfr into-df | dfr into-nu -t -n 1
 ```
-
-# dfr into-nu
-
-**version**: 0.80.0
-
-## **usage**:
-
-Convert expression into a nu value for access and exploration.
-
-## Signature
-
-`> dfr into-nu `
-
-## Examples
 
 Convert a col expression into a nushell value
 

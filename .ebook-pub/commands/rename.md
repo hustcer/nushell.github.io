@@ -1,6 +1,6 @@
 # rename
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -8,12 +8,20 @@ Creates a new table with columns renamed.
 
 ## Signature
 
-`> rename ...rest --column`
+`> rename ...rest --column --block`
 
 ## Parameters
 
 - `...rest`: the new names for the columns
 - `--column {list<string>}`: column name to be changed
+- `--block {closure(any)}`: A closure to apply changes on each column
+
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| record | record |
+| table  | table  |
 
 ## Examples
 
@@ -39,4 +47,10 @@ Rename the fields of a record
 
 ```bash
 > {a: 1 b: 2} | rename x y
+```
+
+Rename fields based on a given closure
+
+```bash
+> {abc: 1, bbc: 2} | rename -b {str replace -a 'b' 'z'}
 ```

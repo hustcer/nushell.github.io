@@ -1,6 +1,6 @@
 # dfr is-duplicated
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Creates mask indicating duplicated values.
 ## Signature
 
 `> dfr is-duplicated `
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # math cos
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,12 +14,19 @@ Returns the cosine of the number.
 
 - `--degrees`: Use degrees instead of radians
 
+## Input/output types:
+
+| input          | output         |
+| -------------- | -------------- |
+| list\<number\> | list\<number\> |
+| number         | number         |
+
 ## Examples
 
 Apply the cosine to π
 
 ```bash
-> math pi | math cos
+> 3.141592 | math cos | math round --precision 4
 ```
 
 Apply the cosine to a list of angles in degrees

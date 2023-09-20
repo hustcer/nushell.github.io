@@ -1,6 +1,6 @@
 # save
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -18,6 +18,12 @@ Save a file.
 - `--append`: append input to the end of the file
 - `--force`: overwrite the destination
 - `--progress`: enable progress bar
+
+## Input/output types:
+
+| input | output  |
+| ----- | ------- |
+| any   | nothing |
 
 ## Examples
 

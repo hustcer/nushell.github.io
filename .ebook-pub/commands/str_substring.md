@@ -1,6 +1,6 @@
 # str substring
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -16,6 +16,15 @@ Get part of a string. Note that the start is included but the end is excluded, a
 - `...rest`: For a data structure input, turn strings at the given cell paths into substrings
 - `--grapheme-clusters`: count indexes and split using grapheme clusters (all visible chars have length 1)
 - `--utf-8-bytes`: count indexes and split using UTF-8 bytes (default; non-ASCII chars have length 2+)
+
+## Input/output types:
+
+| input          | output         |
+| -------------- | -------------- |
+| list\<string\> | list\<string\> |
+| record         | record         |
+| string         | string         |
+| table          | table          |
 
 ## Examples
 

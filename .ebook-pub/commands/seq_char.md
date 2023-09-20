@@ -1,6 +1,6 @@
 # seq char
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,12 @@ Print a sequence of ASCII characters.
 
 - `start`: start of character sequence (inclusive)
 - `end`: end of character sequence (inclusive)
+
+## Input/output types:
+
+| input   | output         |
+| ------- | -------------- |
+| nothing | list\<string\> |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # nu-highlight
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Syntax highlight the input string.
 ## Signature
 
 `> nu-highlight `
+
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| string | string |
 
 ## Examples
 

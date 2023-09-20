@@ -1,6 +1,6 @@
 # ansi gradient
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -17,6 +17,15 @@ Add a color gradient (using ANSI color codes) to the given string.
 - `--fgend {string}`: foreground gradient end color in hex
 - `--bgstart {string}`: background gradient start color in hex
 - `--bgend {string}`: background gradient end color in hex
+
+## Input/output types:
+
+| input          | output         |
+| -------------- | -------------- |
+| list\<string\> | list\<string\> |
+| record         | record         |
+| string         | string         |
+| table          | table          |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # dfr var
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -10,7 +10,19 @@ Create a var expression for an aggregation
 
 `> dfr var `
 
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
+
 ## Examples
+
+Var value from columns in a dataframe or aggregates columns to their var value
+
+```bash
+> [[a b]; [6 2] [4 2] [2 2]] | dfr into-df | dfr var
+```
 
 Var aggregation for a group-by
 
@@ -19,24 +31,4 @@ Var aggregation for a group-by
     | dfr into-df
     | dfr group-by a
     | dfr agg (dfr col b | dfr var)
-```
-
-# dfr var
-
-**version**: 0.80.0
-
-## **usage**:
-
-Aggregates columns to their var value
-
-## Signature
-
-`> dfr var `
-
-## Examples
-
-Var value from columns in a dataframe
-
-```bash
-> [[a b]; [6 2] [4 2] [2 2]] | dfr into-df | dfr var
 ```

@@ -1,6 +1,6 @@
 # from xlsx
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Parse binary Excel(.xlsx) data and create table.
 ## Parameters
 
 - `--sheets {list<string>}`: Only convert specified sheets
+
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| binary | table  |
 
 ## Examples
 

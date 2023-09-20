@@ -1,6 +1,6 @@
 # Custom completions
 
-Custom completions allow you to mix together two features of Nushell: custom commands and completions. With them, you're able to create commands that handle the completions for positional parameters and flag parameters. These custom completions work both custom commands and [known external, or `extern`, commands](externs.md).
+Custom completions allow you to mix together two features of Nushell: custom commands and completions. With them, you're able to create commands that handle the completions for positional parameters and flag parameters. These custom completions work both for [custom commands](custom_commands.md) and [known external, or `extern`, commands](externs.md).
 
 There are two parts to a custom command: the command that handles a completion and attaching this command to the type of another command using `@`.
 
@@ -39,7 +39,7 @@ module commands {
 }
 ```
 
-In our module, we've chosen to export only the custom command `my-command` but not the custom completion `animals`. This allows users of this module to call the command, and even use the custom completion logic, without having access the the custom completion. This keeps the API cleaner, while still offering all the same benefits.
+In our module, we've chosen to export only the custom command `my-command` but not the custom completion `animals`. This allows users of this module to call the command, and even use the custom completion logic, without having access to the custom completion. This keeps the API cleaner, while still offering all the same benefits.
 
 This is possible because custom completion tags using `@` are locked-in as the command is first parsed.
 
@@ -137,59 +137,32 @@ def my_commits [] {
 ## External completions
 
 External completers can also be integrated, instead of relying solely on Nushell ones.
-For this set the `external_completer` field in `config.nu` to a block which will be evaluated if no Nushell completions were found.
-You can configure the block to run an external completer, such as [carapace](https://github.com/rsteube/carapace-bin).
 
-This example should enable carapace external completions:
+For this, set the `external_completer` field in `config.nu` to a [closure](types_of_data.md#closures) which will be evaluated if no Nushell completions were found.
 
 ```nu
-# config.nu
+> $env.config.completions.external = {
+>     enable: true
+>     max_results: 100
+>     completer: $completer
+> }
+```
+
+You can configure the closure to run an external completer, such as [carapace](https://github.com/rsteube/carapace-bin).
+
+When the closure returns unparsable json (e.g. an empty string) it defaults to file completion.
+
+An external completer is a function that takes the current command as a string list, and outputs a list of records with `value` and `description` keys, like custom completion functions.
+
+> **Note**
+> This closure will accept the current command as a list. For example, typing `my-command --arg1 <tab>` will receive `[my-command --arg1 " "]`.
+
+This example will enable carapace external completions:
+
+```nu
 let carapace_completer = {|spans|
     carapace $spans.0 nushell $spans | from json
 }
-
-# The default config record. This is where much of your global configuration is setup.
-let-env config = {
-    # ... your config
-    completions: {
-        external: {
-            enable: true
-            max_results: 100
-            completer: $carapace_completer
-        }
-    }
-}
 ```
 
-Multiple completers can be defined as such:
-
-```nu
-let external_completer = {|spans|
-  {
-    $spans.0: { default_completer $spans | from json } # default
-    ls: { ls_completer $spans | from json }
-    git: { git_completer $spans | from json }
-  } | get $spans.0 | each {|it| do $it}
-}
-```
-
-This example shows an external completer that uses the `fish` shell's `complete` command. (You must have the fish shell installed for this example to work.)
-
-```nu
-let fish_completer = {|spans|
-    fish --command $'complete "--do-complete=($spans | str join " ")"' | str trim | split row "\n" | each { |line| $line | split column "\t" value description } | flatten
-}
-
-let-env config = {
-    # ... your config
-    completions: {
-        external: {
-            enable: true
-            max_results: 100
-            completer: $fish_completer
-        }
-    }
-}
-```
-
-> When the block returns unparsable json (e.g. an empty string) it defaults to file completion.
+[More examples of custom completers can be found in the cookbook](../cookbook/external_completers.md).

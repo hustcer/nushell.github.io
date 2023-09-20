@@ -1,6 +1,6 @@
 # split chars
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -15,6 +15,13 @@ Split a string into a list of characters.
 - `--grapheme-clusters`: split on grapheme clusters
 - `--code-points`: split on code points (default; splits combined characters)
 
+## Input/output types:
+
+| input          | output                 |
+| -------------- | ---------------------- |
+| list\<string\> | list\<list\<string\>\> |
+| string         | list\<string\>         |
+
 ## Examples
 
 Split the string into a list of characters
@@ -27,4 +34,10 @@ Split on grapheme clusters
 
 ```bash
 > '🇯🇵ほげ' | split chars -g
+```
+
+Split multiple strings into lists of characters
+
+```bash
+> ['hello', 'world'] | split chars
 ```

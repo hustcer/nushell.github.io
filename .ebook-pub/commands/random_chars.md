@@ -1,6 +1,6 @@
 # random chars
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Generate random chars.
 ## Parameters
 
 - `--length {int}`: Number of chars
+
+## Input/output types:
+
+| input   | output |
+| ------- | ------ |
+| nothing | string |
 
 ## Examples
 

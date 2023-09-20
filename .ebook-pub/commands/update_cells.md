@@ -1,6 +1,6 @@
 # update cells
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,12 @@ Update the table cells.
 
 - `closure`: the closure to run an update for each cell
 - `--columns {table}`: list of columns to update
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| table | table  |
 
 ## Examples
 

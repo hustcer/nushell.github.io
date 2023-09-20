@@ -1,6 +1,6 @@
 # exec
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,11 +14,11 @@ Execute a command, replacing the current process.
 
 - `command`: the command to execute
 
-## Notes
+## Input/output types:
 
-```text
-Currently supported only on Unix-based systems.
-```
+| input   | output |
+| ------- | ------ |
+| nothing | any    |
 
 ## Examples
 
@@ -32,4 +32,10 @@ Execute 'nautilus'
 
 ```bash
 > exec nautilus
+```
+
+## Notes
+
+```text
+Currently supported only on Unix-based systems.
 ```

@@ -1,6 +1,6 @@
 # math sin
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,12 +14,19 @@ Returns the sine of the number.
 
 - `--degrees`: Use degrees instead of radians
 
+## Input/output types:
+
+| input          | output         |
+| -------------- | -------------- |
+| list\<number\> | list\<number\> |
+| number         | number         |
+
 ## Examples
 
 Apply the sine to π/2
 
 ```bash
-> (math pi) / 2 | math sin
+> 3.141592 / 2 | math sin | math round --precision 4
 ```
 
 Apply the sine to a list of angles in degrees

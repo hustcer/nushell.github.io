@@ -1,6 +1,6 @@
 # url encode
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,15 @@ Converts a string to a percent encoded web safe string.
 
 - `...rest`: For a data structure input, check strings at the given cell paths, and replace with result
 - `--all`: encode all non-alphanumeric chars including `/`, `.`, `:`
+
+## Input/output types:
+
+| input          | output         |
+| -------------- | -------------- |
+| list\<string\> | list\<string\> |
+| record         | record         |
+| string         | string         |
+| table          | table          |
 
 ## Examples
 

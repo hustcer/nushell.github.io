@@ -1,6 +1,6 @@
 # overlay list
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -10,11 +10,11 @@ List all active overlays.
 
 `> overlay list `
 
-## Notes
+## Input/output types:
 
-```text
-The overlays are listed in the order they were activated.
-```
+| input   | output         |
+| ------- | -------------- |
+| nothing | list\<string\> |
 
 ## Examples
 
@@ -24,4 +24,10 @@ Get the last activated overlay
 > module spam { export def foo [] { "foo" } }
     overlay use spam
     overlay list | last
+```
+
+## Notes
+
+```text
+The overlays are listed in the order they were activated.
 ```

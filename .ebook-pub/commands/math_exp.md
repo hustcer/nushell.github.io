@@ -1,6 +1,6 @@
 # math exp
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,13 @@ Returns e raised to the power of x.
 ## Signature
 
 `> math exp `
+
+## Input/output types:
+
+| input          | output         |
+| -------------- | -------------- |
+| list\<number\> | list\<number\> |
+| number         | number         |
 
 ## Examples
 

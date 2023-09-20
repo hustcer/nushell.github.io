@@ -1,16 +1,28 @@
 # dfr mean
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
-Creates a mean expression for an aggregation
+Creates a mean expression for an aggregation or aggregates columns to their mean value
 
 ## Signature
 
 `> dfr mean `
 
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
+
 ## Examples
+
+Mean value from columns in a dataframe
+
+```bash
+> [[a b]; [6 2] [4 2] [2 2]] | dfr into-df | dfr mean
+```
 
 Mean aggregation for a group-by
 
@@ -19,24 +31,4 @@ Mean aggregation for a group-by
     | dfr into-df
     | dfr group-by a
     | dfr agg (dfr col b | dfr mean)
-```
-
-# dfr mean
-
-**version**: 0.80.0
-
-## **usage**:
-
-Aggregates columns to their mean value
-
-## Signature
-
-`> dfr mean `
-
-## Examples
-
-Mean value from columns in a dataframe
-
-```bash
-> [[a b]; [6 2] [4 2] [2 2]] | dfr into-df | dfr mean
 ```

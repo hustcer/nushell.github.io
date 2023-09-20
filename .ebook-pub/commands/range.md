@@ -1,6 +1,6 @@
 # range
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Return only the selected rows.
 ## Parameters
 
 - `rows`: range of rows to return: Eg) 4..7 (=> from 4 to 7)
+
+## Input/output types:
+
+| input       | output      |
+| ----------- | ----------- |
+| list\<any\> | list\<any\> |
 
 ## Examples
 

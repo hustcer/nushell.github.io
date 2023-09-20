@@ -1,6 +1,6 @@
 # dfr melt
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -16,6 +16,12 @@ Unpivot a DataFrame from wide to long format.
 - `--values {table}`: column names used as value columns
 - `--variable-name {string}`: optional name for variable column
 - `--value-name {string}`: optional name for value column
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

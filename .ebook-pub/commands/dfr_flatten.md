@@ -1,17 +1,35 @@
 # dfr flatten
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
-creates a flatten expression
+An alias for dfr explode
 
 ## Signature
 
-`> dfr flatten `
+`> dfr flatten ...rest`
+
+## Parameters
+
+- `...rest`: columns to flatten, only applicable for dataframes
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 
+Flatten the specified dataframe
+
 ```bash
->
+> [[id name hobbies]; [1 Mercy [Cycling Knitting]] [2 Bob [Skiing Football]]] | dfr into-df | dfr flatten hobbies | dfr collect
+```
+
+Select a column and flatten the values
+
+```bash
+> [[id name hobbies]; [1 Mercy [Cycling Knitting]] [2 Bob [Skiing Football]]] | dfr into-df | dfr select (dfr col hobbies | dfr flatten)
 ```

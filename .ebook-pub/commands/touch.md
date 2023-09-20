@@ -1,6 +1,6 @@
 # touch
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -18,6 +18,12 @@ Creates one or more files.
 - `--modified`: change the modification time of the file or directory. If no timestamp, date or reference file/directory is given, the current time is used
 - `--access`: change the access time of the file or directory. If no timestamp, date or reference file/directory is given, the current time is used
 - `--no-create`: do not create the file if it does not exist
+
+## Input/output types:
+
+| input   | output  |
+| ------- | ------- |
+| nothing | nothing |
 
 ## Examples
 

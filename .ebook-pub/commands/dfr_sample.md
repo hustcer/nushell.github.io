@@ -1,6 +1,6 @@
 # dfr sample
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -17,6 +17,12 @@ Create sample dataframe.
 - `--seed {number}`: seed for the selection
 - `--replace`: sample with replace
 - `--shuffle`: shuffle sample
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

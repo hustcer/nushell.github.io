@@ -1,6 +1,6 @@
 # filter
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,12 +14,13 @@ Filter values based on a predicate closure.
 
 - `closure`: Predicate closure
 
-## Notes
+## Input/output types:
 
-```text
-This command works similar to 'where' but allows reading the predicate closure from
-a variable. On the other hand, the "row condition" syntax is not supported.
-```
+| input       | output      |
+| ----------- | ----------- |
+| list\<any\> | list\<any\> |
+| range       | list\<any\> |
+| table       | table       |
 
 ## Examples
 
@@ -39,4 +40,23 @@ Filter rows of a table according to a stored condition
 
 ```bash
 > let cond = {|x| $x.a > 1}; [{a: 1} {a: 2}] | filter $cond
+```
+
+Filter items of a range according to a condition
+
+```bash
+> 9..13 | filter {|el| $el mod 2 != 0}
+```
+
+List all numbers above 3, using an existing closure condition
+
+```bash
+> let a = {$in > 3}; [1, 2, 5, 6] | filter $a
+```
+
+## Notes
+
+```text
+This command works similar to 'where' but allows reading the predicate closure from
+a variable. On the other hand, the "row condition" syntax is not supported.
 ```

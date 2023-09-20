@@ -1,6 +1,6 @@
 # cd
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,13 @@ Change directory.
 ## Parameters
 
 - `path`: the path to change to
+
+## Input/output types:
+
+| input   | output  |
+| ------- | ------- |
+| nothing | nothing |
+| string  | nothing |
 
 ## Examples
 

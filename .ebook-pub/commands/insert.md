@@ -1,6 +1,6 @@
 # insert
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,14 @@ Insert a new column, using an expression or closure to create each row's values.
 
 - `field`: the name of the column to insert
 - `new value`: the new value to give the cell(s)
+
+## Input/output types:
+
+| input       | output      |
+| ----------- | ----------- |
+| list\<any\> | list\<any\> |
+| record      | record      |
+| table       | table       |
 
 ## Examples
 

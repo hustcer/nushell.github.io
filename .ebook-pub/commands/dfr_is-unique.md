@@ -1,6 +1,6 @@
 # dfr is-unique
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Creates mask indicating unique values.
 ## Signature
 
 `> dfr is-unique `
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

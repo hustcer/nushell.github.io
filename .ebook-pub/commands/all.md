@@ -1,6 +1,6 @@
 # all
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,13 @@ Test if every element of the input fulfills a predicate expression.
 ## Parameters
 
 - `predicate`: a closure that must evaluate to a boolean
+
+## Input/output types:
+
+| input       | output |
+| ----------- | ------ |
+| list\<any\> | bool   |
+| table       | bool   |
 
 ## Examples
 

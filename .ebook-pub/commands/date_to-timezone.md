@@ -1,6 +1,6 @@
 # date to-timezone
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,11 +14,12 @@ Convert a date to a given time zone.
 
 - `time zone`: time zone description
 
-## Notes
+## Input/output types:
 
-```text
-Use 'date list-timezone' to list all supported time zones.
-```
+| input    | output   |
+| -------- | -------- |
+| datetime | datetime |
+| string   | datetime |
 
 ## Examples
 
@@ -44,4 +45,16 @@ Get the current date in Hawaii
 
 ```bash
 > "2020-10-10 10:00:00 +02:00" | date to-timezone "+0500"
+```
+
+Get the current date in Hawaii, from a datetime object
+
+```bash
+> "2020-10-10 10:00:00 +02:00" | into datetime | date to-timezone "+0500"
+```
+
+## Notes
+
+```text
+Use 'date list-timezone' to list all supported time zones.
 ```

@@ -1,6 +1,6 @@
 # dfr to-csv
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -15,6 +15,12 @@ Saves dataframe to CSV file.
 - `file`: file path to save dataframe
 - `--delimiter {string}`: file delimiter character
 - `--no-header`: Indicates if file doesn't have header
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 
