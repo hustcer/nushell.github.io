@@ -1,6 +1,6 @@
 # explain
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,13 @@ Explain closure contents.
 ## Parameters
 
 - `closure`: the closure to run
+
+## Input/output types:
+
+| input   | output |
+| ------- | ------ |
+| any     | any    |
+| nothing | any    |
 
 ## Examples
 

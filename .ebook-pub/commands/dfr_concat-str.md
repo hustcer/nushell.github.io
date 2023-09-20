@@ -1,6 +1,6 @@
 # dfr concat-str
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,12 @@ Creates a concat string expression.
 
 - `separator`: Separator used during the concatenation
 - `concat expressions`: Expression(s) that define the string concatenation
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

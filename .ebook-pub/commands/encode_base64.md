@@ -1,6 +1,6 @@
 # encode base64
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -15,6 +15,18 @@ Encode a string or binary value using Base64.
 - `...rest`: For a data structure input, encode data at the given cell paths
 - `--character-set {string}`: specify the character rules for encoding the input.
   Valid values are 'standard', 'standard-no-padding', 'url-safe', 'url-safe-no-padding','binhex', 'bcrypt', 'crypt', 'mutf7'
+
+## Input/output types:
+
+| input          | output         |
+| -------------- | -------------- |
+| binary         | string         |
+| list\<any\>    | list\<string\> |
+| list\<binary\> | list\<string\> |
+| list\<string\> | list\<string\> |
+| record         | record         |
+| string         | string         |
+| table          | table          |
 
 ## Examples
 

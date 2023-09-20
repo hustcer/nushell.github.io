@@ -1,6 +1,6 @@
 # echo
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,13 +14,11 @@ Returns its arguments, ignoring the piped-in value.
 
 - `...rest`: the values to echo
 
-## Notes
+## Input/output types:
 
-```text
-When given no arguments, it returns an empty string. When given one argument,
-it returns it. Otherwise, it returns a list of the arguments. There is usually
-little reason to use this over just writing the values as-is.
-```
+| input   | output |
+| ------- | ------ |
+| nothing | any    |
 
 ## Examples
 
@@ -34,4 +32,12 @@ Returns the piped-in value, by using the special $in variable to obtain it.
 
 ```bash
 > echo $in
+```
+
+## Notes
+
+```text
+When given no arguments, it returns an empty string. When given one argument,
+it returns it. Otherwise, it returns a list of the arguments. There is usually
+little reason to use this over just writing the values as-is.
 ```

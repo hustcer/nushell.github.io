@@ -1,6 +1,6 @@
 # move
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -15,6 +15,13 @@ Move columns before or after other columns.
 - `...rest`: the columns to move
 - `--after {string}`: the column that will precede the columns moved
 - `--before {string}`: the column that will be the next after the columns moved
+
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| record | record |
+| table  | table  |
 
 ## Examples
 

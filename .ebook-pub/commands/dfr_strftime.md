@@ -1,6 +1,6 @@
 # dfr strftime
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Formats date based on string rule.
 ## Parameters
 
 - `fmt`: Format rule
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

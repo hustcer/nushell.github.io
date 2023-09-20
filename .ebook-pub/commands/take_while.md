@@ -1,6 +1,6 @@
 # take while
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,13 @@ Take elements of the input while a predicate is true.
 ## Parameters
 
 - `predicate`: the predicate that element(s) must match
+
+## Input/output types:
+
+| input       | output      |
+| ----------- | ----------- |
+| list\<any\> | list\<any\> |
+| table       | table       |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # rotate
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,13 @@ Rotates a table or record clockwise (default) or counter-clockwise (use --ccw fl
 
 - `...rest`: the names to give columns once rotated
 - `--ccw`: rotate counter clockwise
+
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| record | table  |
+| table  | table  |
 
 ## Examples
 

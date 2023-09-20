@@ -1,6 +1,6 @@
 # roll down
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Roll table rows down.
 ## Parameters
 
 - `--by {int}`: Number of rows to roll
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| table | table  |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # str join
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,13 @@ Concatenate multiple strings into a single string, with an optional separator be
 ## Parameters
 
 - `separator`: optional separator to use when creating string
+
+## Input/output types:
+
+| input       | output |
+| ----------- | ------ |
+| list\<any\> | string |
+| string      | string |
 
 ## Examples
 

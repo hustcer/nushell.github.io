@@ -1,6 +1,6 @@
 # headers
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,13 @@ Use the first row of the table as column names.
 ## Signature
 
 `> headers `
+
+## Input/output types:
+
+| input       | output |
+| ----------- | ------ |
+| list\<any\> | table  |
+| table       | table  |
 
 ## Examples
 

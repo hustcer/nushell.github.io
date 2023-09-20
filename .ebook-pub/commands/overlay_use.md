@@ -1,6 +1,6 @@
 # overlay use
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -17,12 +17,11 @@ Use definitions from a module as an overlay.
 - `--prefix`: Prepend module name to the imported commands and aliases
 - `--reload`: If the overlay already exists, reload its definitions and environment.
 
-## Notes
+## Input/output types:
 
-```text
-This command is a parser keyword. For details, check:
-  https://www.nushell.sh/book/thinking_in_nu.html
-```
+| input   | output  |
+| ------- | ------- |
+| nothing | nothing |
 
 ## Examples
 
@@ -53,7 +52,14 @@ Create an overlay with a prefix
 Create an overlay from a file
 
 ```bash
-> 'export-env { let-env FOO = "foo" }' | save spam.nu
+> 'export-env { $env.FOO = "foo" }' | save spam.nu
     overlay use spam.nu
     $env.FOO
+```
+
+## Notes
+
+```text
+This command is a parser keyword. For details, check:
+  https://www.nushell.sh/book/thinking_in_nu.html
 ```

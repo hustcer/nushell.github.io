@@ -1,6 +1,6 @@
 # to tsv
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,13 @@ Convert table into .tsv text.
 ## Parameters
 
 - `--noheaders`: do not output the column names as the first row
+
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| record | string |
+| table  | string |
 
 ## Examples
 

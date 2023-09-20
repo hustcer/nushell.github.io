@@ -1,6 +1,6 @@
 # dfr get-minute
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Gets minute from date.
 ## Signature
 
 `> dfr get-minute `
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

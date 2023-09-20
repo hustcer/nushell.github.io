@@ -1,6 +1,6 @@
 # math product
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Returns the product of a list of numbers or the products of each column of a tab
 ## Signature
 
 `> math product `
+
+## Input/output types:
+
+| input          | output |
+| -------------- | ------ |
+| list\<number\> | number |
 
 ## Examples
 

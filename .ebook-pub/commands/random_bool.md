@@ -1,6 +1,6 @@
 # random bool
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Generate a random boolean value.
 ## Parameters
 
 - `--bias {number}`: Adjusts the probability of a "true" outcome
+
+## Input/output types:
+
+| input   | output |
+| ------- | ------ |
+| nothing | bool   |
 
 ## Examples
 

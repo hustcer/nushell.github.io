@@ -1,6 +1,6 @@
 # dfr lit
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Creates a literal expression.
 ## Parameters
 
 - `literal`: literal to construct the expression
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

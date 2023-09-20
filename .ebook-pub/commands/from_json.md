@@ -1,6 +1,6 @@
 # from json
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Convert from json to structured data.
 ## Parameters
 
 - `--objects`: treat each line as a separate value
+
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| string | any    |
 
 ## Examples
 

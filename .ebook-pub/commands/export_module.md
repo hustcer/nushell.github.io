@@ -1,6 +1,6 @@
 # export module
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -15,12 +15,11 @@ Export a custom module from a module.
 - `module`: module name or module path
 - `block`: body of the module if 'module' parameter is not a path
 
-## Notes
+## Input/output types:
 
-```text
-This command is a parser keyword. For details, check:
-  https://www.nushell.sh/book/thinking_in_nu.html
-```
+| input   | output  |
+| ------- | ------- |
+| nothing | nothing |
 
 ## Examples
 
@@ -34,4 +33,11 @@ Define a custom command in a submodule of a module and call it
     }
     use spam eggs
     eggs foo
+```
+
+## Notes
+
+```text
+This command is a parser keyword. For details, check:
+  https://www.nushell.sh/book/thinking_in_nu.html
 ```

@@ -1,6 +1,6 @@
 # math tanh
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -10,10 +10,17 @@ Returns the hyperbolic tangent of the number.
 
 `> math tanh `
 
+## Input/output types:
+
+| input          | output         |
+| -------------- | -------------- |
+| list\<number\> | list\<number\> |
+| number         | number         |
+
 ## Examples
 
 Apply the hyperbolic tangent to 10\*π
 
 ```bash
-> (math pi) * 10 | math tanh
+> 3.141592 * 10 | math tanh | math round --precision 4
 ```

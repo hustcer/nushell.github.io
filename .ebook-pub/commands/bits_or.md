@@ -1,6 +1,6 @@
 # bits or
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,13 @@ Performs bitwise or for integers.
 ## Parameters
 
 - `target`: target integer to perform bit or
+
+## Input/output types:
+
+| input       | output      |
+| ----------- | ----------- |
+| int         | int         |
+| list\<int\> | list\<int\> |
 
 ## Examples
 

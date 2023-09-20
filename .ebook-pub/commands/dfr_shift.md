@@ -1,6 +1,6 @@
 # dfr shift
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,12 @@ Shifts the values by a given period.
 
 - `period`: shift period
 - `--fill {any}`: Expression used to fill the null values (lazy df)
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

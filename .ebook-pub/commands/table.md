@@ -1,6 +1,6 @@
 # table
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -22,11 +22,11 @@ Render the table.
 - `--collapse`: expand the table structure in collapse mode.
   Be aware collapse mode currently doesn't support width control
 
-## Notes
+## Input/output types:
 
-```text
-If the table contains a column called 'index', this column is used as the table index instead of the usual continuous index.
-```
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 
@@ -52,4 +52,10 @@ Render data in table view (collapsed)
 
 ```bash
 > [[a b]; [1 2] [2 [4 4]]] | table --collapse
+```
+
+## Notes
+
+```text
+If the table contains a column called 'index', this column is used as the table index instead of the usual continuous index.
 ```

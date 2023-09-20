@@ -1,6 +1,6 @@
 # debug
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,14 @@ Debug print the value(s) piped in.
 ## Parameters
 
 - `--raw`: Prints the raw value representation
+
+## Input/output types:
+
+| input       | output         |
+| ----------- | -------------- |
+| any         | string         |
+| list\<any\> | list\<string\> |
+| table       | list\<string\> |
 
 ## Examples
 

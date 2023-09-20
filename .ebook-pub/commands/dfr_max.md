@@ -1,16 +1,28 @@
 # dfr max
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
-Creates a max expression
+Creates a max expression or aggregates columns to their max value
 
 ## Signature
 
 `> dfr max `
 
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
+
 ## Examples
+
+Max value from columns in a dataframe
+
+```bash
+> [[a b]; [6 2] [1 4] [4 1]] | dfr into-df | dfr max
+```
 
 Max aggregation for a group-by
 
@@ -19,24 +31,4 @@ Max aggregation for a group-by
     | dfr into-df
     | dfr group-by a
     | dfr agg (dfr col b | dfr max)
-```
-
-# dfr max
-
-**version**: 0.80.0
-
-## **usage**:
-
-Aggregates columns to their max value
-
-## Signature
-
-`> dfr max `
-
-## Examples
-
-Max value from columns in a dataframe
-
-```bash
-> [[a b]; [6 2] [1 4] [4 1]] | dfr into-df | dfr max
 ```

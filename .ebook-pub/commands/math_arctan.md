@@ -1,6 +1,6 @@
 # math arctan
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,13 @@ Returns the arctangent of the number.
 ## Parameters
 
 - `--degrees`: Return degrees instead of radians
+
+## Input/output types:
+
+| input          | output         |
+| -------------- | -------------- |
+| list\<number\> | list\<number\> |
+| number         | number         |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # metadata
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Get the metadata for items in the stream.
 ## Parameters
 
 - `expression`: the expression you want metadata for
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | record |
 
 ## Examples
 

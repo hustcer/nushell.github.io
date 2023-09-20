@@ -57,7 +57,7 @@ There are a couple of assignment operators used with mutable variables
 >    where addition would normally fail
 > 2. `**=` requires a variable representing a list **and** a list argument
 
-###### More on Mutability
+##### More on Mutability
 
 Closures and nested `def`s cannot capture mutable variables from their environment. For example
 
@@ -92,20 +92,6 @@ It is common for some scripts to declare variables that start with `$`. This is 
 ```nu
 > let $var = 42
 # identical to `let var = 42`
-```
-
-### Variable Values
-
-A common issue that users run into is trying to declare a variable using a pipeline as the value like so:
-
-```nu
-let val = 42 | math sin
-```
-
-This is an error, because the pipe command is used to separate pipeline elements, so Nushell will see this as a pipeline with two elements, one of which is not allowed in pipelines because it doesn't return a value (`let val = 42`). The correct way to declare using a pipeline is to wrap the pipeline in parentheses
-
-```nu
-let val = (42 | math sin)
 ```
 
 ### Variable Paths

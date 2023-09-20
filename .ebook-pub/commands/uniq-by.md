@@ -1,6 +1,6 @@
 # uniq-by
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -17,6 +17,13 @@ Return the distinct values in the input by the given column(s).
 - `--repeated`: Return the input values that occur more than once
 - `--ignore-case`: Ignore differences in case when comparing input values
 - `--unique`: Return the input values that occur once only
+
+## Input/output types:
+
+| input       | output      |
+| ----------- | ----------- |
+| list\<any\> | list\<any\> |
+| table       | table       |
 
 ## Examples
 

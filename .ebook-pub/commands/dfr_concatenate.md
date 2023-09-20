@@ -1,6 +1,6 @@
 # dfr concatenate
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Concatenates strings with other array.
 ## Parameters
 
 - `other`: Other array with string to be concatenated
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

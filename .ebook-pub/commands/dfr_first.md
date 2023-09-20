@@ -1,10 +1,10 @@
 # dfr first
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
-Show only the first number of rows.
+Show only the first number of rows or create a first expression
 
 ## Signature
 
@@ -13,6 +13,12 @@ Show only the first number of rows.
 ## Parameters
 
 - `rows`: starting from the front, the number of rows to return
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 
@@ -27,20 +33,6 @@ Return the first two rows of a dataframe
 ```bash
 > [[a b]; [1 2] [3 4]] | dfr into-df | dfr first 2
 ```
-
-# dfr first
-
-**version**: 0.80.0
-
-## **usage**:
-
-creates a first expression
-
-## Signature
-
-`> dfr first `
-
-## Examples
 
 Creates a first expression from a column
 

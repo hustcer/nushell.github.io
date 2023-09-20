@@ -1,6 +1,6 @@
 # each while
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,13 @@ Run a block on each row of the input list until a null is found, then create a n
 ## Parameters
 
 - `closure`: the closure to run
+
+## Input/output types:
+
+| input       | output      |
+| ----------- | ----------- |
+| list\<any\> | list\<any\> |
+| table       | list\<any\> |
 
 ## Examples
 

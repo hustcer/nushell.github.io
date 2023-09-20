@@ -1,6 +1,6 @@
 # do
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -18,6 +18,12 @@ Run a closure, providing it with the pipeline input.
 - `--ignore-shell-errors`: ignore shell errors as the closure runs
 - `--ignore-program-errors`: ignore external program errors as the closure runs
 - `--capture-errors`: catch errors as the closure runs, and return them
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

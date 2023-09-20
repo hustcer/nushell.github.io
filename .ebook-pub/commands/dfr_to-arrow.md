@@ -1,6 +1,6 @@
 # dfr to-arrow
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Saves dataframe to arrow file.
 ## Parameters
 
 - `file`: file path to save dataframe
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # dfr all-true
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Returns true if all values are true.
 ## Signature
 
 `> dfr all-true `
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

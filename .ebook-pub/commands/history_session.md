@@ -1,6 +1,6 @@
 # history session
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Get the command history session.
 ## Signature
 
 `> history session `
+
+## Input/output types:
+
+| input   | output |
+| ------- | ------ |
+| nothing | int    |
 
 ## Examples
 

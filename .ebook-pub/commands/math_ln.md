@@ -1,6 +1,6 @@
 # math ln
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -10,10 +10,17 @@ Returns the natural logarithm. Base: (math e).
 
 `> math ln `
 
+## Input/output types:
+
+| input          | output         |
+| -------------- | -------------- |
+| list\<number\> | list\<number\> |
+| number         | number         |
+
 ## Examples
 
 Get the natural logarithm of e
 
 ```bash
-> math e | math ln
+> 2.7182818 | math ln | math round --precision 4
 ```

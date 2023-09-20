@@ -1,6 +1,6 @@
 # kill
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -17,6 +17,12 @@ Kill a process using the process id.
 - `--force`: forcefully kill the process
 - `--quiet`: won't print anything to the console
 - `--signal {int}`: signal decimal number to be sent instead of the default 15 (unsupported on Windows)
+
+## Input/output types:
+
+| input   | output |
+| ------- | ------ |
+| nothing | any    |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # lines
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Converts input to lines.
 ## Parameters
 
 - `--skip-empty`: skip empty lines
+
+## Input/output types:
+
+| input | output         |
+| ----- | -------------- |
+| any   | list\<string\> |
 
 ## Examples
 

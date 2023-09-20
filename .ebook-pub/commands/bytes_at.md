@@ -1,6 +1,6 @@
 # bytes at
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,15 @@ Get bytes defined by a range
 
 - `range`: the range to get bytes
 - `...rest`: for a data structure input, get bytes from data at the given cell paths
+
+## Input/output types:
+
+| input          | output         |
+| -------------- | -------------- |
+| binary         | binary         |
+| list\<binary\> | list\<binary\> |
+| record         | record         |
+| table          | table          |
 
 ## Examples
 
@@ -32,7 +41,7 @@ Get a subbytes `0x[10 01 13]` from the bytes `0x[33 44 55 10 01 13]`
 Get the remaining characters from a starting index
 
 ```bash
->  0x[33 44 55 10 01 13] | bytes at 3..
+>  { data: 0x[33 44 55 10 01 13] } | bytes at 3.. data
 ```
 
 Get the characters from the beginning until ending index

@@ -1,6 +1,6 @@
 # dfr rolling
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,12 @@ Rolling calculation for a series.
 
 - `type`: rolling operation
 - `window`: Window size for rolling
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

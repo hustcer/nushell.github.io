@@ -1,6 +1,6 @@
 # str index-of
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -18,6 +18,15 @@ Returns start index of first occurrence of string in input, or -1 if no match.
 - `--utf-8-bytes`: count indexes using UTF-8 bytes (default; non-ASCII chars have length 2+)
 - `--range {range}`: optional start and/or end index
 - `--end`: search from the end of the input
+
+## Input/output types:
+
+| input          | output      |
+| -------------- | ----------- |
+| list\<string\> | list\<int\> |
+| record         | record      |
+| string         | int         |
+| table          | table       |
 
 ## Examples
 

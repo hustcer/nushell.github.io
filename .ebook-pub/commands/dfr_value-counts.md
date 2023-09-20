@@ -1,6 +1,6 @@
 # dfr value-counts
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Returns a dataframe with the counts for unique values in series.
 ## Signature
 
 `> dfr value-counts `
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

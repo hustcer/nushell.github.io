@@ -1,6 +1,6 @@
 # query web
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -18,6 +18,12 @@ execute selector query on html/web
 - `--as-table {table}`: find table based on column header list
 - `--inspect`: run in inspect mode to provide more information for determining column headers
 
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
+
 ## Examples
 
 Retrieve all `<header>` elements from phoronix.com website
@@ -30,7 +36,7 @@ Retrieve a html table from Wikipedia and parse it into a nushell table using tab
 
 ```bash
 > http get https://en.wikipedia.org/wiki/List_of_cities_in_India_by_population
-    | query web -t [Rank City 'Population(2011)[3]' 'Population(2001)' 'State or union territory']
+    | query web -t [Rank City 'Population(2011)[3]' 'Population(2001)[3][a]' 'State or union territory']
 ```
 
 Pass multiple css selectors to extract several elements within single query, group the query results together and rotate them to create a table

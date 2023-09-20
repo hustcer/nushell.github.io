@@ -1,6 +1,6 @@
 # parse
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,13 @@ Parse columns from string data using a simple pattern.
 
 - `pattern`: the pattern to match. Eg) "{foo}: {bar}"
 - `--regex`: use full regex syntax for patterns
+
+## Input/output types:
+
+| input       | output |
+| ----------- | ------ |
+| list\<any\> | table  |
+| string      | table  |
 
 ## Examples
 

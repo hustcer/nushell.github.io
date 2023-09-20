@@ -2,6 +2,8 @@
 
 There are lots of ways to get Nu up and running. You can download pre-built binaries from our [release page](https://github.com/nushell/nushell/releases), [use your favourite package manager](https://repology.org/project/nushell/versions), or build from source.
 
+The main Nushell binary is named `nu` (or `nu.exe` on Windows). After installation, you can launch it by typing `nu`.
+
 ## Pre-built binaries
 
 Nu binaries are published for Linux, macOS, and Windows [with each GitHub release](https://github.com/nushell/nushell/releases). Just download, extract the binaries, then copy them to a location on your PATH.
@@ -22,9 +24,7 @@ For Windows:
 
 Cross Platform installation:
 
-- [npm](https://www.npmjs.com/) (`npm install -g nushell` Note that nu plugins were not included if you install in this way)
-
-The main Nushell binary is named `nu` (or `nu.exe` on Windows). After installation, you can launch it by typing `nu`.
+- [npm](https://www.npmjs.com/) (`npm install -g nushell` Note that nu plugins are not included if you install in this way)
 
 ## Build from source
 
@@ -42,11 +42,11 @@ For Rust to work properly, you'll need to have a compatible compiler suite insta
 
 ### Installing Rust
 
-If we don't already have Rust on our system, the best way to install it is via [rustup](https://rustup.rs/). Rustup is a way of managing Rust installations, including managing using different Rust versions.
+If you don't already have Rust on our system, the best way to install it is via [rustup](https://rustup.rs/). Rustup is a way of managing Rust installations, including managing using different Rust versions.
 
 Nu currently requires the **latest stable (1.66.1 or later)** version of Rust. The best way is to let `rustup` find the correct version for you. When you first open `rustup` it will ask what version of Rust you wish to install:
 
-Once we are ready, we press 1 and then enter.
+Once you are ready, press 1 and then enter.
 
 If you'd rather not install Rust via `rustup`, you can also install it via other methods (e.g. from a package in a Linux distro). Just be sure to install a version of Rust that is 1.66.1 or later.
 
@@ -66,20 +66,18 @@ Using [Homebrew](https://brew.sh/), you will need to install "openssl" and "cmak
 
 ### Build using [crates.io](https://crates.io)
 
-Nu releases are published as source to the popular Rust package registry [crates.io](https://crates.io/). This makes it easy to build+install the latest Nu release with `cargo`:
+Nu releases are published as source to the popular Rust package registry [crates.io](https://crates.io/). This makes it easy to build and install the latest Nu release with `cargo`:
 
-That's it! The `cargo` tool will do the work of downloading Nu and its source dependencies, building it, and installing it into the cargo bin path so we can run it.
+That's it! The `cargo` tool will do the work of downloading Nu and its source dependencies, building it, and installing it into the cargo bin path.
 
 If you want to install with support for [dataframes](dataframes.md), you can install using the `--features=dataframe` flag.
 
-Once installed, we can run Nu using the `nu` command:
-
 ### Building from the GitHub repository
 
-We can also build our own Nu from the latest source on GitHub. This gives us immediate access to the latest features and bug fixes. First, clone the repo:
+You can also build Nu from the latest source on GitHub. This gives you immediate access to the latest features and bug fixes. First, clone the repo:
 
 From there, we can build and run Nu with:
 
-You can also build and run Nu in release mode:
+You can also build and run Nu in release mode, which enables more optimizations:
 
 People familiar with Rust may wonder why we do both a "build" and a "run" step if "run" does a build by default. This is to get around a shortcoming of the new `default-run` option in Cargo, and ensure that all plugins are built, though this may not be required in the future.

@@ -1,6 +1,6 @@
 # split words
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -15,6 +15,13 @@ Split a string's words into separate rows.
 - `--min-word-length {int}`: The minimum word length
 - `--grapheme-clusters`: measure word length in grapheme clusters (requires -l)
 - `--utf-8-bytes`: measure word length in UTF-8 bytes (default; requires -l; non-ASCII chars are length 2+)
+
+## Input/output types:
+
+| input          | output                 |
+| -------------- | ---------------------- |
+| list\<string\> | list\<list\<string\>\> |
+| string         | list\<string\>         |
 
 ## Examples
 

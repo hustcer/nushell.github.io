@@ -1,6 +1,6 @@
 # str trim
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -16,6 +16,15 @@ Trim whitespace or specific character.
 - `--char {string}`: character to trim (default: whitespace)
 - `--left`: trims characters only from the beginning of the string
 - `--right`: trims characters only from the end of the string
+
+## Input/output types:
+
+| input          | output         |
+| -------------- | -------------- |
+| list\<string\> | list\<string\> |
+| record         | record         |
+| string         | string         |
+| table          | table          |
 
 ## Examples
 

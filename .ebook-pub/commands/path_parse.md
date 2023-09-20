@@ -1,6 +1,6 @@
 # path parse
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -8,19 +8,18 @@ Convert a path into structured data.
 
 ## Signature
 
-`> path parse --columns --extension`
+`> path parse --extension`
 
 ## Parameters
 
-- `--columns {table}`: For a record or table input, convert strings at the given columns
 - `--extension {string}`: Manually supply the extension (without the dot)
 
-## Notes
+## Input/output types:
 
-```text
-Each path is split into a table with 'parent', 'stem' and 'extension' fields.
-On Windows, an extra 'prefix' column is added.
-```
+| input          | output |
+| -------------- | ------ |
+| list\<string\> | table  |
+| string         | record |
 
 ## Examples
 
@@ -42,8 +41,15 @@ Ignore the extension
 > '/etc/conf.d' | path parse -e ''
 ```
 
-Parse all paths under the 'name' column
+Parse all paths in a list
 
 ```bash
-> ls | path parse -c [ name ]
+> [ /home/viking.d /home/spam.txt ] | path parse
+```
+
+## Notes
+
+```text
+Each path is split into a table with 'parent', 'stem' and 'extension' fields.
+On Windows, an extra 'prefix' column is added.
 ```

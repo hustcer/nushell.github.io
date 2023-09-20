@@ -1,6 +1,6 @@
 # schema
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Show the schema of a SQLite database.
 ## Signature
 
 `> schema `
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

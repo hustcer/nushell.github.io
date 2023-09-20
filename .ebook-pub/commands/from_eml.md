@@ -1,6 +1,6 @@
 # from eml
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Parse text as .eml and create record.
 ## Parameters
 
 - `--preview-body {int}`: How many bytes of the body to preview
+
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| string | record |
 
 ## Examples
 

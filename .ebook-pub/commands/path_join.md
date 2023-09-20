@@ -1,6 +1,6 @@
 # path join
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -8,19 +8,20 @@ Join a structured path or a list of path parts.
 
 ## Signature
 
-`> path join ...rest --columns`
+`> path join ...rest`
 
 ## Parameters
 
 - `...rest`: Path to append to the input
-- `--columns {table}`: For a record or table input, join strings at the given columns
 
-## Notes
+## Input/output types:
 
-```text
-Optionally, append an additional path to the result. It is designed to accept
-the output of 'path parse' and 'path split' subcommands.
-```
+| input          | output         |
+| -------------- | -------------- |
+| list\<string\> | string         |
+| record         | string         |
+| string         | string         |
+| table          | list\<string\> |
 
 ## Examples
 
@@ -36,12 +37,6 @@ Append a filename to a path
 > '/home/viking' | path join spams this_spam.txt
 ```
 
-Append a filename to a path inside a column
-
-```bash
-> ls | path join spam.txt -c [ name ]
-```
-
 Join a list of parts into a path
 
 ```bash
@@ -51,5 +46,18 @@ Join a list of parts into a path
 Join a structured path into a path
 
 ```bash
+> { parent: '/home/viking', stem: 'spam', extension: 'txt' } | path join
+```
+
+Join a table of structured paths into a list of paths
+
+```bash
 > [[ parent stem extension ]; [ '/home/viking' 'spam' 'txt' ]] | path join
+```
+
+## Notes
+
+```text
+Optionally, append an additional path to the result. It is designed to accept
+the output of 'path parse' and 'path split' subcommands.
 ```

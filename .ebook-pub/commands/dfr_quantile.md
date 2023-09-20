@@ -1,6 +1,6 @@
 # dfr quantile
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,32 +14,11 @@ Aggregates the columns to the selected quantile.
 
 - `quantile`: quantile value for quantile operation
 
-## Examples
+## Input/output types:
 
-Quantile aggregation for a group-by
-
-```bash
-> [[a b]; [one 2] [one 4] [two 1]]
-    | dfr into-df
-    | dfr group-by a
-    | dfr agg (dfr col b | dfr quantile 0.5)
-```
-
-# dfr quantile
-
-**version**: 0.80.0
-
-## **usage**:
-
-Aggregates the columns to the selected quantile.
-
-## Signature
-
-`> dfr quantile (quantile)`
-
-## Parameters
-
-- `quantile`: quantile value for quantile operation
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # dfr col
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Creates a named column expression.
 ## Parameters
 
 - `column name`: Name of column to be used
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # sys
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ View information about the system.
 ## Signature
 
 `> sys `
+
+## Input/output types:
+
+| input   | output |
+| ------- | ------ |
+| nothing | record |
 
 ## Examples
 

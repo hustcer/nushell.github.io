@@ -1,6 +1,6 @@
 # into duration
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -8,37 +8,40 @@ Convert value to duration.
 
 ## Signature
 
-`> into duration ...rest --convert`
+`> into duration ...rest --unit`
 
 ## Parameters
 
 - `...rest`: for a data structure input, convert data at the given cell paths
-- `--convert {string}`: convert duration into another duration
+- `--unit {string}`: Unit to convert number into (will have an effect only with integer input)
 
-## Notes
+## Input/output types:
 
-```text
-This command does not take leap years into account, and every month is assumed to have 30 days.
-```
+| input    | output   |
+| -------- | -------- |
+| duration | duration |
+| int      | duration |
+| string   | duration |
+| table    | table    |
 
 ## Examples
 
-Convert string to duration in table
-
-```bash
-> [[value]; ['1sec'] ['2min'] ['3hr'] ['4day'] ['5wk']] | into duration value
-```
-
-Convert string to duration
+Convert duration string to duration value
 
 ```bash
 > '7min' | into duration
 ```
 
-Convert string to the requested duration as a string
+Convert compound duration string to duration value
 
 ```bash
-> '7min' | into duration --convert sec
+> '1day 2hr 3min 4sec' | into duration
+```
+
+Convert table of duration strings to table of duration values
+
+```bash
+> [[value]; ['1sec'] ['2min'] ['3hr'] ['4day'] ['5wk']] | into duration value
 ```
 
 Convert duration to duration
@@ -47,26 +50,20 @@ Convert duration to duration
 > 420sec | into duration
 ```
 
-Convert duration to the requested duration as a string
+Convert a number of ns to duration
 
 ```bash
-> 420sec | into duration --convert ms
+> 1_234_567 | into duration
 ```
 
-Convert µs duration to the requested duration as a string
+Convert a number of an arbitrary unit to duration
 
 ```bash
-> 1000000µs | into duration --convert sec
+> 1_234 | into duration --unit ms
 ```
 
-Convert duration to the µs duration as a string
+## Notes
 
-```bash
-> 1sec | into duration --convert µs
-```
-
-Convert duration to µs as a string if unit asked for was us
-
-```bash
-> 1sec | into duration --convert us
+```text
+Max duration value is i64::MAX nanoseconds; max duration time unit is wk (weeks).
 ```

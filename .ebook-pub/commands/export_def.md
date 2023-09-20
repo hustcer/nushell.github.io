@@ -1,6 +1,6 @@
 # export def
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -16,12 +16,11 @@ Define a custom command and export it from a module.
 - `params`: parameters
 - `block`: body of the definition
 
-## Notes
+## Input/output types:
 
-```text
-This command is a parser keyword. For details, check:
-  https://www.nushell.sh/book/thinking_in_nu.html
-```
+| input   | output  |
+| ------- | ------- |
+| nothing | nothing |
 
 ## Examples
 
@@ -29,4 +28,11 @@ Define a custom command in a module and call it
 
 ```bash
 > module spam { export def foo [] { "foo" } }; use spam foo; foo
+```
+
+## Notes
+
+```text
+This command is a parser keyword. For details, check:
+  https://www.nushell.sh/book/thinking_in_nu.html
 ```

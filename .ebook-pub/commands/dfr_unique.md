@@ -1,6 +1,6 @@
 # dfr unique
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -15,6 +15,12 @@ Returns unique values from a dataframe.
 - `--subset {any}`: Subset of column(s) to use to maintain rows (lazy df)
 - `--last`: Keeps last unique value. Default keeps first value (lazy df)
 - `--maintain-order`: Keep the same order as the original DataFrame (lazy df)
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

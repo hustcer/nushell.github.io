@@ -1,6 +1,6 @@
 # dfr get-week
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Gets week from date.
 ## Signature
 
 `> dfr get-week `
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

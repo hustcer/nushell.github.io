@@ -1,6 +1,6 @@
 # dfr is-null
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Creates mask where value is null.
 ## Signature
 
 `> dfr is-null `
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 
@@ -19,20 +25,6 @@ Create mask where values are null
     let res = ($s / $s);
     $res | dfr is-null
 ```
-
-# dfr is-null
-
-**version**: 0.80.0
-
-## **usage**:
-
-creates a is null expression
-
-## Signature
-
-`> dfr is-null `
-
-## Examples
 
 Creates a is null expression from a column
 

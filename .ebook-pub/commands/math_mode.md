@@ -1,6 +1,6 @@
 # math mode
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,15 @@ Returns the most frequent element(s) from a list of numbers or tables.
 ## Signature
 
 `> math mode `
+
+## Input/output types:
+
+| input            | output           |
+| ---------------- | ---------------- |
+| list\<duration\> | list\<duration\> |
+| list\<filesize\> | list\<filesize\> |
+| list\<number\>   | list\<number\>   |
+| table            | record           |
 
 ## Examples
 

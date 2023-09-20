@@ -1,6 +1,6 @@
 # ansi strip
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,15 @@ Strip ANSI escape sequences from a string.
 ## Parameters
 
 - `...rest`: for a data structure input, remove ANSI sequences from strings at the given cell paths
+
+## Input/output types:
+
+| input          | output         |
+| -------------- | -------------- |
+| list\<string\> | list\<string\> |
+| record         | record         |
+| string         | string         |
+| table          | table          |
 
 ## Examples
 

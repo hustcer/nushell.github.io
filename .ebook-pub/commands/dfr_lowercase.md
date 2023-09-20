@@ -1,6 +1,6 @@
 # dfr lowercase
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Lowercase the strings in the column.
 ## Signature
 
 `> dfr lowercase `
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # export def-env
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -15,6 +15,20 @@ Define a custom command that participates in the environment and export it from 
 - `name`: definition name
 - `params`: parameters
 - `block`: body of the definition
+
+## Input/output types:
+
+| input   | output  |
+| ------- | ------- |
+| nothing | nothing |
+
+## Examples
+
+Define a custom command that participates in the environment in a module and call it
+
+```bash
+> module foo { export def-env bar [] { $env.FOO_BAR = "BAZ" } }; use foo bar; bar; $env.FOO_BAR
+```
 
 ## Notes
 
@@ -47,12 +61,4 @@ export def-env cd_with_fallback [arg = ""] {
     }
     cd $path
 }
-```
-
-## Examples
-
-Define a custom command that participates in the environment in a module and call it
-
-```bash
-> module foo { export def-env bar [] { let-env FOO_BAR = "BAZ" } }; use foo bar; bar; $env.FOO_BAR
 ```

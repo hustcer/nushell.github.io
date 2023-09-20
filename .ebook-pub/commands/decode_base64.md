@@ -1,6 +1,6 @@
 # decode base64
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -17,11 +17,14 @@ Base64 decode a value.
   Valid values are 'standard', 'standard-no-padding', 'url-safe', 'url-safe-no-padding','binhex', 'bcrypt', 'crypt', 'mutf7'
 - `--binary`: Output a binary value instead of decoding payload as UTF-8
 
-## Notes
+## Input/output types:
 
-```text
-Will attempt to decode binary payload as an UTF-8 string by default. Use the `--binary(-b)` argument to force binary output.
-```
+| input          | output         |
+| -------------- | -------------- |
+| list\<string\> | list\<string\> |
+| record         | record         |
+| string         | string         |
+| table          | table          |
 
 ## Examples
 
@@ -35,4 +38,10 @@ Base64 decode a value and output as binary
 
 ```bash
 > 'U29tZSBEYXRh' | decode base64 --binary
+```
+
+## Notes
+
+```text
+Will attempt to decode binary payload as an UTF-8 string by default. Use the `--binary(-b)` argument to force binary output.
 ```

@@ -1,6 +1,6 @@
 # load-env
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,13 @@ Loads an environment update from a record.
 ## Parameters
 
 - `update`: the record to use for updates
+
+## Input/output types:
+
+| input   | output  |
+| ------- | ------- |
+| nothing | nothing |
+| record  | nothing |
 
 ## Examples
 

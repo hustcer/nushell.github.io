@@ -1,6 +1,6 @@
 # char
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -17,6 +17,12 @@ Output special characters (e.g., 'newline').
 - `--list`: List all supported character names
 - `--unicode`: Unicode string i.e. 1f378
 - `--integer`: Create a codepoint from an integer
+
+## Input/output types:
+
+| input   | output |
+| ------- | ------ |
+| nothing | string |
 
 ## Examples
 

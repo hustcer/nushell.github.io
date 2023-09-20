@@ -1,6 +1,6 @@
 # dfr filter-with
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Filters dataframe using a mask or expression as reference.
 ## Parameters
 
 - `mask or expression`: boolean mask used to filter data
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

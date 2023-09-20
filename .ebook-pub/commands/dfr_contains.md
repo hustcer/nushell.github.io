@@ -1,6 +1,6 @@
 # dfr contains
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Checks if a pattern is contained in a string.
 ## Parameters
 
 - `pattern`: Regex pattern to be searched
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # date humanize
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,13 @@ Print a 'humanized' format for the date, relative to now.
 ## Signature
 
 `> date humanize `
+
+## Input/output types:
+
+| input    | output |
+| -------- | ------ |
+| datetime | string |
+| string   | string |
 
 ## Examples
 

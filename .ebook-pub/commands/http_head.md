@@ -1,6 +1,6 @@
 # http head
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -19,11 +19,11 @@ Get the headers from a URL.
 - `--headers {any}`: custom headers you want to add
 - `--insecure`: allow insecure server connections when using SSL
 
-## Notes
+## Input/output types:
 
-```text
-Performs HTTP HEAD operation.
-```
+| input   | output |
+| ------- | ------ |
+| nothing | any    |
 
 ## Examples
 
@@ -43,4 +43,10 @@ Get headers from example.com, with custom header
 
 ```bash
 > http head -H [my-header-key my-header-value] https://www.example.com
+```
+
+## Notes
+
+```text
+Performs HTTP HEAD operation.
 ```

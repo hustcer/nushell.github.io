@@ -1,6 +1,6 @@
 # dfr when
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,12 @@ Creates and modifies a when expression.
 
 - `when expression`: when expression used for matching
 - `then expression`: expression that will be applied when predicate is true
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

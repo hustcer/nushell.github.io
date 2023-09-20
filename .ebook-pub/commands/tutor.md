@@ -1,6 +1,6 @@
 # tutor
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,12 @@ Run the tutorial. To begin, run: tutor.
 
 - `search`: item to search for, or 'list' to list available tutorials
 - `--find {string}`: Search tutorial for a phrase
+
+## Input/output types:
+
+| input   | output |
+| ------- | ------ |
+| nothing | string |
 
 ## Examples
 

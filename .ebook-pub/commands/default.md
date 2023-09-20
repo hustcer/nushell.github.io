@@ -1,6 +1,6 @@
 # default
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,12 @@ Sets a default row's column if missing.
 
 - `default value`: the value to use as a default
 - `column name`: the name of the column
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

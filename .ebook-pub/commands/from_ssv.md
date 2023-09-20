@@ -1,6 +1,6 @@
 # from ssv
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -15,6 +15,12 @@ Parse text as space-separated values and create a table. The default minimum num
 - `--noheaders`: don't treat the first row as column names
 - `--aligned-columns`: assume columns are aligned
 - `--minimum-spaces {int}`: the minimum spaces to separate columns
+
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| string | table  |
 
 ## Examples
 

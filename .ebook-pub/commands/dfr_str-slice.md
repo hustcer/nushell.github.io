@@ -1,6 +1,6 @@
 # dfr str-slice
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,12 @@ Slices the string from the start position until the selected length.
 
 - `start`: start of slice
 - `--length {int}`: optional length
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # watch
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -18,6 +18,12 @@ Watch for file changes and execute Nu code when they happen.
 - `--glob {string}`: Only report changes for files that match this glob pattern (default: all files)
 - `--recursive {bool}`: Watch all directories under `<path>` recursively. Will be ignored if `<path>` is a file (default: true)
 - `--verbose`: Operate in verbose mode (default: false)
+
+## Input/output types:
+
+| input   | output |
+| ------- | ------ |
+| nothing | table  |
 
 ## Examples
 
@@ -37,4 +43,10 @@ Log all changes in a directory
 
 ```bash
 > watch /foo/bar { |op, path| $"($op) - ($path)(char nl)" | save --append changes_in_bar.log }
+```
+
+Note: if you are looking to run a command every N units of time, this can be accomplished with a loop and sleep
+
+```bash
+> loop { command; sleep duration }
 ```

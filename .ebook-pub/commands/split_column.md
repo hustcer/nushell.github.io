@@ -1,6 +1,6 @@
 # split column
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -16,6 +16,13 @@ Split a string into multiple columns using a separator.
 - `...rest`: column names to give the new columns
 - `--collapse-empty`: remove empty columns
 - `--regex`: separator is a regular expression
+
+## Input/output types:
+
+| input          | output |
+| -------------- | ------ |
+| list\<string\> | table  |
+| string         | table  |
 
 ## Examples
 

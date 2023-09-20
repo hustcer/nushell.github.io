@@ -1,6 +1,6 @@
 # dfr filter
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Filter dataframe based in expression.
 ## Parameters
 
 - `filter expression`: Expression that define the column selection
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

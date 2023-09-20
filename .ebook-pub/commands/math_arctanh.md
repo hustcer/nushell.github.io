@@ -1,6 +1,6 @@
 # math arctanh
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,13 @@ Returns the inverse of the hyperbolic tangent function.
 ## Signature
 
 `> math arctanh `
+
+## Input/output types:
+
+| input          | output         |
+| -------------- | -------------- |
+| list\<number\> | list\<number\> |
+| number         | number         |
 
 ## Examples
 

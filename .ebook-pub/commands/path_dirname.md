@@ -1,6 +1,6 @@
 # path dirname
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -8,13 +8,19 @@ Get the parent directory of a path.
 
 ## Signature
 
-`> path dirname --columns --replace --num-levels`
+`> path dirname --replace --num-levels`
 
 ## Parameters
 
-- `--columns {table}`: For a record or table input, convert strings at the given columns to their dirname
 - `--replace {string}`: Return original path with dirname replaced by this string
 - `--num-levels {int}`: Number of directories to walk up
+
+## Input/output types:
+
+| input          | output         |
+| -------------- | -------------- |
+| list\<string\> | list\<string\> |
+| string         | string         |
 
 ## Examples
 
@@ -24,10 +30,10 @@ Get dirname of a path
 > '/home/joe/code/test.txt' | path dirname
 ```
 
-Get dirname of a path in a column
+Get dirname of a list of paths
 
 ```bash
-> ls ('.' | path expand) | path dirname -c [ name ]
+> [ /home/joe/test.txt, /home/doe/test.txt ] | path dirname
 ```
 
 Walk up two levels

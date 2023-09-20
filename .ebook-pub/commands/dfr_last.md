@@ -1,6 +1,6 @@
 # dfr last
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,12 @@ Creates new dataframe with tail rows or creates a last expression.
 
 - `rows`: Number of rows for tail
 
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
+
 ## Examples
 
 Create new dataframe with last rows
@@ -21,20 +27,6 @@ Create new dataframe with last rows
 ```bash
 > [[a b]; [1 2] [3 4]] | dfr into-df | dfr last 1
 ```
-
-# dfr last
-
-**version**: 0.80.0
-
-## **usage**:
-
-creates a last expression
-
-## Signature
-
-`> dfr last `
-
-## Examples
 
 Creates a last expression from a column
 

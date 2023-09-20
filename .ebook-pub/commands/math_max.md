@@ -1,14 +1,21 @@
 # math max
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
-Returns the maximum of a list of numbers, or of columns in a table.
+Returns the maximum of a list of values, or of columns in a table.
 
 ## Signature
 
 `> math max `
+
+## Input/output types:
+
+| input       | output |
+| ----------- | ------ |
+| list\<any\> | any    |
+| table       | record |
 
 ## Examples
 

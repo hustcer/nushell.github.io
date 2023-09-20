@@ -1,10 +1,10 @@
 # exit
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
-Exit a Nu shell or exit Nu entirely.
+Exit Nu.
 
 ## Signature
 
@@ -13,6 +13,12 @@ Exit a Nu shell or exit Nu entirely.
 ## Parameters
 
 - `exit_code`: Exit code to return immediately with
+
+## Input/output types:
+
+| input   | output  |
+| ------- | ------- |
+| nothing | nothing |
 
 ## Examples
 

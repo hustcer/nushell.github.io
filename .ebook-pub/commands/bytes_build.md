@@ -1,6 +1,6 @@
 # bytes build
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Create bytes from the arguments.
 ## Parameters
 
 - `...rest`: list of bytes
+
+## Input/output types:
+
+| input   | output |
+| ------- | ------ |
+| nothing | binary |
 
 ## Examples
 

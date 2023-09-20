@@ -1,6 +1,6 @@
 # upsert
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,14 @@ Update an existing column to have a new value, or insert a new column.
 
 - `field`: the name of the column to update or insert
 - `replacement value`: the new value to give the cell(s), or a closure to create the value
+
+## Input/output types:
+
+| input       | output      |
+| ----------- | ----------- |
+| list\<any\> | list\<any\> |
+| record      | record      |
+| table       | table       |
 
 ## Examples
 

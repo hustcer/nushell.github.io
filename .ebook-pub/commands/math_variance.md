@@ -1,6 +1,6 @@
 # math variance
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Returns the variance of a list of numbers or of each column in a table.
 ## Parameters
 
 - `--sample`: calculate sample variance (i.e. using N-1 as the denominator)
+
+## Input/output types:
+
+| input          | output |
+| -------------- | ------ |
+| list\<number\> | number |
 
 ## Examples
 

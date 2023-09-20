@@ -1,6 +1,6 @@
 # shuffle
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Shuffle rows randomly.
 ## Signature
 
 `> shuffle `
+
+## Input/output types:
+
+| input       | output      |
+| ----------- | ----------- |
+| list\<any\> | list\<any\> |
 
 ## Examples
 

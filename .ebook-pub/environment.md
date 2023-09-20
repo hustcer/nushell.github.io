@@ -33,20 +33,18 @@ The environment is initially created from the Nu [configuration files](configura
 
 There are several ways to set an environment variable:
 
-### [`let-env`](/commands/docs/let-env.html)
+### $env.VAR assignment
 
-Using the [`let-env`](/commands/docs/let-env.md) command is the most straightforward method
+Using the `$env.VAR = "val"` is the most straightforward method
 
 ```
-> let-env FOO = 'BAR'
+> $env.FOO = 'BAR'
 ```
-
-'let-env' is similar to the **export** command in Bash.
 
 So, if you want to extend the Windows `Path` variable, for example, you could do that as follows.
 
 ```
-let-env Path = ($env.Path | prepend 'C:\path\you\want\to\add')
+$env.Path = ($env.Path | prepend 'C:\path\you\want\to\add')
 ```
 
 Here we've prepended our folder to the existing folders in the Path, so it will have the highest priority.
@@ -89,9 +87,9 @@ When you set an environment variable, it will be available only in the current s
 Here is a small example to demonstrate the environment scoping:
 
 ```
-> let-env FOO = "BAR"
+> $env.FOO = "BAR"
 > do {
-    let-env FOO = "BAZ"
+    $env.FOO = "BAZ"
     $env.FOO == "BAZ"
 }
 true
@@ -131,7 +129,7 @@ For example:
 
 ```
 # In config.nu
-let-env FOO = 'BAR'
+$env.FOO = 'BAR'
 ```
 
 ## Defining environment from custom commands
@@ -141,7 +139,7 @@ However, a command defined as [`def-env`](/commands/docs/def-env.html) instead o
 
 ```
 > def-env foo [] {
-    let-env FOO = 'BAR'
+    $env.FOO = 'BAR'
 }
 
 > foo
@@ -162,7 +160,7 @@ Let's illustrate the conversions with an example.
 Put the following in your config.nu:
 
 ```
-let-env ENV_CONVERSIONS = {
+$env.ENV_CONVERSIONS = {
     # ... you might have Path and PATH already there, add:
     FOO : {
         from_string: { |s| $s | split row '-' }
@@ -207,7 +205,7 @@ _(Important! The environment conversion string -> value happens **after** the en
 You can remove an environment variable only if it was set in the current scope via [`hide-env`](/commands/docs/hide_env.html):
 
 ```
-> let-env FOO = 'BAR'
+> $env.FOO = 'BAR'
 ...
 > hide-env FOO
 ```
@@ -215,7 +213,7 @@ You can remove an environment variable only if it was set in the current scope v
 The hiding is also scoped which both allows you to remove an environment variable temporarily and prevents you from modifying a parent environment from within a child scope:
 
 ```
-> let-env FOO = 'BAR'
+> $env.FOO = 'BAR'
 > do {
     hide-env FOO
     # $env.FOO does not exist
@@ -223,5 +221,3 @@ The hiding is also scoped which both allows you to remove an environment variabl
 > $env.FOO
 BAR
 ```
-
-You can check [Modules](modules.md) for more details about hiding.

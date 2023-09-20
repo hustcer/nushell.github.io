@@ -1,6 +1,6 @@
 # seq
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Output sequences of numbers.
 ## Parameters
 
 - `...rest`: sequence values
+
+## Input/output types:
+
+| input   | output         |
+| ------- | -------------- |
+| nothing | list\<number\> |
 
 ## Examples
 
@@ -33,3 +39,10 @@ sequence 1 to 5, then convert to a string with a pipe separator
 ```bash
 > seq 1 5 | str join '|'
 ```
+
+## Subcommands:
+
+| name                                     | type    | usage                                 |
+| ---------------------------------------- | ------- | ------------------------------------- |
+| [`seq char`](/commands/docs/seq_char.md) | Builtin | Print a sequence of ASCII characters. |
+| [`seq date`](/commands/docs/seq_date.md) | Builtin | Print sequences of dates.             |

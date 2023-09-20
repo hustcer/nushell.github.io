@@ -1,6 +1,6 @@
 # dfr sort-by
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -8,13 +8,20 @@ sorts a lazy dataframe based on expression(s).
 
 ## Signature
 
-`> dfr sort-by ...rest --reverse --nulls-last`
+`> dfr sort-by ...rest --reverse --nulls-last --maintain-order`
 
 ## Parameters
 
 - `...rest`: sort expression for the dataframe
 - `--reverse {list<bool>}`: Reverse sorting. Default is false
 - `--nulls-last`: nulls are shown last in the dataframe
+- `--maintain-order`: Maintains order during sort
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

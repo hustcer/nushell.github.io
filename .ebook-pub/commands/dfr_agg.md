@@ -1,6 +1,6 @@
 # dfr agg
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Performs a series of aggregations from a group-by.
 ## Parameters
 
 - `...rest`: Expression(s) that define the aggregations to be applied
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

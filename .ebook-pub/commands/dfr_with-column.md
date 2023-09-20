@@ -1,6 +1,6 @@
 # dfr with-column
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,12 @@ Adds a series to the dataframe.
 
 - `...rest`: series to be added or expressions used to define the new columns
 - `--name {string}`: new column name
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

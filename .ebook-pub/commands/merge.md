@@ -1,6 +1,6 @@
 # merge
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,15 +14,12 @@ Merge the input with a record or table, overwriting values in matching columns.
 
 - `value`: the new value to merge with
 
-## Notes
+## Input/output types:
 
-```text
-You may provide a column structure to merge
-
-When merging tables, row 0 of the input table is overwritten
-with values from row 0 of the provided table, then
-repeating this process with row 1, and so on.
-```
+| input  | output |
+| ------ | ------ |
+| record | record |
+| table  | table  |
 
 ## Examples
 
@@ -42,4 +39,14 @@ Merge two tables, overwriting overlapping columns
 
 ```bash
 > [{columnA: A0 columnB: B0}] | merge [{columnA: 'A0*'}]
+```
+
+## Notes
+
+```text
+You may provide a column structure to merge
+
+When merging tables, row 0 of the input table is overwritten
+with values from row 0 of the provided table, then
+repeating this process with row 1, and so on.
 ```

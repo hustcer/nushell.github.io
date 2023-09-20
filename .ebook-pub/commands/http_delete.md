@@ -1,6 +1,6 @@
 # http delete
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -24,11 +24,11 @@ Delete the specified resource.
 - `--full`: returns the full response instead of only the body
 - `--allow-errors`: do not fail if the server returns an error code
 
-## Notes
+## Input/output types:
 
-```text
-Performs HTTP DELETE operation.
-```
+| input   | output |
+| ------- | ------ |
+| nothing | any    |
 
 ## Examples
 
@@ -60,4 +60,10 @@ http delete from example.com, with JSON body
 
 ```bash
 > http delete -t application/json -d { field: value } https://www.example.com
+```
+
+## Notes
+
+```text
+Performs HTTP DELETE operation.
 ```

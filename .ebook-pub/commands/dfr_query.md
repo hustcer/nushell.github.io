@@ -1,6 +1,6 @@
 # dfr query
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Query dataframe using SQL. Note: The dataframe is always named 'df' in your quer
 ## Parameters
 
 - `sql`: sql query
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

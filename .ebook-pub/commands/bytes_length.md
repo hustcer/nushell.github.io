@@ -1,6 +1,6 @@
 # bytes length
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,15 @@ Output the length of any bytes in the pipeline.
 ## Parameters
 
 - `...rest`: for a data structure input, find the length of data at the given cell paths
+
+## Input/output types:
+
+| input          | output      |
+| -------------- | ----------- |
+| binary         | int         |
+| list\<binary\> | list\<int\> |
+| record         | record      |
+| table          | table       |
 
 ## Examples
 

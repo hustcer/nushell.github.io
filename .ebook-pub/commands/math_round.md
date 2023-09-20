@@ -1,6 +1,6 @@
 # math round
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,13 @@ Returns the input number rounded to the specified precision.
 ## Parameters
 
 - `--precision {number}`: digits of precision
+
+## Input/output types:
+
+| input          | output         |
+| -------------- | -------------- |
+| list\<number\> | list\<number\> |
+| number         | number         |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # dfr append
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,12 @@ Appends a new dataframe.
 
 - `other`: dataframe to be appended
 - `--col`: appends in col orientation
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # dfr drop
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Creates a new dataframe by dropping the selected columns.
 ## Parameters
 
 - `...rest`: column names to be dropped
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

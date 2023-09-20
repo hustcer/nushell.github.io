@@ -1,6 +1,6 @@
 # bytes replace
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -16,6 +16,14 @@ Find and replace binary.
 - `replace`: the replacement pattern
 - `...rest`: for a data structure input, replace bytes in data at the given cell paths
 - `--all`: replace all occurrences of find binary
+
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| binary | binary |
+| record | record |
+| table  | table  |
 
 ## Examples
 

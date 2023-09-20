@@ -1,6 +1,6 @@
 # from ini
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Parse text as .ini and create table.
 ## Signature
 
 `> from ini `
+
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| string | record |
 
 ## Examples
 

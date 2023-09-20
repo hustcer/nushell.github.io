@@ -1,6 +1,6 @@
 # dfr get-year
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Gets year from date.
 ## Signature
 
 `> dfr get-year `
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

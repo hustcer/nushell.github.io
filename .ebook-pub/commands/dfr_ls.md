@@ -1,6 +1,6 @@
 # dfr ls
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Lists stored dataframes.
 ## Signature
 
 `> dfr ls `
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # math avg
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,14 @@ Returns the average of a list of numbers.
 ## Signature
 
 `> math avg `
+
+## Input/output types:
+
+| input            | output   |
+| ---------------- | -------- |
+| list\<duration\> | duration |
+| list\<filesize\> | filesize |
+| list\<number\>   | number   |
 
 ## Examples
 

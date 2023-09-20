@@ -1,6 +1,6 @@
 # from yml
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Parse text as .yaml/.yml and create table.
 ## Signature
 
 `> from yml `
+
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| string | any    |
 
 ## Examples
 

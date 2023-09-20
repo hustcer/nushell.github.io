@@ -1,6 +1,6 @@
 # keybindings list
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -17,6 +17,12 @@ List available options that can be used to create keybindings.
 - `--modes`: list of edit modes
 - `--events`: list of reedline event
 - `--edits`: list of edit commands
+
+## Input/output types:
+
+| input   | output |
+| ------- | ------ |
+| nothing | table  |
 
 ## Examples
 

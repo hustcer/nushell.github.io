@@ -1,6 +1,6 @@
 # from ics
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Parse text as .ics and create table.
 ## Signature
 
 `> from ics `
+
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| string | table  |
 
 ## Examples
 

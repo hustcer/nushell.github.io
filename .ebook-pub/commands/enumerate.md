@@ -1,6 +1,6 @@
 # enumerate
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Enumerate the elements in a stream.
 ## Signature
 
 `> enumerate `
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | table  |
 
 ## Examples
 

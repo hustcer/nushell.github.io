@@ -1,6 +1,6 @@
 # str contains
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -17,6 +17,15 @@ Checks if string input contains a substring.
 - `--ignore-case`: search is case insensitive
 - `--not`: does not contain
 
+## Input/output types:
+
+| input          | output       |
+| -------------- | ------------ |
+| list\<string\> | list\<bool\> |
+| record         | record       |
+| string         | bool         |
+| table          | table        |
+
 ## Examples
 
 Check if input contains string
@@ -31,10 +40,10 @@ Check if input contains string case insensitive
 > 'my_library.rb' | str contains -i '.RB'
 ```
 
-Check if input contains string in a table
+Check if input contains string in a record
 
 ```bash
->  [[ColA ColB]; [test 100]] | str contains 'e' ColA
+> { ColA: test, ColB: 100 } | str contains 'e' ColA
 ```
 
 Check if input contains string in a table

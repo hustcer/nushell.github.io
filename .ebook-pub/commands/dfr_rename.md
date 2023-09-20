@@ -1,6 +1,6 @@
 # dfr rename
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,12 @@ Rename a dataframe column.
 
 - `columns`: Column(s) to be renamed. A string or list of strings
 - `new names`: New names for the selected column(s). A string or list of strings
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

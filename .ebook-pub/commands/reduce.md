@@ -1,6 +1,6 @@
 # reduce
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,14 @@ Aggregate a list to a single value using an accumulator closure.
 
 - `closure`: reducing function
 - `--fold {any}`: reduce with initial value
+
+## Input/output types:
+
+| input       | output |
+| ----------- | ------ |
+| list\<any\> | any    |
+| range       | any    |
+| table       | any    |
 
 ## Examples
 
@@ -45,4 +53,10 @@ Add ascending numbers to each of the filenames, and join with semicolons.
 
 ```bash
 > ['foo.gz', 'bar.gz', 'baz.gz'] | enumerate | reduce -f '' {|str all| $"($all)(if $str.index != 0 {'; '})($str.index + 1)-($str.item)" }
+```
+
+Concatenate a string with itself, using a range to determine the number of times.
+
+```bash
+> let s = "Str"; 0..2 | reduce -f '' {|it, acc| $acc + $s}
 ```

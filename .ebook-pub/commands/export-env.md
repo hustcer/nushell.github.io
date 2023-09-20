@@ -1,6 +1,6 @@
 # export-env
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,16 +14,22 @@ Run a block and preserve its environment in a current scope.
 
 - `block`: the block to run to set the environment
 
+## Input/output types:
+
+| input   | output  |
+| ------- | ------- |
+| nothing | nothing |
+
 ## Examples
 
 Set an environment variable
 
 ```bash
-> export-env { let-env SPAM = 'eggs' }
+> export-env { $env.SPAM = 'eggs' }
 ```
 
 Set an environment variable and examine its value
 
 ```bash
-> export-env { let-env SPAM = 'eggs' }; $env.SPAM
+> export-env { $env.SPAM = 'eggs' }; $env.SPAM
 ```

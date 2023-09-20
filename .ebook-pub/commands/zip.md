@@ -1,6 +1,6 @@
 # zip
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,13 @@ Combine a stream with the input.
 ## Parameters
 
 - `other`: the other input
+
+## Input/output types:
+
+| input       | output              |
+| ----------- | ------------------- |
+| list\<any\> | list\<list\<any\>\> |
+| range       | list\<list\<any\>\> |
 
 ## Examples
 

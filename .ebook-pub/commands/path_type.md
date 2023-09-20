@@ -1,6 +1,6 @@
 # path type
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -8,18 +8,14 @@ Get the type of the object a path refers to (e.g., file, dir, symlink).
 
 ## Signature
 
-`> path type --columns`
+`> path type `
 
-## Parameters
+## Input/output types:
 
-- `--columns {table}`: For a record or table input, check strings at the given columns, and replace with result
-
-## Notes
-
-```text
-This checks the file system to confirm the path's object type.
-If nothing is found, an empty string will be returned.
-```
+| input          | output         |
+| -------------- | -------------- |
+| list\<string\> | list\<string\> |
+| string         | string         |
 
 ## Examples
 
@@ -29,8 +25,15 @@ Show type of a filepath
 > '.' | path type
 ```
 
-Show type of a filepath in a column
+Show type of a filepaths in a list
 
 ```bash
-> ls | path type -c [ name ]
+> ls | get name | path type
+```
+
+## Notes
+
+```text
+This checks the file system to confirm the path's object type.
+If nothing is found, an empty string will be returned.
 ```

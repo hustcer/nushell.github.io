@@ -1,6 +1,6 @@
 # dfr set
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,12 @@ Sets value where given mask is true.
 
 - `value`: value to be inserted in series
 - `--mask {any}`: mask indicating insertions
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

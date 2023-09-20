@@ -1,6 +1,6 @@
 # sort-by
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -16,6 +16,13 @@ Sort by the given columns, in increasing order.
 - `--reverse`: Sort in reverse order
 - `--ignore-case`: Sort string-based columns case-insensitively
 - `--natural`: Sort alphanumeric string-based columns naturally (1, 9, 10, 99, 100, ...)
+
+## Input/output types:
+
+| input       | output      |
+| ----------- | ----------- |
+| list\<any\> | list\<any\> |
+| table       | table       |
 
 ## Examples
 

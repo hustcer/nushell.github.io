@@ -1,6 +1,6 @@
 # extern
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -8,20 +8,18 @@ Define a signature for an external command.
 
 ## Signature
 
-`> extern (def_name) (params) (body)`
+`> extern (def_name) (params)`
 
 ## Parameters
 
 - `def_name`: definition name
 - `params`: parameters
-- `body`: wrapper function block
 
-## Notes
+## Input/output types:
 
-```text
-This command is a parser keyword. For details, check:
-  https://www.nushell.sh/book/thinking_in_nu.html
-```
+| input   | output  |
+| ------- | ------- |
+| nothing | nothing |
 
 ## Examples
 
@@ -29,4 +27,11 @@ Write a signature for an external command
 
 ```bash
 > extern echo [text: string]
+```
+
+## Notes
+
+```text
+This command is a parser keyword. For details, check:
+  https://www.nushell.sh/book/thinking_in_nu.html
 ```

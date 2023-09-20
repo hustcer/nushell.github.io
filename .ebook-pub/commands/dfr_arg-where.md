@@ -1,6 +1,6 @@
 # dfr arg-where
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Creates an expression that returns the arguments where expression is true.
 ## Parameters
 
 - `column name`: Expression to evaluate
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

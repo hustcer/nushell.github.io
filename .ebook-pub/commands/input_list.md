@@ -1,6 +1,6 @@
 # input list
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -16,11 +16,11 @@ Interactive list selection.
 - `--multi`: Use multiple results, you can press a to toggle all options on/off
 - `--fuzzy`: Use a fuzzy select.
 
-## Notes
+## Input/output types:
 
-```text
-Abort with esc or q.
-```
+| input       | output      |
+| ----------- | ----------- |
+| list\<any\> | list\<any\> |
 
 ## Examples
 
@@ -40,4 +40,10 @@ Return a single record from a table with fuzzy search
 
 ```bash
 > ls | input list -f 'Select the target'
+```
+
+## Notes
+
+```text
+Abort with esc or q.
 ```

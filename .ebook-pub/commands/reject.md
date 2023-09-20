@@ -1,6 +1,6 @@
 # reject
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,11 +14,12 @@ Remove the given columns or rows from the table. Opposite of `select`.
 
 - `...rest`: the names of columns to remove from the table
 
-## Notes
+## Input/output types:
 
-```text
-To remove a quantity of rows or columns, use `skip`, `drop`, or `drop column`.
-```
+| input  | output |
+| ------ | ------ |
+| record | record |
+| table  | table  |
 
 ## Examples
 
@@ -34,6 +35,12 @@ Reject a column in a table
 > [[a, b]; [1, 2]] | reject a
 ```
 
+Reject a row in a table
+
+```bash
+> [[a, b]; [1, 2] [3, 4]] | reject 1
+```
+
 Reject the specified field in a record
 
 ```bash
@@ -44,4 +51,22 @@ Reject a nested field in a record
 
 ```bash
 > {a: {b: 3, c: 5}} | reject a.b
+```
+
+Reject columns by a provided list of columns
+
+```bash
+> let cols = [size type];[[name type size]; [Cargo.toml toml 1kb] [Cargo.lock toml 2kb]] | reject $cols
+```
+
+Reject rows by a provided list of rows
+
+```bash
+> let rows = [0 2];[[name type size]; [Cargo.toml toml 1kb] [Cargo.lock toml 2kb] [file.json json 3kb]] | reject $rows
+```
+
+## Notes
+
+```text
+To remove a quantity of rows or columns, use `skip`, `drop`, or `drop column`.
 ```

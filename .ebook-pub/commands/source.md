@@ -1,6 +1,6 @@
 # source
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,12 +14,11 @@ Runs a script file in the current context.
 
 - `filename`: the filepath to the script file to source
 
-## Notes
+## Input/output types:
 
-```text
-This command is a parser keyword. For details, check:
-  https://www.nushell.sh/book/thinking_in_nu.html
-```
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 
@@ -33,4 +32,11 @@ Runs foo.nu in current context and call the command defined, suppose foo.nu has 
 
 ```bash
 > source ./foo.nu; say-hi
+```
+
+## Notes
+
+```text
+This command is a parser keyword. For details, check:
+  https://www.nushell.sh/book/thinking_in_nu.html
 ```

@@ -1,6 +1,6 @@
 # dfr collect
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Collect lazy dataframe into eager dataframe.
 ## Signature
 
 `> dfr collect `
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # dfr into-df
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Converts a list, table or record into a dataframe.
 ## Signature
 
 `> dfr into-df `
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

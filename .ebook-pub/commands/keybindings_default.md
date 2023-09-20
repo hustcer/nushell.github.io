@@ -1,6 +1,6 @@
 # keybindings default
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ List default keybindings.
 ## Signature
 
 `> keybindings default `
+
+## Input/output types:
+
+| input   | output |
+| ------- | ------ |
+| nothing | table  |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # dfr drop-nulls
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Drops null values in dataframe.
 ## Parameters
 
 - `subset`: subset of columns to drop nulls
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

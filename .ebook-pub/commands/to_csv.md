@@ -1,6 +1,6 @@
 # to csv
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,13 @@ Convert table into .csv text .
 
 - `--separator {string}`: a character to separate columns, defaults to ','
 - `--noheaders`: do not output the columns names as the first row
+
+## Input/output types:
+
+| input  | output |
+| ------ | ------ |
+| record | string |
+| table  | string |
 
 ## Examples
 

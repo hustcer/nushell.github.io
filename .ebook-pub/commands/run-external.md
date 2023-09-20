@@ -1,6 +1,6 @@
 # run-external
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -18,6 +18,12 @@ Runs external command.
 - `--redirect-stderr`: redirect stderr to the pipeline
 - `--redirect-combine`: redirect both stdout and stderr combined to the pipeline (collected in stdout)
 - `--trim-end-newline`: trimming end newlines
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

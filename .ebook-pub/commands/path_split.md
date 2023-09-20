@@ -1,6 +1,6 @@
 # path split
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -8,11 +8,14 @@ Split a path into a list based on the system's path separator.
 
 ## Signature
 
-`> path split --columns`
+`> path split `
 
-## Parameters
+## Input/output types:
 
-- `--columns {table}`: For a record or table input, split strings at the given columns
+| input          | output                 |
+| -------------- | ---------------------- |
+| list\<string\> | list\<list\<string\>\> |
+| string         | list\<string\>         |
 
 ## Examples
 
@@ -22,8 +25,8 @@ Split a path into parts
 > '/home/viking/spam.txt' | path split
 ```
 
-Split all paths under the 'name' column
+Split paths in list into parts
 
 ```bash
-> ls ('.' | path expand) | path split -c [ name ]
+> [ /home/viking/spam.txt /home/viking/eggs.txt ] | path split
 ```

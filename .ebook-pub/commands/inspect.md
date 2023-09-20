@@ -1,6 +1,6 @@
 # inspect
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Inspect pipeline results while running a pipeline.
 ## Signature
 
 `> inspect `
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

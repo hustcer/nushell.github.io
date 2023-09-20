@@ -1,6 +1,6 @@
 # join
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -19,6 +19,12 @@ Join two tables
 - `--left`: Left-outer join
 - `--right`: Right-outer join
 - `--outer`: Outer join
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| table | table  |
 
 ## Examples
 

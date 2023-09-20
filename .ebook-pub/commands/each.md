@@ -1,6 +1,6 @@
 # each
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -15,17 +15,13 @@ Run a closure on each row of the input list, creating a new list with the result
 - `closure`: the closure to run
 - `--keep-empty`: keep empty result cells
 
-## Notes
+## Input/output types:
 
-```text
-Since tables are lists of records, passing a table into 'each' will
-iterate over each record, not necessarily each cell within it.
-
-Avoid passing single records to this command. Since a record is a
-one-row structure, 'each' will only run once, behaving similar to 'do'.
-To iterate over a record's values, try converting it to a table
-with 'transpose' first.
-```
+| input       | output      |
+| ----------- | ----------- |
+| any         | any         |
+| list\<any\> | list\<any\> |
+| table       | list\<any\> |
 
 ## Examples
 
@@ -58,3 +54,21 @@ Iterate over each element, keeping null results
 ```bash
 > [1 2 3] | each --keep-empty {|e| if $e == 2 { "found 2!"} }
 ```
+
+## Notes
+
+```text
+Since tables are lists of records, passing a table into 'each' will
+iterate over each record, not necessarily each cell within it.
+
+Avoid passing single records to this command. Since a record is a
+one-row structure, 'each' will only run once, behaving similar to 'do'.
+To iterate over a record's values, try converting it to a table
+with 'transpose' first.
+```
+
+## Subcommands:
+
+| name                                         | type    | usage                                                                                                     |
+| -------------------------------------------- | ------- | --------------------------------------------------------------------------------------------------------- |
+| [`each while`](/commands/docs/each_while.md) | Builtin | Run a block on each row of the input list until a null is found, then create a new list with the results. |

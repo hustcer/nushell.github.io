@@ -1,6 +1,6 @@
 # find
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -19,6 +19,14 @@ Searches terms in the input.
 - `--dotall`: dotall regex mode: allow a dot . to match newlines \n; equivalent to (?s)
 - `--columns {list<string>}`: column names to be searched (with rest parameter, not regex yet)
 - `--invert`: invert the match
+
+## Input/output types:
+
+| input       | output      |
+| ----------- | ----------- |
+| list\<any\> | list\<any\> |
+| string      | any         |
+| table       | table       |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # dfr take
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Creates new dataframe using the given indices.
 ## Parameters
 
 - `indices`: list of indices used to take data
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

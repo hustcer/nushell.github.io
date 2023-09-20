@@ -1,6 +1,6 @@
 # hide
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -15,14 +15,11 @@ Hide definitions in the current scope.
 - `module`: Module or module file
 - `members`: Which members of the module to import
 
-## Notes
+## Input/output types:
 
-```text
-Definitions are hidden by priority: First aliases, then custom commands.
-
-This command is a parser keyword. For details, check:
-  https://www.nushell.sh/book/thinking_in_nu.html
-```
+| input   | output  |
+| ------- | ------- |
+| nothing | nothing |
 
 ## Examples
 
@@ -36,4 +33,13 @@ Hide a custom command
 
 ```bash
 > def say-hi [] { echo 'Hi!' }; hide say-hi
+```
+
+## Notes
+
+```text
+Definitions are hidden by priority: First aliases, then custom commands.
+
+This command is a parser keyword. For details, check:
+  https://www.nushell.sh/book/thinking_in_nu.html
 ```

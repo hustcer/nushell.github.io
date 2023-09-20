@@ -1,6 +1,6 @@
 # keybindings listen
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -10,10 +10,22 @@ Get input from the user.
 
 `> keybindings listen `
 
+## Input/output types:
+
+| input   | output  |
+| ------- | ------- |
+| nothing | nothing |
+
 ## Examples
 
 Type and see key event codes
 
 ```bash
 > keybindings listen
+```
+
+## Notes
+
+```text
+This is an internal debugging tool. For better output, try `input listen --types [key]`
 ```

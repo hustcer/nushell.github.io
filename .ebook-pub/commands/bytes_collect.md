@@ -1,6 +1,6 @@
 # bytes collect
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Concatenate multiple binary into a single binary, with an optional separator bet
 ## Parameters
 
 - `separator`: optional separator to use when creating binary
+
+## Input/output types:
+
+| input          | output |
+| -------------- | ------ |
+| list\<binary\> | binary |
 
 ## Examples
 

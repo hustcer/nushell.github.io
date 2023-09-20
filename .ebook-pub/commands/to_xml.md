@@ -1,6 +1,6 @@
 # to xml
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,18 +14,11 @@ Convert special record structure into .xml text.
 
 - `--pretty {int}`: Formats the XML text with the provided indentation setting
 
-## Notes
+## Input/output types:
 
-```text
-Every XML entry is represented via a record with tag, attribute and content fields.
-To represent different types of entries different values must be written to this fields:
-1. Tag entry: `{tag: <tag name> attrs: {<attr name>: "<string value>" ...} content: [<entries>]}`
-2. Comment entry: `{tag: '!' attrs: null content: "<comment string>"}`
-3. Processing instruction (PI): `{tag: '?<pi name>' attrs: null content: "<pi content string>"}`
-4. Text: `{tag: null attrs: null content: "<text>"}`. Or as plain `<text>` instead of record.
-
-Additionally any field which is: empty record, empty list or null, can be omitted.
-```
+| input  | output |
+| ------ | ------ |
+| record | string |
 
 ## Examples
 
@@ -45,4 +38,17 @@ Optionally, formats the text with a custom indentation setting
 
 ```bash
 > {tag: note content : [{tag: remember content : [Event]}]} | to xml -p 3
+```
+
+## Notes
+
+```text
+Every XML entry is represented via a record with tag, attribute and content fields.
+To represent different types of entries different values must be written to this fields:
+1. Tag entry: `{tag: <tag name> attrs: {<attr name>: "<string value>" ...} content: [<entries>]}`
+2. Comment entry: `{tag: '!' attrs: null content: "<comment string>"}`
+3. Processing instruction (PI): `{tag: '?<pi name>' attrs: null content: "<pi content string>"}`
+4. Text: `{tag: null attrs: null content: "<text>"}`. Or as plain `<text>` instead of record.
+
+Additionally any field which is: empty record, empty list or null, can be omitted.
 ```

@@ -1,6 +1,6 @@
 # flatten
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,13 @@ Flatten the table.
 
 - `...rest`: optionally flatten data by column
 - `--all`: flatten inner table one level out
+
+## Input/output types:
+
+| input       | output      |
+| ----------- | ----------- |
+| list\<any\> | list\<any\> |
+| record      | table       |
 
 ## Examples
 

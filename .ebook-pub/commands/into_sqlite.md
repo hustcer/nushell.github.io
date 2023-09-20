@@ -1,6 +1,6 @@
 # into sqlite
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,12 @@ Convert table into a SQLite database.
 
 - `file_name`: Specify the filename to save the database to
 - `--table_name {string}`: Specify table name to store the data in
+
+## Input/output types:
+
+| input | output  |
+| ----- | ------- |
+| any   | nothing |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # dfr uppercase
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -9,6 +9,12 @@ Uppercase the strings in the column.
 ## Signature
 
 `> dfr uppercase `
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

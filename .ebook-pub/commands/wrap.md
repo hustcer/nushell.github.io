@@ -1,6 +1,6 @@
 # wrap
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,14 @@ Wrap the value into a column.
 ## Parameters
 
 - `name`: the name of the column
+
+## Input/output types:
+
+| input       | output |
+| ----------- | ------ |
+| any         | record |
+| list\<any\> | table  |
+| range       | table  |
 
 ## Examples
 

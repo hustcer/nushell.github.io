@@ -1,6 +1,6 @@
 # dfr slice
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,12 @@ Creates new dataframe from a slice of rows.
 
 - `offset`: start of slice
 - `size`: size of slice
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

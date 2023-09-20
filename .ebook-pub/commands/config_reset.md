@@ -1,6 +1,6 @@
 # config reset
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -15,6 +15,12 @@ Reset nushell environment configurations to default, and saves old config files 
 - `--nu`: reset only nu config, config.nu
 - `--env`: reset only env config, env.nu
 - `--without-backup`: do not make a backup
+
+## Input/output types:
+
+| input   | output  |
+| ------- | ------- |
+| nothing | nothing |
 
 ## Examples
 

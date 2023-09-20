@@ -1,6 +1,6 @@
 # with-env
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -14,6 +14,12 @@ Runs a block with an environment variable set.
 
 - `variable`: the environment variable to temporarily set
 - `block`: the block to run once the variable is set
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

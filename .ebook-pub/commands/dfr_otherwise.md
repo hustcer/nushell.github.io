@@ -1,6 +1,6 @@
 # dfr otherwise
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ completes a when expression.
 ## Parameters
 
 - `otherwise expression`: expression to apply when no when predicate matches
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 

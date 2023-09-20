@@ -1,6 +1,6 @@
 # dfr fill-nan
 
-**version**: 0.80.0
+**version**: 0.85.0
 
 ## **usage**:
 
@@ -13,6 +13,12 @@ Replaces NaN values with the given expression.
 ## Parameters
 
 - `fill`: Expression to use to fill the NAN values
+
+## Input/output types:
+
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 
