@@ -1,10 +1,10 @@
 # bits shr
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
-Bitwise shift right for integers.
+Bitwise shift right for ints.
 
 ## Signature
 

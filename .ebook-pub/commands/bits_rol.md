@@ -1,10 +1,10 @@
 # bits rol
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
-Bitwise rotate left for integers.
+Bitwise rotate left for ints.
 
 ## Signature
 

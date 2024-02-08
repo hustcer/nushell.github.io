@@ -1,6 +1,6 @@
 # str distance
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Compare two strings and return the edit distance/Levenshtein distance.
 
 ## Parameters
 
-- `compare-string`: the first string to compare
-- `...rest`: For a data structure input, check strings at the given cell paths, and replace with result
+- `compare-string`: The first string to compare.
+- `...rest`: For a data structure input, check strings at the given cell paths, and replace with result.
 
 ## Input/output types:
 

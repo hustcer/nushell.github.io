@@ -1,6 +1,6 @@
 # bytes replace
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,9 +12,9 @@ Find and replace binary.
 
 ## Parameters
 
-- `find`: the pattern to find
-- `replace`: the replacement pattern
-- `...rest`: for a data structure input, replace bytes in data at the given cell paths
+- `find`: The pattern to find.
+- `replace`: The replacement pattern.
+- `...rest`: For a data structure input, replace bytes in data at the given cell paths.
 - `--all`: replace all occurrences of find binary
 
 ## Input/output types:
@@ -36,11 +36,11 @@ Find and replace contents
 Find and replace all occurrences of find binary
 
 ```bash
-> 0x[10 AA 10 BB 10] | bytes replace -a 0x[10] 0x[A0]
+> 0x[10 AA 10 BB 10] | bytes replace --all 0x[10] 0x[A0]
 ```
 
 Find and replace all occurrences of find binary in table
 
 ```bash
-> [[ColA ColB ColC]; [0x[11 12 13] 0x[14 15 16] 0x[17 18 19]]] | bytes replace -a 0x[11] 0x[13] ColA ColC
+> [[ColA ColB ColC]; [0x[11 12 13] 0x[14 15 16] 0x[17 18 19]]] | bytes replace --all 0x[11] 0x[13] ColA ColC
 ```

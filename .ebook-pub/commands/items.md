@@ -1,6 +1,6 @@
 # items
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Given a record, iterate on each pair of column name and associated value.
 
 ## Parameters
 
-- `closure`: the closure to run
+- `closure`: The closure to run.
 
 ## Input/output types:
 

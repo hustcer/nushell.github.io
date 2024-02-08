@@ -1,6 +1,6 @@
 # loop
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Run a block in a loop.
 
 ## Parameters
 
-- `block`: block to loop
+- `block`: Block to loop.
 
 ## Input/output types:
 

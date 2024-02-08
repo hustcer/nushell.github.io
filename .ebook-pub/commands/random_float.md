@@ -1,6 +1,6 @@
 # random float
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,13 +12,13 @@ Generate a random float within a range [min..max].
 
 ## Parameters
 
-- `range`: Range of values
+- `range`: Range of values.
 
 ## Input/output types:
 
 | input   | output |
 | ------- | ------ |
-| nothing | number |
+| nothing | float  |
 
 ## Examples
 

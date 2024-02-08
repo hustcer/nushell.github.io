@@ -1,6 +1,6 @@
 # drop
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Remove items/rows from the end of the input list/table. Counterpart of `skip`. O
 
 ## Parameters
 
-- `rows`: The number of items to remove
+- `rows`: The number of items to remove.
 
 ## Input/output types:
 

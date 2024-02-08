@@ -1,6 +1,6 @@
 # bytes reverse
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Reverse the bytes in the pipeline.
 
 ## Parameters
 
-- `...rest`: for a data structure input, reverse data at the given cell paths
+- `...rest`: For a data structure input, reverse data at the given cell paths.
 
 ## Input/output types:
 

@@ -1,10 +1,10 @@
 # split-by
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
-Create a new table split.
+Split a record into groups.
 
 ## Signature
 
@@ -12,7 +12,7 @@ Create a new table split.
 
 ## Parameters
 
-- `splitter`: the splitter value to use
+- `splitter`: The splitter value to use.
 
 ## Input/output types:
 
@@ -26,12 +26,12 @@ split items by column named "lang"
 
 ```bash
 > {
-        '2019': [
-          { name: 'andres', lang: 'rb', year: '2019' },
-          { name: 'jt', lang: 'rs', year: '2019' }
-        ],
-        '2021': [
-          { name: 'storm', lang: 'rs', 'year': '2021' }
-        ]
+    '2019': [
+        { name: 'andres', lang: 'rb', year: '2019' },
+        { name: 'jt', lang: 'rs', year: '2019' }
+    ],
+    '2021': [
+        { name: 'storm', lang: 'rs', 'year': '2021' }
+    ]
     } | split-by lang
 ```

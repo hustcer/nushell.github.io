@@ -1,6 +1,6 @@
 # str reverse
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Reverse every string in the pipeline.
 
 ## Parameters
 
-- `...rest`: For a data structure input, reverse strings at the given cell paths
+- `...rest`: For a data structure input, reverse strings at the given cell paths.
 
 ## Input/output types:
 

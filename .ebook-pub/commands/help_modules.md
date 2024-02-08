@@ -1,6 +1,6 @@
 # help modules
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Show help on nushell modules.
 
 ## Parameters
 
-- `...rest`: the name of module to get help on
+- `...rest`: The name of module to get help on.
 - `--find {string}`: string to find in module names and usage
 
 ## Input/output types:

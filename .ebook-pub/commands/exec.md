@@ -1,10 +1,10 @@
 # exec
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
-Execute a command, replacing the current process.
+Execute a command, replacing or exiting the current process, depending on platform.
 
 ## Signature
 
@@ -12,7 +12,7 @@ Execute a command, replacing the current process.
 
 ## Parameters
 
-- `command`: the command to execute
+- `command`: The command to execute.
 
 ## Input/output types:
 
@@ -37,5 +37,6 @@ Execute 'nautilus'
 ## Notes
 
 ```text
-Currently supported only on Unix-based systems.
+On Unix-based systems, the current process is replaced with the command.
+On Windows based systems, Nushell will wait for the command to finish and then exit with the command's exit code.
 ```

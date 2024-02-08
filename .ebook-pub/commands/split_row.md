@@ -1,6 +1,6 @@
 # split row
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Split a string into multiple rows using a separator.
 
 ## Parameters
 
-- `separator`: a character or regex that denotes what separates rows
+- `separator`: A character or regex that denotes what separates rows.
 - `--number {int}`: Split into maximum number of items
 - `--regex`: use regex syntax for separator
 

@@ -1,6 +1,6 @@
 # nu-check
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Validate and parse input content.
 
 ## Parameters
 
-- `path`: File path to parse
+- `path`: File path to parse.
 - `--as-module`: Parse content as module
 - `--debug`: Show error messages
 - `--all`: Parse content as script first, returns result if success, otherwise, try with module
@@ -41,19 +41,19 @@ Parse a input file as module
 Parse a input file by showing error message
 
 ```bash
-> nu-check -d script.nu
+> nu-check --debug script.nu
 ```
 
 Parse an external stream as script by showing error message
 
 ```bash
-> open foo.nu | nu-check -d script.nu
+> open foo.nu | nu-check --debug script.nu
 ```
 
 Parse an internal stream as module by showing error message
 
 ```bash
-> open module.nu | lines | nu-check -d --as-module module.nu
+> open module.nu | lines | nu-check --debug --as-module module.nu
 ```
 
 Parse a string as script
@@ -71,5 +71,5 @@ Heuristically parse which begins with script first, if it sees a failure, try mo
 Heuristically parse by showing error message
 
 ```bash
-> open foo.nu | lines | nu-check -ad
+> open foo.nu | lines | nu-check --all --debug
 ```

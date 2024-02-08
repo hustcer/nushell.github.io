@@ -1,6 +1,6 @@
 # wrap
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Wrap the value into a column.
 
 ## Parameters
 
-- `name`: the name of the column
+- `name`: The name of the column.
 
 ## Input/output types:
 

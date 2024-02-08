@@ -1,6 +1,6 @@
 # http get
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -8,11 +8,11 @@ Fetch the contents from a URL.
 
 ## Signature
 
-`> http get (URL) --user --password --max-time --headers --raw --insecure --full --allow-errors`
+`> http get (URL) --user --password --max-time --headers --raw --insecure --full --allow-errors --redirect-mode`
 
 ## Parameters
 
-- `URL`: the URL to fetch the contents from
+- `URL`: The URL to fetch the contents from.
 - `--user {any}`: the username when authenticating
 - `--password {any}`: the password when authenticating
 - `--max-time {int}`: timeout period in seconds
@@ -21,6 +21,7 @@ Fetch the contents from a URL.
 - `--insecure`: allow insecure server connections when using SSL
 - `--full`: returns the full response instead of only the body
 - `--allow-errors`: do not fail if the server returns an error code
+- `--redirect-mode {string}`: What to do when encountering redirects. Default: 'follow'. Valid options: 'follow' ('f'), 'manual' ('m'), 'error' ('e').
 
 ## Input/output types:
 
@@ -39,19 +40,19 @@ Get content from example.com
 Get content from example.com, with username and password
 
 ```bash
-> http get -u myuser -p mypass https://www.example.com
+> http get --user myuser --password mypass https://www.example.com
 ```
 
 Get content from example.com, with custom header
 
 ```bash
-> http get -H [my-header-key my-header-value] https://www.example.com
+> http get --headers [my-header-key my-header-value] https://www.example.com
 ```
 
 Get content from example.com, with custom headers
 
 ```bash
-> http get -H [my-header-key-A my-header-value-A my-header-key-B my-header-value-B] https://www.example.com
+> http get --headers [my-header-key-A my-header-value-A my-header-key-B my-header-value-B] https://www.example.com
 ```
 
 ## Notes

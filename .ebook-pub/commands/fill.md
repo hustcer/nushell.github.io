@@ -1,6 +1,6 @@
 # fill
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -21,13 +21,13 @@ Fill and Align.
 | input            | output         |
 | ---------------- | -------------- |
 | filesize         | string         |
+| float            | string         |
 | int              | string         |
 | list\<any\>      | list\<string\> |
 | list\<filesize\> | list\<string\> |
+| list\<float\>    | list\<string\> |
 | list\<int\>      | list\<string\> |
-| list\<number\>   | list\<string\> |
 | list\<string\>   | list\<string\> |
-| number           | string         |
 | string           | string         |
 
 ## Examples
@@ -35,19 +35,19 @@ Fill and Align.
 Fill a string on the left side to a width of 15 with the character '─'
 
 ```bash
-> 'nushell' | fill -a l -c '─' -w 15
+> 'nushell' | fill --alignment l --character '─' --width 15
 ```
 
 Fill a string on the right side to a width of 15 with the character '─'
 
 ```bash
-> 'nushell' | fill -a r -c '─' -w 15
+> 'nushell' | fill --alignment r --character '─' --width 15
 ```
 
 Fill a string on both sides to a width of 15 with the character '─'
 
 ```bash
-> 'nushell' | fill -a m -c '─' -w 15
+> 'nushell' | fill --alignment m --character '─' --width 15
 ```
 
 Fill a number on the left side to a width of 5 with the character '0'

@@ -1,6 +1,6 @@
 # start
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Open a folder, file or website in the default application or viewer.
 
 ## Parameters
 
-- `path`: path to open
+- `path`: Path to open.
 
 ## Input/output types:
 

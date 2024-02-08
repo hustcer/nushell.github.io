@@ -1,6 +1,6 @@
 # encode
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Encode a string into bytes.
 
 ## Parameters
 
-- `encoding`: the text encoding to use
+- `encoding`: The text encoding to use.
 - `--ignore-errors`: when a character isn't in the given encoding, replace with a HTML entity (like `&#127880;`)
 
 ## Input/output types:
@@ -32,7 +32,7 @@ Encode an UTF-8 string into Shift-JIS
 Replace characters with HTML entities if they can't be encoded
 
 ```bash
-> "🎈" | encode -i shift-jis
+> "🎈" | encode --ignore-errors shift-jis
 ```
 
 ## Notes

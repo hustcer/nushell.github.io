@@ -1,10 +1,10 @@
 # bits or
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
-Performs bitwise or for integers.
+Performs bitwise or for ints.
 
 ## Signature
 
@@ -12,7 +12,7 @@ Performs bitwise or for integers.
 
 ## Parameters
 
-- `target`: target integer to perform bit or
+- `target`: target int to perform bit or
 
 ## Input/output types:
 

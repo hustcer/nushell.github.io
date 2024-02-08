@@ -1,6 +1,6 @@
 # mkdir
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Make directories, creates intermediary directories as required.
 
 ## Parameters
 
-- `...rest`: the name(s) of the path(s) to create
+- `...rest`: The name(s) of the path(s) to create.
 - `--verbose`: print created path(s).
 
 ## Input/output types:

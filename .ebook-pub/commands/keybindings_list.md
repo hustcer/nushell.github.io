@@ -1,6 +1,6 @@
 # keybindings list
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -29,7 +29,7 @@ List available options that can be used to create keybindings.
 Get list of key modifiers
 
 ```bash
-> keybindings list -m
+> keybindings list --modifiers
 ```
 
 Get list of reedline events and edit commands

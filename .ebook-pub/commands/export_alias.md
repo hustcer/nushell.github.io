@@ -1,6 +1,6 @@
 # export alias
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Alias a command (with optional flags) to a new name and export it from a module.
 
 ## Parameters
 
-- `name`: name of the alias
-- `initial_value`: equals sign followed by value
+- `name`: Name of the alias.
+- `initial_value`: Equals sign followed by value.
 
 ## Input/output types:
 

@@ -1,6 +1,6 @@
 # into sqlite
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -8,18 +8,19 @@ Convert table into a SQLite database.
 
 ## Signature
 
-`> into sqlite (file_name) --table_name`
+`> into sqlite (file-name) --table-name`
 
 ## Parameters
 
-- `file_name`: Specify the filename to save the database to
-- `--table_name {string}`: Specify table name to store the data in
+- `file-name`: Specify the filename to save the database to.
+- `--table-name {string}`: Specify table name to store the data in
 
 ## Input/output types:
 
-| input | output  |
-| ----- | ------- |
-| any   | nothing |
+| input  | output  |
+| ------ | ------- |
+| record | nothing |
+| table  | nothing |
 
 ## Examples
 
@@ -41,8 +42,8 @@ Convert table literal into a SQLite database with 'main' as the table name
 > [[name]; [-----] [someone] [=====] [somename] ['(((((']] | into sqlite filename.db
 ```
 
-Convert a variety of values in table literal form into a SQLite database
+Insert a single record into a SQLite database
 
 ```bash
-> [one 2 5.2 six true 100mib 25sec] | into sqlite variety.db
+> { foo: bar, baz: quux } | into sqlite filename.db
 ```

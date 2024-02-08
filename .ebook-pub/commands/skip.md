@@ -1,6 +1,6 @@
 # skip
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Skip the first several rows of the input. Counterpart of `drop`. Opposite of `fi
 
 ## Parameters
 
-- `n`: the number of elements to skip
+- `n`: The number of elements to skip.
 
 ## Input/output types:
 

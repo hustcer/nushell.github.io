@@ -1,6 +1,6 @@
 # reject
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -8,11 +8,12 @@ Remove the given columns or rows from the table. Opposite of `select`.
 
 ## Signature
 
-`> reject ...rest`
+`> reject ...rest --ignore-errors`
 
 ## Parameters
 
-- `...rest`: the names of columns to remove from the table
+- `...rest`: The names of columns to remove from the table.
+- `--ignore-errors`: ignore missing data (make all cell path members optional)
 
 ## Input/output types:
 
@@ -57,6 +58,12 @@ Reject columns by a provided list of columns
 
 ```bash
 > let cols = [size type];[[name type size]; [Cargo.toml toml 1kb] [Cargo.lock toml 2kb]] | reject $cols
+```
+
+Reject columns by a list of columns directly
+
+```bash
+> [[name type size]; [Cargo.toml toml 1kb] [Cargo.lock toml 2kb]] | reject ["size", "type"]
 ```
 
 Reject rows by a provided list of rows

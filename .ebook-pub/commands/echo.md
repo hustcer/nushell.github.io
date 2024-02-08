@@ -1,6 +1,6 @@
 # echo
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Returns its arguments, ignoring the piped-in value.
 
 ## Parameters
 
-- `...rest`: the values to echo
+- `...rest`: The values to echo.
 
 ## Input/output types:
 

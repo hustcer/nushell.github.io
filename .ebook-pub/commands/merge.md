@@ -1,6 +1,6 @@
 # merge
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Merge the input with a record or table, overwriting values in matching columns.
 
 ## Parameters
 
-- `value`: the new value to merge with
+- `value`: The new value to merge with.
 
 ## Input/output types:
 

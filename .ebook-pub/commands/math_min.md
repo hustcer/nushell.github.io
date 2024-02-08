@@ -1,6 +1,6 @@
 # math min
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,10 +12,15 @@ Finds the minimum within a list of values or tables.
 
 ## Input/output types:
 
-| input       | output |
-| ----------- | ------ |
-| list\<any\> | any    |
-| table       | record |
+| input            | output   |
+| ---------------- | -------- |
+| list\<any\>      | any      |
+| list\<duration\> | duration |
+| list\<filesize\> | filesize |
+| list\<number\>   | number   |
+| range            | number   |
+| record           | record   |
+| table            | record   |
 
 ## Examples
 

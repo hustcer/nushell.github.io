@@ -1,6 +1,6 @@
 # bits not
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -33,11 +33,11 @@ Apply logical negation to a list of numbers
 Apply logical negation to a list of numbers, treat input as 2 bytes number
 
 ```bash
-> [4 3 2] | bits not -n '2'
+> [4 3 2] | bits not --number-bytes '2'
 ```
 
 Apply logical negation to a list of numbers, treat input as signed number
 
 ```bash
-> [4 3 2] | bits not -s
+> [4 3 2] | bits not --signed
 ```

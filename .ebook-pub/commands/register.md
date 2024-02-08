@@ -1,6 +1,6 @@
 # register
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Register a plugin.
 
 ## Parameters
 
-- `plugin`: path of executable for plugin
-- `signature`: Block with signature description as json object
+- `plugin`: Path of executable for plugin.
+- `signature`: Block with signature description as json object.
 - `--shell {path}`: path of shell used to run plugin (cmd, sh, python, etc)
 
 ## Input/output types:

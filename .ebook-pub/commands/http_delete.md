@@ -1,6 +1,6 @@
 # http delete
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -8,11 +8,11 @@ Delete the specified resource.
 
 ## Signature
 
-`> http delete (URL) --user --password --data --content-type --max-time --headers --raw --insecure --full --allow-errors`
+`> http delete (URL) --user --password --data --content-type --max-time --headers --raw --insecure --full --allow-errors --redirect-mode`
 
 ## Parameters
 
-- `URL`: the URL to fetch the contents from
+- `URL`: The URL to fetch the contents from.
 - `--user {any}`: the username when authenticating
 - `--password {any}`: the password when authenticating
 - `--data {any}`: the content to post
@@ -23,6 +23,7 @@ Delete the specified resource.
 - `--insecure`: allow insecure server connections when using SSL
 - `--full`: returns the full response instead of only the body
 - `--allow-errors`: do not fail if the server returns an error code
+- `--redirect-mode {string}`: What to do when encountering redirects. Default: 'follow'. Valid options: 'follow' ('f'), 'manual' ('m'), 'error' ('e').
 
 ## Input/output types:
 
@@ -41,25 +42,25 @@ http delete from example.com
 http delete from example.com, with username and password
 
 ```bash
-> http delete -u myuser -p mypass https://www.example.com
+> http delete --user myuser --password mypass https://www.example.com
 ```
 
 http delete from example.com, with custom header
 
 ```bash
-> http delete -H [my-header-key my-header-value] https://www.example.com
+> http delete --headers [my-header-key my-header-value] https://www.example.com
 ```
 
 http delete from example.com, with body
 
 ```bash
-> http delete -d 'body' https://www.example.com
+> http delete --data 'body' https://www.example.com
 ```
 
 http delete from example.com, with JSON body
 
 ```bash
-> http delete -t application/json -d { field: value } https://www.example.com
+> http delete --content-type application/json --data { field: value } https://www.example.com
 ```
 
 ## Notes

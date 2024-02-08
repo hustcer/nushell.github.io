@@ -1,10 +1,10 @@
 # bits ror
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
-Bitwise rotate right for integers.
+Bitwise rotate right for ints.
 
 ## Signature
 
@@ -34,5 +34,5 @@ Rotate right a number with 60 bits
 Rotate right a list of numbers of one byte
 
 ```bash
-> [15 33 92] | bits ror 2 -n '1'
+> [15 33 92] | bits ror 2 --number-bytes '1'
 ```

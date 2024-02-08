@@ -1,6 +1,6 @@
 # export use
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Use definitions from a module and export them from this module.
 
 ## Parameters
 
-- `module`: Module or module file
-- `members`: Which members of the module to import
+- `module`: Module or module file.
+- `members`: Which members of the module to import.
 
 ## Input/output types:
 

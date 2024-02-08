@@ -1,6 +1,6 @@
 # save
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Save a file.
 
 ## Parameters
 
-- `filename`: the filename to use
+- `filename`: The filename to use.
 - `--stderr {path}`: the filename used to save stderr, only works with `-r` flag
 - `--raw`: save file as raw binary
 - `--append`: append input to the end of the file

@@ -1,6 +1,6 @@
 # dfr arg-sort
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -33,5 +33,5 @@ Returns indexes for a sorted series
 Returns indexes for a sorted series
 
 ```bash
-> [1 2 2 3 3] | dfr into-df | dfr arg-sort -r
+> [1 2 2 3 3] | dfr into-df | dfr arg-sort --reverse
 ```

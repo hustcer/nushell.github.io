@@ -1,6 +1,6 @@
 # histogram
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Creates a new table with a histogram based on the column name passed in.
 
 ## Parameters
 
-- `column-name`: column name to calc frequency, no need to provide if input is just a list
-- `frequency-column-name`: histogram's frequency column, default to be frequency column output
+- `column-name`: Column name to calc frequency, no need to provide if input is a list.
+- `frequency-column-name`: Histogram's frequency column, default to be frequency column output.
 - `--percentage-type {string}`: percentage calculate method, can be 'normalize' or 'relative', in 'normalize', defaults to be 'normalize'
 
 ## Input/output types:

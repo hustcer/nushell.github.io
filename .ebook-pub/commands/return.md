@@ -1,6 +1,6 @@
 # return
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Return early from a function.
 
 ## Parameters
 
-- `return_value`: optional value to return
+- `return_value`: Optional value to return.
 
 ## Input/output types:
 

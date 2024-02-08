@@ -1,6 +1,6 @@
 # group
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Groups input into groups of `group_size`.
 
 ## Parameters
 
-- `group_size`: the size of each group
+- `group_size`: The size of each group.
 
 ## Input/output types:
 

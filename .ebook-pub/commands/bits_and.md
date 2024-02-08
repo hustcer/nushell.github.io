@@ -1,10 +1,10 @@
 # bits and
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
-Performs bitwise and for integers.
+Performs bitwise and for ints.
 
 ## Signature
 
@@ -12,7 +12,7 @@ Performs bitwise and for integers.
 
 ## Parameters
 
-- `target`: target integer to perform bit and
+- `target`: target int to perform bit and
 
 ## Input/output types:
 

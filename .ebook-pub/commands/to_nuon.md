@@ -1,6 +1,6 @@
 # to nuon
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -30,7 +30,7 @@ Outputs a NUON string representing the contents of this list, compact by default
 > [1 2 3] | to nuon
 ```
 
-Outputs a NUON array of integers, with pretty indentation
+Outputs a NUON array of ints, with pretty indentation
 
 ```bash
 > [1 2 3] | to nuon --indent 2

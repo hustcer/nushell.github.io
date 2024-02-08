@@ -1,6 +1,6 @@
 # explain
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Explain closure contents.
 
 ## Parameters
 
-- `closure`: the closure to run
+- `closure`: The closure to run.
 
 ## Input/output types:
 
@@ -26,5 +26,5 @@ Explain closure contents.
 Explain a command within a closure
 
 ```bash
-> explain {|| ls | sort-by name type -i | get name } | table -e
+> explain {|| ls | sort-by name type --ignore-case | get name } | table --expand
 ```

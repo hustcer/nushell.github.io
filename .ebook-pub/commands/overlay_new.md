@@ -1,6 +1,6 @@
 # overlay new
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Create an empty overlay.
 
 ## Parameters
 
-- `name`: Name of the overlay
+- `name`: Name of the overlay.
 
 ## Input/output types:
 

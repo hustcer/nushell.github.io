@@ -1,6 +1,6 @@
 # which
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Finds a program file, alias or custom command.
 
 ## Parameters
 
-- `application`: application
-- `...rest`: additional applications
+- `application`: Application.
+- `...rest`: Additional applications.
 - `--all`: list all executables
 
 ## Input/output types:

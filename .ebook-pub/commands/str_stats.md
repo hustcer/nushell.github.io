@@ -1,6 +1,6 @@
-# size
+# str stats
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -8,7 +8,7 @@ Gather word count statistics on the text.
 
 ## Signature
 
-`> size `
+`> str stats `
 
 ## Input/output types:
 
@@ -21,17 +21,17 @@ Gather word count statistics on the text.
 Count the number of words in a string
 
 ```bash
-> "There are seven words in this sentence" | size
+> "There are seven words in this sentence" | str stats
 ```
 
 Counts unicode characters
 
 ```bash
-> '今天天气真好' | size
+> '今天天气真好' | str stats
 ```
 
 Counts Unicode characters correctly in a string
 
 ```bash
-> "Amélie Amelie" | size
+> "Amélie Amelie" | str stats
 ```

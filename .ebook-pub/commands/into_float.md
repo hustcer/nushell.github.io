@@ -1,6 +1,6 @@
 # into float
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,19 +12,19 @@ Convert data into floating point number.
 
 ## Parameters
 
-- `...rest`: for a data structure input, convert data at the given cell paths
+- `...rest`: For a data structure input, convert data at the given cell paths.
 
 ## Input/output types:
 
-| input       | output         |
-| ----------- | -------------- |
-| bool        | number         |
-| int         | number         |
-| list\<any\> | list\<number\> |
-| number      | number         |
-| record      | record         |
-| string      | number         |
-| table       | table          |
+| input       | output        |
+| ----------- | ------------- |
+| bool        | float         |
+| float       | float         |
+| int         | float         |
+| list\<any\> | list\<float\> |
+| record      | record        |
+| string      | float         |
+| table       | table         |
 
 ## Examples
 

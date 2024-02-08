@@ -1,6 +1,6 @@
 # find
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Searches terms in the input.
 
 ## Parameters
 
-- `...rest`: terms to search
+- `...rest`: Terms to search.
 - `--regex {string}`: regex to match with
 - `--ignore-case`: case-insensitive regex mode; equivalent to (?i)
 - `--multiline`: multi-line regex mode: ^ and $ match begin/end of line; equivalent to (?m)
@@ -26,7 +26,6 @@ Searches terms in the input.
 | ----------- | ----------- |
 | list\<any\> | list\<any\> |
 | string      | any         |
-| table       | table       |
 
 ## Examples
 
@@ -36,7 +35,7 @@ Search for multiple terms in a command output
 > ls | find toml md sh
 ```
 
-Search for a term in a string
+Search and highlight text for a term in a string
 
 ```bash
 > 'Cargo.toml' | find toml
@@ -69,25 +68,25 @@ Find using regex case insensitive
 Find value in records using regex
 
 ```bash
-> [[version name]; ['0.1.0' nushell] ['0.1.1' fish] ['0.2.0' zsh]] | find -r "nu"
+> [[version name]; ['0.1.0' nushell] ['0.1.1' fish] ['0.2.0' zsh]] | find --regex "nu"
 ```
 
 Find inverted values in records using regex
 
 ```bash
-> [[version name]; ['0.1.0' nushell] ['0.1.1' fish] ['0.2.0' zsh]] | find -r "nu" --invert
+> [[version name]; ['0.1.0' nushell] ['0.1.1' fish] ['0.2.0' zsh]] | find --regex "nu" --invert
 ```
 
 Find value in list using regex
 
 ```bash
-> [["Larry", "Moe"], ["Victor", "Marina"]] | find -r "rr"
+> [["Larry", "Moe"], ["Victor", "Marina"]] | find --regex "rr"
 ```
 
 Find inverted values in records using regex
 
 ```bash
-> [["Larry", "Moe"], ["Victor", "Marina"]] | find -r "rr" --invert
+> [["Larry", "Moe"], ["Victor", "Marina"]] | find --regex "rr" --invert
 ```
 
 Remove ANSI sequences from result
@@ -99,5 +98,5 @@ Remove ANSI sequences from result
 Find and highlight text in specific columns
 
 ```bash
-> [[col1 col2 col3]; [moe larry curly] [larry curly moe]] | find moe -c [col1]
+> [[col1 col2 col3]; [moe larry curly] [larry curly moe]] | find moe --columns [col1]
 ```

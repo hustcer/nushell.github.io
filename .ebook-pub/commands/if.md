@@ -1,6 +1,6 @@
 # if
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,9 +12,9 @@ Conditionally run a block.
 
 ## Parameters
 
-- `cond`: condition to check
-- `then_block`: block to run if check succeeds
-- `else_expression`: expression or block to run if check fails
+- `cond`: Condition to check.
+- `then_block`: Block to run if check succeeds.
+- `else_expression`: Expression or block to run when the condition is false.
 
 ## Input/output types:
 

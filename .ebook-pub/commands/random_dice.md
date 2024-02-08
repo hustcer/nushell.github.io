@@ -1,6 +1,6 @@
 # random dice
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -32,5 +32,5 @@ Roll 1 dice with 6 sides each
 Roll 10 dice with 12 sides each
 
 ```bash
-> random dice -d 10 -s 12
+> random dice --dice 10 --sides 12
 ```

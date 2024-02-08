@@ -1,6 +1,6 @@
 # mv
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Move files or directories.
 
 ## Parameters
 
-- `source`: the location to move files/directories from
-- `destination`: the location to move files/directories to
+- `source`: The location to move files/directories from.
+- `destination`: The location to move files/directories to.
 - `--verbose`: make mv to be verbose, showing files been moved.
 - `--force`: overwrite the destination.
 - `--interactive`: ask user to confirm action

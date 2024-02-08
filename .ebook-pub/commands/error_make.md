@@ -1,6 +1,6 @@
 # error make
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Create an error.
 
 ## Parameters
 
-- `error_struct`: the error to create
+- `error_struct`: The error to create.
 - `--unspanned`: remove the origin label from the error
 
 ## Input/output types:
@@ -36,9 +36,14 @@ Create a more complex custom error
         msg: "my custom error message"
         label: {
             text: "my custom label text"  # not mandatory unless $.label exists
-            start: 123  # not mandatory unless $.label.end is set
-            end: 456  # not mandatory unless $.label.start is set
+            # optional
+            span: {
+                # if $.label.span exists, both start and end must be present
+                start: 123
+                end: 456
+            }
         }
+        help: "A help string, suggesting a fix to the user"  # optional
     }
 ```
 
@@ -46,13 +51,11 @@ Create a custom error for a custom command that shows the span of the argument
 
 ```bash
 > def foo [x] {
-        let span = (metadata $x).span;
         error make {
             msg: "this is fishy"
             label: {
                 text: "fish right here"
-                start: $span.start
-                end: $span.end
+                span: (metadata $x).span
             }
         }
     }

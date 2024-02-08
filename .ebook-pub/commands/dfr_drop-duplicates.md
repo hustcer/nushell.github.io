@@ -1,6 +1,6 @@
 # dfr drop-duplicates
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 

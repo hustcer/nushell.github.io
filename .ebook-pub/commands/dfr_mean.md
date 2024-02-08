@@ -1,10 +1,10 @@
 # dfr mean
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
-Creates a mean expression for an aggregation or aggregates columns to their mean value
+Creates a mean expression for an aggregation or aggregates columns to their mean value.
 
 ## Signature
 

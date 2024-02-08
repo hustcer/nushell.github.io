@@ -1,6 +1,6 @@
 # help
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,14 +12,14 @@ Display help information about different parts of Nushell.
 
 ## Parameters
 
-- `...rest`: the name of command, alias or module to get help on
+- `...rest`: The name of command, alias or module to get help on.
 - `--find {string}`: string to find in command names, usage, and search terms
 
 ## Input/output types:
 
 | input   | output |
 | ------- | ------ |
-| nothing | string |
+| nothing | any    |
 
 ## Examples
 
@@ -49,10 +49,11 @@ search for string in command names, usage and search terms
 
 ## Subcommands:
 
-| name                                                 | type    | usage                           |
-| ---------------------------------------------------- | ------- | ------------------------------- |
-| [`help aliases`](/commands/docs/help_aliases.md)     | Builtin | Show help on nushell aliases.   |
-| [`help commands`](/commands/docs/help_commands.md)   | Builtin | Show help on nushell commands.  |
-| [`help externs`](/commands/docs/help_externs.md)     | Builtin | Show help on nushell externs.   |
-| [`help modules`](/commands/docs/help_modules.md)     | Builtin | Show help on nushell modules.   |
-| [`help operators`](/commands/docs/help_operators.md) | Builtin | Show help on nushell operators. |
+| name                                                 | type    | usage                                |
+| ---------------------------------------------------- | ------- | ------------------------------------ |
+| [`help aliases`](/commands/docs/help_aliases.md)     | Builtin | Show help on nushell aliases.        |
+| [`help commands`](/commands/docs/help_commands.md)   | Builtin | Show help on nushell commands.       |
+| [`help escapes`](/commands/docs/help_escapes.md)     | Builtin | Show help on nushell string escapes. |
+| [`help externs`](/commands/docs/help_externs.md)     | Builtin | Show help on nushell externs.        |
+| [`help modules`](/commands/docs/help_modules.md)     | Builtin | Show help on nushell modules.        |
+| [`help operators`](/commands/docs/help_operators.md) | Builtin | Show help on nushell operators.      |

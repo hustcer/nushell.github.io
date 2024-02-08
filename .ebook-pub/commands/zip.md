@@ -1,6 +1,6 @@
 # zip
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Combine a stream with the input.
 
 ## Parameters
 
-- `other`: the other input
+- `other`: The other input.
 
 ## Input/output types:
 

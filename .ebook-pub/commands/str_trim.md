@@ -1,6 +1,6 @@
 # str trim
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Trim whitespace or specific character.
 
 ## Parameters
 
-- `...rest`: For a data structure input, trim strings at the given cell paths
+- `...rest`: For a data structure input, trim strings at the given cell paths.
 - `--char {string}`: character to trim (default: whitespace)
 - `--left`: trims characters only from the beginning of the string
 - `--right`: trims characters only from the end of the string
@@ -34,32 +34,26 @@ Trim whitespace
 > 'Nu shell ' | str trim
 ```
 
-Trim a specific character
+Trim a specific character (not the whitespace)
 
 ```bash
-> '=== Nu shell ===' | str trim -c '=' | str trim
+> '=== Nu shell ===' | str trim --char '='
 ```
 
 Trim whitespace from the beginning of string
 
 ```bash
-> ' Nu shell ' | str trim -l
-```
-
-Trim a specific character
-
-```bash
-> '=== Nu shell ===' | str trim -c '='
+> ' Nu shell ' | str trim --left
 ```
 
 Trim whitespace from the end of string
 
 ```bash
-> ' Nu shell ' | str trim -r
+> ' Nu shell ' | str trim --right
 ```
 
-Trim a specific character
+Trim a specific character only from the end of the string
 
 ```bash
-> '=== Nu shell ===' | str trim -r -c '='
+> '=== Nu shell ===' | str trim --right --char '='
 ```

@@ -1,10 +1,10 @@
 # bytes at
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
-Get bytes defined by a range
+Get bytes defined by a range.
 
 ## Signature
 
@@ -12,8 +12,8 @@ Get bytes defined by a range
 
 ## Parameters
 
-- `range`: the range to get bytes
-- `...rest`: for a data structure input, get bytes from data at the given cell paths
+- `range`: The range to get bytes.
+- `...rest`: For a data structure input, get bytes from data at the given cell paths.
 
 ## Input/output types:
 

@@ -1,6 +1,6 @@
 # into record
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -19,7 +19,6 @@ Convert value to record.
 | list\<any\> | record |
 | range       | record |
 | record      | record |
-| table       | record |
 
 ## Examples
 

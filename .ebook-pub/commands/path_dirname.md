@@ -1,6 +1,6 @@
 # path dirname
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -39,11 +39,11 @@ Get dirname of a list of paths
 Walk up two levels
 
 ```bash
-> '/home/joe/code/test.txt' | path dirname -n 2
+> '/home/joe/code/test.txt' | path dirname --num-levels 2
 ```
 
 Replace the part that would be returned with a custom path
 
 ```bash
-> '/home/joe/code/test.txt' | path dirname -n 2 -r /home/viking
+> '/home/joe/code/test.txt' | path dirname --num-levels 2 --replace /home/viking
 ```

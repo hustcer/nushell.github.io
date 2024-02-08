@@ -1,10 +1,10 @@
 # dfr max
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
-Creates a max expression or aggregates columns to their max value
+Creates a max expression or aggregates columns to their max value.
 
 ## Signature
 

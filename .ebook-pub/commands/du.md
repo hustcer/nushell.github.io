@@ -1,6 +1,6 @@
 # du
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Find disk usage sizes of specified items.
 
 ## Parameters
 
-- `path`: starting directory
+- `path`: Starting directory.
 - `--all`: Output file sizes as well as directory sizes
 - `--deref`: Dereference symlinks to their targets for size
 - `--exclude {glob}`: Exclude these file names

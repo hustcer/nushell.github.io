@@ -1,6 +1,6 @@
 # upsert
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Update an existing column to have a new value, or insert a new column.
 
 ## Parameters
 
-- `field`: the name of the column to update or insert
-- `replacement value`: the new value to give the cell(s), or a closure to create the value
+- `field`: The name of the column to update or insert.
+- `replacement value`: The new value to give the cell(s), or a closure to create the value.
 
 ## Input/output types:
 
@@ -31,31 +31,31 @@ Update a record's value
 > {'name': 'nu', 'stars': 5} | upsert name 'Nushell'
 ```
 
+Insert a new entry into a record
+
+```bash
+> {'name': 'nu', 'stars': 5} | upsert language 'Rust'
+```
+
 Update each row of a table
 
 ```bash
 > [[name lang]; [Nushell ''] [Reedline '']] | upsert lang 'Rust'
 ```
 
-Insert a new entry into a single record
+Insert a new column with values computed based off the other columns
 
 ```bash
-> {'name': 'nu', 'stars': 5} | upsert language 'Rust'
+> [[foo]; [7] [8] [9]] | upsert bar {|row| $row.foo * 2 }
 ```
 
-Use in closure form for more involved updating logic
-
-```bash
-> [[count fruit]; [1 'apple']] | enumerate | upsert item.count {|e| ($e.item.fruit | str length) + $e.index } | get item
-```
-
-Upsert an int into a list, updating an existing value based on the index
+Upsert into a list, updating an existing value at an index
 
 ```bash
 > [1 2 3] | upsert 0 2
 ```
 
-Upsert an int into a list, inserting a new value based on the index
+Upsert into a list, inserting a new value at the end
 
 ```bash
 > [1 2 3] | upsert 3 4

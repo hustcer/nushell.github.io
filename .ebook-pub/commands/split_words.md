@@ -1,6 +1,6 @@
 # split words
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -34,11 +34,11 @@ Split the string's words into separate rows
 Split the string's words, of at least 3 characters, into separate rows
 
 ```bash
-> 'hello to the world' | split words -l 3
+> 'hello to the world' | split words --min-word-length 3
 ```
 
 A real-world example of splitting words
 
 ```bash
-> http get https://www.gutenberg.org/files/11/11-0.txt | str downcase | split words -l 2 | uniq -c | sort-by count --reverse | first 10
+> http get https://www.gutenberg.org/files/11/11-0.txt | str downcase | split words --min-word-length 2 | uniq --count | sort-by count --reverse | first 10
 ```

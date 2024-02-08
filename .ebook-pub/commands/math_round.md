@@ -1,6 +1,6 @@
 # math round
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -32,11 +32,11 @@ Apply the round function to a list of numbers
 Apply the round function with precision specified
 
 ```bash
-> [1.555 2.333 -3.111] | math round -p 2
+> [1.555 2.333 -3.111] | math round --precision 2
 ```
 
 Apply negative precision to a list of numbers
 
 ```bash
-> [123, 123.3, -123.4] | math round -p -1
+> [123, 123.3, -123.4] | math round --precision -1
 ```

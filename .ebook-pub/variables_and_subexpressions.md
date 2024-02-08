@@ -12,7 +12,7 @@ The simpler of the two evaluation expressions is the variable. During evaluation
 
 An immutable variable cannot change its value after declaration. They are declared using the `let` keyword,
 
-```
+```nu
 > let val = 42
 > print $val
 42
@@ -20,7 +20,7 @@ An immutable variable cannot change its value after declaration. They are declar
 
 However, they can be 'shadowed'. Shadowing means that they are redeclared and their initial value cannot be used anymore within the same scope.
 
-```
+```nu
 > let val = 42                   # declare a variable
 > do { let val = 101;  $val }    # in an inner scope, shadow the variable
 101
@@ -32,7 +32,7 @@ However, they can be 'shadowed'. Shadowing means that they are redeclared and th
 
 A mutable variable is allowed to change its value by assignment. These are declared using the `mut` keyword.
 
-```
+```nu
 > mut val = 42
 > $val += 27
 > $val
@@ -48,20 +48,21 @@ There are a couple of assignment operators used with mutable variables
 | `-=`     | Subtracts a value from the variable and makes the difference its new value |
 | `*=`     | Multiplies the variable by a value and makes the product its new value     |
 | `/=`     | Divides the variable by a value and makes the quotient its new value       |
-| `**=`    | Concatenates the variable with a list making the new list its new value    |
+| `++=`    | Appends a list or a value to a variable                                    |
 
 > **Note**
 >
 > 1. `+=`, `-=`, `*=` and `/=` are only valid in the contexts where their root operations
 >    are expected to work. For example, `+=` uses addition, so it can not be used for contexts
 >    where addition would normally fail
-> 2. `**=` requires a variable representing a list **and** a list argument
+> 2. `++=` requires that either the variable **or** the argument is a
+>    list.
 
 ##### More on Mutability
 
 Closures and nested `def`s cannot capture mutable variables from their environment. For example
 
-```
+```nu
 # naive method to count number of elements in a list
 mut x = 0
 
@@ -74,7 +75,7 @@ To use mutable variables for such behaviour, you are encouraged to use the loops
 
 A constant variable is an immutable variable that can be fully evaluated at parse-time. These are useful with commands that need to know the value of an argument at parse time, like [`source`](/commands/docs/source.md), [`use`](/commands/docs/use.md) and [`register`](/commands/docs/register.md). See [how nushell code gets run](how_nushell_code_gets_run.md) for a deeper explanation. They are declared using the `const` keyword
 
-```
+```nu
 const plugin = 'path/to/plugin'
 register $plugin
 ```
@@ -98,13 +99,13 @@ It is common for some scripts to declare variables that start with `$`. This is 
 
 A variable path works by reaching inside of the contents of a variable, navigating columns inside of it, to reach a final value. Let's say instead of `4`, we had assigned a table value:
 
-```
+```nu
 > let my_value = [[name]; [testuser]]
 ```
 
 We can use a variable path to evaluate the variable `$my_value` and get the value from the `name` column in a single step:
 
-```
+```nu
 > $my_value.name.0
 testuser
 ```
@@ -133,7 +134,7 @@ The parentheses contain a pipeline that will run to completion, and the resultin
 
 Subexpressions can also be pipelines and not just single commands. If we wanted to get a table of files larger than ten kilobytes, we could use a subexpression to run a pipeline and assign its result to a variable:
 
-```
+```nu
 > let big_files = (ls | where size > 10kb)
 > $big_files
 ───┬────────────┬──────┬──────────┬──────────────
@@ -148,13 +149,13 @@ Subexpressions can also be pipelines and not just single commands. If we wanted 
 
 Subexpressions also support paths. For example, let's say we wanted to get a list of the filenames in the current directory. One way to do this is to use a pipeline:
 
-```
+```nu
 > ls | get name
 ```
 
 We can do a very similar action in a single step using a subexpression path:
 
-```
+```nu
 > (ls).name
 ```
 
@@ -164,13 +165,13 @@ It depends on the needs of the code and your particular style which form works b
 
 Nushell supports accessing columns in a subexpression using a simple short-hand. You may have already used this functionality before. If, for example, we wanted to only see rows from [`ls`](/commands/docs/ls.md) where the entry is at least ten kilobytes we could write:
 
-```
+```nu
 > ls | where size > 10kb
 ```
 
 The `where size > 10kb` is a command with two parts: the command name [`where`](/commands/docs/where.md) and the short-hand expression `size > 10kb`. We say short-hand because `size` here is the shortened version of writing `$it.size`. This could also be written in any of the following ways:
 
-```
+```nu
 > ls | where $it.size > 10kb
 > ls | where ($it.size > 10kb)
 > ls | where {|$x| $x.size > 10kb }

@@ -1,6 +1,6 @@
 # kill
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Kill a process using the process id.
 
 ## Parameters
 
-- `pid`: process id of process that is to be killed
-- `...rest`: rest of processes to kill
+- `pid`: Process id of process that is to be killed.
+- `...rest`: Rest of processes to kill.
 - `--force`: forcefully kill the process
 - `--quiet`: won't print anything to the console
 - `--signal {int}`: signal decimal number to be sent instead of the default 15 (unsupported on Windows)

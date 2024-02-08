@@ -1,6 +1,6 @@
 # decode
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Decode bytes into a string.
 
 ## Parameters
 
-- `encoding`: the text encoding to use
+- `encoding`: The text encoding to use.
 
 ## Input/output types:
 

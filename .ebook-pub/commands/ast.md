@@ -1,6 +1,6 @@
 # ast
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Print the abstract syntax tree (ast) for a pipeline.
 
 ## Parameters
 
-- `pipeline`: the pipeline to print the ast for
+- `pipeline`: The pipeline to print the ast for.
 - `--json`: serialize to json
 - `--minify`: minify the nuon or json output
 
@@ -51,5 +51,5 @@ Print the ast of a pipeline with an error, as json, in a nushell table
 Print the ast of a pipeline with an error, as json, minified
 
 ```bash
-> ast 'for x in 1..10 { echo $x ' -j -m
+> ast 'for x in 1..10 { echo $x ' --json --minify
 ```

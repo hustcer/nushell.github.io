@@ -1,6 +1,6 @@
 # filter
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Filter values based on a predicate closure.
 
 ## Parameters
 
-- `closure`: Predicate closure
+- `closure`: Predicate closure.
 
 ## Input/output types:
 
@@ -20,7 +20,6 @@ Filter values based on a predicate closure.
 | ----------- | ----------- |
 | list\<any\> | list\<any\> |
 | range       | list\<any\> |
-| table       | table       |
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # par-each
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Run a closure on each row of the input list in parallel, creating a new list wit
 
 ## Parameters
 
-- `closure`: the closure to run
+- `closure`: The closure to run.
 - `--threads {int}`: the number of threads to use
 - `--keep-order`: keep sequence of output same as the order of input
 
@@ -20,8 +20,8 @@ Run a closure on each row of the input list in parallel, creating a new list wit
 
 | input       | output      |
 | ----------- | ----------- |
+| any         | any         |
 | list\<any\> | list\<any\> |
-| range       | list\<any\> |
 | table       | list\<any\> |
 
 ## Examples

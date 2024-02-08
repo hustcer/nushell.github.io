@@ -1,6 +1,6 @@
 # str
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -32,6 +32,7 @@ You must use one of the following subcommands. Using this command as-is will onl
 | [`str distance`](/commands/docs/str_distance.md)                         | Builtin | Compare two strings and return the edit distance/Levenshtein distance.                                                              |
 | [`str downcase`](/commands/docs/str_downcase.md)                         | Builtin | Make text lowercase.                                                                                                                |
 | [`str ends-with`](/commands/docs/str_ends-with.md)                       | Builtin | Check if an input ends with a string.                                                                                               |
+| [`str escape-glob`](/commands/docs/str_escape-glob.md)                   | Builtin | Escape glob pattern.                                                                                                                |
 | [`str expand`](/commands/docs/str_expand.md)                             | Builtin | Generates all possible combinations defined in brace expansion syntax.                                                              |
 | [`str index-of`](/commands/docs/str_index-of.md)                         | Builtin | Returns start index of first occurrence of string in input, or -1 if no match.                                                      |
 | [`str join`](/commands/docs/str_join.md)                                 | Builtin | Concatenate multiple strings into a single string, with an optional separator between each.                                         |
@@ -43,6 +44,7 @@ You must use one of the following subcommands. Using this command as-is will onl
 | [`str screaming-snake-case`](/commands/docs/str_screaming-snake-case.md) | Builtin | Convert a string to SCREAMING_SNAKE_CASE.                                                                                           |
 | [`str snake-case`](/commands/docs/str_snake-case.md)                     | Builtin | Convert a string to snake_case.                                                                                                     |
 | [`str starts-with`](/commands/docs/str_starts-with.md)                   | Builtin | Check if an input starts with a string.                                                                                             |
+| [`str stats`](/commands/docs/str_stats.md)                               | Builtin | Gather word count statistics on the text.                                                                                           |
 | [`str substring`](/commands/docs/str_substring.md)                       | Builtin | Get part of a string. Note that the start is included but the end is excluded, and that the first character of a string is index 0. |
 | [`str title-case`](/commands/docs/str_title-case.md)                     | Builtin | Convert a string to Title Case.                                                                                                     |
 | [`str trim`](/commands/docs/str_trim.md)                                 | Builtin | Trim whitespace or specific character.                                                                                              |

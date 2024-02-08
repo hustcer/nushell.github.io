@@ -1,10 +1,10 @@
 # dfr sort-by
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
-sorts a lazy dataframe based on expression(s).
+Sorts a lazy dataframe based on expression(s).
 
 ## Signature
 

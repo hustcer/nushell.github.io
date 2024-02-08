@@ -1,6 +1,6 @@
 # into bool
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Convert value to boolean.
 
 ## Parameters
 
-- `...rest`: for a data structure input, convert data at the given cell paths
+- `...rest`: For a data structure input, convert data at the given cell paths.
 
 ## Input/output types:
 
@@ -40,7 +40,7 @@ Convert bool to boolean
 > true | into bool
 ```
 
-convert integer to boolean
+convert int to boolean
 
 ```bash
 > 1 | into bool

@@ -1,6 +1,6 @@
 # cd
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Change directory.
 
 ## Parameters
 
-- `path`: the path to change to
+- `path`: The path to change to.
 
 ## Input/output types:
 
@@ -27,12 +27,6 @@ Change to your home directory
 
 ```bash
 > cd ~
-```
-
-Change to a directory via abbreviations
-
-```bash
-> cd d/s/9
 ```
 
 Change to the previous working directory ($OLDPWD)

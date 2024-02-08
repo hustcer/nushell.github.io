@@ -1,6 +1,6 @@
 # bytes remove
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Remove bytes.
 
 ## Parameters
 
-- `pattern`: the pattern to find
-- `...rest`: for a data structure input, remove bytes from data at the given cell paths
+- `pattern`: The pattern to find.
+- `...rest`: For a data structure input, remove bytes from data at the given cell paths.
 - `--end`: remove from end of binary
 - `--all`: remove occurrences of finding binary
 
@@ -36,13 +36,19 @@ Remove contents
 Remove all occurrences of find binary in record field
 
 ```bash
-> { data: 0x[10 AA 10 BB 10] } | bytes remove -a 0x[10] data
+> { data: 0x[10 AA 10 BB 10] } | bytes remove --all 0x[10] data
 ```
 
 Remove occurrences of find binary from end
 
 ```bash
-> 0x[10 AA 10 BB CC AA 10] | bytes remove -e 0x[10]
+> 0x[10 AA 10 BB CC AA 10] | bytes remove --end 0x[10]
+```
+
+Remove find binary from end not found
+
+```bash
+> 0x[10 AA 10 BB CC AA 10] | bytes remove --end 0x[11]
 ```
 
 Remove all occurrences of find binary in table

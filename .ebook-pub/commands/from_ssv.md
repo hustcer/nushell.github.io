@@ -1,6 +1,6 @@
 # from ssv
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -35,5 +35,5 @@ Converts ssv formatted string to table but not treating the first row as column 
 
 ```bash
 > 'FOO   BAR
-1   2' | from ssv -n
+1   2' | from ssv --noheaders
 ```

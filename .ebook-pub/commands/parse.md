@@ -1,6 +1,6 @@
 # parse
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Parse columns from string data using a simple pattern.
 
 ## Parameters
 
-- `pattern`: the pattern to match. Eg) "{foo}: {bar}"
+- `pattern`: The pattern to match.
 - `--regex`: use full regex syntax for patterns
 
 ## Input/output types:
@@ -33,29 +33,29 @@ Parse a string into two named columns
 Parse a string using regex pattern
 
 ```bash
-> "hi there" | parse -r '(?P<foo>\w+) (?P<bar>\w+)'
+> "hi there" | parse --regex '(?P<foo>\w+) (?P<bar>\w+)'
 ```
 
 Parse a string using fancy-regex named capture group pattern
 
 ```bash
-> "foo bar." | parse -r '\s*(?<name>\w+)(?=\.)'
+> "foo bar." | parse --regex '\s*(?<name>\w+)(?=\.)'
 ```
 
 Parse a string using fancy-regex capture group pattern
 
 ```bash
-> "foo! bar." | parse -r '(\w+)(?=\.)|(\w+)(?=!)'
+> "foo! bar." | parse --regex '(\w+)(?=\.)|(\w+)(?=!)'
 ```
 
 Parse a string using fancy-regex look behind pattern
 
 ```bash
-> " @another(foo bar)   " | parse -r '\s*(?<=[() ])(@\w+)(\([^)]*\))?\s*'
+> " @another(foo bar)   " | parse --regex '\s*(?<=[() ])(@\w+)(\([^)]*\))?\s*'
 ```
 
 Parse a string using fancy-regex look ahead atomic group pattern
 
 ```bash
-> "abcd" | parse -r '^a(bc(?=d)|b)cd$'
+> "abcd" | parse --regex '^a(bc(?=d)|b)cd$'
 ```

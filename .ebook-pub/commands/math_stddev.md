@@ -1,6 +1,6 @@
 # math stddev
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -19,6 +19,8 @@ Returns the standard deviation of a list of numbers, or of each column in a tabl
 | input          | output |
 | -------------- | ------ |
 | list\<number\> | number |
+| record         | record |
+| table          | record |
 
 ## Examples
 
@@ -31,5 +33,11 @@ Compute the standard deviation of a list of numbers
 Compute the sample standard deviation of a list of numbers
 
 ```bash
-> [1 2 3 4 5] | math stddev -s
+> [1 2 3 4 5] | math stddev --sample
+```
+
+Compute the standard deviation of each column in a table
+
+```bash
+> [[a b]; [1 2] [3 4]] | math stddev
 ```

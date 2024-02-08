@@ -1,6 +1,6 @@
 # uniq
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -40,17 +40,17 @@ Return the input values that occur more than once
 Return the input values that occur once only
 
 ```bash
-> [1 2 2] | uniq -u
+> [1 2 2] | uniq --unique
 ```
 
 Ignore differences in case when comparing input values
 
 ```bash
-> ['hello' 'goodbye' 'Hello'] | uniq -i
+> ['hello' 'goodbye' 'Hello'] | uniq --ignore-case
 ```
 
 Return a table containing the distinct input values together with their counts
 
 ```bash
-> [1 2 2] | uniq -c
+> [1 2 2] | uniq --count
 ```

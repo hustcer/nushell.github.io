@@ -1,6 +1,6 @@
 # hide-env
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Hide environment variables in the current scope.
 
 ## Parameters
 
-- `...rest`: environment variable names to hide
+- `...rest`: Environment variable names to hide.
 - `--ignore-errors`: do not throw an error if an environment variable was not found
 
 ## Input/output types:

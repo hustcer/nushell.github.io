@@ -1,6 +1,6 @@
 # math sum
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -18,7 +18,8 @@ Returns the sum of a list of numbers or of each column in a table.
 | list\<filesize\> | filesize |
 | list\<number\>   | number   |
 | range            | number   |
-| table            | table    |
+| record           | record   |
+| table            | record   |
 
 ## Examples
 
@@ -32,4 +33,10 @@ Get the disk usage for the current directory
 
 ```bash
 > ls | get size | math sum
+```
+
+Compute the sum of each column in a table
+
+```bash
+> [[a b]; [1 2] [3 4]] | math sum
 ```

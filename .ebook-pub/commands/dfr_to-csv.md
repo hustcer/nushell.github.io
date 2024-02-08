@@ -1,6 +1,6 @@
 # dfr to-csv
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -33,5 +33,5 @@ Saves dataframe to CSV file
 Saves dataframe to CSV file using other delimiter
 
 ```bash
-> [[a b]; [1 2] [3 4]] | dfr into-df | dfr to-csv test.csv -d '|'
+> [[a b]; [1 2] [3 4]] | dfr into-df | dfr to-csv test.csv --delimiter '|'
 ```

@@ -1,6 +1,6 @@
 # rm
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Remove files and directories.
 
 ## Parameters
 
-- `filename`: the path of the file you want to remove
-- `...rest`: additional file path(s) to remove
+- `filename`: The file or files you want to remove.
+- `...rest`: Additional file path(s) to remove.
 - `--trash`: move to the platform's trash instead of permanently deleting. not used on android and ios
 - `--permanent`: delete permanently, ignoring the 'always_trash' config option. always enabled on android and ios
 - `--recursive`: delete subdirectories recursively

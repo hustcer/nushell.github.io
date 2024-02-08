@@ -1,6 +1,6 @@
 # sort
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -35,7 +35,7 @@ sort the list by increasing value
 sort the list by decreasing value
 
 ```bash
-> [2 0 1] | sort -r
+> [2 0 1] | sort --reverse
 ```
 
 sort a list of strings
@@ -47,7 +47,7 @@ sort a list of strings
 sort a list of strings in reverse
 
 ```bash
-> [betty amy sarah] | sort -r
+> [betty amy sarah] | sort --reverse
 ```
 
 Sort strings (case-insensitive)

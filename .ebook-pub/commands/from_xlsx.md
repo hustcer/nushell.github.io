@@ -1,6 +1,6 @@
 # from xlsx
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -31,5 +31,5 @@ Convert binary .xlsx data to a table
 Convert binary .xlsx data to a table, specifying the tables
 
 ```bash
-> open --raw test.xlsx | from xlsx -s [Spreadsheet1]
+> open --raw test.xlsx | from xlsx --sheets [Spreadsheet1]
 ```

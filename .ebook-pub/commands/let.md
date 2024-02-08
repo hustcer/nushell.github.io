@@ -1,6 +1,6 @@
 # let
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Create a variable and give it a value.
 
 ## Parameters
 
-- `var_name`: variable name
-- `initial_value`: equals sign followed by value
+- `var_name`: Variable name.
+- `initial_value`: Equals sign followed by value.
 
 ## Input/output types:
 

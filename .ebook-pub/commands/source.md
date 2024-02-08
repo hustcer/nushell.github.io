@@ -1,6 +1,6 @@
 # source
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Runs a script file in the current context.
 
 ## Parameters
 
-- `filename`: the filepath to the script file to source
+- `filename`: The filepath to the script file to source.
 
 ## Input/output types:
 

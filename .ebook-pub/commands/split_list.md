@@ -1,6 +1,6 @@
 # split list
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Split a list into multiple lists using a separator.
 
 ## Parameters
 
-- `separator`: the value that denotes what separates the list
+- `separator`: The value that denotes what separates the list.
 - `--regex`: separator is a regular expression, matching values that can be coerced into a string
 
 ## Input/output types:
@@ -44,5 +44,5 @@ Split a list of chars into two lists
 Split a list of chars into lists based on multiple characters
 
 ```bash
-> [a, b, c, d, a, e, f, g] | split list -r '(b|e)'
+> [a, b, c, d, a, e, f, g] | split list --regex '(b|e)'
 ```

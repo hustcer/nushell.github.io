@@ -1,6 +1,6 @@
 # http patch
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -8,12 +8,12 @@ Patch a body to a URL.
 
 ## Signature
 
-`> http patch (URL) (data) --user --password --content-type --max-time --headers --raw --insecure --full --allow-errors`
+`> http patch (URL) (data) --user --password --content-type --max-time --headers --raw --insecure --full --allow-errors --redirect-mode`
 
 ## Parameters
 
-- `URL`: the URL to post to
-- `data`: the contents of the post body
+- `URL`: The URL to post to.
+- `data`: The contents of the post body.
 - `--user {any}`: the username when authenticating
 - `--password {any}`: the password when authenticating
 - `--content-type {any}`: the MIME type of content to post
@@ -23,6 +23,7 @@ Patch a body to a URL.
 - `--insecure`: allow insecure server connections when using SSL
 - `--full`: returns the full response instead of only the body
 - `--allow-errors`: do not fail if the server returns an error code
+- `--redirect-mode {string}`: What to do when encountering redirects. Default: 'follow'. Valid options: 'follow' ('f'), 'manual' ('m'), 'error' ('e').
 
 ## Input/output types:
 
@@ -41,19 +42,19 @@ Patch content to example.com
 Patch content to example.com, with username and password
 
 ```bash
-> http patch -u myuser -p mypass https://www.example.com 'body'
+> http patch --user myuser --password mypass https://www.example.com 'body'
 ```
 
 Patch content to example.com, with custom header
 
 ```bash
-> http patch -H [my-header-key my-header-value] https://www.example.com
+> http patch --headers [my-header-key my-header-value] https://www.example.com
 ```
 
 Patch content to example.com, with JSON body
 
 ```bash
-> http patch -t application/json https://www.example.com { field: value }
+> http patch --content-type application/json https://www.example.com { field: value }
 ```
 
 ## Notes

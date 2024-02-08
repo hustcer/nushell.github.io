@@ -1,10 +1,10 @@
 # dfr count
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
-creates a count expression
+Creates a count expression.
 
 ## Signature
 

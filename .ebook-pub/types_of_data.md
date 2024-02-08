@@ -8,7 +8,7 @@ Like many programming languages, Nu models data using a set of simple, and struc
 
 The [`describe`](/commands/docs/describe.md) command returns the type of a data value:
 
-```sh
+```nu
 > 42 | describe
 ```
 
@@ -37,17 +37,17 @@ The [`describe`](/commands/docs/describe.md) command returns the type of a data 
 Examples of integers (i.e. "round numbers") include 1, 0, -5, and 100.
 You can parse a string into an integer with the [`into int`](/commands/docs/into_int.md) command
 
-```sh
+```nu
 > "-5" | into int
 ```
 
-## Decimals
+## Decimals (floats)
 
 Decimal numbers are numbers with some fractional component. Examples include 1.5, 2.0, and 15.333.
-You can cast a string into a Decimal with the [`into decimal`](/commands/docs/into_decimal.md) command
+You can cast a string into a Float with the [`into float`](/commands/docs/into_float.md) command
 
-```sh
-> "1.2" | into decimal
+```nu
+> "1.2" | into float
 ```
 
 ## Strings
@@ -71,7 +71,7 @@ See [Working with strings](working_with_strings.md) and [Handling Strings](https
 
 There are just two boolean values: `true` and `false`. Rather than writing the values directly, they often result from a comparison:
 
-```sh
+```nu
 > let mybool = 2 > 1
 > $mybool
 true
@@ -110,14 +110,14 @@ Durations represent a length of time. This chart shows all durations currently s
 
 You can make fractional durations:
 
-```sh
+```nu
 > 3.14day
 3day 3hr 21min
 ```
 
 And you can do calculations with durations:
 
-```sh
+```nu
 > 30day / 1sec  # How many seconds in 30 days?
 2592000
 ```
@@ -140,11 +140,11 @@ The full list of filesize units are:
 - `gib`: gibibytes
 - `tib`: tebibytes
 - `pib`: pebibytes
-- `eib`: exbibyte
+- `eib`: exbibytes
 
 As with durations, you can make fractional file sizes, and do calculations:
 
-```sh
+```nu
 > 1Gb / 1b
 1000000000
 > 1Gib / 1b
@@ -155,7 +155,19 @@ true
 
 ## Ranges
 
-A range is a way of expressing a sequence of values from start to finish. They take the form \<start\>..\<end\>. For example, the range `1..3` means the numbers 1, 2, and 3.
+A range is a way of expressing a sequence of integer or float values from start to finish. They take the form \<start\>..\<end\>. For example, the range `1..3` means the numbers 1, 2, and 3.
+
+::: tip
+
+You can also easily create lists of characters with a form similar to ranges with the command [`seq char`](/commands/docs/seq_char.html) as well as with dates using the [`seq date`](/commands/docs/seq_date.html) command.
+
+:::
+
+### Specifying the step
+
+You can specify the step of a range with the form \<start\>..\<second\>..\<end\>, where the step between values in the range is the distance between the \<start\> and \<second\> values, which numerically is \<second\> - \<start\>. For example, the range `2..5..11` means the numbers 2, 5, 8, and 11 because the step is \<second\> - \<first\> = 5 - 2 = 3. The third value is 5 + 3 = 8 and the fourth value is 8 + 3 = 11.
+
+[`seq`](/commands/docs/seq.md) can also create sequences of numbers, and provides an alternate way of specifying the step with three parameters. It's called with `seq $start $step $end` where the step amount is the second parameter rather than being the second parameter minus the first parameter. So `2..5..9` would be equivalent to `seq 2 3 9`.
 
 ### Inclusive and non-inclusive ranges
 
@@ -171,13 +183,19 @@ Let's say you wanted to start counting at 3, but you didn't have a specific end 
 
 You can also make the start of the range open. In this case, Nushell will start counting with `0`. For example, the range `..2` is the numbers 0, 1, and 2.
 
+::: warning
+
+Watch out for displaying open-ended ranges like just entering `3..` into the command line. It will keep printing out numbers very quickly until you stop it with something like Ctr + c.
+
+:::
+
 ## Binary data
 
 Binary data, like the data from an image file, is a group of raw bytes.
 
 You can write binary as a literal using any of the `0x[...]`, `0b[...]`, or `0o[...]` forms:
 
-```sh
+```nu
 > 0x[1F FF]  # Hexadecimal
 > 0b[1 1010] # Binary
 > 0o[377]    # Octal
@@ -193,7 +211,7 @@ Structured data builds from the simple data. For example, instead of a single in
 
 Records hold key-value pairs, which associate string keys with various data values. Record syntax is very similar to objects in JSON. However, commas are _not_ required to separate values if Nushell can easily distinguish them!
 
-```sh
+```nu
 > {name: sam rank: 10}
 ╭──────┬─────╮
 │ name │ sam │
@@ -208,7 +226,7 @@ A record is identical to a single row of a table (see below). You can think of a
 
 This means that any command that operates on a table's rows _also_ operates on records. For instance, [`insert`](/commands/docs/insert.md), which adds data to each of a table's rows, can be used with records:
 
-```sh
+```nu
 > {x:3 y:1} | insert z 0
 ╭───┬───╮
 │ x │ 3 │
@@ -221,7 +239,7 @@ This means that any command that operates on a table's rows _also_ operates on r
 
 You can iterate over records by first transposing it into a table:
 
-```sh
+```nu
 > {name: sam, rank: 10} | transpose key value
 ╭───┬──────┬───────╮
 │ # │ key  │ value │
@@ -233,23 +251,35 @@ You can iterate over records by first transposing it into a table:
 
 Accessing records' data is done by placing a `.` before a string, which is usually a bare string:
 
-```sh
+```nu
 > {x:12 y:4}.x
 12
 ```
 
 However, if a record has a key name that can't be expressed as a bare string, or resembles an integer (see lists, below), you'll need to use more explicit string syntax, like so:
 
-```sh
+```nu
 > {"1":true " ":false}." "
 false
+```
+
+To make a copy of a record with new fields, you can use the [spread operator](/book/operators#spread-operator) (`...`):
+
+```nu
+> let data = { name: alice, age: 50 }
+> { ...$data, hobby: cricket }
+╭───────┬─────────╮
+│ name  │ alice   │
+│ age   │ 50      │
+│ hobby │ cricket │
+╰───────┴─────────╯
 ```
 
 ## Lists
 
 Lists are ordered sequences of data values. List syntax is very similar to arrays in JSON. However, commas are _not_ required to separate values if Nushell can easily distinguish them!
 
-```sh
+```nu
 > [sam fred george]
 ╭───┬────────╮
 │ 0 │ sam    │
@@ -261,7 +291,7 @@ Lists are ordered sequences of data values. List syntax is very similar to array
 :::tip
 Lists are equivalent to the individual columns of tables. You can think of a list as essentially being a "one-column table" (with no column name). Thus, any command which operates on a column _also_ operates on a list. For instance, [`where`](/commands/docs/where.md) can be used with lists:
 
-```sh
+```nu
 > [bell book candle] | where ($it =~ 'b')
 ╭───┬──────╮
 │ 0 │ bell │
@@ -273,19 +303,34 @@ Lists are equivalent to the individual columns of tables. You can think of a lis
 
 Accessing lists' data is done by placing a `.` before a bare integer:
 
-```sh
+```nu
 > [a b c].1
 b
 ```
 
 To get a sub-list from a list, you can use the [`range`](/commands/docs/range.md) command:
 
-```sh
+```nu
 > [a b c d e f] | range 1..3
 ╭───┬───╮
 │ 0 │ b │
 │ 1 │ c │
 │ 2 │ d │
+╰───┴───╯
+```
+
+To append one or more lists together, optionally with values interspersed in between, you can use the
+[spread operator](/book/operators#spread-operator) (`...`):
+
+```nu
+> let x = [1 2]
+> [...$x 3 ...(4..7 | take 2)]
+╭───┬───╮
+│ 0 │ 1 │
+│ 1 │ 2 │
+│ 2 │ 3 │
+│ 3 │ 4 │
+│ 4 │ 5 │
 ╰───┴───╯
 ```
 
@@ -295,7 +340,7 @@ The table is a core data structure in Nushell. As you run commands, you'll see t
 
 We can create our own tables similarly to how we create a list. Because tables also contain columns and not just values, we pass in the name of the column values:
 
-```sh
+```nu
 > [[column1, column2]; [Value1, Value2] [Value3, Value4]]
 ╭───┬─────────┬─────────╮
 │ # │ column1 │ column2 │
@@ -307,7 +352,7 @@ We can create our own tables similarly to how we create a list. Because tables a
 
 You can also create a table as a list of records, JSON-style:
 
-```sh
+```nu
 > [{name: sam, rank: 10}, {name: bob, rank: 7}]
 ╭───┬──────┬──────╮
 │ # │ name │ rank │
@@ -320,7 +365,7 @@ You can also create a table as a list of records, JSON-style:
 :::tip
 Internally, tables are simply **lists of records**. This means that any command which extracts or isolates a specific row of a table will produce a record. For example, `get 0`, when used on a list, extracts the first value. But when used on a table (a list of records), it extracts a record:
 
-```sh
+```nu
 > [{x:12, y:5}, {x:3, y:6}] | get 0
 ╭───┬────╮
 │ x │ 12 │
@@ -330,7 +375,7 @@ Internally, tables are simply **lists of records**. This means that any command 
 
 This is true regardless of which table syntax you use:
 
-```sh
+```nu
 [[x,y];[12,5],[3,6]] | get 0
 ╭───┬────╮
 │ x │ 12 │
@@ -348,7 +393,7 @@ You can access individual rows by number to obtain records:
 
 Moreover, you can also access entire columns of a table by name, to obtain lists:
 
-```sh
+```nu
 > [{x:12 y:5} {x:4 y:7} {x:2 y:2}].x
 ╭───┬────╮
 │ 0 │ 12 │
@@ -359,7 +404,7 @@ Moreover, you can also access entire columns of a table by name, to obtain lists
 
 Of course, these resulting lists don't have the column names of the table. To remove columns from a table while leaving it as a table, you'll commonly use the [`select`](/commands/docs/select.md) command with column names:
 
-```sh
+```nu
 > [{x:0 y:5 z:1} {x:4 y:7 z:3} {x:2 y:2 z:0}] | select y z
 ╭───┬───┬───╮
 │ # │ y │ z │
@@ -372,7 +417,7 @@ Of course, these resulting lists don't have the column names of the table. To re
 
 To remove rows from a table, you'll commonly use the [`select`](/commands/docs/select.md) command with row numbers, as you would with a list:
 
-```sh
+```nu
 > [{x:0 y:5 z:1} {x:4 y:7 z:3} {x:2 y:2 z:0}] | select 1 2
 ╭───┬───┬───┬───╮
 │ # │ x │ y │ z │
@@ -386,7 +431,7 @@ To remove rows from a table, you'll commonly use the [`select`](/commands/docs/s
 
 By default, cell path access will fail if it can't access the requested row or column. To suppress these errors, you can add `?` to a cell path member to mark it as _optional_:
 
-```sh
+```nu
 > [{foo: 123}, {}].foo?
 ╭───┬─────╮
 │ 0 │ 123 │
@@ -433,11 +478,11 @@ print $x
 
 ## Null
 
-Finally, there is `null` (also known as `$nothing`) which is the language's "nothing" value, similar to JSON's "null". Whenever Nushell would print the `null` value (outside of a string or data structure), it prints nothing instead. Hence, most of Nushell's file system commands (like [`save`](/commands/docs/save.md) or [`cd`](/commands/docs/cd.md)) produce `null`.
+Finally, there is `null` which is the language's "nothing" value, similar to JSON's "null". Whenever Nushell would print the `null` value (outside of a string or data structure), it prints nothing instead. Hence, most of Nushell's file system commands (like [`save`](/commands/docs/save.md) or [`cd`](/commands/docs/cd.md)) produce `null`.
 
 You can place `null` at the end of a pipeline to replace the pipeline's output with it, and thus print nothing:
 
-```sh
+```nu
 git checkout featurebranch | null
 ```
 
@@ -445,7 +490,7 @@ git checkout featurebranch | null
 
 `null` is not the same as the absence of a value! It is possible for a table to be produced that has holes in some of its rows. Attempting to access this value will not produce `null`, but instead cause an error:
 
-```sh
+```nu
 > [{a:1 b:2} {b:1}]
 ╭───┬────┬───╮
 │ # │ a  │ b │

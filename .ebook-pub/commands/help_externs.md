@@ -1,6 +1,6 @@
 # help externs
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Show help on nushell externs.
 
 ## Parameters
 
-- `...rest`: the name of extern to get help on
+- `...rest`: The name of extern to get help on.
 - `--find {string}`: string to find in extern names and usage
 
 ## Input/output types:

@@ -1,6 +1,6 @@
 # split chars
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -33,7 +33,7 @@ Split the string into a list of characters
 Split on grapheme clusters
 
 ```bash
-> '🇯🇵ほげ' | split chars -g
+> '🇯🇵ほげ' | split chars --grapheme-clusters
 ```
 
 Split multiple strings into lists of characters

@@ -1,6 +1,6 @@
 # reverse
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -15,7 +15,6 @@ Reverses the input list or table.
 | input       | output      |
 | ----------- | ----------- |
 | list\<any\> | list\<any\> |
-| table       | table       |
 
 ## Examples
 

@@ -1,10 +1,10 @@
 # date format
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
-Removed command: use `format date` instead
+Removed command: use `format date` instead.
 
 ## Signature
 
@@ -12,7 +12,7 @@ Removed command: use `format date` instead
 
 ## Parameters
 
-- `format string`: the desired date format
+- `format string`: The desired date format.
 - `--list`: lists strftime cheatsheet
 
 ## Input/output types:

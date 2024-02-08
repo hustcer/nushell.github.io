@@ -1,6 +1,6 @@
 # watch
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Watch for file changes and execute Nu code when they happen.
 
 ## Parameters
 
-- `path`: the path to watch. Can be a file or directory
-- `closure`: Some Nu code to run whenever a file changes. The closure will be passed `operation`, `path`, and `new_path` (for renames only) arguments in that order
+- `path`: The path to watch. Can be a file or directory.
+- `closure`: Some Nu code to run whenever a file changes. The closure will be passed `operation`, `path`, and `new_path` (for renames only) arguments in that order.
 - `--debounce-ms {int}`: Debounce changes for this many milliseconds (default: 100). Adjust if you find that single writes are reported as multiple events
 - `--glob {string}`: Only report changes for files that match this glob pattern (default: all files)
 - `--recursive {bool}`: Watch all directories under `<path>` recursively. Will be ignored if `<path>` is a file (default: true)

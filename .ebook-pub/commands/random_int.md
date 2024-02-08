@@ -1,6 +1,6 @@
-# random integer
+# random int
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -8,11 +8,11 @@ Generate a random integer [min..max].
 
 ## Signature
 
-`> random integer (range)`
+`> random int (range)`
 
 ## Parameters
 
-- `range`: Range of values
+- `range`: Range of values.
 
 ## Input/output types:
 
@@ -25,23 +25,23 @@ Generate a random integer [min..max].
 Generate an unconstrained random integer
 
 ```bash
-> random integer
+> random int
 ```
 
 Generate a random integer less than or equal to 500
 
 ```bash
-> random integer ..500
+> random int ..500
 ```
 
 Generate a random integer greater than or equal to 100000
 
 ```bash
-> random integer 100000..
+> random int 100000..
 ```
 
 Generate a random integer between 1 and 10
 
 ```bash
-> random integer 1..10
+> random int 1..10
 ```

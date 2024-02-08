@@ -1,6 +1,6 @@
 # group-by
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -8,17 +8,18 @@ Splits a list or table into groups, and returns a record containing those groups
 
 ## Signature
 
-`> group-by (grouper)`
+`> group-by (grouper) --to-table`
 
 ## Parameters
 
-- `grouper`: the path to the column to group on
+- `grouper`: The path to the column to group on.
+- `--to-table`: Return a table with "groups" and "items" columns
 
 ## Input/output types:
 
 | input       | output |
 | ----------- | ------ |
-| list\<any\> | record |
+| list\<any\> | any    |
 
 ## Examples
 
@@ -44,4 +45,10 @@ You can also group by raw values by leaving out the argument
 
 ```bash
 > ['1' '3' '1' '3' '2' '1' '1'] | group-by
+```
+
+You can also output a table instead of a record
+
+```bash
+> ['1' '3' '1' '3' '2' '1' '1'] | group-by --to-table
 ```

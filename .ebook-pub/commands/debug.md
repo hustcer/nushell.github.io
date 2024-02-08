@@ -1,6 +1,6 @@
 # debug
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -20,7 +20,6 @@ Debug print the value(s) piped in.
 | ----------- | -------------- |
 | any         | string         |
 | list\<any\> | list\<string\> |
-| table       | list\<string\> |
 
 ## Examples
 
@@ -41,3 +40,9 @@ Debug print a table
 ```bash
 > [[version patch]; ['0.1.0' false] ['0.1.1' true] ['0.2.0' false]] | debug
 ```
+
+## Subcommands:
+
+| name                                         | type    | usage                     |
+| -------------------------------------------- | ------- | ------------------------- |
+| [`debug info`](/commands/docs/debug_info.md) | Builtin | View process memory info. |

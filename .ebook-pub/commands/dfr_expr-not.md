@@ -1,10 +1,10 @@
 # dfr expr-not
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
-creates a not expression
+Creates a not expression.
 
 ## Signature
 

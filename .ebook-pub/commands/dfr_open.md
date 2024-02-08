@@ -1,6 +1,6 @@
 # dfr open
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -8,7 +8,7 @@ Opens CSV, JSON, JSON lines, arrow, avro, or parquet file to create dataframe.
 
 ## Signature
 
-`> dfr open (file) --lazy --type --delimiter --no-header --infer-schema --skip-rows --columns`
+`> dfr open (file) --lazy --type --delimiter --no-header --infer-schema --skip-rows --columns --schema`
 
 ## Parameters
 
@@ -20,6 +20,7 @@ Opens CSV, JSON, JSON lines, arrow, avro, or parquet file to create dataframe.
 - `--infer-schema {number}`: Number of rows to infer the schema of the file. CSV file
 - `--skip-rows {number}`: Number of rows to skip from file. CSV file
 - `--columns {list<string>}`: Columns to be selected from csv file. CSV and Parquet file
+- `--schema {record}`: Polars Schema in format [{name: str}]. CSV, JSON, and JSONL files
 
 ## Input/output types:
 

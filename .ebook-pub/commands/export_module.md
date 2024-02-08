@@ -1,6 +1,6 @@
 # export module
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Export a custom module from a module.
 
 ## Parameters
 
-- `module`: module name or module path
-- `block`: body of the module if 'module' parameter is not a path
+- `module`: Module name or module path.
+- `block`: Body of the module if 'module' parameter is not a path.
 
 ## Input/output types:
 

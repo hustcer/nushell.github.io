@@ -1,6 +1,6 @@
 # drop nth
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Drop the selected rows.
 
 ## Parameters
 
-- `row number or row range`: the number of the row to drop or a range to drop consecutive rows
-- `...rest`: the number of the row to drop
+- `row number or row range`: The number of the row to drop or a range to drop consecutive rows.
+- `...rest`: The number of the row to drop.
 
 ## Input/output types:
 

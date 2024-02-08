@@ -1,6 +1,6 @@
 # str ends-with
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Check if an input ends with a string.
 
 ## Parameters
 
-- `string`: the string to match
-- `...rest`: For a data structure input, check strings at the given cell paths, and replace with result
+- `string`: The string to match.
+- `...rest`: For a data structure input, check strings at the given cell paths, and replace with result.
 - `--ignore-case`: search is case insensitive
 
 ## Input/output types:
@@ -42,5 +42,5 @@ Checks if strings end with '.txt'
 Checks if string ends with '.RB', case-insensitive
 
 ```bash
-> 'my_library.rb' | str ends-with -i '.RB'
+> 'my_library.rb' | str ends-with --ignore-case '.RB'
 ```

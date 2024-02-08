@@ -1,10 +1,10 @@
 # dfr std
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
-Creates a std expression for an aggregation of std value from columns in a dataframe
+Creates a std expression for an aggregation of std value from columns in a dataframe.
 
 ## Signature
 

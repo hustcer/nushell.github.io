@@ -1,6 +1,6 @@
 # each
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Run a closure on each row of the input list, creating a new list with the result
 
 ## Parameters
 
-- `closure`: the closure to run
+- `closure`: The closure to run.
 - `--keep-empty`: keep empty result cells
 
 ## Input/output types:

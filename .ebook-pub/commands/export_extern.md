@@ -1,6 +1,6 @@
 # export extern
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Define an extern and export it from a module.
 
 ## Parameters
 
-- `def_name`: definition name
-- `params`: parameters
+- `def_name`: Definition name.
+- `params`: Parameters.
 
 ## Input/output types:
 

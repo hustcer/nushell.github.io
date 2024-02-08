@@ -1,10 +1,10 @@
 # dfr flatten
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
-An alias for dfr explode
+An alias for dfr explode.
 
 ## Signature
 

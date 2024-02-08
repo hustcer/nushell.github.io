@@ -1,6 +1,6 @@
 # each while
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -19,7 +19,6 @@ Run a block on each row of the input list until a null is found, then create a n
 | input       | output      |
 | ----------- | ----------- |
 | list\<any\> | list\<any\> |
-| table       | list\<any\> |
 
 ## Examples
 

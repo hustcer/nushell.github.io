@@ -1,6 +1,6 @@
 # str index-of
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Returns start index of first occurrence of string in input, or -1 if no match.
 
 ## Parameters
 
-- `string`: the string to find in the input
-- `...rest`: For a data structure input, search strings at the given cell paths, and replace with result
+- `string`: The string to find in the input.
+- `...rest`: For a data structure input, search strings at the given cell paths, and replace with result.
 - `--grapheme-clusters`: count indexes using grapheme clusters (all visible chars have length 1)
 - `--utf-8-bytes`: count indexes using UTF-8 bytes (default; non-ASCII chars have length 2+)
 - `--range {range}`: optional start and/or end index
@@ -39,25 +39,25 @@ Returns index of string in input
 Count length using grapheme clusters
 
 ```bash
-> '🇯🇵ほげ ふが ぴよ' | str index-of -g 'ふが'
+> '🇯🇵ほげ ふが ぴよ' | str index-of --grapheme-clusters 'ふが'
 ```
 
 Returns index of string in input within a`rhs open range`
 
 ```bash
->  '.rb.rb' | str index-of '.rb' -r 1..
+>  '.rb.rb' | str index-of '.rb' --range 1..
 ```
 
 Returns index of string in input within a lhs open range
 
 ```bash
->  '123456' | str index-of '6' -r ..4
+>  '123456' | str index-of '6' --range ..4
 ```
 
 Returns index of string in input within a range
 
 ```bash
->  '123456' | str index-of '3' -r 1..4
+>  '123456' | str index-of '3' --range 1..4
 ```
 
 Returns index of string in input

@@ -1,6 +1,6 @@
 # module
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Define a custom module.
 
 ## Parameters
 
-- `module`: module name or module path
-- `block`: body of the module if 'module' parameter is not a module path
+- `module`: Module name or module path.
+- `block`: Body of the module if 'module' parameter is not a module path.
 
 ## Input/output types:
 
@@ -38,7 +38,7 @@ Define an environment variable in a module
 Define a custom command that participates in the environment in a module and call it
 
 ```bash
-> module foo { export def-env bar [] { $env.FOO_BAR = "BAZ" } }; use foo bar; bar; $env.FOO_BAR
+> module foo { export def --env bar [] { $env.FOO_BAR = "BAZ" } }; use foo bar; bar; $env.FOO_BAR
 ```
 
 ## Notes

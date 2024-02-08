@@ -1,6 +1,6 @@
 # input
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Get input from the user.
 
 ## Parameters
 
-- `prompt`: prompt to show the user
+- `prompt`: Prompt to show the user.
 - `--bytes-until-any {string}`: read bytes (not text) until any of the given stop bytes is seen
 - `--numchar {int}`: number of characters to read; suppresses output
 - `--suppress-output`: don't print keystroke values
@@ -21,7 +21,7 @@ Get input from the user.
 
 | input   | output |
 | ------- | ------ |
-| nothing | string |
+| nothing | any    |
 
 ## Examples
 
@@ -39,7 +39,7 @@ Get two characters from the user, and assign to a variable
 
 ## Subcommands:
 
-| name                                             | type    | usage                           |
-| ------------------------------------------------ | ------- | ------------------------------- |
-| [`input list`](/commands/docs/input_list.md)     | Builtin | Interactive list selection.     |
-| [`input listen`](/commands/docs/input_listen.md) | Builtin | Listen for user interface event |
+| name                                             | type    | usage                            |
+| ------------------------------------------------ | ------- | -------------------------------- |
+| [`input list`](/commands/docs/input_list.md)     | Builtin | Interactive list selection.      |
+| [`input listen`](/commands/docs/input_listen.md) | Builtin | Listen for user interface event. |
