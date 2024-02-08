@@ -32,11 +32,13 @@ output.base_path: /Users/hustcer/github/open-books
 -- aliases.md
 -- operators.md
 -- variables_and_subexpressions.md
+-- control_flow.md
 -- scripts.md
 -- modules.md
 -- overlays.md
 -- command_signature.md
 -- testing.md
+-- style_guide.md
 + nu_as_a_shell.md
 -- configuration.md
 -- environment.md
@@ -125,14 +127,15 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/date_to-table.md
 -- commands/date_to-timezone.md
 -- commands/debug.md
+-- commands/debug_info.md
 -- commands/decode.md
 -- commands/decode_base64.md
 -- commands/decode_hex.md
--- commands/def-env.md
 -- commands/def.md
 -- commands/default.md
 -- commands/describe.md
 -- commands/detect_columns.md
+-- commands/dfr.md
 -- commands/dfr_agg-groups.md
 -- commands/dfr_agg.md
 -- commands/dfr_all-false.md
@@ -215,6 +218,7 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/dfr_reverse.md
 -- commands/dfr_rolling.md
 -- commands/dfr_sample.md
+-- commands/dfr_schema.md
 -- commands/dfr_select.md
 -- commands/dfr_set-with-idx.md
 -- commands/dfr_set.md
@@ -262,13 +266,10 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/export.md
 -- commands/export_alias.md
 -- commands/export_const.md
--- commands/export_def-env.md
 -- commands/export_def.md
--- commands/export_extern-wrapped.md
 -- commands/export_extern.md
 -- commands/export_module.md
 -- commands/export_use.md
--- commands/extern-wrapped.md
 -- commands/extern.md
 -- commands/fill.md
 -- commands/filter.md
@@ -281,6 +282,7 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/format_date.md
 -- commands/format_duration.md
 -- commands/format_filesize.md
+-- commands/format_pattern.md
 -- commands/from.md
 -- commands/from_csv.md
 -- commands/from_eml.md
@@ -298,6 +300,7 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/from_xml.md
 -- commands/from_yaml.md
 -- commands/from_yml.md
+-- commands/generate.md
 -- commands/get.md
 -- commands/glob.md
 -- commands/grid.md
@@ -311,6 +314,7 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/help.md
 -- commands/help_aliases.md
 -- commands/help_commands.md
+-- commands/help_escapes.md
 -- commands/help_externs.md
 -- commands/help_modules.md
 -- commands/help_operators.md
@@ -339,8 +343,8 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/into_binary.md
 -- commands/into_bits.md
 -- commands/into_bool.md
+-- commands/into_cell-path.md
 -- commands/into_datetime.md
--- commands/into_decimal.md
 -- commands/into_duration.md
 -- commands/into_filesize.md
 -- commands/into_float.md
@@ -348,8 +352,10 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/into_record.md
 -- commands/into_sqlite.md
 -- commands/into_string.md
+-- commands/into_value.md
 -- commands/is-admin.md
 -- commands/is-empty.md
+-- commands/is-terminal.md
 -- commands/items.md
 -- commands/join.md
 -- commands/keybindings.md
@@ -400,6 +406,7 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/merge.md
 -- commands/metadata.md
 -- commands/mkdir.md
+-- commands/mktemp.md
 -- commands/module.md
 -- commands/move.md
 -- commands/mut.md
@@ -427,7 +434,6 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/port.md
 -- commands/prepend.md
 -- commands/print.md
--- commands/profile.md
 -- commands/ps.md
 -- commands/query.md
 -- commands/query_db.md
@@ -437,10 +443,9 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/random.md
 -- commands/random_bool.md
 -- commands/random_chars.md
--- commands/random_decimal.md
 -- commands/random_dice.md
 -- commands/random_float.md
--- commands/random_integer.md
+-- commands/random_int.md
 -- commands/random_uuid.md
 -- commands/range.md
 -- commands/reduce.md
@@ -471,7 +476,6 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/seq_char.md
 -- commands/seq_date.md
 -- commands/shuffle.md
--- commands/size.md
 -- commands/skip.md
 -- commands/skip_until.md
 -- commands/skip_while.md
@@ -488,6 +492,15 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/split_row.md
 -- commands/split_words.md
 -- commands/start.md
+-- commands/stor.md
+-- commands/stor_create.md
+-- commands/stor_delete.md
+-- commands/stor_export.md
+-- commands/stor_import.md
+-- commands/stor_insert.md
+-- commands/stor_open.md
+-- commands/stor_reset.md
+-- commands/stor_update.md
 -- commands/str.md
 -- commands/str_camel-case.md
 -- commands/str_capitalize.md
@@ -495,6 +508,7 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/str_distance.md
 -- commands/str_downcase.md
 -- commands/str_ends-with.md
+-- commands/str_escape-glob.md
 -- commands/str_expand.md
 -- commands/str_index-of.md
 -- commands/str_join.md
@@ -506,6 +520,7 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/str_screaming-snake-case.md
 -- commands/str_snake-case.md
 -- commands/str_starts-with.md
+-- commands/str_stats.md
 -- commands/str_substring.md
 -- commands/str_title-case.md
 -- commands/str_trim.md
@@ -532,7 +547,9 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/transpose.md
 -- commands/try.md
 -- commands/tutor.md
--- commands/ucp.md
+-- commands/ulimit.md
+-- commands/umkdir.md
+-- commands/umv.md
 -- commands/uniq-by.md
 -- commands/uniq.md
 -- commands/update.md
@@ -540,6 +557,7 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/upsert.md
 -- commands/url.md
 -- commands/url_build-query.md
+-- commands/url_decode.md
 -- commands/url_encode.md
 -- commands/url_join.md
 -- commands/url_parse.md
@@ -554,6 +572,7 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/where.md
 -- commands/which.md
 -- commands/while.md
+-- commands/whoami.md
 -- commands/window.md
 -- commands/with-env.md
 -- commands/wrap.md
