@@ -1,10 +1,10 @@
 # dfr agg-groups
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
-creates an agg_groups expression
+Creates an agg_groups expression.
 
 ## Signature
 

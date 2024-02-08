@@ -1,6 +1,6 @@
 # port
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Get a free port from system.
 
 ## Parameters
 
-- `start`: The start port to scan (inclusive)
-- `end`: The end port to scan (inclusive)
+- `start`: The start port to scan (inclusive).
+- `end`: The end port to scan (inclusive).
 
 ## Input/output types:
 

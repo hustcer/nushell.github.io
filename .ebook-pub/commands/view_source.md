@@ -1,6 +1,6 @@
 # view source
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ View a block, module, or a definition.
 
 ## Parameters
 
-- `item`: name or block to view
+- `item`: Name or block to view.
 
 ## Input/output types:
 
@@ -37,7 +37,7 @@ View the source of a custom command
 View the source of a custom command, which participates in the caller environment
 
 ```bash
-> def-env foo [] { $env.BAR = 'BAZ' }; view source foo
+> def --env foo [] { $env.BAR = 'BAZ' }; view source foo
 ```
 
 View the source of a custom command with flags and arguments

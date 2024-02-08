@@ -1,6 +1,6 @@
 # lazy make
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -32,7 +32,7 @@ Create a lazy record
 Test the laziness of lazy records
 
 ```bash
-> lazy make -c ["hello"] -g { |key| print $"getting ($key)!"; $key | str upcase }
+> lazy make --columns ["hello"] --get-value { |key| print $"getting ($key)!"; $key | str upcase }
 ```
 
 ## Notes

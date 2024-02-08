@@ -1,10 +1,10 @@
 # bits shl
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
-Bitwise shift left for integers.
+Bitwise shift left for ints.
 
 ## Signature
 
@@ -34,13 +34,13 @@ Shift left a number by 7 bits
 Shift left a number with 1 byte by 7 bits
 
 ```bash
-> 2 | bits shl 7 -n '1'
+> 2 | bits shl 7 --number-bytes '1'
 ```
 
 Shift left a signed number by 1 bit
 
 ```bash
-> 0x7F | bits shl 1 -s
+> 0x7F | bits shl 1 --signed
 ```
 
 Shift left a list of numbers

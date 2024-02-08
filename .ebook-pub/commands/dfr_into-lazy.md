@@ -1,6 +1,6 @@
 # dfr into-lazy
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -8,7 +8,11 @@ Converts a dataframe into a lazy dataframe.
 
 ## Signature
 
-`> dfr into-lazy `
+`> dfr into-lazy --schema`
+
+## Parameters
+
+- `--schema {record}`: Polars Schema in format [{name: str}]. CSV, JSON, and JSONL files
 
 ## Input/output types:
 

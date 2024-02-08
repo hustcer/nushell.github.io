@@ -1,6 +1,6 @@
 # match
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Conditionally run a block on a matched value.
 
 ## Parameters
 
-- `value`: value to check
-- `match_block`: block to run if check succeeds
+- `value`: Value to check.
+- `match_block`: Block to run if check succeeds.
 
 ## Input/output types:
 

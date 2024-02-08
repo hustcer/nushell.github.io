@@ -1,6 +1,6 @@
 # to json
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -33,7 +33,7 @@ Outputs a JSON string, with default indentation, representing the contents of th
 Outputs a JSON string, with 4-space indentation, representing the contents of this table
 
 ```bash
-> [Joe Bob Sam] | to json -i 4
+> [Joe Bob Sam] | to json --indent 4
 ```
 
 Outputs an unformatted JSON string representing the contents of this table

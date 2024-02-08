@@ -21,7 +21,7 @@ If you like [oh-my-posh](https://ohmyposh.dev/), you can use oh-my-posh with Nus
 3. Generate the .oh-my-posh.nu file. By default it will be generated to your home directory. You can use `--config` to specify a theme, other wise, oh-my-posh comes with a default theme.
 4. Initialize oh-my-posh prompt by adding in ~/.config/nushell/config.nu(or the path output by `$nu.config-path`) to source ~/.oh-my-posh.nu.
 
-```shell
+```nu
 # Generate the .oh-my-posh.nu file
 > oh-my-posh init nu --config ~/.poshthemes/M365Princess.omp.json
 
@@ -31,11 +31,11 @@ If you like [oh-my-posh](https://ohmyposh.dev/), you can use oh-my-posh with Nus
 
 For MacOS users:
 
-1. You can install oh-my-posh by `brew`, just following the [guide here](https://ohmyposh.dev/docs/macos)
+1. You can install oh-my-posh by `brew`, just following the [guide here](https://ohmyposh.dev/docs/installation/macos)
 2. Download and install a [nerd font](https://github.com/ryanoasis/nerd-fonts).
 3. Set the PROMPT_COMMAND in the file output by `$nu.config-path`, here is a code snippet:
 
-```shell
+```nu
 let posh_dir = (brew --prefix oh-my-posh | str trim)
 let posh_theme = $'($posh_dir)/share/oh-my-posh/themes/'
 # Change the theme names to: zash/space/robbyrussel/powerline/powerlevel10k_lean/
@@ -56,9 +56,19 @@ $env.PROMPT_INDICATOR = $"(ansi y)$> (ansi reset)"
 2. Install nerdfonts depending on your preferences.
 3. Use the config example below. Make sure to set the `STARSHIP_SHELL` environment variable.
 
+::: tip
+An alternate way to enable Starship is described in the [Starship Quick Install](https://starship.rs/#nushell) instructions.
+
+The link above is the official integration of Starship and Nushell and is the simplest way to get
+Starship running without doing anything manual:
+
+- Starship will create its own configuration / environment setup script
+- you simply have to create it in `env.nu` and `use` it in `config.nu`
+  :::
+
 Here's an example config section for Starship:
 
-```
+```nu
 $env.STARSHIP_SHELL = "nu"
 
 def create_left_prompt [] {
@@ -83,10 +93,6 @@ Now restart Nu.
 nushell on 📙 main is 📦 v0.60.0 via 🦀 v1.59.0
 ❯
 ```
-
-You can learn more about configuring Starship in the [official starship configuration documentation](https://github.com/starship/starship#step-2-setup-your-shell-to-use-starship).
-
-An alternate way to enable Starship is described in the [Starship Quick Install](https://starship.rs/#nushell) instructions.
 
 ## Purs
 

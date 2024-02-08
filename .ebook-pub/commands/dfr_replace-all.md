@@ -1,6 +1,6 @@
 # dfr replace-all
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -26,5 +26,5 @@ Replace all (sub)strings by a regex pattern.
 Replaces string
 
 ```bash
-> [abac abac abac] | dfr into-df | dfr replace-all -p a -r A
+> [abac abac abac] | dfr into-df | dfr replace-all --pattern a --replace A
 ```

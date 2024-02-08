@@ -1,10 +1,10 @@
 # bits xor
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
-Performs bitwise xor for integers.
+Performs bitwise xor for ints.
 
 ## Signature
 
@@ -12,7 +12,7 @@ Performs bitwise xor for integers.
 
 ## Parameters
 
-- `target`: target integer to perform bit xor
+- `target`: target int to perform bit xor
 
 ## Input/output types:
 

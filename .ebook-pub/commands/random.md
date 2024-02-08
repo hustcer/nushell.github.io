@@ -1,6 +1,6 @@
 # random
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -24,12 +24,11 @@ You must use one of the following subcommands. Using this command as-is will onl
 
 ## Subcommands:
 
-| name                                                 | type    | usage                                                          |
-| ---------------------------------------------------- | ------- | -------------------------------------------------------------- |
-| [`random bool`](/commands/docs/random_bool.md)       | Builtin | Generate a random boolean value.                               |
-| [`random chars`](/commands/docs/random_chars.md)     | Builtin | Generate random chars.                                         |
-| [`random decimal`](/commands/docs/random_decimal.md) | Builtin | deprecated: Generate a random float within a range [min..max]. |
-| [`random dice`](/commands/docs/random_dice.md)       | Builtin | Generate a random dice roll.                                   |
-| [`random float`](/commands/docs/random_float.md)     | Builtin | Generate a random float within a range [min..max].             |
-| [`random integer`](/commands/docs/random_integer.md) | Builtin | Generate a random integer [min..max].                          |
-| [`random uuid`](/commands/docs/random_uuid.md)       | Builtin | Generate a random uuid4 string.                                |
+| name                                             | type    | usage                                              |
+| ------------------------------------------------ | ------- | -------------------------------------------------- |
+| [`random bool`](/commands/docs/random_bool.md)   | Builtin | Generate a random boolean value.                   |
+| [`random chars`](/commands/docs/random_chars.md) | Builtin | Generate random chars.                             |
+| [`random dice`](/commands/docs/random_dice.md)   | Builtin | Generate a random dice roll.                       |
+| [`random float`](/commands/docs/random_float.md) | Builtin | Generate a random float within a range [min..max]. |
+| [`random int`](/commands/docs/random_int.md)     | Builtin | Generate a random integer [min..max].              |
+| [`random uuid`](/commands/docs/random_uuid.md)   | Builtin | Generate a random uuid4 string.                    |

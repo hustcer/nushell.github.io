@@ -1,6 +1,6 @@
 # compact
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -8,35 +8,41 @@ Creates a table with non-empty rows.
 
 ## Signature
 
-`> compact ...rest`
+`> compact ...rest --empty`
 
 ## Parameters
 
-- `...rest`: the columns to compact from the table
+- `...rest`: The columns to compact from the table.
+- `--empty`: also compact empty items like "", {}, and []
 
 ## Input/output types:
 
 | input       | output      |
 | ----------- | ----------- |
 | list\<any\> | list\<any\> |
-| table       | table       |
 
 ## Examples
 
-Filter out all records where 'Hello' is null (returns nothing)
+Filter out all records where 'Hello' is null
 
 ```bash
 > [["Hello" "World"]; [null 3]] | compact Hello
 ```
 
-Filter out all records where 'World' is null (Returns the table)
+Filter out all records where 'World' is null
 
 ```bash
 > [["Hello" "World"]; [null 3]] | compact World
 ```
 
-Filter out all instances of nothing from a list (Returns [1,2])
+Filter out all instances of null from a list
 
 ```bash
 > [1, null, 2] | compact
+```
+
+Filter out all instances of null and empty items from a list
+
+```bash
+> [1, null, 2, "", 3, [], 4, {}, 5] | compact --empty
 ```

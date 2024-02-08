@@ -1,6 +1,6 @@
 # touch
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Creates one or more files.
 
 ## Parameters
 
-- `filename`: the path of the file you want to create
-- `...rest`: additional files to create
+- `filename`: The path of the file you want to create.
+- `...rest`: Additional files to create.
 - `--reference {string}`: change the file or directory time to the time of the reference file/directory
 - `--modified`: change the modification time of the file or directory. If no timestamp, date or reference file/directory is given, the current time is used
 - `--access`: change the access time of the file or directory. If no timestamp, date or reference file/directory is given, the current time is used

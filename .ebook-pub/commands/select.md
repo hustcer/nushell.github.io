@@ -1,6 +1,6 @@
 # select
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Select only these columns or rows from the input. Opposite of `reject`.
 
 ## Parameters
 
-- `...rest`: the columns to select from the table
+- `...rest`: The columns to select from the table.
 - `--ignore-errors`: ignore missing data (make all cell path members optional)
 
 ## Input/output types:
@@ -53,6 +53,12 @@ Select columns by a provided list of columns
 
 ```bash
 > let cols = [name type];[[name type size]; [Cargo.toml toml 1kb] [Cargo.lock toml 2kb]] | select $cols
+```
+
+Select columns by a provided list of columns
+
+```bash
+> [[name type size]; [Cargo.toml toml 1kb] [Cargo.lock toml 2kb]] | select ["name", "type"]
 ```
 
 Select rows by a provided list of rows

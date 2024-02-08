@@ -1,6 +1,6 @@
 # overlay hide
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Hide an active overlay.
 
 ## Parameters
 
-- `name`: Overlay to hide
-- `--keep-custom`: Keep all newly added commands and aliases in the next activated overlay
+- `name`: Overlay to hide.
+- `--keep-custom`: Keep all newly added commands and aliases in the next activated overlay.
 - `--keep-env {list<string>}`: List of environment variables to keep in the next activated overlay
 
 ## Input/output types:

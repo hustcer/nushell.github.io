@@ -1,6 +1,6 @@
 # from tsv
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -44,7 +44,7 @@ Create a tsv file with header columns and open it
 Create a tsv file without header columns and open it
 
 ```bash
-> $'a1(char tab)b1(char tab)c1(char nl)a2(char tab)b2(char tab)c2' | save tsv-data | open tsv-data | from tsv -n
+> $'a1(char tab)b1(char tab)c1(char nl)a2(char tab)b2(char tab)c2' | save tsv-data | open tsv-data | from tsv --noheaders
 ```
 
 Create a tsv file without header columns and open it, removing all unnecessary whitespaces

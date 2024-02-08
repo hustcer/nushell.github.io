@@ -1,6 +1,6 @@
 # to csv
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -33,7 +33,7 @@ Outputs an CSV string representing the contents of this table
 Outputs an CSV string representing the contents of this table
 
 ```bash
-> [[foo bar]; [1 2]] | to csv -s ';'
+> [[foo bar]; [1 2]] | to csv --separator ';'
 ```
 
 Outputs an CSV string representing the contents of this record

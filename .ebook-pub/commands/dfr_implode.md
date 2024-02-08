@@ -1,10 +1,10 @@
 # dfr implode
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
-Aggregates a group to a Series
+Aggregates a group to a Series.
 
 ## Signature
 

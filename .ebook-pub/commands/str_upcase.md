@@ -1,6 +1,6 @@
 # str upcase
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Make text uppercase.
 
 ## Parameters
 
-- `...rest`: For a data structure input, convert strings at the given cell paths
+- `...rest`: For a data structure input, convert strings at the given cell paths.
 
 ## Input/output types:
 

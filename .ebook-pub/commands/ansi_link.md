@@ -1,6 +1,6 @@
 # ansi link
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Add a link (using OSC 8 escape sequence) to the given string.
 
 ## Parameters
 
-- `...rest`: for a data structure input, add links to all strings at the given cell paths
+- `...rest`: For a data structure input, add links to all strings at the given cell paths.
 - `--text {string}`: Link text. Uses uri as text if absent. In case of
   tables, records and lists applies this text to all elements
 

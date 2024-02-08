@@ -1,6 +1,6 @@
 # overlay use
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Use definitions from a module as an overlay.
 
 ## Parameters
 
-- `name`: Module name to use overlay for
-- `as`: as keyword followed by a new name
+- `name`: Module name to use overlay for.
+- `as`: `as` keyword followed by a new name.
 - `--prefix`: Prepend module name to the imported commands and aliases
 - `--reload`: If the overlay already exists, reload its definitions and environment.
 

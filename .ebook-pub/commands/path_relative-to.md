@@ -1,6 +1,6 @@
 # path relative-to
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Express a path as relative to another path.
 
 ## Parameters
 
-- `path`: Parent shared with the input path
+- `path`: Parent shared with the input path.
 
 ## Input/output types:
 

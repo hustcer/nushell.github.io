@@ -1,6 +1,6 @@
 # uniq-by
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Return the distinct values in the input by the given column(s).
 
 ## Parameters
 
-- `...rest`: the column(s) to filter by
+- `...rest`: The column(s) to filter by.
 - `--count`: Return a table containing the distinct input values together with their counts
 - `--repeated`: Return the input values that occur more than once
 - `--ignore-case`: Ignore differences in case when comparing input values

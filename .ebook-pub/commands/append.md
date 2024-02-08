@@ -1,6 +1,6 @@
 # append
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Append any number of rows to a table.
 
 ## Parameters
 
-- `row`: the row, list, or table to append
+- `row`: The row, list, or table to append.
 
 ## Input/output types:
 
@@ -22,7 +22,7 @@ Append any number of rows to a table.
 
 ## Examples
 
-Append one integer to a list
+Append one int to a list
 
 ```bash
 > [0 1 2 3] | append 4
@@ -40,19 +40,19 @@ Append a list of string to a string
 > "a" | append ["b"]
 ```
 
-Append three integer items
+Append three int items
 
 ```bash
 > [0 1] | append [2 3 4]
 ```
 
-Append integers and strings
+Append ints and strings
 
 ```bash
 > [0 1] | append [2 nu 4 shell]
 ```
 
-Append a range of integers to a list
+Append a range of ints to a list
 
 ```bash
 > [0 1] | append 2..4

@@ -1,6 +1,6 @@
 # dfr replace
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -26,5 +26,5 @@ Replace the leftmost (sub)string by a regex pattern.
 Replaces string
 
 ```bash
-> [abc abc abc] | dfr into-df | dfr replace -p ab -r AB
+> [abc abc abc] | dfr into-df | dfr replace --pattern ab --replace AB
 ```

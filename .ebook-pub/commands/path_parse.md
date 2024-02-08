@@ -1,6 +1,6 @@
 # path parse
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -32,13 +32,13 @@ Parse a path
 Replace a complex extension
 
 ```bash
-> '/home/viking/spam.tar.gz' | path parse -e tar.gz | upsert extension { 'txt' }
+> '/home/viking/spam.tar.gz' | path parse --extension tar.gz | upsert extension { 'txt' }
 ```
 
 Ignore the extension
 
 ```bash
-> '/etc/conf.d' | path parse -e ''
+> '/etc/conf.d' | path parse --extension ''
 ```
 
 Parse all paths in a list

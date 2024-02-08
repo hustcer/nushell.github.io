@@ -1,6 +1,6 @@
 # prepend
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Prepend any number of rows to a table.
 
 ## Parameters
 
-- `row`: the row, list, or table to prepend
+- `row`: The row, list, or table to prepend.
 
 ## Input/output types:
 
@@ -34,19 +34,19 @@ Prepend a list of strings to a string
 > "a" | prepend ["b"]
 ```
 
-Prepend one integer item
+Prepend one int item
 
 ```bash
 > [1 2 3 4] | prepend 0
 ```
 
-Prepend two integer items
+Prepend two int items
 
 ```bash
 > [2 3 4] | prepend [0 1]
 ```
 
-Prepend integers and strings
+Prepend ints and strings
 
 ```bash
 > [2 nu 4 shell] | prepend [0 1 rocks]

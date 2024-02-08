@@ -1,6 +1,6 @@
 # math arctan
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -16,10 +16,10 @@ Returns the arctangent of the number.
 
 ## Input/output types:
 
-| input          | output         |
-| -------------- | -------------- |
-| list\<number\> | list\<number\> |
-| number         | number         |
+| input          | output        |
+| -------------- | ------------- |
+| list\<number\> | list\<float\> |
+| number         | float         |
 
 ## Examples
 
@@ -32,5 +32,5 @@ Get the arctangent of 1
 Get the arctangent of -1 in degrees
 
 ```bash
-> -1 | math arctan -d
+> -1 | math arctan --degrees
 ```

@@ -1,6 +1,6 @@
 # sort-by
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Sort by the given columns, in increasing order.
 
 ## Parameters
 
-- `...rest`: the column(s) to sort by
+- `...rest`: The column(s) to sort by.
 - `--reverse`: Sort in reverse order
 - `--ignore-case`: Sort string-based columns case-insensitively
 - `--natural`: Sort alphanumeric string-based columns naturally (1, 9, 10, 99, 100, ...)
@@ -22,6 +22,7 @@ Sort by the given columns, in increasing order.
 | input       | output      |
 | ----------- | ----------- |
 | list\<any\> | list\<any\> |
+| record      | table       |
 | table       | table       |
 
 ## Examples
@@ -35,11 +36,11 @@ Sort files by modified date
 Sort files by name (case-insensitive)
 
 ```bash
-> ls | sort-by name -i
+> ls | sort-by name --ignore-case
 ```
 
 Sort a table by a column (reversed order)
 
 ```bash
-> [[fruit count]; [apple 9] [pear 3] [orange 7]] | sort-by fruit -r
+> [[fruit count]; [apple 9] [pear 3] [orange 7]] | sort-by fruit --reverse
 ```

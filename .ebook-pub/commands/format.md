@@ -1,38 +1,25 @@
 # format
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
-Format columns into a string using a simple pattern.
+Various commands for formatting data.
 
 ## Signature
 
-`> format (pattern)`
-
-## Parameters
-
-- `pattern`: the pattern to output. e.g.) "{foo}: {bar}"
+`> format `
 
 ## Input/output types:
 
-| input  | output         |
-| ------ | -------------- |
-| record | any            |
-| table  | list\<string\> |
+| input   | output |
+| ------- | ------ |
+| nothing | string |
 
-## Examples
+## Notes
 
-Print filenames with their sizes
-
-```bash
-> ls | format '{name}: {size}'
-```
-
-Print elements from some columns of a table
-
-```bash
-> [[col1, col2]; [v1, v2] [v3, v4]] | format '{col2}'
+```text
+You must use one of the following subcommands. Using this command as-is will only produce this help message.
 ```
 
 ## Subcommands:
@@ -42,3 +29,4 @@ Print elements from some columns of a table
 | [`format date`](/commands/docs/format_date.md)         | Builtin | Format a given date using a format string.               |
 | [`format duration`](/commands/docs/format_duration.md) | Builtin | Outputs duration with a specified unit of time.          |
 | [`format filesize`](/commands/docs/format_filesize.md) | Builtin | Converts a column of filesizes to some specified format. |
+| [`format pattern`](/commands/docs/format_pattern.md)   | Builtin | Format columns into a string using a simple pattern.     |

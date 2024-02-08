@@ -1,6 +1,6 @@
 # dfr get-week
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -21,7 +21,7 @@ Gets week from date.
 Returns week from a date
 
 ```bash
-> let dt = ('2020-08-04T16:39:18+00:00' | into datetime -z 'UTC');
+> let dt = ('2020-08-04T16:39:18+00:00' | into datetime --timezone 'UTC');
     let df = ([$dt $dt] | dfr into-df);
     $df | dfr get-week
 ```

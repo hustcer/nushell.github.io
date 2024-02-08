@@ -1,6 +1,6 @@
 # const
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Create a parse-time constant.
 
 ## Parameters
 
-- `const_name`: constant name
-- `initial_value`: equals sign followed by constant value
+- `const_name`: Constant name.
+- `initial_value`: Equals sign followed by constant value.
 
 ## Input/output types:
 

@@ -1,6 +1,6 @@
 # export-env
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Run a block and preserve its environment in a current scope.
 
 ## Parameters
 
-- `block`: the block to run to set the environment
+- `block`: The block to run to set the environment.
 
 ## Input/output types:
 

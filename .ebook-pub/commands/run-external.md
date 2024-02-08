@@ -1,6 +1,6 @@
 # run-external
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Runs external command.
 
 ## Parameters
 
-- `command`: external command to run
-- `...rest`: arguments for external command
+- `command`: External command to run.
+- `...rest`: Arguments for external command.
 - `--redirect-stdout`: redirect stdout to the pipeline
 - `--redirect-stderr`: redirect stderr to the pipeline
 - `--redirect-combine`: redirect both stdout and stderr combined to the pipeline (collected in stdout)

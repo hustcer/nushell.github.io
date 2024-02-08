@@ -1,6 +1,6 @@
 # use
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Use definitions from a module, making them available in your shell.
 
 ## Parameters
 
-- `module`: Module or module file
-- `...rest`: Which members of the module to import
+- `module`: Module or module file.
+- `...rest`: Which members of the module to import.
 
 ## Input/output types:
 
@@ -32,7 +32,7 @@ Define a custom command in a module and call it
 Define a custom command that participates in the environment in a module and call it
 
 ```bash
-> module foo { export def-env bar [] { $env.FOO_BAR = "BAZ" } }; use foo bar; bar; $env.FOO_BAR
+> module foo { export def --env bar [] { $env.FOO_BAR = "BAZ" } }; use foo bar; bar; $env.FOO_BAR
 ```
 
 Use a plain module name to import its definitions qualified by the module name

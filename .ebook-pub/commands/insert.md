@@ -1,6 +1,6 @@
 # insert
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Insert a new column, using an expression or closure to create each row's values.
 
 ## Parameters
 
-- `field`: the name of the column to insert
-- `new value`: the new value to give the cell(s)
+- `field`: The name of the column to insert.
+- `new value`: The new value to give the cell(s).
 
 ## Input/output types:
 
@@ -37,8 +37,20 @@ Insert a new column into a table, populating all rows
 > [[project, lang]; ['Nushell', 'Rust']] | insert type 'shell'
 ```
 
-Insert a column with values equal to their row index, plus the value of 'foo' in each row
+Insert a new column with values computed based off the other columns
 
 ```bash
-> [[foo]; [7] [8] [9]] | enumerate | insert bar {|e| $e.item.foo + $e.index } | flatten
+> [[foo]; [7] [8] [9]] | insert bar {|row| $row.foo * 2 }
+```
+
+Insert a new value into a list at an index
+
+```bash
+> [1 2 4] | insert 2 3
+```
+
+Insert a new value at the end of a list
+
+```bash
+> [1 2 3] | insert 3 4
 ```

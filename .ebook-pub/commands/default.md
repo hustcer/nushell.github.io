@@ -1,6 +1,6 @@
 # default
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Sets a default row's column if missing.
 
 ## Parameters
 
-- `default value`: the value to use as a default
-- `column name`: the name of the column
+- `default value`: The value to use as a default.
+- `column name`: The name of the column.
 
 ## Input/output types:
 
@@ -32,7 +32,7 @@ Give a default 'target' column to all file entries
 Get the env value of `MY_ENV` with a default value 'abc' if not present
 
 ```bash
-> $env | get -i MY_ENV | default 'abc'
+> $env | get --ignore-errors MY_ENV | default 'abc'
 ```
 
 Replace the `null` value in a list

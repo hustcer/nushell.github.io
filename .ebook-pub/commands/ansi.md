@@ -1,6 +1,6 @@
 # ansi
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Output ANSI codes to change color and style of text.
 
 ## Parameters
 
-- `code`: the name of the code to use like 'green' or 'reset' to reset the color
+- `code`: The name of the code to use (from `ansi -l`).
 - `--escape`: escape sequence without the escape character(s) ('\x1b[' is not required)
 - `--osc`: operating system command (osc) escape sequence without the escape character(s) ('\x1b]' is not required)
 - `--list`: list available ansi code names
@@ -21,7 +21,7 @@ Output ANSI codes to change color and style of text.
 
 | input   | output |
 | ------- | ------ |
-| nothing | string |
+| nothing | any    |
 
 ## Examples
 
@@ -52,7 +52,7 @@ The same example as above with short names
 Use escape codes, without the '\x1b['
 
 ```bash
-> $"(ansi -e '3;93;41m')Hello(ansi reset)"  # italic bright yellow on red background
+> $"(ansi --escape '3;93;41m')Hello(ansi reset)"  # italic bright yellow on red background
 ```
 
 Use structured escape codes
@@ -63,7 +63,7 @@ Use structured escape codes
         bg: '#ff0000'
         attr: b
     }
-    $"(ansi -e $bold_blue_on_red)Hello Nu World(ansi reset)"
+    $"(ansi --escape $bold_blue_on_red)Hello, Nu World!(ansi reset)"
 ```
 
 ## Notes
@@ -82,6 +82,7 @@ Escape sequences usual values:
 │  3 │ foreground │     33 │     93 │ yellow  │
 │  4 │ foreground │     34 │     94 │ blue    │
 │  5 │ foreground │     35 │     95 │ magenta │
+│  5 │ foreground │     35 │     95 │ purple  │
 │  6 │ foreground │     36 │     96 │ cyan    │
 │  7 │ foreground │     37 │     97 │ white   │
 │  8 │ foreground │     39 │        │ default │
@@ -91,6 +92,7 @@ Escape sequences usual values:
 │ 12 │ background │     43 │    103 │ yellow  │
 │ 13 │ background │     44 │    104 │ blue    │
 │ 14 │ background │     45 │    105 │ magenta │
+│ 14 │ background │     45 │    105 │ purple  │
 │ 15 │ background │     46 │    106 │ cyan    │
 │ 16 │ background │     47 │    107 │ white   │
 │ 17 │ background │     49 │        │ default │

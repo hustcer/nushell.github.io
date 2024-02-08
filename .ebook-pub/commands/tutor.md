@@ -1,6 +1,6 @@
 # tutor
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Run the tutorial. To begin, run: tutor.
 
 ## Parameters
 
-- `search`: item to search for, or 'list' to list available tutorials
+- `search`: Item to search for, or 'list' to list available tutorials.
 - `--find {string}`: Search tutorial for a phrase
 
 ## Input/output types:
@@ -32,5 +32,5 @@ Begin the tutorial
 Search a tutorial by phrase
 
 ```bash
-> tutor -f "$in"
+> tutor --find "$in"
 ```

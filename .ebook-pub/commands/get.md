@@ -1,6 +1,6 @@
 # get
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Extract data using a cell path.
 
 ## Parameters
 
-- `cell_path`: the cell path to the data
-- `...rest`: additional cell paths
+- `cell_path`: The cell path to the data.
+- `...rest`: Additional cell paths.
 - `--ignore-errors`: ignore missing data (make all cell path members optional)
 - `--sensitive`: get path in a case sensitive manner
 
@@ -72,7 +72,7 @@ Getting Path/PATH in a case insensitive way
 Getting Path in a case sensitive way, won't work for 'PATH'
 
 ```bash
-> $env | get -s Path
+> $env | get --sensitive Path
 ```
 
 ## Notes

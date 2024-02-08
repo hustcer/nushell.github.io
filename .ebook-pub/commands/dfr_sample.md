@@ -1,6 +1,6 @@
 # dfr sample
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -29,11 +29,11 @@ Create sample dataframe.
 Sample rows from dataframe
 
 ```bash
-> [[a b]; [1 2] [3 4]] | dfr into-df | dfr sample -n 1
+> [[a b]; [1 2] [3 4]] | dfr into-df | dfr sample --n-rows 1
 ```
 
 Shows sample row using fraction and replace
 
 ```bash
-> [[a b]; [1 2] [3 4] [5 6]] | dfr into-df | dfr sample -f 0.5 -e
+> [[a b]; [1 2] [3 4] [5 6]] | dfr into-df | dfr sample --fraction 0.5 --replace
 ```

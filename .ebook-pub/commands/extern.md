@@ -1,6 +1,6 @@
 # extern
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Define a signature for an external command.
 
 ## Parameters
 
-- `def_name`: definition name
-- `params`: parameters
+- `def_name`: Definition name.
+- `params`: Parameters.
 
 ## Input/output types:
 

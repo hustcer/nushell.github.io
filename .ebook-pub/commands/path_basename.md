@@ -1,6 +1,6 @@
 # path basename
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -38,5 +38,5 @@ Get basename of a list of paths
 Replace basename of a path
 
 ```bash
-> '/home/joe/test.txt' | path basename -r 'spam.png'
+> '/home/joe/test.txt' | path basename --replace 'spam.png'
 ```

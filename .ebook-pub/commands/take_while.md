@@ -1,6 +1,6 @@
 # take while
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Take elements of the input while a predicate is true.
 
 ## Parameters
 
-- `predicate`: the predicate that element(s) must match
+- `predicate`: The predicate that element(s) must match.
 
 ## Input/output types:
 

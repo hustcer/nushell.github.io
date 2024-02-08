@@ -1,6 +1,6 @@
 # update
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Update an existing column to have a new value.
 
 ## Parameters
 
-- `field`: the name of the column to update
-- `replacement value`: the new value to give the cell(s), or a closure to create the value
+- `field`: The name of the column to update.
+- `replacement value`: The new value to give the cell(s), or a closure to create the value.
 
 ## Input/output types:
 
@@ -31,22 +31,28 @@ Update a column value
 > {'name': 'nu', 'stars': 5} | update name 'Nushell'
 ```
 
-Use in closure form for more involved updating logic
+Use a closure to alter each value in the 'authors' column to a single string
 
 ```bash
-> [[count fruit]; [1 'apple']] | enumerate | update item.count {|e| ($e.item.fruit | str length) + $e.index } | get item
-```
-
-Alter each value in the 'authors' column to use a single string instead of a list
-
-```bash
-> [[project, authors]; ['nu', ['Andrés', 'JT', 'Yehuda']]] | update authors {|row| $row.authors | str join ','}
+> [[project, authors]; ['nu', ['Andrés', 'JT', 'Yehuda']]] | update authors {|row| $row.authors | str join ',' }
 ```
 
 You can also use a simple command to update 'authors' to a single string
 
 ```bash
-> [[project, authors]; ['nu', ['Andrés', 'JT', 'Yehuda']]] | update authors {|| str join ','}
+> [[project, authors]; ['nu', ['Andrés', 'JT', 'Yehuda']]] | update authors { str join ',' }
+```
+
+Update a value at an index in a list
+
+```bash
+> [1 2 3] | update 1 4
+```
+
+Use a closure to compute a new value at an index
+
+```bash
+> [1 2 3] | update 1 {|i| $i + 2 }
 ```
 
 ## Subcommands:

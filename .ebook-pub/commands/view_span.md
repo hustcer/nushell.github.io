@@ -1,6 +1,6 @@
 # view span
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ View the contents of a span.
 
 ## Parameters
 
-- `start`: start of the span
-- `end`: end of the span
+- `start`: Start of the span.
+- `end`: End of the span.
 
 ## Input/output types:
 
@@ -23,10 +23,10 @@ View the contents of a span.
 
 ## Examples
 
-View the source of a span. 1 and 2 are just example values. Use the return of debug -r to get the actual values
+View the source of a span. 1 and 2 are just example values. Use the return of debug --raw to get the actual values
 
 ```bash
-> some | pipeline | or | variable | debug -r; view span 1 2
+> some | pipeline | or | variable | debug --raw; view span 1 2
 ```
 
 ## Notes

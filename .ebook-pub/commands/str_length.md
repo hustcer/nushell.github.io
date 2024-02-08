@@ -1,6 +1,6 @@
 # str length
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Output the length of any strings in the pipeline.
 
 ## Parameters
 
-- `...rest`: For a data structure input, replace strings at the given cell paths with their length
+- `...rest`: For a data structure input, replace strings at the given cell paths with their length.
 - `--grapheme-clusters`: count length using grapheme clusters (all visible chars have length 1)
 - `--utf-8-bytes`: count length using UTF-8 bytes (default; all non-ASCII chars have length 2+)
 
@@ -36,7 +36,7 @@ Return the lengths of a string
 Count length using grapheme clusters
 
 ```bash
-> '🇯🇵ほげ ふが ぴよ' | str length -g
+> '🇯🇵ほげ ふが ぴよ' | str length  --grapheme-clusters
 ```
 
 Return the lengths of multiple strings

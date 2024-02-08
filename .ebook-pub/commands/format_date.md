@@ -1,6 +1,6 @@
 # format date
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Format a given date using a format string.
 
 ## Parameters
 
-- `format string`: the desired format date
+- `format string`: The desired format date.
 - `--list`: lists strftime cheatsheet
 
 ## Input/output types:
@@ -20,6 +20,7 @@ Format a given date using a format string.
 | input    | output |
 | -------- | ------ |
 | datetime | string |
+| nothing  | table  |
 | string   | string |
 
 ## Examples

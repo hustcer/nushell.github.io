@@ -1,6 +1,6 @@
 # for
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,9 +12,9 @@ Loop over a range.
 
 ## Parameters
 
-- `var_name`: name of the looping variable
-- `range`: range of the loop
-- `block`: the block to run
+- `var_name`: Name of the looping variable.
+- `range`: Range of the loop.
+- `block`: The block to run.
 - `--numbered`: return a numbered item ($it.index and $it.item)
 
 ## Input/output types:
@@ -25,7 +25,7 @@ Loop over a range.
 
 ## Examples
 
-Echo the square of each integer
+Print the square of each integer
 
 ```bash
 > for x in [1 2 3] { print ($x * $x) }
@@ -37,7 +37,7 @@ Work with elements of a range
 > for $x in 1..3 { print $x }
 ```
 
-Number each item and echo a message
+Number each item and print a message
 
 ```bash
 > for $it in ['bob' 'fred'] --numbered { print $"($it.index) is ($it.item)" }

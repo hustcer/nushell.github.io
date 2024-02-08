@@ -1,6 +1,6 @@
 # math cos
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -16,10 +16,10 @@ Returns the cosine of the number.
 
 ## Input/output types:
 
-| input          | output         |
-| -------------- | -------------- |
-| list\<number\> | list\<number\> |
-| number         | number         |
+| input          | output        |
+| -------------- | ------------- |
+| list\<number\> | list\<float\> |
+| number         | float         |
 
 ## Examples
 
@@ -32,5 +32,5 @@ Apply the cosine to π
 Apply the cosine to a list of angles in degrees
 
 ```bash
-> [0 90 180 270 360] | math cos -d
+> [0 90 180 270 360] | math cos --degrees
 ```

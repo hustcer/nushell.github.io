@@ -1,6 +1,6 @@
 # into binary
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Convert value to a binary primitive.
 
 ## Parameters
 
-- `...rest`: for a data structure input, convert data at the given cell paths
+- `...rest`: For a data structure input, convert data at the given cell paths.
 - `--compact`: output without padding zeros
 
 ## Input/output types:
@@ -67,7 +67,7 @@ convert a float to a nushell binary primitive
 > 1.234 | into binary
 ```
 
-convert an integer to a nushell binary primitive with compact enabled
+convert an int to a nushell binary primitive with compact enabled
 
 ```bash
 > 10 | into binary --compact

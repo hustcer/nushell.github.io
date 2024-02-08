@@ -1,6 +1,6 @@
 # str starts-with
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Check if an input starts with a string.
 
 ## Parameters
 
-- `string`: the string to match
-- `...rest`: For a data structure input, check strings at the given cell paths, and replace with result
+- `string`: The string to match.
+- `...rest`: For a data structure input, check strings at the given cell paths, and replace with result.
 - `--ignore-case`: search is case insensitive
 
 ## Input/output types:
@@ -48,5 +48,5 @@ Checks if input string starts with '.toml'
 Checks if input string starts with 'cargo', case-insensitive
 
 ```bash
-> 'Cargo.toml' | str starts-with -i 'cargo'
+> 'Cargo.toml' | str starts-with --ignore-case 'cargo'
 ```

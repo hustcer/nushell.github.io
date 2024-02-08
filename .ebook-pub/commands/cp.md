@@ -1,25 +1,31 @@
 # cp
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
-Copy files.
+Copy files using uutils/coreutils cp.
 
 ## Signature
 
-`> cp (source) (destination) --recursive --verbose --update --interactive --no-symlink --progress`
+`> cp ...rest --recursive --verbose --force --interactive --update --progress --no-clobber --preserve --debug`
 
 ## Parameters
 
-- `source`: the place to copy from
-- `destination`: the place to copy to
-- `--recursive`: copy recursively through subdirectories
-- `--verbose`: show successful copies in addition to failed copies (default:false)
+- `...rest`: Copy SRC file/s to DEST.
+- `--recursive`: copy directories recursively
+- `--verbose`: explicitly state what is being done
+- `--force`: if an existing destination file cannot be opened, remove it and try
+  again (this option is ignored when the -n option is also used).
+  currently not implemented for windows
+- `--interactive`: ask before overwriting files
 - `--update`: copy only when the SOURCE file is newer than the destination file or when the destination file is missing
-- `--interactive`: ask user to confirm action
-- `--no-symlink`: no symbolic links are followed, only works if -r is active
-- `--progress`: enable progress bar
+- `--progress`: display a progress bar
+- `--no-clobber`: do not overwrite an existing file
+- `--preserve {list<string>}`: preserve only the specified attributes (empty list means no attributes preserved)
+  if not specified only mode is preserved
+  possible values: mode, ownership (unix only), timestamps, context, link, links, xattr
+- `--debug`: explain how a file is copied. Implies -v
 
 ## Input/output types:
 
@@ -57,4 +63,16 @@ Copy only if source file is newer than target file
 
 ```bash
 > cp -u a b
+```
+
+Copy file preserving mode and timestamps attributes
+
+```bash
+> cp --preserve [ mode timestamps ] a b
+```
+
+Copy file erasing all attributes
+
+```bash
+> cp --preserve [] a b
 ```

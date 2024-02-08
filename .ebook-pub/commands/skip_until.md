@@ -1,6 +1,6 @@
 # skip until
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Skip elements of the input until a predicate is true.
 
 ## Parameters
 
-- `predicate`: the predicate that skipped element must not match
+- `predicate`: The predicate that skipped element must not match.
 
 ## Input/output types:
 

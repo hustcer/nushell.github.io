@@ -1,6 +1,6 @@
 # flatten
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Flatten the table.
 
 ## Parameters
 
-- `...rest`: optionally flatten data by column
+- `...rest`: Optionally flatten data by column.
 - `--all`: flatten inner table one level out
 
 ## Input/output types:
@@ -51,5 +51,5 @@ restrict the flattening by passing column names
 Flatten inner table
 
 ```bash
-> { a: b, d: [ 1 2 3 4 ],  e: [ 4 3  ] } | flatten d --all
+> { a: b, d: [ 1 2 3 4 ], e: [ 4 3 ] } | flatten d --all
 ```

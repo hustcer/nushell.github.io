@@ -4,22 +4,23 @@ As you probably noticed, Nushell behaves quite differently from other shells and
 
 First, let's give a few example which you might intuitively try but which do not work in Nushell.
 
-1. Sourcing a dynamic path
+1. Sourcing a dynamic path (note that a constant would work, see [parse-time evaluation](#parse-time-evaluation))
 
-```
+```nu
+let my_path = 'foo'
 source $"($my_path)/common.nu"
 ```
 
 2. Write to a file and source it in a single script
 
-```
+```nu
 "def abc [] { 1 + 2 }" | save output.nu
 source "output.nu"
 ```
 
 3. Change a directory and source a path within (even though the file exists)
 
-```
+```nu
 if ('spam/foo.nu' | path exists) {
     cd spam
     source-env foo.nu
@@ -34,7 +35,7 @@ The underlying reason why all of the above examples won't work is a strict separ
 
 Let's start with a simple "hello world" Nushell program:
 
-```
+```nu
 # hello.nu
 
 print "Hello world!"
@@ -143,24 +144,25 @@ _Note: The following examples use [`source`](/commands/docs/source.md), but simi
 
 ### 1. Sourcing a dynamic path
 
-```
+```nu
+let my_path = 'foo'
 source $"($my_path)/common.nu"
 ```
 
-Let's break down what would need to happen for this to work (assuming `$my_path` is set somewhere):
+Let's break down what would need to happen for this to work:
 
-1. Parse `source $"($my_path)/common.nu"`
+1. Parse `let my_path = 'foo'` and `source $"($my_path)/config.nu"`
 2. To evaluate `source $"($my_path)/common.nu"`:
-   2.1. Parse `$"($my_path)/common.nu"`
-   2.2. Evaluate `$"($my_path)/common.nu"` to get the file name
-   2.3. Parse the contents of the file
-   2.4. Evaluate the contents of the file
+   1. Parse `$"($my_path)/common.nu"`
+   2. Evaluate `$"($my_path)/common.nu"` to get the file name
+   3. Parse the contents of the file
+   4. Evaluate the contents of the file
 
 You can see the process is similar to the `eval` functionality we talked about earlier. Nesting parse-evaluation cycles into the evaluation is not allowed in Nushell.
 
 To give another perspective, here is why it is helpful to _think of Nushell as a compiled language_. Instead of
 
-```
+```nu
 let my_path = 'foo'
 source $"($my_path)/common.nu"
 ```
@@ -176,7 +178,7 @@ std::string my_path("foo");
 
 or Rust
 
-```rust!
+```rust
 let my_path = "foo";
 use format!("{}::common", my_path);
 ```
@@ -185,7 +187,7 @@ If you've ever written a simple program in any of these languages, you can see t
 
 ### 2. Write to a file and source it in a single script
 
-```
+```nu
 "def abc [] { 1 + 2 }" | save output.nu
 source "output.nu"
 ```
@@ -193,11 +195,11 @@ source "output.nu"
 Here, the sourced path is static (= known at parse-time) so everything should be fine, right? Well... no. Let's break down the sequence again:
 
 1. Parse the whole source code
-   1.1. Parse `"def abc [] { 1 + 2 }" | save output.nu`
-   1.2. Parse `source "output.nu"` - 1.2.1. Open `output.nu` and parse its contents
+   1. Parse `"def abc [] { 1 + 2 }" | save output.nu`
+   2. Parse `source "output.nu"` - 1.2.1. Open `output.nu` and parse its contents
 2. Evaluate the whole source code
-   2.1. Evaluate `"def abc [] { 1 + 2 }" | save output.nu` to generate `output.nu`
-   2.2. ...wait what???
+   1. Evaluate `"def abc [] { 1 + 2 }" | save output.nu` to generate `output.nu`
+   2. ...wait what???
 
 We're asking Nushell to read `output.nu` before it even exists. All the source code needs to be available to Nushell at parse-time, but `output.nu` is only generated during evaluation. Again, it helps here to _think of Nushell as a compiled language_.
 
@@ -205,7 +207,7 @@ We're asking Nushell to read `output.nu` before it even exists. All the source c
 
 (We assume the `spam/foo.nu` file exists.)
 
-```
+```nu
 if ('spam/foo.nu' | path exists) {
     cd spam
     source-env foo.nu
@@ -218,13 +220,13 @@ This one is similar to the previous example. `cd spam` changes the directory _du
 
 [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) is what happens when you run `nu` without any file. You launch an interactive prompt. By
 
-```
+```nu
 > some code...
 ```
 
 we denote a REPL entry followed by pressing Enter. For example
 
-```
+```nu
 > print "Hello world!"
 Hello world!
 
@@ -249,14 +251,14 @@ In other words, each REPL invocation is its own separate parse-evaluation sequen
 
 To give an example, we showed that
 
-```
+```nu
 cd spam
 source-env foo.nu
 ```
 
 does not work because the directory will be changed _after_ [`source-env`](/commands/docs/source-env.md) attempts to read the file. Running these commands as separate REPL entries, however, works:
 
-```
+```nu
 > cd spam
 
 > source-env foo.nu
@@ -281,32 +283,36 @@ While it is impossible to add parsing into the evaluation, we can add _a little 
 
 One pattern that this unlocks is being able to [`source`](/commands/docs/source.md)/[`use`](/commands/docs/use.md)/etc. a path from a "variable". We've seen that
 
-```
-let some_path = 'foo/common.nu'
-source $some_path
+```nu
+let some_path = $nu.default-config-dir
+source $"($some_path)/common.nu"
 ```
 
 does not work, but we can do the following:
 
-```
-const some_path = 'foo/common.nu'
-source $some_path
+```nu
+const some_path = $nu.default-config-dir
+source $"($some_path)/config.nu"
 ```
 
 We can break down what is happening again:
 
 1. Parse the whole source code
-   1.1. Parse `const some_path = 'foo/common.nu'` - 1.1.1. Evaluate* `'foo/common.nu'` and store it as a `some_path` constant
-   1.2. Parse `source $some_path` - 1.2.1. Evaluate* `$some_path`, see that it is a constant, fetch it - 1.2.2. Parse the `foo/common.nu` file
+   1. Parse `const some_path = $nu.default-config-dir`
+      1. Evaluate\* `$nu.default-config-dir` to `/home/user/.config/nushell` and store it as a `some_path` constant
+   2. Parse `source $"($some_path)/config.nu"`
+      1. Evaluate\* `$some_path`, see that it is a constant, fetch it
+      2. Evaluate\* `$"($some_path)/config.nu"` to `/home/user/.config/nushell/config.nu`
+      3. Parse the `/home/user/.config/nushell/config.nu` file
 2. Evaluate the whole source code
-   2.1. Evaluate `const some_path = 'foo/common.nu'` (i.e., add the `foo/common.nu` string to the runtime stack as `some_path` variable)
-   2.2. Evaluate `source $some_path` (i.e., evaluate the contents of `foo/common.nu`)
+   1. Evaluate `const some_path = $nu.default-config-dir` (i.e., add the `/home/user/.config/nushell` string to the runtime stack as `some_path` variable)
+   2. Evaluate `source $"($some_path)/config.nu"` (i.e., evaluate the contents of `/home/user/.config/nushell/config.nu`)
 
 This still does not violate our rule of not having an eval function, because an eval function adds additional parsing to the evaluation step. With parse-time evaluation we're doing the opposite.
 
 Also, note the \* in steps 1.1.1. and 1.2.1. The evaluation happening during parsing is very restricted and limited to only a small subset of what is normally allowed during a regular evaluation. For example, the following is not allowed:
 
-```
+```nu
 const foo_contents = (open foo.nu)
 ```
 

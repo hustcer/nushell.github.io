@@ -1,6 +1,6 @@
 # into duration
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Convert value to duration.
 
 ## Parameters
 
-- `...rest`: for a data structure input, convert data at the given cell paths
+- `...rest`: For a data structure input, convert data at the given cell paths.
 - `--unit {string}`: Unit to convert number into (will have an effect only with integer input)
 
 ## Input/output types:

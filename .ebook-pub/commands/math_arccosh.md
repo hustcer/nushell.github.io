@@ -1,6 +1,6 @@
 # math arccosh
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,10 +12,10 @@ Returns the inverse of the hyperbolic cosine function.
 
 ## Input/output types:
 
-| input          | output         |
-| -------------- | -------------- |
-| list\<number\> | list\<number\> |
-| number         | number         |
+| input          | output        |
+| -------------- | ------------- |
+| list\<number\> | list\<float\> |
+| number         | float         |
 
 ## Examples
 

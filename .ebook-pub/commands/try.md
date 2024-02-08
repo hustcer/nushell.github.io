@@ -1,6 +1,6 @@
 # try
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Try to run a block, if it fails optionally run a catch block.
 
 ## Parameters
 
-- `try_block`: block to run
-- `catch_block`: block to run if try block fails
+- `try_block`: Block to run.
+- `catch_block`: Block to run if try block fails.
 
 ## Input/output types:
 

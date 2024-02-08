@@ -1,6 +1,6 @@
 # bytes index-of
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Returns start index of first occurrence of pattern in bytes, or -1 if no match.
 
 ## Parameters
 
-- `pattern`: the pattern to find index of
-- `...rest`: for a data structure input, find the indexes at the given cell paths
+- `pattern`: The pattern to find index of.
+- `...rest`: For a data structure input, find the indexes at the given cell paths.
 - `--all`: returns all matched index
 - `--end`: search from the end of the binary
 
@@ -21,7 +21,7 @@ Returns start index of first occurrence of pattern in bytes, or -1 if no match.
 
 | input  | output |
 | ------ | ------ |
-| binary | int    |
+| binary | any    |
 | record | record |
 | table  | table  |
 
@@ -36,19 +36,19 @@ Returns index of pattern in bytes
 Returns index of pattern, search from end
 
 ```bash
->  0x[33 44 55 10 01 13 44 55] | bytes index-of -e 0x[44 55]
+>  0x[33 44 55 10 01 13 44 55] | bytes index-of --end 0x[44 55]
 ```
 
 Returns all matched index
 
 ```bash
->  0x[33 44 55 10 01 33 44 33 44] | bytes index-of -a 0x[33 44]
+>  0x[33 44 55 10 01 33 44 33 44] | bytes index-of --all 0x[33 44]
 ```
 
 Returns all matched index, searching from end
 
 ```bash
->  0x[33 44 55 10 01 33 44 33 44] | bytes index-of -a -e 0x[33 44]
+>  0x[33 44 55 10 01 33 44 33 44] | bytes index-of --all --end 0x[33 44]
 ```
 
 Returns index of pattern for specific column

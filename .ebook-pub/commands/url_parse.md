@@ -1,6 +1,6 @@
 # url parse
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Parses a url.
 
 ## Parameters
 
-- `...rest`: optionally operate by cell path
+- `...rest`: Optionally operate by cell path.
 
 ## Input/output types:
 

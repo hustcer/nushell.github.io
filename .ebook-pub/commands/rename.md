@@ -1,6 +1,6 @@
 # rename
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Creates a new table with columns renamed.
 
 ## Parameters
 
-- `...rest`: the new names for the columns
-- `--column {list<string>}`: column name to be changed
+- `...rest`: The new names for the columns.
+- `--column {record}`: column name to be changed
 - `--block {closure(any)}`: A closure to apply changes on each column
 
 ## Input/output types:
@@ -40,7 +40,7 @@ Rename many columns
 Rename a specific column
 
 ```bash
-> [[a, b, c]; [1, 2, 3]] | rename -c [a ham]
+> [[a, b, c]; [1, 2, 3]] | rename --column { a: ham }
 ```
 
 Rename the fields of a record
@@ -52,5 +52,5 @@ Rename the fields of a record
 Rename fields based on a given closure
 
 ```bash
-> {abc: 1, bbc: 2} | rename -b {str replace -a 'b' 'z'}
+> {abc: 1, bbc: 2} | rename --block {str replace --all 'b' 'z'}
 ```

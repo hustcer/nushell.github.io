@@ -1,6 +1,6 @@
 # explore
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -40,13 +40,13 @@ Explore the output of `ls` without column names
 Explore a list of Markdown files' contents, with row indexes
 
 ```bash
-> glob *.md | each {|| open } | explore -i
+> glob *.md | each {|| open } | explore --index
 ```
 
 Explore a JSON file, then save the last visited sub-structure to a file
 
 ```bash
-> open file.json | explore -p | to json | save part.json
+> open file.json | explore --peek | to json | save part.json
 ```
 
 ## Notes

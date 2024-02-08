@@ -1,6 +1,6 @@
 # while
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Conditionally run a block in a loop.
 
 ## Parameters
 
-- `cond`: condition to check
-- `block`: block to loop if check succeeds
+- `cond`: Condition to check.
+- `block`: Block to loop if check succeeds.
 
 ## Input/output types:
 

@@ -1,6 +1,6 @@
 # decode base64
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,19 +12,19 @@ Base64 decode a value.
 
 ## Parameters
 
-- `...rest`: For a data structure input, decode data at the given cell paths
+- `...rest`: For a data structure input, decode data at the given cell paths.
 - `--character-set {string}`: specify the character rules for encoding the input.
   Valid values are 'standard', 'standard-no-padding', 'url-safe', 'url-safe-no-padding','binhex', 'bcrypt', 'crypt', 'mutf7'
 - `--binary`: Output a binary value instead of decoding payload as UTF-8
 
 ## Input/output types:
 
-| input          | output         |
-| -------------- | -------------- |
-| list\<string\> | list\<string\> |
-| record         | record         |
-| string         | string         |
-| table          | table          |
+| input          | output      |
+| -------------- | ----------- |
+| list\<string\> | list\<any\> |
+| record         | record      |
+| string         | any         |
+| table          | table       |
 
 ## Examples
 

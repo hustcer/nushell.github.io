@@ -1,6 +1,6 @@
 # seq
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Output sequences of numbers.
 
 ## Parameters
 
-- `...rest`: sequence values
+- `...rest`: Sequence values.
 
 ## Input/output types:
 

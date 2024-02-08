@@ -1,6 +1,6 @@
 # random chars
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -31,5 +31,5 @@ Generate random chars
 Generate random chars with specified length
 
 ```bash
-> random chars -l 20
+> random chars --length 20
 ```

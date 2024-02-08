@@ -1,10 +1,10 @@
 # dfr min
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
-Creates a min expression or aggregates columns to their min value
+Creates a min expression or aggregates columns to their min value.
 
 ## Signature
 

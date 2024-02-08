@@ -1,6 +1,6 @@
 # move
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Move columns before or after other columns.
 
 ## Parameters
 
-- `...rest`: the columns to move
+- `...rest`: The columns to move.
 - `--after {string}`: the column that will precede the columns moved
 - `--before {string}`: the column that will be the next after the columns moved
 

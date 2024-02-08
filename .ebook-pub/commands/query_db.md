@@ -1,6 +1,6 @@
 # query db
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Query a database using SQL.
 
 ## Parameters
 
-- `SQL`: SQL to execute against the database
+- `SQL`: SQL to execute against the database.
 
 ## Input/output types:
 

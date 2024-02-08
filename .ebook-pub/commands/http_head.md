@@ -1,6 +1,6 @@
 # http head
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -8,16 +8,17 @@ Get the headers from a URL.
 
 ## Signature
 
-`> http head (URL) --user --password --max-time --headers --insecure`
+`> http head (URL) --user --password --max-time --headers --insecure --redirect-mode`
 
 ## Parameters
 
-- `URL`: the URL to fetch the contents from
+- `URL`: The URL to fetch the contents from.
 - `--user {any}`: the username when authenticating
 - `--password {any}`: the password when authenticating
 - `--max-time {int}`: timeout period in seconds
 - `--headers {any}`: custom headers you want to add
 - `--insecure`: allow insecure server connections when using SSL
+- `--redirect-mode {string}`: What to do when encountering redirects. Default: 'follow'. Valid options: 'follow' ('f'), 'manual' ('m'), 'error' ('e').
 
 ## Input/output types:
 
@@ -36,13 +37,13 @@ Get headers from example.com
 Get headers from example.com, with username and password
 
 ```bash
-> http head -u myuser -p mypass https://www.example.com
+> http head --user myuser --password mypass https://www.example.com
 ```
 
 Get headers from example.com, with custom header
 
 ```bash
-> http head -H [my-header-key my-header-value] https://www.example.com
+> http head --headers [my-header-key my-header-value] https://www.example.com
 ```
 
 ## Notes

@@ -1,10 +1,10 @@
 # dfr var
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
-Create a var expression for an aggregation
+Create a var expression for an aggregation.
 
 ## Signature
 

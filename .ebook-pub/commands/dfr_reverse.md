@@ -1,6 +1,6 @@
 # dfr reverse
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -18,7 +18,7 @@ Reverses the LazyFrame
 
 ## Examples
 
-Reverses the dataframe
+Reverses the dataframe.
 
 ```bash
 > [[a b]; [6 2] [4 2] [2 2]] | dfr into-df | dfr reverse

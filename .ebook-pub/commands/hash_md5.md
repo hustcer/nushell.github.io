@@ -1,10 +1,10 @@
 # hash md5
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
-Hash a value using the md5 hash algorithm
+Hash a value using the md5 hash algorithm.
 
 ## Signature
 
@@ -12,7 +12,7 @@ Hash a value using the md5 hash algorithm
 
 ## Parameters
 
-- `...rest`: optionally md5 hash data by cell path
+- `...rest`: Optionally md5 hash data by cell path.
 - `--binary`: Output binary instead of hexadecimal representation
 
 ## Input/output types:
@@ -20,7 +20,7 @@ Hash a value using the md5 hash algorithm
 | input  | output |
 | ------ | ------ |
 | record | record |
-| string | string |
+| string | any    |
 | table  | table  |
 
 ## Examples

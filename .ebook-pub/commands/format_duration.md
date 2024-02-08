@@ -1,6 +1,6 @@
 # format duration
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Outputs duration with a specified unit of time.
 
 ## Parameters
 
-- `format value`: the unit in which to display the duration
-- `...rest`: For a data structure input, format duration at the given cell paths
+- `format value`: The unit in which to display the duration.
+- `...rest`: For a data structure input, format duration at the given cell paths.
 
 ## Input/output types:
 

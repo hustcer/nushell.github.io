@@ -1,6 +1,6 @@
 # take
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Take only the first n elements of a list, or the first n bytes of a binary value
 
 ## Parameters
 
-- `n`: starting from the front, the number of elements to return
+- `n`: Starting from the front, the number of elements to return.
 
 ## Input/output types:
 

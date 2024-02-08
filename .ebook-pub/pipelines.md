@@ -6,7 +6,7 @@ One of the core designs of Nu is the pipeline, a design idea that traces its roo
 
 A pipeline is composed of three parts: the input, the filter, and the output.
 
-```
+```nu
 > open "Cargo.toml" | inc package.version --minor | save "Cargo_new.toml"
 ```
 
@@ -18,7 +18,7 @@ The last command, `save "Cargo_new.toml"`, is an output (sometimes called a "sin
 
 The `$in` variable will collect the pipeline into a value for you, allowing you to access the whole stream as a parameter:
 
-```nushell
+```nu
 > [1 2 3] | $in.1 * $in.2
 6
 ```
@@ -27,7 +27,7 @@ The `$in` variable will collect the pipeline into a value for you, allowing you 
 
 If a pipeline is getting a bit long for one line, you can enclose it within `(` and `)` to create a subexpression:
 
-```nushell
+```nu
 (
     "01/22/2021" |
     parse "{month}/{day}/{year}" |
@@ -41,7 +41,7 @@ Also see [Subexpressions](https://www.nushell.sh/book/variables_and_subexpressio
 
 Take this example:
 
-```
+```nu
 > line1; line2 | line3
 ```
 
@@ -72,13 +72,13 @@ You may have wondered how we see a table if [`ls`](/commands/docs/ls.md) is an i
 
 In effect, the command:
 
-```
+```nu
 > ls
 ```
 
 And the pipeline:
 
-```
+```nu
 > ls | table
 ```
 
@@ -100,7 +100,7 @@ Are one and the same.
 Sometimes you want to output Nushell structured data to an external command for further processing. However, Nushell's default formatting options for structured data may not be what you want.
 For example, you want to find a file named "tutor" under "/usr/share/vim/runtime" and check its ownership
 
-```
+```nu
 > ls /usr/share/nvim/runtime/
 ╭────┬───────────────────────────────────────┬──────┬─────────┬───────────────╮
 │  # │                 name                  │ type │  size   │   modified    │
@@ -119,14 +119,14 @@ For example, you want to find a file named "tutor" under "/usr/share/vim/runtime
 
 You decided to use `grep` and [pipe](https://www.nushell.sh/book/pipelines.html) the result to external `^ls`
 
-```
+```nu
 > ls /usr/share/nvim/runtime/ | get name | ^grep tutor | ^ls -la $in
 ls: cannot access ''$'\342\224\202'' 32 '$'\342\224\202'' /usr/share/nvim/runtime/tutor        '$'\342\224\202\n': No such file or directory
 ```
 
 What's wrong? Nushell renders lists and tables (by adding a border with characters like `╭`,`─`,`┬`,`╮`) before piping them as text to external commands. If that's not the behavior you want, you must explicitly convert the data to a string before piping it to an external. For example, you can do so with [`to text`](/commands/docs/to_text.md):
 
-```
+```nu
 > ls /usr/share/nvim/runtime/ | get name | to text | ^grep tutor | tr -d '\n' | ^ls -la $in
 total 24
 drwxr-xr-x@  5 pengs  admin   160 14 Nov 13:12 .
@@ -137,6 +137,39 @@ drwxr-xr-x@  4 pengs  admin   128 14 Nov 13:42 en
 
 (Actually, for this simple usage you can just use [`find`](/commands/docs/find.md))
 
-```
+```nu
 > ls /usr/share/nvim/runtime/ | get name | find tutor | ^ls -al $in
+```
+
+## Command Output in Nushell
+
+Unlike external commands, Nushell commands are akin to functions. Most Nushell commands do not print anything to `stdout` and instead just return data.
+
+```nu
+> do { ls; ls; ls; "What?!" }
+```
+
+This means that the above code will not display the files under the current directory three times.
+In fact, running this in the shell will only display `"What?!"` because that is the value returned by the `do` command in this example. However, using the system `^ls` command instead of `ls` would indeed print the directory thrice because `^ls` does print its result once it runs.
+
+Knowing when data is displayed is important when using configuration variables that affect the display output of commands such as `table`.
+
+```nu
+> do { $env.config.table.mode = none; ls }
+```
+
+For instance, the above example sets the `$env.config.table.mode` configuration variable to `none`, which causes the `table` command to render data without additional borders. However, as it was shown earlier, the command is effectively equivalent to
+
+```nu
+> do { $env.config.table.mode = none; ls } | table
+```
+
+Because Nushell `$env` variables are [scoped](https://www.nushell.sh/book/environment.html#scoping), this means that the `table` command in the example is not affected by the
+environment modification inside the `do` block and the data will not be shown with the applied configuration.
+
+When displaying data early is desired, it is possible to explicitly apply `| table` inside the scope, or use the `print` command.
+
+```nu
+> do { $env.config.table.mode = none; ls | table }
+> do { $env.config.table.mode = none; print (ls) }
 ```

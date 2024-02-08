@@ -1,6 +1,6 @@
 # http put
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -8,12 +8,12 @@ Put a body to a URL.
 
 ## Signature
 
-`> http put (URL) (data) --user --password --content-type --max-time --headers --raw --insecure --full --allow-errors`
+`> http put (URL) (data) --user --password --content-type --max-time --headers --raw --insecure --full --allow-errors --redirect-mode`
 
 ## Parameters
 
-- `URL`: the URL to post to
-- `data`: the contents of the post body
+- `URL`: The URL to post to.
+- `data`: The contents of the post body.
 - `--user {any}`: the username when authenticating
 - `--password {any}`: the password when authenticating
 - `--content-type {any}`: the MIME type of content to post
@@ -23,6 +23,7 @@ Put a body to a URL.
 - `--insecure`: allow insecure server connections when using SSL
 - `--full`: returns the full response instead of only the body
 - `--allow-errors`: do not fail if the server returns an error code
+- `--redirect-mode {string}`: What to do when encountering redirects. Default: 'follow'. Valid options: 'follow' ('f'), 'manual' ('m'), 'error' ('e').
 
 ## Input/output types:
 
@@ -41,19 +42,19 @@ Put content to example.com
 Put content to example.com, with username and password
 
 ```bash
-> http put -u myuser -p mypass https://www.example.com 'body'
+> http put --user myuser --password mypass https://www.example.com 'body'
 ```
 
 Put content to example.com, with custom header
 
 ```bash
-> http put -H [my-header-key my-header-value] https://www.example.com
+> http put --headers [my-header-key my-header-value] https://www.example.com
 ```
 
 Put content to example.com, with JSON body
 
 ```bash
-> http put -t application/json https://www.example.com { field: value }
+> http put --content-type application/json https://www.example.com { field: value }
 ```
 
 ## Notes

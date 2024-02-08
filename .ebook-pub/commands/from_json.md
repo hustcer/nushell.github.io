@@ -1,6 +1,6 @@
 # from json
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -8,11 +8,12 @@ Convert from json to structured data.
 
 ## Signature
 
-`> from json --objects`
+`> from json --objects --strict`
 
 ## Parameters
 
 - `--objects`: treat each line as a separate value
+- `--strict`: follow the json specification exactly
 
 ## Input/output types:
 
@@ -32,4 +33,10 @@ Converts json formatted string to table
 
 ```bash
 > '{ "a": 1, "b": [1, 2] }' | from json
+```
+
+Parse json strictly which will error on comments and trailing commas
+
+```bash
+> '{ "a": 1, "b": 2 }' | from json -s
 ```

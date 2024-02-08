@@ -1,6 +1,6 @@
 # seq char
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Print a sequence of ASCII characters.
 
 ## Parameters
 
-- `start`: start of character sequence (inclusive)
-- `end`: end of character sequence (inclusive)
+- `start`: Start of character sequence (inclusive).
+- `end`: End of character sequence (inclusive).
 
 ## Input/output types:
 

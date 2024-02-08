@@ -1,6 +1,6 @@
 # exit
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Exit Nu.
 
 ## Parameters
 
-- `exit_code`: Exit code to return immediately with
+- `exit_code`: Exit code to return immediately with.
 
 ## Input/output types:
 

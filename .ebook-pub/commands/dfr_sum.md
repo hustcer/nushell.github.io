@@ -1,10 +1,10 @@
 # dfr sum
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
-Creates a sum expression for an aggregation or aggregates columns to their sum value
+Creates a sum expression for an aggregation or aggregates columns to their sum value.
 
 ## Signature
 

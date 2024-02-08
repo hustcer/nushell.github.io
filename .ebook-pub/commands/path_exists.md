@@ -1,6 +1,6 @@
 # path exists
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -8,7 +8,11 @@ Check whether a path exists.
 
 ## Signature
 
-`> path exists `
+`> path exists --no-symlink`
+
+## Parameters
+
+- `--no-symlink`: Do not resolve symbolic links
 
 ## Input/output types:
 

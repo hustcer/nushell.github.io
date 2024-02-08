@@ -1,6 +1,6 @@
 # into string
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Convert value to string.
 
 ## Parameters
 
-- `...rest`: for a data structure input, convert data at the given cell paths
+- `...rest`: For a data structure input, convert data at the given cell paths.
 - `--decimals {int}`: decimal digits to which to round
 
 ## Input/output types:
@@ -33,34 +33,28 @@ Convert value to string.
 
 ## Examples
 
-convert integer to string and append three decimal places
+convert int to string and append three decimal places
 
 ```bash
-> 5 | into string -d 3
+> 5 | into string --decimals 3
 ```
 
 convert float to string and round to nearest integer
 
 ```bash
-> 1.7 | into string -d 0
+> 1.7 | into string --decimals 0
 ```
 
 convert float to string
 
 ```bash
-> 1.7 | into string -d 1
+> 1.7 | into string --decimals 1
 ```
 
 convert float to string and limit to 2 decimals
 
 ```bash
-> 1.734 | into string -d 2
-```
-
-try to convert float to string and provide negative decimal points
-
-```bash
-> 1.734 | into string -d -2
+> 1.734 | into string --decimals 2
 ```
 
 convert float to string

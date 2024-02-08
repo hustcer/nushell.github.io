@@ -1,6 +1,6 @@
 # sleep
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Delay for a specified amount of time.
 
 ## Parameters
 
-- `duration`: time to sleep
-- `...rest`: additional time
+- `duration`: Time to sleep.
+- `...rest`: Additional time.
 
 ## Input/output types:
 

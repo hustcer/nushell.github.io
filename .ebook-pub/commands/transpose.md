@@ -1,6 +1,6 @@
 # transpose
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Transposes the table contents so rows become columns and columns become rows.
 
 ## Parameters
 
-- `...rest`: the names to give columns once transposed
+- `...rest`: The names to give columns once transposed.
 - `--header-row`: treat the first row as column names
 - `--ignore-titles`: don't transpose the column names into values
 - `--as-record`: transfer to record if the result is a table and contains only one row
@@ -43,11 +43,11 @@ Transposes the table contents with specified column names
 Transposes the table without column names and specify a new column name
 
 ```bash
-> [[c1 c2]; [1 2]] | transpose -i val
+> [[c1 c2]; [1 2]] | transpose --ignore-titles val
 ```
 
 Transfer back to record with -d flag
 
 ```bash
-> {c1: 1, c2: 2} | transpose | transpose -i -r -d
+> {c1: 1, c2: 2} | transpose | transpose --ignore-titles -r -d
 ```

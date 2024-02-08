@@ -1,6 +1,6 @@
 # glob
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -8,16 +8,16 @@ Creates a list of files and/or folders based on the glob pattern provided.
 
 ## Signature
 
-`> glob (glob) --depth --no-dir --no-file --no-symlink --not`
+`> glob (glob) --depth --no-dir --no-file --no-symlink --exclude`
 
 ## Parameters
 
-- `glob`: the glob expression
+- `glob`: The glob expression.
 - `--depth {int}`: directory depth to search
 - `--no-dir`: Whether to filter out directories from the returned paths
 - `--no-file`: Whether to filter out files from the returned paths
 - `--no-symlink`: Whether to filter out symlinks from the returned paths
-- `--not {list<string>}`: Patterns to exclude from the results
+- `--exclude {list<string>}`: Patterns to exclude from the search: `glob` will not walk the inside of directories matching the excluded patterns.
 
 ## Input/output types:
 
@@ -39,7 +39,7 @@ Search for _.rs and _.toml files recursively up to 2 folders deep
 > glob **/*.{rs,toml} --depth 2
 ```
 
-Search for files and folders that begin with uppercase C and lowercase c
+Search for files and folders that begin with uppercase C or lowercase c
 
 ```bash
 > glob "[Cc]*"
@@ -84,17 +84,17 @@ Search for folders that begin with an uppercase ASCII letter, ignoring files and
 Search for files named tsconfig.json that are not in node_modules directories
 
 ```bash
-> glob **/tsconfig.json --not [**/node_modules/**]
+> glob **/tsconfig.json --exclude [**/node_modules/**]
 ```
 
 Search for all files that are not in the target nor .git directories
 
 ```bash
-> glob **/* --not [**/target/** **/.git/** */]
+> glob **/* --exclude [**/target/** **/.git/** */]
 ```
 
 ## Notes
 
 ```text
-For more glob pattern help, please refer to https://github.com/olson-sean-k/wax
+For more glob pattern help, please refer to https://docs.rs/crate/wax/latest
 ```

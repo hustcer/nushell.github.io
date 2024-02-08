@@ -1,6 +1,6 @@
 # str replace
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,9 +12,9 @@ Find and replace text.
 
 ## Parameters
 
-- `find`: the pattern to find
-- `replace`: the replacement string
-- `...rest`: For a data structure input, operate on strings at the given cell paths
+- `find`: The pattern to find.
+- `replace`: The replacement string.
+- `...rest`: For a data structure input, operate on strings at the given cell paths.
 - `--all`: replace all occurrences of the pattern
 - `--no-expand`: do not expand capture groups (like $name) in the replacement string
 - `--regex`: match the pattern as a regular expression in the input, instead of a substring
@@ -40,7 +40,7 @@ Find and replace the first occurrence of a substring
 Find and replace all occurrences of a substring
 
 ```bash
-> 'abc abc abc' | str replace -a 'b' 'z'
+> 'abc abc abc' | str replace --all 'b' 'z'
 ```
 
 Find and replace contents with capture group using regular expression
@@ -52,19 +52,19 @@ Find and replace contents with capture group using regular expression
 Find and replace all occurrences of find string using regular expression
 
 ```bash
-> 'abc abc abc' | str replace -ar 'b' 'z'
+> 'abc abc abc' | str replace --all --regex 'b' 'z'
 ```
 
 Find and replace all occurrences of find string in table using regular expression
 
 ```bash
-> [[ColA ColB ColC]; [abc abc ads]] | str replace -ar 'b' 'z' ColA ColC
+> [[ColA ColB ColC]; [abc abc ads]] | str replace --all --regex 'b' 'z' ColA ColC
 ```
 
 Find and replace all occurrences of find string in record using regular expression
 
 ```bash
-> { KeyA: abc, KeyB: abc, KeyC: ads } | str replace -ar 'b' 'z' KeyA KeyC
+> { KeyA: abc, KeyB: abc, KeyC: ads } | str replace --all --regex 'b' 'z' KeyA KeyC
 ```
 
 Find and replace contents without using the replace parameter as a regular expression
@@ -94,5 +94,5 @@ Find and replace with fancy-regex using regular expression
 Find and replace on individual lines using multiline regular expression
 
 ```bash
-> "non-matching line\n123. one line\n124. another line\n" | str replace -am '^[0-9]+\. ' ''
+> "non-matching line\n123. one line\n124. another line\n" | str replace --all --multiline '^[0-9]+\. ' ''
 ```

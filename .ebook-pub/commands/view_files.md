@@ -1,6 +1,6 @@
 # view files
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,16 +12,22 @@ View the files registered in nushell's EngineState memory.
 
 ## Input/output types:
 
-| input   | output |
-| ------- | ------ |
-| nothing | string |
+| input   | output                                                     |
+| ------- | ---------------------------------------------------------- |
+| nothing | table\<filename: string, start: int, end: int, size: int\> |
 
 ## Examples
 
-View the files registered in nushell's EngineState memory
+View the files registered in Nushell's EngineState memory
 
 ```bash
 > view files
+```
+
+View how Nushell was originally invoked
+
+```bash
+> view files | get 0
 ```
 
 ## Notes

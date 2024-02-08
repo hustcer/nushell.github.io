@@ -1,10 +1,10 @@
 # hash sha256
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
-Hash a value using the sha256 hash algorithm
+Hash a value using the sha256 hash algorithm.
 
 ## Signature
 
@@ -12,7 +12,7 @@ Hash a value using the sha256 hash algorithm
 
 ## Parameters
 
-- `...rest`: optionally sha256 hash data by cell path
+- `...rest`: Optionally sha256 hash data by cell path.
 - `--binary`: Output binary instead of hexadecimal representation
 
 ## Input/output types:
@@ -20,7 +20,7 @@ Hash a value using the sha256 hash algorithm
 | input  | output |
 | ------ | ------ |
 | record | record |
-| string | string |
+| string | any    |
 | table  | table  |
 
 ## Examples

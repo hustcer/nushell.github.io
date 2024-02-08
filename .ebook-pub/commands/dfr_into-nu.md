@@ -1,6 +1,6 @@
 # dfr into-nu
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -32,7 +32,7 @@ Shows head rows from dataframe
 Shows tail rows from dataframe
 
 ```bash
-> [[a b]; [1 2] [5 6] [3 4]] | dfr into-df | dfr into-nu -t -n 1
+> [[a b]; [1 2] [5 6] [3 4]] | dfr into-df | dfr into-nu --tail --rows 1
 ```
 
 Convert a col expression into a nushell value

@@ -1,6 +1,6 @@
 # grid
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -22,7 +22,6 @@ Renders the output to a textual terminal grid.
 | ----------- | ------ |
 | list\<any\> | string |
 | record      | string |
-| table       | string |
 
 ## Examples
 

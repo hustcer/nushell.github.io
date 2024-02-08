@@ -1,6 +1,6 @@
 # date to-timezone
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Convert a date to a given time zone.
 
 ## Parameters
 
-- `time zone`: time zone description
+- `time zone`: Time zone description.
 
 ## Input/output types:
 

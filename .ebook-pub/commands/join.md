@@ -1,10 +1,10 @@
 # join
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
-Join two tables
+Join two tables.
 
 ## Signature
 
@@ -12,8 +12,8 @@ Join two tables
 
 ## Parameters
 
-- `right-table`: The right table in the join
-- `left-on`: Name of column in input (left) table to join on
+- `right-table`: The right table in the join.
+- `left-on`: Name of column in input (left) table to join on.
 - `right-on`: Name of column in right table to join on. Defaults to same column as left table.
 - `--inner`: Inner join (default)
 - `--left`: Left-outer join

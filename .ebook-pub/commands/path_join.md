@@ -1,6 +1,6 @@
 # path join
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Join a structured path or a list of path parts.
 
 ## Parameters
 
-- `...rest`: Path to append to the input
+- `...rest`: Path to append to the input.
 
 ## Input/output types:
 
@@ -35,6 +35,18 @@ Append a filename to a path
 
 ```bash
 > '/home/viking' | path join spams this_spam.txt
+```
+
+Use relative paths, e.g. '..' will go up one directory
+
+```bash
+> '/home/viking' | path join .. folder
+```
+
+Use absolute paths, e.g. '/' will bring you to the top level directory
+
+```bash
+> '/home/viking' | path join / folder
 ```
 
 Join a list of parts into a path

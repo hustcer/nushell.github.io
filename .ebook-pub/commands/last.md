@@ -1,6 +1,6 @@
 # last
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,14 +12,14 @@ Return only the last several rows of the input. Counterpart of `first`. Opposite
 
 ## Parameters
 
-- `rows`: starting from the back, the number of rows to return
+- `rows`: Starting from the back, the number of rows to return.
 
 ## Input/output types:
 
-| input       | output      |
-| ----------- | ----------- |
-| binary      | binary      |
-| list\<any\> | list\<any\> |
+| input       | output |
+| ----------- | ------ |
+| binary      | binary |
+| list\<any\> | any    |
 
 ## Examples
 

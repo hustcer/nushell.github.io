@@ -1,6 +1,6 @@
 # window
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Creates a sliding window of `window_size` that slide by n rows/elements across i
 
 ## Parameters
 
-- `window_size`: the size of each window
+- `window_size`: The size of each window.
 - `--stride {int}`: the number of rows to slide over between windows
 - `--remainder`: yield last chunks even if they have fewer elements than size
 

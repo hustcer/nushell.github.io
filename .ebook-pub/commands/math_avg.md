@@ -1,6 +1,6 @@
 # math avg
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -14,9 +14,15 @@ Returns the average of a list of numbers.
 
 | input            | output   |
 | ---------------- | -------- |
+| duration         | duration |
+| filesize         | filesize |
 | list\<duration\> | duration |
 | list\<filesize\> | filesize |
 | list\<number\>   | number   |
+| number           | number   |
+| range            | number   |
+| record           | record   |
+| table            | record   |
 
 ## Examples
 
@@ -24,4 +30,16 @@ Compute the average of a list of numbers
 
 ```bash
 > [-50 100.0 25] | math avg
+```
+
+Compute the average of a list of durations
+
+```bash
+> [2sec 1min] | math avg
+```
+
+Compute the average of each column in a table
+
+```bash
+> [[a b]; [1 2] [3 4]] | math avg
 ```

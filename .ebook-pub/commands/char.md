@@ -1,6 +1,6 @@
 # char
 
-**version**: 0.85.0
+**version**: 0.90.2
 
 ## **usage**:
 
@@ -12,8 +12,8 @@ Output special characters (e.g., 'newline').
 
 ## Parameters
 
-- `character`: the name of the character to output
-- `...rest`: multiple Unicode bytes
+- `character`: The name of the character to output.
+- `...rest`: Multiple Unicode bytes.
 - `--list`: List all supported character names
 - `--unicode`: Unicode string i.e. 1f378
 - `--integer`: Create a codepoint from an integer
@@ -22,7 +22,7 @@ Output special characters (e.g., 'newline').
 
 | input   | output |
 | ------- | ------ |
-| nothing | string |
+| nothing | any    |
 
 ## Examples
 
@@ -47,17 +47,17 @@ Output prompt character, newline and a hamburger menu character
 Output Unicode character
 
 ```bash
-> char -u 1f378
+> char --unicode 1f378
 ```
 
 Create Unicode from integer codepoint values
 
 ```bash
-> char -i (0x60 + 1) (0x60 + 2)
+> char --integer (0x60 + 1) (0x60 + 2)
 ```
 
 Output multi-byte Unicode character
 
 ```bash
-> char -u 1F468 200D 1F466 200D 1F466
+> char --unicode 1F468 200D 1F466 200D 1F466
 ```
