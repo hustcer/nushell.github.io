@@ -31,7 +31,7 @@ output.base_path: /Users/hustcer/github/open-books
 -- custom_commands.md
 -- aliases.md
 -- operators.md
--- variables_and_subexpressions.md
+-- variables.md
 -- control_flow.md
 -- scripts.md
 -- modules.md
@@ -109,6 +109,9 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/collect.md
 -- commands/columns.md
 -- commands/commandline.md
+-- commands/commandline_edit.md
+-- commands/commandline_get-cursor.md
+-- commands/commandline_set-cursor.md
 -- commands/compact.md
 -- commands/complete.md
 -- commands/config.md
@@ -128,6 +131,7 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/date_to-timezone.md
 -- commands/debug.md
 -- commands/debug_info.md
+-- commands/debug_profile.md
 -- commands/decode.md
 -- commands/decode_base64.md
 -- commands/decode_hex.md
@@ -151,6 +155,7 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/dfr_as-datetime.md
 -- commands/dfr_as.md
 -- commands/dfr_cache.md
+-- commands/dfr_cast.md
 -- commands/dfr_col.md
 -- commands/dfr_collect.md
 -- commands/dfr_columns.md
@@ -289,6 +294,8 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/from_ics.md
 -- commands/from_ini.md
 -- commands/from_json.md
+-- commands/from_msgpack.md
+-- commands/from_msgpackz.md
 -- commands/from_nuon.md
 -- commands/from_ods.md
 -- commands/from_ssv.md
@@ -339,6 +346,7 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/input_listen.md
 -- commands/insert.md
 -- commands/inspect.md
+-- commands/interleave.md
 -- commands/into.md
 -- commands/into_binary.md
 -- commands/into_bits.md
@@ -348,6 +356,7 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/into_duration.md
 -- commands/into_filesize.md
 -- commands/into_float.md
+-- commands/into_glob.md
 -- commands/into_int.md
 -- commands/into_record.md
 -- commands/into_sqlite.md
@@ -355,6 +364,7 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/into_value.md
 -- commands/is-admin.md
 -- commands/is-empty.md
+-- commands/is-not-empty.md
 -- commands/is-terminal.md
 -- commands/items.md
 -- commands/join.md
@@ -405,6 +415,7 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/math_variance.md
 -- commands/merge.md
 -- commands/metadata.md
+-- commands/metadata_set.md
 -- commands/mkdir.md
 -- commands/mktemp.md
 -- commands/module.md
@@ -419,6 +430,7 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/overlay_list.md
 -- commands/overlay_new.md
 -- commands/overlay_use.md
+-- commands/panic.md
 -- commands/par-each.md
 -- commands/parse.md
 -- commands/path.md
@@ -431,6 +443,12 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/path_relative-to.md
 -- commands/path_split.md
 -- commands/path_type.md
+-- commands/plugin.md
+-- commands/plugin_add.md
+-- commands/plugin_list.md
+-- commands/plugin_rm.md
+-- commands/plugin_stop.md
+-- commands/plugin_use.md
 -- commands/port.md
 -- commands/prepend.md
 -- commands/print.md
@@ -525,11 +543,13 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/str_title-case.md
 -- commands/str_trim.md
 -- commands/str_upcase.md
+-- commands/stress_internals.md
 -- commands/sys.md
 -- commands/table.md
 -- commands/take.md
 -- commands/take_until.md
 -- commands/take_while.md
+-- commands/tee.md
 -- commands/term_size.md
 -- commands/timeit.md
 -- commands/to.md
@@ -537,6 +557,8 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/to_html.md
 -- commands/to_json.md
 -- commands/to_md.md
+-- commands/to_msgpack.md
+-- commands/to_msgpackz.md
 -- commands/to_nuon.md
 -- commands/to_text.md
 -- commands/to_toml.md
@@ -550,6 +572,7 @@ output.base_path: /Users/hustcer/github/open-books
 -- commands/ulimit.md
 -- commands/umkdir.md
 -- commands/umv.md
+-- commands/uname.md
 -- commands/uniq-by.md
 -- commands/uniq.md
 -- commands/update.md
