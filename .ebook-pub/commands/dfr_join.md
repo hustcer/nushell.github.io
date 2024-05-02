@@ -1,6 +1,6 @@
 # dfr join
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -15,7 +15,7 @@ Joins a lazy frame with other lazy frame.
 - `other`: LazyFrame to join with
 - `left_on`: Left column(s) to join on
 - `right_on`: Right column(s) to join on
-- `--inner`: inner joing between lazyframes (default)
+- `--inner`: inner join between lazyframes (default)
 - `--left`: left join between lazyframes
 - `--outer`: outer join between lazyframes
 - `--cross`: cross join between lazyframes

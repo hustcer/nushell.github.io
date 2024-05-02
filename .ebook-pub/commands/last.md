@@ -1,6 +1,6 @@
 # last
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -20,6 +20,7 @@ Return only the last several rows of the input. Counterpart of `first`. Opposite
 | ----------- | ------ |
 | binary      | binary |
 | list\<any\> | any    |
+| range       | any    |
 
 ## Examples
 
@@ -39,4 +40,10 @@ Return the last 2 bytes of a binary value
 
 ```bash
 > 0x[01 23 45] | last 2
+```
+
+Return the last item of a range
+
+```bash
+> 1..3 | last
 ```

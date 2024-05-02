@@ -1,6 +1,6 @@
 # dfr into-df
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -50,4 +50,10 @@ Convert to a dataframe and provide a schema
 
 ```bash
 > {a: 1, b: {a: [1 2 3]}, c: [a b c]}| dfr into-df -s {a: u8, b: {a: list<u64>}, c: list<str>}
+```
+
+Convert to a dataframe and provide a schema that adds a new column
+
+```bash
+> [[a b]; [1 "foo"] [2 "bar"]] | dfr into-df -s {a: u8, b:str, c:i64} | dfr fill-null 3
 ```

@@ -1,6 +1,6 @@
 # into
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -34,6 +34,7 @@ You must use one of the following subcommands. Using this command as-is will onl
 | [`into duration`](/commands/docs/into_duration.md)   | Builtin | Convert value to duration.                 |
 | [`into filesize`](/commands/docs/into_filesize.md)   | Builtin | Convert value to filesize.                 |
 | [`into float`](/commands/docs/into_float.md)         | Builtin | Convert data into floating point number.   |
+| [`into glob`](/commands/docs/into_glob.md)           | Builtin | Convert value to glob.                     |
 | [`into int`](/commands/docs/into_int.md)             | Builtin | Convert value to integer.                  |
 | [`into record`](/commands/docs/into_record.md)       | Builtin | Convert value to record.                   |
 | [`into sqlite`](/commands/docs/into_sqlite.md)       | Builtin | Convert table into a SQLite database.      |

@@ -35,7 +35,7 @@
 ---
 
 ```nu
-    > [[framework, language]; [Django, Python] [Lavarel, PHP]]
+    > [[framework, language]; [Django, Python] [Laravel, PHP]]
 ```
 
 > **prints the table**
@@ -124,7 +124,7 @@
     > $'(ansi purple_bold)This text is a bold purple!(ansi reset)'
 ```
 
-> **ansi command colors the text (alsways end with `ansi reset` to reset color to default)**
+> **ansi command colors the text (always end with `ansi reset` to reset color to default)**
 
 ## Lists
 
@@ -139,7 +139,7 @@
     ╰───┴───────╯
 ```
 
-> **inserts `beeze` value at st index in the list**
+> **inserts `beeze` value at the 2nd index of the list**
 
 ---
 
@@ -181,7 +181,7 @@
 
 ```nu
     > let planets = [Mercury Venus Earth Mars Jupiter Saturn Uranus Neptune]
-    > $planets | each { |it| $"($it) is a planet of solar system" }
+    > $planets | each { |it| $"($it) is a planet of the solar system" }
 ```
 
 > **iterates over a list; `it` is current list value**
@@ -412,7 +412,7 @@
 
 > **custom command which takes any number of positional arguments using rest params**
 
-## Variables & Subexpressions
+## Variables
 
 ```nu
     > let val = 42
@@ -456,8 +456,8 @@
 > This expression results in error.**
 
 ```nu
-    > const plugin = 'path/­to/­plugin'
-    > register $plugin
+    > const file = 'path/­to/­file.nu'
+    > source $file
 ```
 
 > **a constant variable is immutable value which is fully evaluated at parse-time**
@@ -475,10 +475,10 @@
 
 ```nu
     > let big_files = (ls | where size > 10kb)
-    >  $big_files
+    > $big_files
 ```
 
-> **using subexp­ression by wrapping the expression with parent­heses ()**
+> **assigning the result of a pipeline to a variable**
 
 ---
 

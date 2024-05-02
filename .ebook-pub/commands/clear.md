@@ -1,6 +1,6 @@
 # clear
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -8,7 +8,11 @@ Clear the terminal.
 
 ## Signature
 
-`> clear `
+`> clear --all`
+
+## Parameters
+
+- `--all`: Clear the terminal and its scroll-back history
 
 ## Input/output types:
 
@@ -22,4 +26,10 @@ Clear the terminal
 
 ```bash
 > clear
+```
+
+Clear the terminal and its scroll-back history
+
+```bash
+> clear --all
 ```

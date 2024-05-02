@@ -1,6 +1,6 @@
 # insert
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -53,4 +53,11 @@ Insert a new value at the end of a list
 
 ```bash
 > [1 2 3] | insert 3 4
+```
+
+## Notes
+
+```text
+When inserting a column, the closure will be run for each row, and the current row will be passed as the first argument.
+When inserting into a specific index, the closure will instead get the current value at the index or null if inserting at the end of a list/table.
 ```

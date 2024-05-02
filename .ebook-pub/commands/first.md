@@ -1,6 +1,6 @@
 # first
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -40,4 +40,10 @@ Return the first 2 bytes of a binary value
 
 ```bash
 > 0x[01 23 45] | first 2
+```
+
+Return the first item of a range
+
+```bash
+> 1..3 | first
 ```

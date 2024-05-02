@@ -1,6 +1,6 @@
 # into string
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -24,6 +24,7 @@ Convert value to string.
 | datetime    | string         |
 | duration    | string         |
 | filesize    | string         |
+| glob        | string         |
 | int         | string         |
 | list\<any\> | list\<string\> |
 | number      | string         |

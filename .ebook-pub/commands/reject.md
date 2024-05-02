@@ -1,6 +1,6 @@
 # reject
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -54,22 +54,22 @@ Reject a nested field in a record
 > {a: {b: 3, c: 5}} | reject a.b
 ```
 
-Reject columns by a provided list of columns
+Reject multiple rows
 
 ```bash
-> let cols = [size type];[[name type size]; [Cargo.toml toml 1kb] [Cargo.lock toml 2kb]] | reject $cols
+> [[name type size]; [Cargo.toml toml 1kb] [Cargo.lock toml 2kb] [file.json json 3kb]] | reject 0 2
 ```
 
-Reject columns by a list of columns directly
+Reject multiple columns
 
 ```bash
-> [[name type size]; [Cargo.toml toml 1kb] [Cargo.lock toml 2kb]] | reject ["size", "type"]
+> [[name type size]; [Cargo.toml toml 1kb] [Cargo.lock toml 2kb]] | reject type size
 ```
 
-Reject rows by a provided list of rows
+Reject multiple columns by spreading a list
 
 ```bash
-> let rows = [0 2];[[name type size]; [Cargo.toml toml 1kb] [Cargo.lock toml 2kb] [file.json json 3kb]] | reject $rows
+> let cols = [type size]; [[name type size]; [Cargo.toml toml 1kb] [Cargo.lock toml 2kb]] | reject ...$cols
 ```
 
 ## Notes

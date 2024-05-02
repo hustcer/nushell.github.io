@@ -1,6 +1,6 @@
 # from ics
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -22,5 +22,5 @@ Converts ics formatted string to table
 
 ```bash
 > 'BEGIN:VCALENDAR
-            END:VCALENDAR' | from ics
+END:VCALENDAR' | from ics
 ```

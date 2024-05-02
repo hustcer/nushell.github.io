@@ -1,27 +1,25 @@
 # commandline
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
-View or modify the current command line input buffer.
+View the current command line input buffer.
 
 ## Signature
 
-`> commandline (cmd) --cursor --cursor-end --append --insert --replace`
-
-## Parameters
-
-- `cmd`: the string to perform the operation with
-- `--cursor`: Set or get the current cursor position
-- `--cursor-end`: Set the current cursor position to the end of the buffer
-- `--append`: appends the string to the end of the buffer
-- `--insert`: inserts the string into the buffer at the cursor position
-- `--replace`: replaces the current contents of the buffer (default)
+`> commandline `
 
 ## Input/output types:
 
-| input   | output  |
-| ------- | ------- |
-| nothing | nothing |
-| string  | string  |
+| input   | output |
+| ------- | ------ |
+| nothing | string |
+
+## Subcommands:
+
+| name                                                                 | type    | usage                                         |
+| -------------------------------------------------------------------- | ------- | --------------------------------------------- |
+| [`commandline edit`](/commands/docs/commandline_edit.md)             | Builtin | Modify the current command line input buffer. |
+| [`commandline get-cursor`](/commands/docs/commandline_get-cursor.md) | Builtin | Get the current cursor position.              |
+| [`commandline set-cursor`](/commands/docs/commandline_set-cursor.md) | Builtin | Set the current cursor position.              |

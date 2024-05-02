@@ -1,6 +1,6 @@
 # debug
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -43,6 +43,7 @@ Debug print a table
 
 ## Subcommands:
 
-| name                                         | type    | usage                     |
-| -------------------------------------------- | ------- | ------------------------- |
-| [`debug info`](/commands/docs/debug_info.md) | Builtin | View process memory info. |
+| name                                               | type    | usage                                   |
+| -------------------------------------------------- | ------- | --------------------------------------- |
+| [`debug info`](/commands/docs/debug_info.md)       | Builtin | View process memory info.               |
+| [`debug profile`](/commands/docs/debug_profile.md) | Builtin | Profile pipeline elements in a closure. |

@@ -1,6 +1,6 @@
 # dfr str-slice
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -27,4 +27,10 @@ Creates slices from the strings
 
 ```bash
 > [abcded abc321 abc123] | dfr into-df | dfr str-slice 1 --length 2
+```
+
+Creates slices from the strings without length
+
+```bash
+> [abcded abc321 abc123] | dfr into-df | dfr str-slice 1
 ```

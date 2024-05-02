@@ -1,10 +1,10 @@
 # bits shr
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
-Bitwise shift right for ints.
+Bitwise shift right for ints or binary values.
 
 ## Signature
 
@@ -14,14 +14,16 @@ Bitwise shift right for ints.
 
 - `bits`: number of bits to shift right
 - `--signed`: always treat input number as a signed number
-- `--number-bytes {string}`: the word size in number of bytes, it can be 1, 2, 4, 8, auto, default value `8`
+- `--number-bytes {int}`: the word size in number of bytes, it can be 1, 2, 4, 8, auto, default value `8`
 
 ## Input/output types:
 
-| input       | output      |
-| ----------- | ----------- |
-| int         | int         |
-| list\<int\> | list\<int\> |
+| input          | output         |
+| -------------- | -------------- |
+| binary         | binary         |
+| int            | int            |
+| list\<binary\> | list\<binary\> |
+| list\<int\>    | list\<int\>    |
 
 ## Examples
 
@@ -35,4 +37,10 @@ Shift right a list of numbers
 
 ```bash
 > [15 35 2] | bits shr 2
+```
+
+Shift right a binary value
+
+```bash
+> 0x[4f f4] | bits shr 4
 ```

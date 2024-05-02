@@ -1,10 +1,10 @@
 # bits ror
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
-Bitwise rotate right for ints.
+Bitwise rotate right for ints or binary values.
 
 ## Signature
 
@@ -14,25 +14,33 @@ Bitwise rotate right for ints.
 
 - `bits`: number of bits to rotate right
 - `--signed`: always treat input number as a signed number
-- `--number-bytes {string}`: the word size in number of bytes, it can be 1, 2, 4, 8, auto, default value `8`
+- `--number-bytes {int}`: the word size in number of bytes, it can be 1, 2, 4, 8, auto, default value `8`
 
 ## Input/output types:
 
-| input       | output      |
-| ----------- | ----------- |
-| int         | int         |
-| list\<int\> | list\<int\> |
+| input          | output         |
+| -------------- | -------------- |
+| binary         | binary         |
+| int            | int            |
+| list\<binary\> | list\<binary\> |
+| list\<int\>    | list\<int\>    |
 
 ## Examples
 
-Rotate right a number with 60 bits
+rotate right a number with 2 bits
 
 ```bash
-> 17 | bits ror 60
+> 17 | bits ror 2
 ```
 
-Rotate right a list of numbers of one byte
+rotate right a list of numbers of two bytes
 
 ```bash
-> [15 33 92] | bits ror 2 --number-bytes '1'
+> [15 33 92] | bits ror 2 --number-bytes 2
+```
+
+rotate right binary data
+
+```bash
+> 0x[ff bb 03] | bits ror 10
 ```

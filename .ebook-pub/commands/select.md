@@ -1,6 +1,6 @@
 # select
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -49,22 +49,16 @@ Select the first four rows (this is the same as `first 4`)
 > ls | select 0 1 2 3
 ```
 
-Select columns by a provided list of columns
+Select multiple columns
 
 ```bash
-> let cols = [name type];[[name type size]; [Cargo.toml toml 1kb] [Cargo.lock toml 2kb]] | select $cols
+> [[name type size]; [Cargo.toml toml 1kb] [Cargo.lock toml 2kb]] | select name type
 ```
 
-Select columns by a provided list of columns
+Select multiple columns by spreading a list
 
 ```bash
-> [[name type size]; [Cargo.toml toml 1kb] [Cargo.lock toml 2kb]] | select ["name", "type"]
-```
-
-Select rows by a provided list of rows
-
-```bash
-> let rows = [0 2];[[name type size]; [Cargo.toml toml 1kb] [Cargo.lock toml 2kb] [file.json json 3kb]] | select $rows
+> let cols = [name type]; [[name type size]; [Cargo.toml toml 1kb] [Cargo.lock toml 2kb]] | select ...$cols
 ```
 
 ## Notes

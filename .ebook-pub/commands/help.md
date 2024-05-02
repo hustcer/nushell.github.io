@@ -1,6 +1,6 @@
 # help
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -32,7 +32,7 @@ show help for single command, alias, or module
 show help for single sub-command, alias, or module
 
 ```bash
-> help str lpad
+> help str join
 ```
 
 search for string in command names, usage and search terms

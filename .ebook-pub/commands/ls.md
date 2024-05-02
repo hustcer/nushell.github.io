@@ -1,6 +1,6 @@
 # ls
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -8,11 +8,11 @@ List the filenames, sizes, and modification times of items in a directory.
 
 ## Signature
 
-`> ls (pattern) --all --long --short-names --full-paths --du --directory --mime-type`
+`> ls ...rest --all --long --short-names --full-paths --du --directory --mime-type`
 
 ## Parameters
 
-- `pattern`: The glob pattern to use.
+- `...rest`: The glob pattern to use.
 - `--all`: Show hidden files
 - `--long`: Get all available columns for each entry (slower; columns are platform-dependent)
 - `--short-names`: Only print the file names, and not the path

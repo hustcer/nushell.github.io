@@ -1,6 +1,6 @@
 # stor import
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Import a sqlite database file into the in-memory sqlite database.
 
 ## Parameters
 
-- `--file-name {string}`: file name to export the sqlite in-memory database to
+- `--file-name {string}`: file name to import the sqlite in-memory database from
 
 ## Input/output types:
 

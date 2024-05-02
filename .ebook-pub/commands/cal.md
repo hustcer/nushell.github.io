@@ -1,6 +1,6 @@
 # cal
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -42,5 +42,5 @@ The calendar for all of 2012
 This month's calendar with the week starting on monday
 
 ```bash
-> cal --week-start monday
+> cal --week-start mo
 ```
