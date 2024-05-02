@@ -1,6 +1,6 @@
 # into int
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -8,13 +8,14 @@ Convert value to integer.
 
 ## Signature
 
-`> into int ...rest --radix --endian`
+`> into int ...rest --radix --endian --signed`
 
 ## Parameters
 
 - `...rest`: For a data structure input, convert data at the given cell paths.
 - `--radix {number}`: radix of integer
 - `--endian {string}`: byte encode endian, available options: native(default), little, big
+- `--signed`: always treat input number as a signed number
 
 ## Input/output types:
 
@@ -109,4 +110,16 @@ Convert 0 padded string to int with radix 8
 
 ```bash
 > '0010132' | into int --radix 8
+```
+
+Convert binary value to int
+
+```bash
+> 0x[10] | into int
+```
+
+Convert binary value to signed int
+
+```bash
+> 0x[a0] | into int --signed
 ```

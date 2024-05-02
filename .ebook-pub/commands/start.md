@@ -1,6 +1,6 @@
 # start
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -19,7 +19,6 @@ Open a folder, file or website in the default application or viewer.
 | input   | output |
 | ------- | ------ |
 | nothing | any    |
-| string  | any    |
 
 ## Examples
 

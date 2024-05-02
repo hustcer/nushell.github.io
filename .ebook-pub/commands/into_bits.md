@@ -1,6 +1,6 @@
 # into bits
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -20,7 +20,6 @@ Convert value to a binary primitive.
 | -------- | ------ |
 | binary   | string |
 | bool     | string |
-| datetime | string |
 | duration | string |
 | filesize | string |
 | int      | string |
@@ -33,7 +32,7 @@ Convert value to a binary primitive.
 convert a binary value into a string, padded to 8 places with 0s
 
 ```bash
-> 01b | into bits
+> 0x[1] | into bits
 ```
 
 convert an int into a string, padded to 8 places with 0s
@@ -58,12 +57,6 @@ convert a boolean value into a string, padded to 8 places with 0s
 
 ```bash
 > true | into bits
-```
-
-convert a datetime value into a string, padded to 8 places with 0s
-
-```bash
-> 2023-04-17T01:02:03 | into bits
 ```
 
 convert a string into a raw binary string, padded with 0s to 8 places

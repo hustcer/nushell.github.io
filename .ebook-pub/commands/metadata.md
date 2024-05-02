@@ -1,6 +1,6 @@
 # metadata
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -33,3 +33,9 @@ Get the metadata of the input
 ```bash
 > ls | metadata
 ```
+
+## Subcommands:
+
+| name                                             | type    | usage                                     |
+| ------------------------------------------------ | ------- | ----------------------------------------- |
+| [`metadata set`](/commands/docs/metadata_set.md) | Builtin | Set the metadata for items in the stream. |

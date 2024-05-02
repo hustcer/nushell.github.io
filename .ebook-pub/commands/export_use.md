@@ -1,6 +1,6 @@
 # export use
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -8,12 +8,12 @@ Use definitions from a module and export them from this module.
 
 ## Signature
 
-`> export use (module) (members)`
+`> export use (module) ...rest`
 
 ## Parameters
 
 - `module`: Module or module file.
-- `members`: Which members of the module to import.
+- `...rest`: Which members of the module to import.
 
 ## Input/output types:
 

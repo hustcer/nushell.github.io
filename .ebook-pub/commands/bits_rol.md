@@ -1,10 +1,10 @@
 # bits rol
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
-Bitwise rotate left for ints.
+Bitwise rotate left for ints or binary values.
 
 ## Signature
 
@@ -14,14 +14,16 @@ Bitwise rotate left for ints.
 
 - `bits`: number of bits to rotate left
 - `--signed`: always treat input number as a signed number
-- `--number-bytes {string}`: the word size in number of bytes, it can be 1, 2, 4, 8, auto, default value `8`
+- `--number-bytes {int}`: the word size in number of bytes, it can be 1, 2, 4, 8, auto, default value `8`
 
 ## Input/output types:
 
-| input       | output      |
-| ----------- | ----------- |
-| int         | int         |
-| list\<int\> | list\<int\> |
+| input          | output         |
+| -------------- | -------------- |
+| binary         | binary         |
+| int            | int            |
+| list\<binary\> | list\<binary\> |
+| list\<int\>    | list\<int\>    |
 
 ## Examples
 
@@ -35,4 +37,10 @@ Rotate left a list of numbers with 2 bits
 
 ```bash
 > [5 3 2] | bits rol 2
+```
+
+rotate left binary data
+
+```bash
+> 0x[c0 ff ee] | bits rol 10
 ```

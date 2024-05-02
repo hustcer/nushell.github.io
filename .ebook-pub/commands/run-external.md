@@ -1,6 +1,6 @@
 # run-external
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -8,16 +8,12 @@ Runs external command.
 
 ## Signature
 
-`> run-external (command) ...rest --redirect-stdout --redirect-stderr --redirect-combine --trim-end-newline`
+`> run-external (command) ...rest`
 
 ## Parameters
 
 - `command`: External command to run.
 - `...rest`: Arguments for external command.
-- `--redirect-stdout`: redirect stdout to the pipeline
-- `--redirect-stderr`: redirect stderr to the pipeline
-- `--redirect-combine`: redirect both stdout and stderr combined to the pipeline (collected in stdout)
-- `--trim-end-newline`: trimming end newlines
 
 ## Input/output types:
 
@@ -36,5 +32,11 @@ Run an external command
 Redirect stdout from an external command into the pipeline
 
 ```bash
-> run-external --redirect-stdout "echo" "-n" "hello" | split chars
+> run-external "echo" "-n" "hello" | split chars
+```
+
+Redirect stderr from an external command into the pipeline
+
+```bash
+> run-external "nu" "-c" "print -e hello" e>| split chars
 ```

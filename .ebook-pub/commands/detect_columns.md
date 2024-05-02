@@ -1,6 +1,6 @@
 # detect columns
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -8,13 +8,14 @@ Attempt to automatically split text into multiple columns.
 
 ## Signature
 
-`> detect columns --skip --no-headers --combine-columns`
+`> detect columns --skip --no-headers --combine-columns --guess`
 
 ## Parameters
 
 - `--skip {int}`: number of rows to skip before detecting
 - `--no-headers`: don't detect headers
 - `--combine-columns {range}`: columns to be combined; listed as a range
+- `--guess`: detect columns by guessing width, it may be useful if default one doesn't work
 
 ## Input/output types:
 
@@ -24,10 +25,18 @@ Attempt to automatically split text into multiple columns.
 
 ## Examples
 
-Splits string across multiple columns
+use --guess if you find default algorithm not working
 
 ```bash
-> 'a b c' | detect columns --no-headers
+>
+'Filesystem     1K-blocks      Used Available Use% Mounted on
+none             8150224         4   8150220   1% /mnt/c' | detect columns --guess
+```
+
+detect columns with no headers
+
+```bash
+> 'a b c' | detect columns  --no-headers
 ```
 
 ```bash

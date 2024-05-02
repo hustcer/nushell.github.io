@@ -1,6 +1,6 @@
 # scope commands
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -12,9 +12,9 @@ Output info on the commands in the current scope.
 
 ## Input/output types:
 
-| input   | output |
-| ------- | ------ |
-| nothing | any    |
+| input   | output      |
+| ------- | ----------- |
+| nothing | list\<any\> |
 
 ## Examples
 

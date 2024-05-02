@@ -1,6 +1,6 @@
 # date list-timezone
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -18,7 +18,7 @@ List supported time zones.
 
 ## Examples
 
-Show timezone(s) that contains 'Shanghai'
+Show time zone(s) that contains 'Shanghai'
 
 ```bash
 > date list-timezone | where timezone =~ Shanghai

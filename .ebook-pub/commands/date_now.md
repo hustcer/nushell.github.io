@@ -1,6 +1,6 @@
 # date now
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -24,19 +24,19 @@ Get the current date and display it in a given format string.
 > date now | format date "%Y-%m-%d %H:%M:%S"
 ```
 
-Get the time duration from 2019-04-30 to now
+Get the time duration since 2019-04-30.
 
 ```bash
 > (date now) - 2019-05-01
 ```
 
-Get the time duration since a more accurate time
+Get the time duration since a more specific time.
 
 ```bash
 > (date now) - 2019-05-01T04:12:05.20+08:00
 ```
 
-Get current time in full RFC3339 format with timezone
+Get current time in full RFC 3339 format with time zone.
 
 ```bash
 > date now | debug

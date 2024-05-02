@@ -87,7 +87,7 @@ Compared to JSON, NUON is more "human-friendly".
 For example, comments are allowed and commas are not required.
 
 One limitation of NUON currently is that it cannot represent all of the Nushell [data types](types_of_data.md).
-Most notably, NUON does not allow to serialize blocks.
+Most notably, NUON does not allow the serialization of blocks.
 
 ## Handling Strings
 
@@ -182,7 +182,6 @@ There are other commands you can use to work with strings:
 
 - [`str`](/commands/docs/str.md)
 - [`lines`](/commands/docs/lines.md)
-- [`size`](/commands/docs/size.md)
 
 There is also a set of helper commands we can call if we know the data has a structure that Nu should be able to understand. For example, let's open a Rust lock file:
 
@@ -207,7 +206,7 @@ While it's helpful to be able to open a file and immediately work with a table o
 > open Cargo.toml --raw
 [package]                                                                                        name = "nu"
 version = "0.1.3"
-authors = ["Yehuda Katz <wycats@gmail.com>", "Jonathan Turner <jonathan.d.turner@gmail.com>"]
+authors = ["Yehuda Katz <wycats@gmail.com>", "Sophia Turner <547158+sophiajt@users.noreply.github.com>"]
 description = "A shell for the GitHub era"
 license = "MIT"
 ```

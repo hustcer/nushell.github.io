@@ -1,23 +1,23 @@
 # mv
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
-Move files or directories.
+Move files or directories using uutils/coreutils mv.
 
 ## Signature
 
-`> mv (source) (destination) --verbose --force --interactive --update`
+`> mv ...rest --force --verbose --progress --interactive --no-clobber`
 
 ## Parameters
 
-- `source`: The location to move files/directories from.
-- `destination`: The location to move files/directories to.
-- `--verbose`: make mv to be verbose, showing files been moved.
-- `--force`: overwrite the destination.
-- `--interactive`: ask user to confirm action
-- `--update`: move only when the SOURCE file is newer than the destination file(with -f) or when the destination file is missing
+- `...rest`: Rename SRC to DST, or move SRC to DIR.
+- `--force`: do not prompt before overwriting
+- `--verbose`: explain what is being done.
+- `--progress`: display a progress bar
+- `--interactive`: prompt before overwriting
+- `--no-clobber`: do not overwrite an existing file
 
 ## Input/output types:
 

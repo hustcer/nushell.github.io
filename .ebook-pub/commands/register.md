@@ -1,6 +1,6 @@
 # register
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -39,6 +39,8 @@ Register `nu_plugin_query` plugin from `nu -c` (writes/updates $nu.plugin-path)
 ## Notes
 
 ```text
+Deprecated in favor of `plugin add` and `plugin use`.
+
 This command is a parser keyword. For details, check:
   https://www.nushell.sh/book/thinking_in_nu.html
 ```

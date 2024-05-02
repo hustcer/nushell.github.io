@@ -1,6 +1,6 @@
 # to html
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -21,9 +21,10 @@ Convert table into simple HTML.
 
 ## Input/output types:
 
-| input | output |
-| ----- | ------ |
-| any   | string |
+| input   | output |
+| ------- | ------ |
+| any     | string |
+| nothing | any    |
 
 ## Examples
 

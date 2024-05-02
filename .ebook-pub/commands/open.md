@@ -1,6 +1,6 @@
 # open
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -8,12 +8,11 @@ Load a file into a cell, converting to table if possible (avoid by appending '--
 
 ## Signature
 
-`> open (filename) ...rest --raw`
+`> open ...rest --raw`
 
 ## Parameters
 
-- `filename`: The filename to use.
-- `...rest`: Optional additional files to open.
+- `...rest`: The file(s) to open.
 - `--raw`: open file as raw binary
 
 ## Input/output types:

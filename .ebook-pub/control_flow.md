@@ -3,7 +3,7 @@
 Nushell provides several commands that help determine how different groups of code are executed. In programming languages this functionality is often referred to as _control flow_.
 
 ::: tip
-One thing to note is that all of the commands discussed on this page use [blocks](/book/types_of_data.html#blocks). This means you can mutate [environmental variables](/book/environment.html) and other [mutable variables](http://localhost:8080/book/variables_and_subexpressions.html#mutable-variables) in them.
+One thing to note is that all of the commands discussed on this page use [blocks](/book/types_of_data.html#blocks). This means you can mutate [environmental variables](/book/environment.html) and other [mutable variables](/book/variables.html#mutable-variables) in them.
 :::
 
 ## Already covered
@@ -80,7 +80,7 @@ The branches can either return a single value or, as shown in the second branch,
 
 #### Catch all branch
 
-You can have also have a catch all condition for if the given value doesn't match any of the other conditions by having a branch whose matching value is `_`.
+You can also have a catch all condition for when the given value doesn't match any of the other conditions by having a branch whose matching value is `_`.
 
 ```nu
 > let foo = match 7 {

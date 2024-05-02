@@ -30,9 +30,9 @@ This is a bit different than the tables we saw before. The [`sys`](/commands/doc
 
 The [`get`](/commands/docs/get.md) command lets us jump into the contents of a column of the table. Here, we're looking into the "host" column, which contains information about the host that Nu is running on. The name of the OS, the hostname, the CPU, and more. Let's get the name of the users on the system:
 
-Right now, there's just one user on the system named "jt". You'll notice that we can pass a column path (the `host.sessions.name` part) and not just the name of the column. Nu will take the column path and go to the corresponding bit of data in the table.
+Right now, there's just one user on the system named "sophiajt". You'll notice that we can pass a column path (the `host.sessions.name` part) and not just the name of the column. Nu will take the column path and go to the corresponding bit of data in the table.
 
-You might have noticed something else that's different. Rather than having a table of data, we have just a single element: the string "jt". Nu works with both tables of data as well as strings. Strings are an important part of working with commands outside of Nu.
+You might have noticed something else that's different. Rather than having a table of data, we have just a single element: the string "sophiajt". Nu works with both tables of data as well as strings. Strings are an important part of working with commands outside of Nu.
 
 Let's see how strings work outside of Nu in action. We'll take our example from before and run the external [`echo`](/commands/docs/echo.md) command (the `^` tells Nu to not use the built-in [`echo`](/commands/docs/echo.md) command):
 

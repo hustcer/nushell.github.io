@@ -1,6 +1,6 @@
 # str
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -32,7 +32,6 @@ You must use one of the following subcommands. Using this command as-is will onl
 | [`str distance`](/commands/docs/str_distance.md)                         | Builtin | Compare two strings and return the edit distance/Levenshtein distance.                                                              |
 | [`str downcase`](/commands/docs/str_downcase.md)                         | Builtin | Make text lowercase.                                                                                                                |
 | [`str ends-with`](/commands/docs/str_ends-with.md)                       | Builtin | Check if an input ends with a string.                                                                                               |
-| [`str escape-glob`](/commands/docs/str_escape-glob.md)                   | Builtin | Escape glob pattern.                                                                                                                |
 | [`str expand`](/commands/docs/str_expand.md)                             | Builtin | Generates all possible combinations defined in brace expansion syntax.                                                              |
 | [`str index-of`](/commands/docs/str_index-of.md)                         | Builtin | Returns start index of first occurrence of string in input, or -1 if no match.                                                      |
 | [`str join`](/commands/docs/str_join.md)                                 | Builtin | Concatenate multiple strings into a single string, with an optional separator between each.                                         |

@@ -1,6 +1,6 @@
 # query web
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -36,7 +36,7 @@ Retrieve a html table from Wikipedia and parse it into a nushell table using tab
 
 ```bash
 > http get https://en.wikipedia.org/wiki/List_of_cities_in_India_by_population |
-    query web --as-table [City 'Population(2011)[3]' 'Population(2001)[3][a]' 'State or unionterritory' 'Ref']
+        query web --as-table [City 'Population(2011)[3]' 'Population(2001)[3][a]' 'State or unionterritory' 'Ref']
 ```
 
 Pass multiple css selectors to extract several elements within single query, group the query results together and rotate them to create a table

@@ -1,6 +1,6 @@
 # complete
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -18,16 +18,10 @@ Capture the outputs and exit code from an external piped in command in a nushell
 
 ## Examples
 
-Run the external command to completion, capturing stdout and exit_code
+Run the external command to completion, capturing stdout, stderr, and exit_code
 
 ```bash
 > ^external arg1 | complete
-```
-
-Run external command to completion, capturing, stdout, stderr and exit_code
-
-```bash
-> do { ^external arg1 } | complete
 ```
 
 ## Notes

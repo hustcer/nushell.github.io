@@ -1,10 +1,10 @@
 # mkdir
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
-Make directories, creates intermediary directories as required.
+Create directories, with intermediary directories if required using uutils/coreutils mkdir.
 
 ## Signature
 
@@ -13,7 +13,7 @@ Make directories, creates intermediary directories as required.
 ## Parameters
 
 - `...rest`: The name(s) of the path(s) to create.
-- `--verbose`: print created path(s).
+- `--verbose`: print a message for each created directory.
 
 ## Input/output types:
 

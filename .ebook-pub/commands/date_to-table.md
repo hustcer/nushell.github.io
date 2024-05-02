@@ -1,6 +1,6 @@
 # date to-table
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -20,12 +20,6 @@ Convert the date into a structured table.
 ## Examples
 
 Convert the current date into a table.
-
-```bash
-> date to-table
-```
-
-Convert the date into a table.
 
 ```bash
 > date now | date to-table

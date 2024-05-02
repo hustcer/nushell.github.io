@@ -1,6 +1,6 @@
 # date to-timezone
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -23,31 +23,31 @@ Convert a date to a given time zone.
 
 ## Examples
 
-Get the current date in UTC+05:00
+Get the current date in UTC+05:00.
 
 ```bash
 > date now | date to-timezone '+0500'
 ```
 
-Get the current local date
+Get the current date in the local time zone.
 
 ```bash
 > date now | date to-timezone local
 ```
 
-Get the current date in Hawaii
+Get the current date in Hawaii.
 
 ```bash
 > date now | date to-timezone US/Hawaii
 ```
 
-Get the current date in Hawaii
+Get a date in a different time zone, from a string.
 
 ```bash
 > "2020-10-10 10:00:00 +02:00" | date to-timezone "+0500"
 ```
 
-Get the current date in Hawaii, from a datetime object
+Get a date in a different time zone, from a datetime.
 
 ```bash
 > "2020-10-10 10:00:00 +02:00" | into datetime | date to-timezone "+0500"

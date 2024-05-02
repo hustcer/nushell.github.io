@@ -1,6 +1,6 @@
 # with-env
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -22,24 +22,6 @@ Runs a block with an environment variable set.
 | any   | any    |
 
 ## Examples
-
-Set the MYENV environment variable
-
-```bash
-> with-env [MYENV "my env value"] { $env.MYENV }
-```
-
-Set by primitive value list
-
-```bash
-> with-env [X Y W Z] { $env.X }
-```
-
-Set by single row table
-
-```bash
-> with-env [[X W]; [Y Z]] { $env.W }
-```
 
 Set by key-value record
 

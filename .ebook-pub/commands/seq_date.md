@@ -1,6 +1,6 @@
 # seq date
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -28,25 +28,25 @@ Print sequences of dates.
 
 ## Examples
 
-print the next 10 days in YYYY-MM-DD format with newline separator
+Return a list of the next 10 days in the YYYY-MM-DD format
 
 ```bash
 > seq date --days 10
 ```
 
-print the previous 10 days in YYYY-MM-DD format with newline separator
+Return the previous 10 days in the YYYY-MM-DD format
 
 ```bash
 > seq date --days 10 --reverse
 ```
 
-print the previous 10 days starting today in MM/DD/YYYY format with newline separator
+Return the previous 10 days, starting today, in the MM/DD/YYYY format
 
 ```bash
 > seq date --days 10 -o '%m/%d/%Y' --reverse
 ```
 
-print the first 10 days in January, 2020
+Return the first 10 days in January, 2020
 
 ```bash
 > seq date --begin-date '2020-01-01' --end-date '2020-01-10'

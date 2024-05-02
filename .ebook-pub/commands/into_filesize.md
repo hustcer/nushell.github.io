@@ -1,6 +1,6 @@
 # into filesize
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -60,4 +60,10 @@ Convert file size to filesize
 
 ```bash
 > 4KB | into filesize
+```
+
+Convert string with unit to filesize
+
+```bash
+> '-1KB' | into filesize
 ```

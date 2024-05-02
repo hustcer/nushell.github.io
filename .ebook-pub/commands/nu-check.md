@@ -1,6 +1,6 @@
 # nu-check
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -8,14 +8,13 @@ Validate and parse input content.
 
 ## Signature
 
-`> nu-check (path) --as-module --debug --all`
+`> nu-check (path) --as-module --debug`
 
 ## Parameters
 
 - `path`: File path to parse.
 - `--as-module`: Parse content as module
 - `--debug`: Show error messages
-- `--all`: Parse content as script first, returns result if success, otherwise, try with module
 
 ## Input/output types:
 

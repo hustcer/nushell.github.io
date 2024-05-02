@@ -1,6 +1,6 @@
 # update
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -37,7 +37,7 @@ Use a closure to alter each value in the 'authors' column to a single string
 > [[project, authors]; ['nu', ['Andrés', 'JT', 'Yehuda']]] | update authors {|row| $row.authors | str join ',' }
 ```
 
-You can also use a simple command to update 'authors' to a single string
+Implicitly use the `$in` value in a closure to update 'authors'
 
 ```bash
 > [[project, authors]; ['nu', ['Andrés', 'JT', 'Yehuda']]] | update authors { str join ',' }
@@ -53,6 +53,14 @@ Use a closure to compute a new value at an index
 
 ```bash
 > [1 2 3] | update 1 {|i| $i + 2 }
+```
+
+## Notes
+
+```text
+When updating a column, the closure will be run for each row, and the current row will be passed as the first argument. Referencing `$in` inside the closure will provide the value at the column for the current row.
+
+When updating a specific index, the closure will instead be run once. The first argument to the closure and the `$in` value will both be the current value at the index.
 ```
 
 ## Subcommands:

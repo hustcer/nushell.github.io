@@ -1,6 +1,6 @@
 # date to-record
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
@@ -18,12 +18,6 @@ Convert the date into a record.
 | string   | record |
 
 ## Examples
-
-Convert the current date into a record.
-
-```bash
-> date to-record
-```
 
 Convert the current date into a record.
 

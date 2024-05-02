@@ -1,6 +1,6 @@
 # math sqrt
 
-**version**: 0.90.2
+**version**: 0.93.0
 
 ## **usage**:
 
