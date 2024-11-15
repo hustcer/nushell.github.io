@@ -8,7 +8,7 @@ output: [html, epub, pdf]
 output.pdf: Nushell-Book.pdf
 output.epub: Nushell-Book.epub
 output.html: Nushell-Book.html
-output.base_path: /Users/hustcer/github/open-books
+output.base_path: /Users/hustcer/iWork/github/open-books
 # list of chapters
 # Nushell Book
 
