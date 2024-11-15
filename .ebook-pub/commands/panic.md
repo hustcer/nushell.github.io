@@ -1,10 +1,10 @@
 # panic
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
-Executes a rust panic, useful only for testing.
+Causes nushell to panic.
 
 ## Signature
 
@@ -12,10 +12,18 @@ Executes a rust panic, useful only for testing.
 
 ## Parameters
 
-- `msg`: The glob pattern to use.
+- `msg`: The custom message for the panic.
 
 ## Input/output types:
 
-| input   | output |
-| ------- | ------ |
-| nothing | table  |
+| input   | output  |
+| ------- | ------- |
+| nothing | nothing |
+
+## Examples
+
+Panic with a custom message
+
+```bash
+> panic 'This is a custom panic message'
+```

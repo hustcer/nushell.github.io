@@ -1,6 +1,6 @@
 # explore
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -8,13 +8,13 @@ Explore acts as a table pager, just like `less` does for text.
 
 ## Signature
 
-`> explore --head --index --reverse --peek`
+`> explore --head --index --tail --peek`
 
 ## Parameters
 
 - `--head {bool}`: Show or hide column headers (default true)
 - `--index`: Show row indexes when viewing a list
-- `--reverse`: Start with the viewport scrolled to the bottom
+- `--tail`: Start with the viewport scrolled to the bottom
 - `--peek`: When quitting, output the value of the cell the cursor was on
 
 ## Input/output types:
@@ -25,10 +25,10 @@ Explore acts as a table pager, just like `less` does for text.
 
 ## Examples
 
-Explore the system information record
+Explore the system host information record
 
 ```bash
-> sys | explore
+> sys host | explore
 ```
 
 Explore the output of `ls` without column names

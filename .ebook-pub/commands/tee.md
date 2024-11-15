@@ -1,6 +1,6 @@
 # tee
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -39,6 +39,12 @@ Print numbers and their sum
 
 ```bash
 > 1..100 | tee { each { print } } | math sum | wrap sum
+```
+
+Do something with a value on another thread, while also passing through the value
+
+```bash
+> 10000 | tee { 1..$in | print } | $in * 5
 ```
 
 ## Notes

@@ -1,6 +1,6 @@
 # http options
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -15,7 +15,7 @@ Requests permitted communication options for a given URL.
 - `URL`: The URL to fetch the options from.
 - `--user {any}`: the username when authenticating
 - `--password {any}`: the password when authenticating
-- `--max-time {int}`: timeout period in seconds
+- `--max-time {duration}`: max duration before timeout occurs
 - `--headers {any}`: custom headers you want to add
 - `--insecure`: allow insecure server connections when using SSL
 - `--allow-errors`: do not fail if the server returns an error code

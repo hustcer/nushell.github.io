@@ -25,7 +25,7 @@ greet "world"
 
 A script file defines the definitions for custom commands as well as the main script itself, which will run after the custom commands are defined.
 
-In the above, first `greet` is defined by the Nushell interpreter. This allows us to later call this definition. We could have written the above as:
+In the above example, first `greet` is defined by the Nushell interpreter. This allows us to later call this definition. We could have written the above as:
 
 ```nu
 greet "world"
@@ -37,13 +37,13 @@ def greet [name] {
 
 There is no requirement that definitions have to come before the parts of the script that call the definitions, allowing you to put them where you feel comfortable.
 
-## How scripts are processed
+## How Scripts are Processed
 
 In a script, definitions run first. This allows us to call the definitions using the calls in the script.
 
 After the definitions run, we start at the top of the script file and run each group of commands one after another.
 
-## Script lines
+## Script Lines
 
 To better understand how Nushell sees lines of code, let's take a look at an example script:
 
@@ -103,9 +103,7 @@ Hello string +1
 
 ## Subcommands
 
-A script can have multiple sub-commands like `run`, `build`, etc. which allows to execute a specific main sub-function. The important part is to expose them correctly with `def main [] {}`. See more details in the [Custom Command](custom_commands.html#sub-commands) section.
-
-For example:
+A script can have multiple [subcommands](custom_commands.html#subcommands), like `run` or `build` for example:
 
 ```nu
 # myscript.nu
@@ -117,15 +115,46 @@ def "main build" [] {
     print "building"
 }
 
-# important for the command to be exposed to the outside
-def main [] {}
+def main [] {
+    print "hello from myscript!"
+}
 ```
 
+You can then execute the script's subcommands when calling it:
+
 ```nu
+> nu myscript.nu
+hello from myscript!
 > nu myscript.nu build
 building
 > nu myscript.nu run
 running
+```
+
+[Unlike modules](modules.html#main), `main` does _not_ need to exported in order to be visible. In the above example, our `main` command is not `export def`, however it was still executed when running `nu myscript.nu`. If we had used myscript as a module by running `use myscript.nu`, rather than running `myscript.nu` as a script, trying to execute the `myscript` command would not work since `myscript` is not exported.
+
+It is important to note that you must define a `main` command in order for subcommands of `main` to be correctly exposed. For example, if we had just defined the `run` and `build` subcommands, they wouldn't be accessible when running the script:
+
+```nu
+# myscript.nu
+def "main run" [] {
+    print "running"
+}
+
+def "main build" [] {
+    print "building"
+}
+```
+
+```nu
+> nu myscript.nu build
+> nu myscript.nu run
+```
+
+This is a limitation of the way scripts are currently processed. If your script only has subcommands, you can add an empty `main` to expose the subcommands, like so:
+
+```nu
+def main [] {}
 ```
 
 ## Shebangs (`#!`)
@@ -146,7 +175,9 @@ For script to have access to standard input, `nu` should be invoked with `--stdi
 
 ```nu
 #!/usr/bin/env -S nu --stdin
-echo $"stdin: ($in)"
+def main [] {
+  echo $"stdin: ($in)"
+}
 ```
 
 ```nu

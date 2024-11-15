@@ -1,6 +1,6 @@
 # http delete
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -17,7 +17,7 @@ Delete the specified resource.
 - `--password {any}`: the password when authenticating
 - `--data {any}`: the content to post
 - `--content-type {any}`: the MIME type of content to post
-- `--max-time {int}`: timeout period in seconds
+- `--max-time {duration}`: max duration before timeout occurs
 - `--headers {any}`: custom headers you want to add
 - `--raw`: fetch contents as text rather than a table
 - `--insecure`: allow insecure server connections when using SSL
@@ -27,9 +27,9 @@ Delete the specified resource.
 
 ## Input/output types:
 
-| input   | output |
-| ------- | ------ |
-| nothing | any    |
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 
@@ -61,6 +61,12 @@ http delete from example.com, with JSON body
 
 ```bash
 > http delete --content-type application/json --data { field: value } https://www.example.com
+```
+
+Perform an HTTP delete with JSON content from a pipeline to example.com
+
+```bash
+> open foo.json | http delete https://www.example.com
 ```
 
 ## Notes

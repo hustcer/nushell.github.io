@@ -1,4 +1,8 @@
-# Working with tables
+# Working with Tables
+
+[[toc]]
+
+## Overview
 
 One of the common ways of seeing data in Nu is through a table. Nu comes with a number of commands for working with tables to make it convenient to find what you're looking for, and for narrowing down the data to just what you need.
 
@@ -24,7 +28,7 @@ Nu will try to expands all table's structure by default. You can change this beh
 See [hooks](/book/hooks.md#changing-how-output-is-displayed) for more information.
 :::
 
-## Sorting the data
+## Sorting the Data
 
 We can sort a table by calling the [`sort-by`](/commands/docs/sort-by.md) command and telling it which columns we want to use in the sort. Let's say we wanted to sort our table by the size of the file:
 
@@ -45,7 +49,13 @@ We can sort a table by calling the [`sort-by`](/commands/docs/sort-by.md) comman
 
 We can sort a table by any column that can be compared. For example, we could also have sorted the above using the "name", "accessed", or "modified" columns.
 
-## Selecting the data you want
+For more info on sorting, see [Sorting](/book/sorting.md).
+
+## Selecting the Data you Want
+
+::: tip Note
+The following is a basic overview. For a more in-depth discussion of this topic, see the chapter, [Navigating and Accessing Structured Data](/book/navigating_structured_data.md).
+:::
 
 We can select data from a table by choosing to select specific columns or specific rows. Let's [`select`](/commands/docs/select.md) a few columns from our table to use:
 
@@ -120,7 +130,7 @@ Let's look at a few other commands for selecting data. You may have wondered why
 ───┴───────────────┴──────┴─────────┴────────────
 ```
 
-## Getting data out of a table
+## Getting Data out of a Table
 
 So far, we've worked with tables by trimming the table down to only what we need. Sometimes we may want to go a step further and only look at the values in the cells themselves rather than taking a whole column. Let's say, for example, we wanted to only get a list of the names of the files. For this, we use the [`get`](/commands/docs/get.md) command:
 
@@ -162,10 +172,10 @@ These look very similar! Let's see if we can spell out the difference between th
 - [`get`](/commands/docs/get.md) - returns the values inside the column specified as a list
 
 :::tip
-The arguments provided to `select` and `get` are [cell paths](/book/types_of_data.html#cell-paths), a fundamental part of Nu's query language. In addition to simple queries like `get name`, you can also do things like `get name?` (will replace missing values with `null` instead of returning an error) or `get some.deeply.nested.column` for nested data.
+The arguments provided to `select` and `get` are [cell-paths](/book/types_of_data.html#cell-paths), a fundamental part of Nu's query language. For a more in-depth discussion of cell-paths and other navigation topics, see the next chapter, [Navigating and Accessing Structured Data](/book/navigating_structured_data.md).
 :::
 
-## Changing data in a table
+## Changing Data in a Table
 
 In addition to selecting data from a table, we can also update what the table has. We may want to combine tables, add new columns, or edit the contents of a cell. In Nu, rather than editing in place, each of the commands in the section will return a new table in the pipeline.
 
@@ -249,7 +259,7 @@ We could join all three tables together like this:
 Or we could use the [`reduce`](/commands/docs/reduce.md) command to dynamically merge all tables:
 
 ```nu
-> [$first $second $third] | reduce {|it, acc| $acc | merge $it }
+> [$first $second $third] | reduce {|elt, acc| $acc | merge $elt }
 ───┬───┬───┬───┬───┬───┬───
  # │ a │ b │ c │ d │ e │ f
 ───┼───┼───┼───┼───┼───┼───
@@ -257,7 +267,7 @@ Or we could use the [`reduce`](/commands/docs/reduce.md) command to dynamically 
 ───┴───┴───┴───┴───┴───┴───
 ```
 
-### Adding a new column
+### Adding a new Column
 
 We can use the [`insert`](/commands/docs/insert.md) command to add a new column to the table. Let's look at an example:
 
@@ -311,7 +321,7 @@ Changes in Nu are functional changes, meaning that they work on values themselve
 ──────────────┴──────
 ```
 
-### Updating a column
+### Updating a Column
 
 In a similar way to the [`insert`](/commands/docs/insert.md) command, we can also use the [`update`](/commands/docs/update.md) command to change the contents of a column to a new value. To see it in action let's open the same file:
 
@@ -333,7 +343,7 @@ And now, let's update the edition to point at the next edition we hope to suppor
 
 You can also use the [`upsert`](/commands/docs/upsert.md) command to insert or update depending on whether the column already exists.
 
-### Moving columns
+### Moving Columns
 
 You can use [`move`](/commands/docs/move.md) to move columns in the table. For example, if we wanted to move the "name" column from [`ls`](/commands/docs/ls.md) after the "size" column, we could do:
 
@@ -350,7 +360,7 @@ You can use [`move`](/commands/docs/move.md) to move columns in the table. For e
 ...
 ```
 
-### Renaming columns
+### Renaming Columns
 
 You can also [`rename`](/commands/docs/rename.md) columns in a table by passing it through the rename command. If we wanted to run [`ls`](/commands/docs/ls.md) and rename the columns, we can use this example:
 
@@ -367,7 +377,7 @@ You can also [`rename`](/commands/docs/rename.md) columns in a table by passing 
 ...
 ```
 
-### Rejecting/Deleting columns
+### Rejecting/Deleting Columns
 
 You can also [`reject`](/commands/docs/reject.md) columns in a table by passing it through the reject command. If we wanted to run [`ls`](/commands/docs/ls.md) and delete the columns, we can use this example:
 
@@ -386,3 +396,191 @@ You can also [`reject`](/commands/docs/reject.md) columns in a table by passing 
 │  7 │ /mnt   │ dir     │         │ rwxr-xr-x │ root │ root  │    0 B │
 ...
 ```
+
+### The # Index Column
+
+You've noticed that every table, by default, starts with a column with the heading `#`. This column can operate in one of two modes:
+
+1. Internal #
+
+   - The default mode
+   - Nushell provides a 0-based, consecutive index
+   - Always corresponds to the cell-path row-number, where `select 0` will return the first item in the list, and `select <n-1>` returns the nth item
+   - Is a display of an internal representation only. In other words, it is not accessible by column name. For example, `get index` will not work, nor `get #`
+
+1. "Index"-Renamed #
+
+   - When a column named "index" is created, either directly or as a side-effect of another command, then this `index` column takes the place of the `#` column in the table display. In the table output, the column header is still `#`, but the _name_ of the column is now `index`.
+
+     Example:
+
+     ```nu
+     ls | each { insert index { 1000 }} | first 5
+     # => ╭──────┬─────────────────┬──────┬─────────┬──────────────╮
+     # => │    # │      name       │ type │  size   │   modified   │
+     # => ├──────┼─────────────────┼──────┼─────────┼──────────────┤
+     # => │ 1000 │ CNAME           │ file │    15 B │ 9 months ago │
+     # => │ 1000 │ CONTRIBUTING.md │ file │ 4.3 KiB │ 9 hours ago  │
+     # => │ 1000 │ LICENSE         │ file │ 1.0 KiB │ 9 months ago │
+     # => │ 1000 │ README.md       │ file │ 2.2 KiB │ 3 weeks ago  │
+     # => │ 1000 │ assets          │ dir  │ 4.0 KiB │ 9 months ago │
+     # => ╰──────┴─────────────────┴──────┴─────────┴──────────────╯
+     ```
+
+     - If an `index` key is added to each row in the table, then it can be accessed via `select` and `get`:
+
+     ```nu
+     ls | each { insert index { 1000 }} | first 5 | select index name
+     # => ╭──────┬─────────────────╮
+     # => │    # │      name       │
+     # => ├──────┼─────────────────┤
+     # => │ 1000 │ CNAME           │
+     # => │ 1000 │ CONTRIBUTING.md │
+     # => │ 1000 │ LICENSE         │
+     # => │ 1000 │ README.md       │
+     # => │ 1000 │ assets          │
+     # => ╰──────┴─────────────────╯
+     ```
+
+     - On the other hand, if some rows have an `index` key and others don't, the result is no longer a table; it is a `list<any>` due to the different record types:
+
+       ```nu
+       ls | upsert 3.index { "--->" } | first 5
+       # => ╭──────┬─────────────────┬──────┬─────────┬──────────────╮
+       # => │    # │      name       │ type │  size   │   modified   │
+       # => ├──────┼─────────────────┼──────┼─────────┼──────────────┤
+       # => │    0 │ CNAME           │ file │    15 B │ 9 months ago │
+       # => │    1 │ CONTRIBUTING.md │ file │ 4.3 KiB │ 9 hours ago  │
+       # => │    2 │ LICENSE         │ file │ 1.0 KiB │ 9 months ago │
+       # => │ ---> │ README.md       │ file │ 2.2 KiB │ 3 weeks ago  │
+       # => │    4 │ assets          │ dir  │ 4.0 KiB │ 9 months ago │
+       # => ╰──────┴─────────────────┴──────┴─────────┴──────────────╯
+
+       ls | upsert 3.index { "--->" } | first 5 | describe
+       # => list<any> (stream)
+
+       ls | upsert 3.index { "--->" } | select index name
+       # Error: cannot find column 'index'
+
+       ls | upsert 3.index { "--->" } | select index? name | first 5
+       # => ╭──────┬─────────────────╮
+       # => │    # │      name       │
+       # => ├──────┼─────────────────┤
+       # => │      │ CNAME           │
+       # => │      │ CONTRIBUTING.md │
+       # => │      │ LICENSE         │
+       # => │ ---> │ README.md       │
+       # => │      │ assets          │
+       # => ╰──────┴─────────────────╯
+       ```
+
+   - As demonstrated in the example above, any rows (records) in the table without an `index` key will continue to display the internal representation.
+
+#### Additional Index Examples
+
+##### Convert # to Index
+
+A useful pattern for converting an internal `#` into an index for all rows, while maintaining the original numbering, is:
+
+```nu
+ls | enumerate | flatten
+```
+
+While the results _look_ the same, the `index` is now decoupled from the internal cell-path. For example:
+
+```nu
+ls | enumerate | flatten | sort-by modified | first 5
+# => ╭────┬──────────────┬──────┬─────────┬──────────────╮
+# => │  # │     name     │ type │  size   │   modified   │
+# => ├────┼──────────────┼──────┼─────────┼──────────────┤
+# => │  0 │ CNAME        │ file │    15 B │ 9 months ago │
+# => │  2 │ LICENSE      │ file │ 1.0 KiB │ 9 months ago │
+# => │  4 │ assets       │ dir  │ 4.0 KiB │ 9 months ago │
+# => │ 17 │ lefthook.yml │ file │ 1.1 KiB │ 9 months ago │
+# => │ 24 │ snippets     │ dir  │ 4.0 KiB │ 9 months ago │
+# => ╰────┴──────────────┴──────┴─────────┴──────────────╯
+
+ls | enumerate | flatten | sort-by modified | select 4
+# => ╭────┬──────────┬──────┬─────────┬──────────────╮
+# => │  # │   name   │ type │  size   │   modified   │
+# => ├────┼──────────┼──────┼─────────┼──────────────┤
+# => │ 24 │ snippets │ dir  │ 4.0 KiB │ 9 months ago │
+# => ╰────┴──────────┴──────┴─────────┴──────────────╯
+```
+
+The `sort-by modified` now _also_ sorts the `index` along with the rest of the columns.
+
+##### Adding a Row Header
+
+```nu
+let table = [
+[additions   deletions   delta ];
+[       10          20     -10 ]
+[       15           5      10 ]
+[        8           6       2 ]]
+
+let totals_row = ($table | math sum | insert index {"Totals"})
+$table | append $totals_row
+# => ╭────────┬───────────┬───────────┬───────╮
+# => │      # │ additions │ deletions │ delta │
+# => ├────────┼───────────┼───────────┼───────┤
+# => │      0 │        10 │        20 │   -10 │
+# => │      1 │        15 │         5 │    10 │
+# => │      2 │         8 │         6 │     2 │
+# => │ Totals │        33 │        31 │     2 │
+# => ╰────────┴───────────┴───────────┴───────╯
+```
+
+### The `table` command
+
+The [`table`](/commands/docs/table.md) command is used to _render_ structured data. This includes:
+
+- Tables
+- Lists
+- Records
+- Ranges
+
+Perhaps contrary to initial assumptions, the result of rendering these types is a `string`. For example:
+
+```nu
+[ Nagasaki Ghent Cambridge Izmir Graz Lubango ] | table | describe
+# => string (stream)
+```
+
+Other data types are passed through the `table` command unchanged.
+
+With no arguments, the output rendered from the `table` command will often _display_ the same as unrendered form. For example:
+
+```nu
+[ Nagasaki Ghent Cambridge Izmir Graz Lubango ]
+# => ╭───┬───────────╮
+# => │ 0 │ Nagasaki  │
+# => │ 1 │ Ghent     │
+# => │ 2 │ Cambridge │
+# => │ 3 │ Izmir     │
+# => │ 4 │ Graz      │
+# => │ 5 │ Lubango   │
+# => ╰───┴───────────╯
+[ Nagasaki Ghent Cambridge Izmir Graz Lubango ] | table
+# => ╭───┬───────────╮
+# => │ 0 │ Nagasaki  │
+# => │ 1 │ Ghent     │
+# => │ 2 │ Cambridge │
+# => │ 3 │ Izmir     │
+# => │ 4 │ Graz      │
+# => │ 5 │ Lubango   │
+# => ╰───┴───────────╯
+```
+
+This can be useful when you need to store the rendered view of structured data as a string. For example, to remove all ANSI formatting (colors) from a table:
+
+```
+ls | table | ansi strip
+```
+
+The `table` command also has multiple options for _changing_ the rendering of a table, such as:
+
+- `-e` to expand data that would normally be collapsed when rendering. Compare `scope modules | table` to `scope modules | table -e`.
+- `-i false` to hide the `index`/`#` column
+- `-a 5` to abbreviate the table to just the first and last 5 entries
+- And more

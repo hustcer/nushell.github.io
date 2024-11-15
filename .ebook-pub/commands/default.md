@@ -1,10 +1,10 @@
 # default
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
-Sets a default row's column if missing.
+Sets a default value if a row's column is missing or null.
 
 ## Signature
 
@@ -38,5 +38,11 @@ Get the env value of `MY_ENV` with a default value 'abc' if not present
 Replace the `null` value in a list
 
 ```bash
-> [1, 2, null, 4] | default 3
+> [1, 2, null, 4] | each { default 3 }
+```
+
+Replace the missing value in the "a" column of a list
+
+```bash
+> [{a:1 b:2} {b:1}] | default 'N/A' a
 ```

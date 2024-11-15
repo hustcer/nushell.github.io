@@ -1,6 +1,6 @@
 # split
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -24,10 +24,11 @@ You must use one of the following subcommands. Using this command as-is will onl
 
 ## Subcommands:
 
-| name                                             | type    | usage                                                   |
-| ------------------------------------------------ | ------- | ------------------------------------------------------- |
-| [`split chars`](/commands/docs/split_chars.md)   | Builtin | Split a string into a list of characters.               |
-| [`split column`](/commands/docs/split_column.md) | Builtin | Split a string into multiple columns using a separator. |
-| [`split list`](/commands/docs/split_list.md)     | Builtin | Split a list into multiple lists using a separator.     |
-| [`split row`](/commands/docs/split_row.md)       | Builtin | Split a string into multiple rows using a separator.    |
-| [`split words`](/commands/docs/split_words.md)   | Builtin | Split a string's words into separate rows.              |
+| name                                                   | type     | usage                                                   |
+| ------------------------------------------------------ | -------- | ------------------------------------------------------- |
+| [`split cell-path`](/commands/docs/split_cell-path.md) | built-in | Split a cell-path into its components.                  |
+| [`split chars`](/commands/docs/split_chars.md)         | built-in | Split a string into a list of characters.               |
+| [`split column`](/commands/docs/split_column.md)       | built-in | Split a string into multiple columns using a separator. |
+| [`split list`](/commands/docs/split_list.md)           | built-in | Split a list into multiple lists using a separator.     |
+| [`split row`](/commands/docs/split_row.md)             | built-in | Split a string into multiple rows using a separator.    |
+| [`split words`](/commands/docs/split_words.md)         | built-in | Split a string's words into separate rows.              |

@@ -1,6 +1,6 @@
 # export-env
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -32,4 +32,11 @@ Set an environment variable and examine its value
 
 ```bash
 > export-env { $env.SPAM = 'eggs' }; $env.SPAM
+```
+
+## Notes
+
+```text
+This command is a parser keyword. For details, check:
+  https://www.nushell.sh/book/thinking_in_nu.html
 ```

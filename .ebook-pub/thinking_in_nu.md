@@ -28,7 +28,7 @@ In Nushell, we use the `>` as the greater-than operator. This fits better with t
 
 **Thinking in Nushell:** The way Nushell views data is that data flows through the pipeline until it reaches the user or is handled by a final command. You can simply type data, from strings to JSON-style lists and records, and follow it with `|` to send it through the pipeline. Nushell uses commands to do work and produce more data. Learning these commands and when to use them helps you compose many kinds of pipelines.
 
-## Think of Nushell as a compiled language
+## Think of Nushell as a Compiled Language
 
 An important part of Nushell's design and specifically where it differs from many dynamic languages is that Nushell converts the source you give it into something to run, and then runs the result. It doesn't have an `eval` feature which allows you to continue pulling in new source during runtime. This means that tasks like including files to be part of your project need to be known paths, much like includes in compiled languages like C++ or Rust.
 
@@ -63,41 +63,15 @@ would work, since the string can be evaluated at compile-time:
 
 For more in-depth explanation, check [How Nushell Code Gets Run](how_nushell_code_gets_run.md).
 
-## Variables are immutable
+## Variables are Immutable by Default
 
-Another common surprise for folks coming from other languages is that Nushell variables are immutable (and indeed some people have started to call them "constants" to reflect this). Coming to Nushell you'll want to spend some time becoming familiar with working in a more functional style, as this tends to help write code that works best with immutable variables.
-
-You might wonder why Nushell uses immutable variables. Early on in Nushell's development we decided to see how long we could go using a more data-focused, functional style in the language. More recently, we added a key bit of functionality into Nushell that made these early experiments show their value: parallelism. By switching from [`each`](/commands/docs/each.md) to [`par-each`](/commands/docs/par-each.md) in any Nushell script, you're able to run the corresponding block of code in parallel over the input. This is possible because Nushell's design leans heavily on immutability, composition, and pipelining.
-
-Just because Nushell variables are immutable doesn't mean things don't change. Nushell makes heavy use of the technique of "shadowing". Shadowing means creating a new variable with the same name as a previously declared variable. For example, say you had an `$x` in scope, and you wanted a new `$x` that was one greater:
-
-```nu
-let x = $x + 1
-```
-
-This new `x` is visible to any code that follows this line. Careful use of shadowing can make for an easier time working with variables, though it's not required.
-
-Loop counters are another common pattern for mutable variables and are built into most iterating commands, for example you can get both each item and an index of each item using [`each`](/commands/docs/each.md):
-
-```nu
-> ls | enumerate | each { |it| $"Number ($it.index) is size ($it.item.size)" }
-```
-
-You can also use the [`reduce`](/commands/docs/reduce.md) command to work in the same way you might mutate a variable in a loop. For example, if you wanted to find the largest string in a list of strings, you might do:
-
-```nu
-> [one, two, three, four, five, six] | reduce {|curr, max|
-    if ($curr | str length) > ($max | str length) {
-        $curr
-    } else {
-        $max
-    }
-}
-```
+Another common surprise for folks coming from other languages is that Nushell variables are immutable by default. Coming to Nushell, you'll want to spend some time becoming familiar with working in a more functional style, as this tends to help write code that works best with immutable variables.
 
 **Thinking in Nushell:** If you're used to using mutable variables for different tasks, it will take some time to learn how to do each task in a more functional style. Nushell has a set of built-in capabilities to help with many of these patterns, and learning them will help you write code in a more Nushell-style. The added benefit of speeding up your scripts by running parts of your code in parallel is a nice bonus.
 
-## Nushell's environment is scoped
+See [Immutable Variables](variables.html#immutable-variables) and [Choosing between mutable and immutable variables](variables.html#choosing-between-mutable-and-immutable-variables) for more information.
+
+## Nushell's Environment is Scoped
 
 Nushell takes multiple design cues from compiled languages. One such cue is that languages should avoid global mutable state. Shells have commonly used global mutation to update the environment, but Nushell steers clear of this approach.
 
@@ -106,8 +80,8 @@ In Nushell, blocks control their own environment. Changes to the environment are
 In practice, this lets you write some concise code for working with subdirectories, for example, if you wanted to build each sub-project in the current directory, you could run:
 
 ```nu
-> ls | each { |it|
-    cd $it.name
+> ls | each { |row|
+    cd $row.name
     make
 }
 ```

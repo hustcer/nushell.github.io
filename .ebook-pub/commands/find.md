@@ -1,6 +1,6 @@
 # find
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -35,10 +35,10 @@ Search for multiple terms in a command output
 > ls | find toml md sh
 ```
 
-Search and highlight text for a term in a string
+Search and highlight text for a term in a string. Note that regular search is case insensitive
 
 ```bash
-> 'Cargo.toml' | find toml
+> 'Cargo.toml' | find cargo
 ```
 
 Search a number or a file size in a list of numbers

@@ -1,6 +1,6 @@
 # help commands
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -13,7 +13,7 @@ Show help on nushell commands.
 ## Parameters
 
 - `...rest`: The name of command to get help on.
-- `--find {string}`: string to find in command names, usage, and search terms
+- `--find {string}`: string to find in command names, descriptions, and search terms
 
 ## Input/output types:
 

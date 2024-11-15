@@ -1,6 +1,6 @@
 # merge
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -23,10 +23,10 @@ Merge the input with a record or table, overwriting values in matching columns.
 
 ## Examples
 
-Add an 'index' column to the input table
+Add an 'id' column to the input table
 
 ```bash
-> [a b c] | wrap name | merge ( [1 2 3] | wrap index )
+> [a b c] | wrap name | merge ( [47 512 618] | wrap id )
 ```
 
 Merge two records

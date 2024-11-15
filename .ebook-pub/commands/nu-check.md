@@ -1,6 +1,6 @@
 # nu-check
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -43,7 +43,7 @@ Parse a input file by showing error message
 > nu-check --debug script.nu
 ```
 
-Parse an external stream as script by showing error message
+Parse a byte stream as script by showing error message
 
 ```bash
 > open foo.nu | nu-check --debug script.nu

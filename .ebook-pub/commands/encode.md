@@ -1,6 +1,6 @@
 # encode
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -50,7 +50,9 @@ documentation link at https://docs.rs/encoding_rs/latest/encoding_rs/#statics
 
 ## Subcommands:
 
-| name                                               | type    | usage                                         |
-| -------------------------------------------------- | ------- | --------------------------------------------- |
-| [`encode base64`](/commands/docs/encode_base64.md) | Builtin | Encode a string or binary value using Base64. |
-| [`encode hex`](/commands/docs/encode_hex.md)       | Builtin | Encode a binary value using hex.              |
+| name                                                     | type     | usage                                              |
+| -------------------------------------------------------- | -------- | -------------------------------------------------- |
+| [`encode base32`](/commands/docs/encode_base32.md)       | built-in | Encode a string or binary value using Base32.      |
+| [`encode base32hex`](/commands/docs/encode_base32hex.md) | built-in | Encode a binary value or a string using base32hex. |
+| [`encode base64`](/commands/docs/encode_base64.md)       | built-in | Encode a string or binary value using Base64.      |
+| [`encode hex`](/commands/docs/encode_hex.md)             | built-in | Hex encode a binary value or a string.             |

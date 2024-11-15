@@ -1,6 +1,6 @@
 # help externs
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -13,7 +13,7 @@ Show help on nushell externs.
 ## Parameters
 
 - `...rest`: The name of extern to get help on.
-- `--find {string}`: string to find in extern names and usage
+- `--find {string}`: string to find in extern names and descriptions
 
 ## Input/output types:
 
@@ -35,7 +35,7 @@ show help for single extern
 > help externs smth
 ```
 
-search for string in extern names and usages
+search for string in extern names and descriptions
 
 ```bash
 > help externs --find smth

@@ -1,4 +1,4 @@
-# Best practices
+# Best Practices
 
 This page is a working document collecting syntax guidelines and best practices we have discovered so far.
 The goal of this document is to eventually land on a canonical Nushell code style, but as for now it is still work in
@@ -35,7 +35,7 @@ Incorrect:
 'Hello, Nushell! This is a gradient.' |  ansi gradient --fgstart '0x40c9ff' --fgend '0xe81cff'
 ```
 
-#### One-line format
+#### One-line Format
 
 One-line format is a format for writing all commands in one line.
 
@@ -69,8 +69,8 @@ Correct:
 
 ```nu
 [[status]; [UP] [UP]] | all {|el| $el.status == UP }
-[1 2 3 4] | reduce {|it, acc| $it + $acc }
-[1 2 3 4] | reduce {|it acc| $it + $acc }
+[1 2 3 4] | reduce {|elt, acc| $elt + $acc }
+[1 2 3 4] | reduce {|elt acc| $elt + $acc }
 {x: 1, y: 2}
 {x: 1 y: 2}
 [1 2] | zip [3 4]
@@ -85,7 +85,7 @@ Incorrect:
 [[status]; [UP] [UP]] | all { |el| $el.status == UP }
 
 # too many spaces before ",": no space is allowed
-[1 2 3 4] | reduce {|it , acc| $it + $acc }
+[1 2 3 4] | reduce {|elt , acc| $elt + $acc }
 
 # too many spaces before "x": no space is allowed
 { x: 1, y: 2}
@@ -100,7 +100,7 @@ Incorrect:
 (1 + 2 ) * 3
 ```
 
-#### Multi-line format
+#### Multi-line Format
 
 Multi-line format is a format for writing all commands in several lines. It inherits all rules from one-line format
 and modifies them slightly.
@@ -134,8 +134,8 @@ Correct:
     $el.status == UP
 }
 
-[1 2 3 4] | reduce {|it, acc|
-    $it + $acc
+[1 2 3 4] | reduce {|elt, acc|
+    $elt + $acc
 }
 
 {x: 1, y: 2}
@@ -159,8 +159,8 @@ Incorrect:
     $el.status == UP}
 
 # too many spaces before "2": one space is required (like in one-line format)
-[1  2 3 4] | reduce {|it, acc|
-    $it + $acc
+[1  2 3 4] | reduce {|elt, acc|
+    $elt + $acc
 }
 
 {
@@ -180,7 +180,142 @@ let selectedProfile = (
 })
 ```
 
-## Options and parameters of custom commands
+## Naming Convention
+
+### Abbreviations and Acronyms
+
+**It's recommended** to use full concise words over abbreviations and acronyms, unless they are well-known and/or
+commonly used.
+
+Correct:
+
+```nu
+query-user --id 123
+
+$user.name | str downcase
+```
+
+Incorrect:
+
+```nu
+qry-usr --id 123
+
+$user.name | string downcase
+```
+
+### Case
+
+#### Commands
+
+**It's recommended to** use kebab-case for command names with multiple words.
+
+Correct:
+
+```nu
+fetch-user --id 123
+```
+
+Incorrect:
+
+```nu
+fetch_user --id 123
+fetchUser --id 123
+```
+
+See also [Naming Commands](custom_commands.md#naming-commands).
+
+#### Sub-Commands
+
+Sub commands are commands that are logically grouped under a parent command and separated by a space.
+**It's recommended to** use kebab-case for the sub-command name.
+
+Correct:
+
+```nu
+date now
+
+date list-timezone
+
+def "login basic-auth" [username: string password: string] {
+    # ...
+}
+```
+
+See also [Naming Sub-Commands](custom_commands.md#subcommands).
+
+#### Flags
+
+**It's recommended to** use kebab-case for flag names.
+
+Correct:
+
+```nu
+def greet [name: string, --all-caps] {
+    # ...
+}
+```
+
+Incorrect:
+
+```nu
+def greet [name: string, --all_caps] {
+    # ...
+}
+```
+
+::: tip
+Notice that the name used to access the flag is accessed by replacing the dash with an underscore in the resulting
+variable name.
+
+See [Flags](custom_commands.md#flags).
+:::
+
+#### Variables and Command Parameters
+
+**It's recommended to** use snake_case for variable names, including command parameters.
+
+Correct:
+
+```nu
+let user_id = 123
+
+def fetch-user [user_id: int] {
+  # ...
+}
+```
+
+Incorrect:
+
+```nu
+let user-id = 123
+let userId = 123
+
+def fetch-user [user-id: int] {
+  # ...
+}
+```
+
+#### Environment Variables
+
+**It's recommended to** use SCREAMING_SNAKE_CASE for environment variable names.
+
+Correct:
+
+```nu
+$env.ENVIRONMENT_CODE = "prod"
+
+$env.APP_VERSION = "1.0.0"
+```
+
+Incorrect:
+
+```nu
+$env.ENVIRONMENT-CODE = "prod"
+
+$env.app_version = "1.0.0"
+```
+
+## Options and Parameters of Custom Commands
 
 - **It's recommended to** keep count of all positional parameters less than or equal to 2, for remaining inputs use options. Assume that command can expect source and destination parameter, like `mv`: source and target file or directory.
 - **It's recommended to** use positional parameters unless they can't be used due to rules listed here or technical restrictions.

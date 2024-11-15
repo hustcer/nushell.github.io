@@ -1,6 +1,6 @@
 # to text
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -8,7 +8,11 @@ Converts data into simple text.
 
 ## Signature
 
-`> to text `
+`> to text --no-newline`
+
+## Parameters
+
+- `--no-newline`: Do not append a newline to the end of the text
 
 ## Input/output types:
 
@@ -18,10 +22,16 @@ Converts data into simple text.
 
 ## Examples
 
-Outputs data as simple text
+Outputs data as simple text with a trailing newline
 
 ```bash
-> 1 | to text
+> [1] | to text
+```
+
+Outputs data as simple text without a trailing newline
+
+```bash
+> [1] | to text --no-newline
 ```
 
 Outputs external data as simple text

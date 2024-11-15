@@ -1,6 +1,6 @@
 # grid
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -8,12 +8,13 @@ Renders the output to a textual terminal grid.
 
 ## Signature
 
-`> grid --width --color --separator`
+`> grid --width --color --icons --separator`
 
 ## Parameters
 
 - `--width {int}`: number of terminal columns wide (not output columns)
 - `--color`: draw output with color
+- `--icons`: draw output with icons (assumes nerd font is used)
 - `--separator {string}`: character to separate grid with
 
 ## Input/output types:
@@ -53,6 +54,12 @@ Render a table with 'name' column in it to a grid
 
 ```bash
 > [[name patch]; [0.1.0 false] [0.1.1 true] [0.2.0 false]] | grid
+```
+
+Render a table with 'name' column in it to a grid with icons and colors
+
+```bash
+> [[name patch]; [Cargo.toml false] [README.md true] [SECURITY.md false]] | grid --icons --color
 ```
 
 ## Notes

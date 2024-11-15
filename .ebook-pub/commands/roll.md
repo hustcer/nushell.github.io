@@ -1,6 +1,6 @@
 # roll
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -24,9 +24,9 @@ You must use one of the following subcommands. Using this command as-is will onl
 
 ## Subcommands:
 
-| name                                         | type    | usage                              |
-| -------------------------------------------- | ------- | ---------------------------------- |
-| [`roll down`](/commands/docs/roll_down.md)   | Builtin | Roll table rows down.              |
-| [`roll left`](/commands/docs/roll_left.md)   | Builtin | Roll record or table columns left. |
-| [`roll right`](/commands/docs/roll_right.md) | Builtin | Roll table columns right.          |
-| [`roll up`](/commands/docs/roll_up.md)       | Builtin | Roll table rows up.                |
+| name                                         | type     | usage                              |
+| -------------------------------------------- | -------- | ---------------------------------- |
+| [`roll down`](/commands/docs/roll_down.md)   | built-in | Roll table rows down.              |
+| [`roll left`](/commands/docs/roll_left.md)   | built-in | Roll record or table columns left. |
+| [`roll right`](/commands/docs/roll_right.md) | built-in | Roll table columns right.          |
+| [`roll up`](/commands/docs/roll_up.md)       | built-in | Roll table rows up.                |

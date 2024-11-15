@@ -1,6 +1,6 @@
 # url build-query
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -12,10 +12,10 @@ Converts record or table into query string applying percent-encoding.
 
 ## Input/output types:
 
-| input  | output |
-| ------ | ------ |
-| record | string |
-| table  | string |
+| input                         | output |
+| ----------------------------- | ------ |
+| record                        | string |
+| table\<key: any, value: any\> | string |
 
 ## Examples
 
@@ -25,14 +25,20 @@ Outputs a query string representing the contents of this record
 > { mode:normal userid:31415 } | url build-query
 ```
 
-Outputs a query string representing the contents of this 1-row table
-
-```bash
-> [[foo bar]; ["1" "2"]] | url build-query
-```
-
-Outputs a query string representing the contents of this record
+Outputs a query string representing the contents of this record, with a value that needs to be url-encoded
 
 ```bash
 > {a:"AT&T", b: "AT T"} | url build-query
+```
+
+Outputs a query string representing the contents of this record, "exploding" the list into multiple parameters
+
+```bash
+> {a: ["one", "two"], b: "three"} | url build-query
+```
+
+Outputs a query string representing the contents of this table containing key-value pairs
+
+```bash
+> [[key, value]; [a, one], [a, two], [b, three], [a, four]] | url build-query
 ```

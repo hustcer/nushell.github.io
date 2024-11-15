@@ -1,6 +1,6 @@
 # path type
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -35,5 +35,5 @@ Show type of a filepaths in a list
 
 ```text
 This checks the file system to confirm the path's object type.
-If nothing is found, an empty string will be returned.
+If the path does not exist, null will be returned.
 ```

@@ -1,6 +1,6 @@
 # window
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -40,4 +40,10 @@ A sliding window of equal stride that includes remainder. Equivalent to chunking
 
 ```bash
 > [1, 2, 3, 4, 5] | window 3 --stride 3 --remainder
+```
+
+## Notes
+
+```text
+This command will error if `window_size` or `stride` are negative or zero.
 ```

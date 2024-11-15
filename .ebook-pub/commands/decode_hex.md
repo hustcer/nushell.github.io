@@ -1,6 +1,6 @@
 # decode hex
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -8,31 +8,24 @@ Hex decode a value.
 
 ## Signature
 
-`> decode hex ...rest`
-
-## Parameters
-
-- `...rest`: For a data structure input, decode data at the given cell paths
+`> decode hex `
 
 ## Input/output types:
 
-| input          | output         |
-| -------------- | -------------- |
-| list\<string\> | list\<binary\> |
-| record         | record         |
-| string         | binary         |
-| table          | table          |
+| input  | output |
+| ------ | ------ |
+| string | binary |
 
 ## Examples
 
-Hex decode a value and output as binary
+Decode arbitrary binary data
 
 ```bash
-> '0102030A0a0B' | decode hex
+> "09FD" | decode hex
 ```
 
-Whitespaces are allowed to be between hex digits
+Lowercase Hex is also accepted
 
 ```bash
-> '01 02  03 0A 0a 0B' | decode hex
+> "09fd" | decode hex
 ```

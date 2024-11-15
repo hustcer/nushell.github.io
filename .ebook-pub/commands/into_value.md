@@ -1,10 +1,10 @@
 # into value
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
-Infer nushell datatype for each cell.
+Infer Nushell datatype for each cell.
 
 ## Signature
 
@@ -12,7 +12,7 @@ Infer nushell datatype for each cell.
 
 ## Parameters
 
-- `--columns {table}`: list of columns to update
+- `--columns {list<any>}`: list of columns to update
 - `--prefer-filesizes`: For ints display them as human-readable file sizes
 
 ## Input/output types:

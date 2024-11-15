@@ -1,6 +1,6 @@
 # path
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -37,14 +37,14 @@ the path literal.
 
 ## Subcommands:
 
-| name                                                     | type    | usage                                                                   |
-| -------------------------------------------------------- | ------- | ----------------------------------------------------------------------- |
-| [`path basename`](/commands/docs/path_basename.md)       | Builtin | Get the final component of a path.                                      |
-| [`path dirname`](/commands/docs/path_dirname.md)         | Builtin | Get the parent directory of a path.                                     |
-| [`path exists`](/commands/docs/path_exists.md)           | Builtin | Check whether a path exists.                                            |
-| [`path expand`](/commands/docs/path_expand.md)           | Builtin | Try to expand a path to its absolute form.                              |
-| [`path join`](/commands/docs/path_join.md)               | Builtin | Join a structured path or a list of path parts.                         |
-| [`path parse`](/commands/docs/path_parse.md)             | Builtin | Convert a path into structured data.                                    |
-| [`path relative-to`](/commands/docs/path_relative-to.md) | Builtin | Express a path as relative to another path.                             |
-| [`path split`](/commands/docs/path_split.md)             | Builtin | Split a path into a list based on the system's path separator.          |
-| [`path type`](/commands/docs/path_type.md)               | Builtin | Get the type of the object a path refers to (e.g., file, dir, symlink). |
+| name                                                     | type     | usage                                                                   |
+| -------------------------------------------------------- | -------- | ----------------------------------------------------------------------- |
+| [`path basename`](/commands/docs/path_basename.md)       | built-in | Get the final component of a path.                                      |
+| [`path dirname`](/commands/docs/path_dirname.md)         | built-in | Get the parent directory of a path.                                     |
+| [`path exists`](/commands/docs/path_exists.md)           | built-in | Check whether a path exists.                                            |
+| [`path expand`](/commands/docs/path_expand.md)           | built-in | Try to expand a path to its absolute form.                              |
+| [`path join`](/commands/docs/path_join.md)               | built-in | Join a structured path or a list of path parts.                         |
+| [`path parse`](/commands/docs/path_parse.md)             | built-in | Convert a path into structured data.                                    |
+| [`path relative-to`](/commands/docs/path_relative-to.md) | built-in | Express a path as relative to another path.                             |
+| [`path split`](/commands/docs/path_split.md)             | built-in | Split a path into a list based on the system's path separator.          |
+| [`path type`](/commands/docs/path_type.md)               | built-in | Get the type of the object a path refers to (e.g., file, dir, symlink). |

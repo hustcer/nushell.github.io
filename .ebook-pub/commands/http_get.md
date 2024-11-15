@@ -1,6 +1,6 @@
 # http get
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -15,7 +15,7 @@ Fetch the contents from a URL.
 - `URL`: The URL to fetch the contents from.
 - `--user {any}`: the username when authenticating
 - `--password {any}`: the password when authenticating
-- `--max-time {int}`: timeout period in seconds
+- `--max-time {duration}`: max duration before timeout occurs
 - `--headers {any}`: custom headers you want to add
 - `--raw`: fetch contents as text rather than a table
 - `--insecure`: allow insecure server connections when using SSL

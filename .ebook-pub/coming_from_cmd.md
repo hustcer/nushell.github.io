@@ -37,11 +37,11 @@ This table was last updated for Nu 0.67.0.
 | `MKLINK`                             |                                                                                     | Create symbolic links                                                 |
 | `MOVE`                               | `mv`                                                                                | Move files                                                            |
 | `PATH`                               | `$env.Path`                                                                         | Display the current path variable                                     |
-| `PATH <path>;%PATH%`                 | `$env.Path = ($env.Path \| prepend <path>`)                                         | Edit the path variable                                                |
+| `PATH <path>;%PATH%`                 | `$env.Path = ($env.Path \| append <path>`)                                          | Edit the path variable                                                |
 | `PATH %PATH%;<path>`                 | `$env.Path = ($env.Path \| prepend <path>`)                                         | Edit the path variable                                                |
 | `PAUSE`                              | `input "Press any key to continue . . ."`                                           | Pause script execution                                                |
 | `PROMPT <template>`                  | `$env.PROMPT_COMMAND = { <command> }`                                               | Change the terminal prompt                                            |
-| `PUSHD <path>`/`POPD`                | `enter <path>`/`exit`                                                               | Change working directory temporarily                                  |
+| `PUSHD <path>`/`POPD`                | `enter <path>`/`dexit`                                                              | Change working directory temporarily                                  |
 | `REM`                                | `#`                                                                                 | Comments                                                              |
 | `REN` or `RENAME`                    | `mv`                                                                                | Rename files                                                          |
 | `RD` or `RMDIR`                      | `rm`                                                                                | Remove directory                                                      |
@@ -57,4 +57,14 @@ This table was last updated for Nu 0.67.0.
 | `VERIFY`                             |                                                                                     | Verify that file writes happen                                        |
 | `VOL`                                |                                                                                     | Show drive information                                                |
 
-Before Nu version 0.67, Nu [used to](https://www.nushell.sh/blog/2022-08-16-nushell-0_67.html#windows-cmd-exe-changes-rgwood) use CMD.EXE to launch external commands, which meant that the above builtins could be run as an `^external` command. As of version 0.67, however, Nu no longer uses CMD.EXE to launch externals, meaning the above builtins cannot be run from within Nu, except for `ASSOC`, `CLS`, `ECHO`, `FTYPE`, `MKLINK`, `PAUSE`, `START`, `VER`, and `VOL`, which are explicitly allowed to be interpreted by CMD if no executable by that name exists.
+## Forwarded CMD.EXE commands
+
+Nu accepts and runs _some_ of CMD.EXE's internal commands through `cmd.exe`.
+
+The internal commands are: `ASSOC`, `CLS`, `ECHO`, `FTYPE`, `MKLINK`, `PAUSE`, `START`, `VER`, `VOL`
+
+These internal commands take precedence over external commands.
+
+For example, with a `ver.bat` file in the current working directory, executing `^ver` executes CMD.EXE's internal `VER` command, _NOT_ the `ver.bat` file.
+
+Executing `./ver` or `ver.bat` _will_ execute the local bat file though.

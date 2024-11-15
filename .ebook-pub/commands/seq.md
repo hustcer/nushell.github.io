@@ -1,6 +1,6 @@
 # seq
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -42,7 +42,7 @@ sequence 1 to 5, then convert to a string with a pipe separator
 
 ## Subcommands:
 
-| name                                     | type    | usage                                 |
-| ---------------------------------------- | ------- | ------------------------------------- |
-| [`seq char`](/commands/docs/seq_char.md) | Builtin | Print a sequence of ASCII characters. |
-| [`seq date`](/commands/docs/seq_date.md) | Builtin | Print sequences of dates.             |
+| name                                     | type     | usage                                 |
+| ---------------------------------------- | -------- | ------------------------------------- |
+| [`seq char`](/commands/docs/seq_char.md) | built-in | Print a sequence of ASCII characters. |
+| [`seq date`](/commands/docs/seq_date.md) | built-in | Print sequences of dates.             |

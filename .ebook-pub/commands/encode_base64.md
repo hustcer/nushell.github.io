@@ -1,6 +1,6 @@
 # encode base64
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -8,42 +8,44 @@ Encode a string or binary value using Base64.
 
 ## Signature
 
-`> encode base64 ...rest --character-set`
+`> encode base64 --url --nopad`
 
 ## Parameters
 
-- `...rest`: For a data structure input, encode data at the given cell paths.
-- `--character-set {string}`: specify the character rules for encoding the input.
-  Valid values are 'standard', 'standard-no-padding', 'url-safe', 'url-safe-no-padding','binhex', 'bcrypt', 'crypt', 'mutf7'
+- `--url`: Use the URL-safe Base64 version.
+- `--nopad`: Don't pad the output.
 
 ## Input/output types:
 
-| input          | output         |
-| -------------- | -------------- |
-| binary         | string         |
-| list\<any\>    | list\<string\> |
-| list\<binary\> | list\<string\> |
-| list\<string\> | list\<string\> |
-| record         | record         |
-| string         | string         |
-| table          | table          |
+| input  | output |
+| ------ | ------ |
+| binary | string |
+| string | string |
 
 ## Examples
 
-Encode binary data
+Encode a string with Base64
 
 ```bash
-> 0x[09 F9 11 02 9D 74 E3 5B D8 41 56 C5 63 56 88 C0] | encode base64
+> "Alphabet from A to Z" | encode base64
 ```
 
-Encode a string with default settings
+Encode arbitrary data
 
 ```bash
-> 'Some Data' | encode base64
+> 0x[BE EE FF] | encode base64
 ```
 
-Encode a string with the binhex character set
+Use a URL-safe alphabet
 
 ```bash
-> 'Some Data' | encode base64 --character-set binhex
+> 0x[BE EE FF] | encode base64 --url
+```
+
+## Notes
+
+```text
+The default alphabet is taken from RFC 4648, section 4.  A URL-safe version is available.
+
+Note this command will collect stream input.
 ```

@@ -1,6 +1,6 @@
 # str contains
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -8,14 +8,13 @@ Checks if string input contains a substring.
 
 ## Signature
 
-`> str contains (string) ...rest --ignore-case --not`
+`> str contains (string) ...rest --ignore-case`
 
 ## Parameters
 
 - `string`: The substring to find.
 - `...rest`: For a data structure input, check strings at the given cell paths, and replace with result.
 - `--ignore-case`: search is case insensitive
-- `--not`: does not contain
 
 ## Input/output types:
 
@@ -68,10 +67,4 @@ Check if list contains string
 
 ```bash
 > [one two three] | str contains o
-```
-
-Check if list does not contain string
-
-```bash
-> [one two three] | str contains --not o
 ```

@@ -39,7 +39,9 @@ Parentheses can be used for grouping to specify evaluation order or for calling 
 
 ## Order of Operations
 
-Operations are evaluated in the following order (from highest precedence to lowest):
+To understand the precedence of operations, you can run the command: `help operators | sort-by precedence -r`.
+
+Presented in descending order of precedence, the article details the operations as follows:
 
 - Parentheses (`()`)
 - Exponentiation/Power (`**`)
@@ -50,11 +52,11 @@ Operations are evaluated in the following order (from highest precedence to lowe
 - Bitwise and (`bit-and`)
 - Bitwise xor (`bit-xor`)
 - Bitwise or (`bit-or`)
-- Logical not (`not`)
 - Logical and (`and`)
 - Logical xor (`xor`)
 - Logical or (`or`)
 - Assignment operations
+- Logical not (`not`)
 
 ```
 > 3 * (1 + 2)
@@ -110,10 +112,10 @@ Operators are usually case-sensitive when operating on strings. There are a few 
 "FOO" =~ "(?i)foo" # returns true
 ```
 
-2. Use the [`str contains`](/commands/docs/str_contains.md) command's `--insensitive` flag:
+2. Use the [`str contains`](/commands/docs/str_contains.md) command's `--ignore-case` flag:
 
 ```nu
-"FOO" | str contains --insensitive "foo"
+"FOO" | str contains --ignore-case "foo"
 ```
 
 3. Convert strings to lowercase with [`str downcase`](/commands/docs/str_downcase.md) before comparing:
@@ -134,7 +136,7 @@ There are three places you can use the spread operator:
 - [In record literals](#in-record-literals)
 - [In command calls](#in-command-calls)
 
-### In list literals
+### In List literals
 
 Suppose you have multiple lists you want to concatenate together, but you also want to intersperse
 some individual values. This can be done with `append` and `prepend`, but the spread
@@ -146,7 +148,7 @@ operator can let you do it more easily.
 > [
     ...$dogs
     Polly
-    ...($cats | each { |it| $"($it) \(cat\)" })
+    ...($cats | each { |elt| $"($elt) \(cat\)" })
     ...[Porky Bessie]
     ...Nemo
   ]
@@ -167,7 +169,7 @@ The below code is an equivalent version using `append`:
 ```nushell
 > $dogs |
     append Polly |
-    append ($cats | each { |it| $"($it) \(cat\)" }) |
+    append ($cats | each { |elt| $"($elt) \(cat\)" }) |
     append [Porky Bessie] |
     append ...Nemo
 ```
@@ -194,7 +196,7 @@ the next expression:
 
 This is mainly so that `...` won't be confused for the spread operator in commands such as `mv ... $dir`.
 
-### In record literals
+### In Record literals
 
 Let's say you have a record with some configuration information and you want to add more fields to
 this record:
@@ -211,7 +213,7 @@ operator. You can use the spread multiple records inside a single record literal
     ...$config,
     users: [alice bob],
     ...{ url: example.com },
-    ...(sys | get mem)
+    ...(sys mem)
   }
 ╭────────────┬───────────────╮
 │ path       │ /tmp          │
@@ -235,7 +237,7 @@ Similarly to lists, inside record literals, the spread operator can only be used
 subexpressions (`...(foo)`), and record literals (`...{foo:bar}`). Here too, there needs to be no
 whitespace between the `...` and the next expression for it to be recognized as the spread operator.
 
-### In command calls
+### In Command calls
 
 You can also spread arguments to a command, provided that it either has a rest parameter or is an
 external command.

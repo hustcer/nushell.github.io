@@ -1,6 +1,6 @@
 # for
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -8,14 +8,13 @@ Loop over a range.
 
 ## Signature
 
-`> for (var_name) (range) (block) --numbered`
+`> for (var_name) (range) (block)`
 
 ## Parameters
 
 - `var_name`: Name of the looping variable.
 - `range`: Range of the loop.
 - `block`: The block to run.
-- `--numbered`: return a numbered item ($it.index and $it.item)
 
 ## Input/output types:
 
@@ -40,7 +39,7 @@ Work with elements of a range
 Number each item and print a message
 
 ```bash
-> for $it in ['bob' 'fred'] --numbered { print $"($it.index) is ($it.item)" }
+> for $it in (['bob' 'fred'] | enumerate) { print $"($it.index) is ($it.item)" }
 ```
 
 ## Notes

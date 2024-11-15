@@ -1,6 +1,6 @@
 # wrap
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -27,11 +27,11 @@ Wrap the value into a column.
 Wrap a list into a table with a given column name
 
 ```bash
-> [1 2 3] | wrap num
+> [ Pachisi Mahjong Catan Carcassonne ] | wrap game
 ```
 
 Wrap a range into a table with a given column name
 
 ```bash
-> 1..3 | wrap num
+> 4..6 | wrap num
 ```

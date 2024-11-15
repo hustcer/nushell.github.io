@@ -1,6 +1,6 @@
 # def
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -44,10 +44,22 @@ Set environment variable by call a custom command
 > def --env foo [] { $env.BAR = "BAZ" }; foo; $env.BAR
 ```
 
+cd affects the environment, so '--env' is required to change directory from within a command
+
+```bash
+> def --env gohome [] { cd ~ }; gohome; $env.PWD == ('~' | path expand)
+```
+
 Define a custom wrapper for an external command
 
 ```bash
-> def --wrapped my-echo [...rest] { echo $rest }; my-echo spam
+> def --wrapped my-echo [...rest] { ^echo ...$rest }; my-echo -e 'spam\tspam'
+```
+
+Define a custom command with a type signature. Passing a non-int value will result in an error
+
+```bash
+> def only_int []: int -> int { $in }; 42 | only_int
 ```
 
 ## Notes

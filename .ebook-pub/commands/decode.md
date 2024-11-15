@@ -1,6 +1,6 @@
 # decode
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -46,7 +46,9 @@ documentation link at https://docs.rs/encoding_rs/latest/encoding_rs/#statics
 
 ## Subcommands:
 
-| name                                               | type    | usage                  |
-| -------------------------------------------------- | ------- | ---------------------- |
-| [`decode base64`](/commands/docs/decode_base64.md) | Builtin | Base64 decode a value. |
-| [`decode hex`](/commands/docs/decode_hex.md)       | Builtin | Hex decode a value.    |
+| name                                                     | type     | usage                     |
+| -------------------------------------------------------- | -------- | ------------------------- |
+| [`decode base32`](/commands/docs/decode_base32.md)       | built-in | Decode a Base32 value.    |
+| [`decode base32hex`](/commands/docs/decode_base32hex.md) | built-in | Encode a base32hex value. |
+| [`decode base64`](/commands/docs/decode_base64.md)       | built-in | Decode a Base64 value.    |
+| [`decode hex`](/commands/docs/decode_hex.md)             | built-in | Hex decode a value.       |

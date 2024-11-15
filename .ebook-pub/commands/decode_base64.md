@@ -1,47 +1,50 @@
 # decode base64
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
-Base64 decode a value.
+Decode a Base64 value.
 
 ## Signature
 
-`> decode base64 ...rest --character-set --binary`
+`> decode base64 --url --nopad`
 
 ## Parameters
 
-- `...rest`: For a data structure input, decode data at the given cell paths.
-- `--character-set {string}`: specify the character rules for encoding the input.
-  Valid values are 'standard', 'standard-no-padding', 'url-safe', 'url-safe-no-padding','binhex', 'bcrypt', 'crypt', 'mutf7'
-- `--binary`: Output a binary value instead of decoding payload as UTF-8
+- `--url`: Decode the URL-safe Base64 version.
+- `--nopad`: Reject padding.
 
 ## Input/output types:
 
-| input          | output      |
-| -------------- | ----------- |
-| list\<string\> | list\<any\> |
-| record         | record      |
-| string         | any         |
-| table          | table       |
+| input  | output |
+| ------ | ------ |
+| string | binary |
 
 ## Examples
 
-Base64 decode a value and output as UTF-8 string
+Decode a Base64 string
 
 ```bash
-> 'U29tZSBEYXRh' | decode base64
+> "U29tZSBEYXRh" | decode base64 | decode
 ```
 
-Base64 decode a value and output as binary
+Decode arbitrary data
 
 ```bash
-> 'U29tZSBEYXRh' | decode base64 --binary
+> "/w==" | decode base64
+```
+
+Decode a URL-safe Base64 string
+
+```bash
+> "_w==" | decode base64 --url
 ```
 
 ## Notes
 
 ```text
-Will attempt to decode binary payload as an UTF-8 string by default. Use the `--binary(-b)` argument to force binary output.
+The default alphabet is taken from RFC 4648, section 4.  A URL-safe version is available.
+
+Note this command will collect stream input.
 ```

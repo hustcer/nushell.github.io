@@ -1,6 +1,6 @@
 # stor update
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -21,6 +21,7 @@ Update information in a specified table in the in-memory sqlite database.
 | input   | output |
 | ------- | ------ |
 | nothing | table  |
+| record  | table  |
 
 ## Examples
 
@@ -34,4 +35,10 @@ Update the in-memory sqlite database with a where clause
 
 ```bash
 > stor update --table-name nudb --update-record {str1: nushell datetime1: 2020-04-17} --where-clause "bool1 = 1"
+```
+
+Update the in-memory sqlite database through pipeline input
+
+```bash
+> {str1: nushell datetime1: 2020-04-17} | stor update --table-name nudb
 ```

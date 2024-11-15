@@ -1,6 +1,6 @@
 # random bool
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 

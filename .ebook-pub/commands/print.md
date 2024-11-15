@@ -1,6 +1,6 @@
 # print
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -8,13 +8,14 @@ Print the given values to stdout.
 
 ## Signature
 
-`> print ...rest --no-newline --stderr`
+`> print ...rest --no-newline --stderr --raw`
 
 ## Parameters
 
 - `...rest`: the values to print
 - `--no-newline`: print without inserting a newline for the line ending
 - `--stderr`: print to stderr instead of stdout
+- `--raw`: print without formatting (including binary data)
 
 ## Input/output types:
 
@@ -35,6 +36,12 @@ Print the sum of 2 and 3
 
 ```bash
 > print (2 + 3)
+```
+
+Print 'ABC' from binary data
+
+```bash
+> 0x[41 42 43] | print --raw
 ```
 
 ## Notes

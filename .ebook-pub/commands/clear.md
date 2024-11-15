@@ -1,6 +1,6 @@
 # clear
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -8,11 +8,11 @@ Clear the terminal.
 
 ## Signature
 
-`> clear --all`
+`> clear --keep-scrollback`
 
 ## Parameters
 
-- `--all`: Clear the terminal and its scroll-back history
+- `--keep-scrollback`: Do not clear the scrollback history
 
 ## Input/output types:
 
@@ -28,8 +28,14 @@ Clear the terminal
 > clear
 ```
 
-Clear the terminal and its scroll-back history
+Clear the terminal but not its scrollback history
 
 ```bash
-> clear --all
+> clear --keep-scrollback
+```
+
+## Notes
+
+```text
+By default clears the current screen and the off-screen scrollback buffer.
 ```

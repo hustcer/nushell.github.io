@@ -1,10 +1,10 @@
 # str substring
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
-Get part of a string. Note that the start is included but the end is excluded, and that the first character of a string is index 0.
+Get part of a string. Note that the first character of a string is index 0.
 
 ## Signature
 
@@ -31,11 +31,17 @@ Get part of a string. Note that the start is included but the end is excluded, a
 Get a substring "nushell" from the text "good nushell" using a range
 
 ```bash
->  'good nushell' | str substring 5..12
+>  'good nushell' | str substring 5..11
 ```
 
 Count indexes and split using grapheme clusters
 
 ```bash
->  '🇯🇵ほげ ふが ぴよ' | str substring --grapheme-clusters 4..6
+>  '🇯🇵ほげ ふが ぴよ' | str substring --grapheme-clusters 4..5
+```
+
+sub string by negative index
+
+```bash
+>  'good nushell' | str substring 5..-2
 ```

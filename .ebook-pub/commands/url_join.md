@@ -1,6 +1,6 @@
 # url join
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -18,7 +18,7 @@ Converts a record to url.
 
 ## Examples
 
-Outputs a url representing the contents of this record
+Outputs a url representing the contents of this record, `params` and `query` fields must be equivalent
 
 ```bash
 > {
@@ -35,6 +35,20 @@ Outputs a url representing the contents of this record
             "mode": "medium",
             "illust_id": "99260204"
         }
+    } | url join
+```
+
+Outputs a url representing the contents of this record, "exploding" the list in `params` into multiple parameters
+
+```bash
+> {
+        "scheme": "http",
+        "username": "user",
+        "password": "pwd",
+        "host": "www.pixiv.net",
+        "port": "1234",
+        "params": {a: ["one", "two"], b: "three"},
+        "fragment": ""
     } | url join
 ```
 

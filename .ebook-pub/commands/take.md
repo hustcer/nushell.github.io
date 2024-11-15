@@ -1,6 +1,6 @@
 # take
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -57,7 +57,7 @@ Return the first 3 elements of a range
 
 ## Subcommands:
 
-| name                                         | type    | usage                                                 |
-| -------------------------------------------- | ------- | ----------------------------------------------------- |
-| [`take until`](/commands/docs/take_until.md) | Builtin | Take elements of the input until a predicate is true. |
-| [`take while`](/commands/docs/take_while.md) | Builtin | Take elements of the input while a predicate is true. |
+| name                                         | type     | usage                                                 |
+| -------------------------------------------- | -------- | ----------------------------------------------------- |
+| [`take until`](/commands/docs/take_until.md) | built-in | Take elements of the input until a predicate is true. |
+| [`take while`](/commands/docs/take_while.md) | built-in | Take elements of the input while a predicate is true. |

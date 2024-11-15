@@ -1,6 +1,6 @@
 # hide-env
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -26,5 +26,5 @@ Hide environment variables in the current scope.
 Hide an environment variable
 
 ```bash
-> $env.HZ_ENV_ABC = 1; hide-env HZ_ENV_ABC; 'HZ_ENV_ABC' in (env).name
+> $env.HZ_ENV_ABC = 1; hide-env HZ_ENV_ABC; 'HZ_ENV_ABC' in $env
 ```

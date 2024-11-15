@@ -1,6 +1,6 @@
 # bits
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -24,13 +24,13 @@ You must use one of the following subcommands. Using this command as-is will onl
 
 ## Subcommands:
 
-| name                                     | type    | usage                                           |
-| ---------------------------------------- | ------- | ----------------------------------------------- |
-| [`bits and`](/commands/docs/bits_and.md) | Builtin | Performs bitwise and for ints or binary values. |
-| [`bits not`](/commands/docs/bits_not.md) | Builtin | Performs logical negation on each bit.          |
-| [`bits or`](/commands/docs/bits_or.md)   | Builtin | Performs bitwise or for ints or binary values.  |
-| [`bits rol`](/commands/docs/bits_rol.md) | Builtin | Bitwise rotate left for ints or binary values.  |
-| [`bits ror`](/commands/docs/bits_ror.md) | Builtin | Bitwise rotate right for ints or binary values. |
-| [`bits shl`](/commands/docs/bits_shl.md) | Builtin | Bitwise shift left for ints or binary values.   |
-| [`bits shr`](/commands/docs/bits_shr.md) | Builtin | Bitwise shift right for ints or binary values.  |
-| [`bits xor`](/commands/docs/bits_xor.md) | Builtin | Performs bitwise xor for ints or binary values. |
+| name                                     | type     | usage                                           |
+| ---------------------------------------- | -------- | ----------------------------------------------- |
+| [`bits and`](/commands/docs/bits_and.md) | built-in | Performs bitwise and for ints or binary values. |
+| [`bits not`](/commands/docs/bits_not.md) | built-in | Performs logical negation on each bit.          |
+| [`bits or`](/commands/docs/bits_or.md)   | built-in | Performs bitwise or for ints or binary values.  |
+| [`bits rol`](/commands/docs/bits_rol.md) | built-in | Bitwise rotate left for ints or binary values.  |
+| [`bits ror`](/commands/docs/bits_ror.md) | built-in | Bitwise rotate right for ints or binary values. |
+| [`bits shl`](/commands/docs/bits_shl.md) | built-in | Bitwise shift left for ints or binary values.   |
+| [`bits shr`](/commands/docs/bits_shr.md) | built-in | Bitwise shift right for ints or binary values.  |
+| [`bits xor`](/commands/docs/bits_xor.md) | built-in | Performs bitwise xor for ints or binary values. |

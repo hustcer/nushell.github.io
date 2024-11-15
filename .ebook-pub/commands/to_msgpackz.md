@@ -1,6 +1,6 @@
 # to msgpackz
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -12,7 +12,7 @@ Convert Nu values into brotli-compressed MessagePack.
 
 ## Parameters
 
-- `--quality {int}`: Quality of brotli compression (default 1)
+- `--quality {int}`: Quality of brotli compression (default 3)
 - `--window-size {int}`: Window size for brotli compression (default 20)
 
 ## Input/output types:

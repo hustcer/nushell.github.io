@@ -1,6 +1,6 @@
 # path exists
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -40,4 +40,5 @@ Check if files in list exist
 ```text
 This only checks if it is possible to either `open` or `cd` to the given path.
 If you need to distinguish dirs and files, please use `path type`.
+Also note that if you don't have a permission to a directory of a path, false will be returned
 ```

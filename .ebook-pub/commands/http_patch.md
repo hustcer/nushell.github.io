@@ -1,6 +1,6 @@
 # http patch
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -17,7 +17,7 @@ Patch a body to a URL.
 - `--user {any}`: the username when authenticating
 - `--password {any}`: the password when authenticating
 - `--content-type {any}`: the MIME type of content to post
-- `--max-time {int}`: timeout period in seconds
+- `--max-time {duration}`: max duration before timeout occurs
 - `--headers {any}`: custom headers you want to add
 - `--raw`: return values as a string instead of a table
 - `--insecure`: allow insecure server connections when using SSL
@@ -27,9 +27,9 @@ Patch a body to a URL.
 
 ## Input/output types:
 
-| input   | output |
-| ------- | ------ |
-| nothing | any    |
+| input | output |
+| ----- | ------ |
+| any   | any    |
 
 ## Examples
 
@@ -55,6 +55,12 @@ Patch content to example.com, with JSON body
 
 ```bash
 > http patch --content-type application/json https://www.example.com { field: value }
+```
+
+Patch JSON content from a pipeline to example.com
+
+```bash
+> open --raw foo.json | http patch https://www.example.com
 ```
 
 ## Notes

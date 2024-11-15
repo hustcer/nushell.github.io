@@ -1,6 +1,6 @@
 # each
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -69,6 +69,6 @@ with 'transpose' first.
 
 ## Subcommands:
 
-| name                                         | type    | usage                                                                                                     |
-| -------------------------------------------- | ------- | --------------------------------------------------------------------------------------------------------- |
-| [`each while`](/commands/docs/each_while.md) | Builtin | Run a block on each row of the input list until a null is found, then create a new list with the results. |
+| name                                         | type     | usage                                                                                                       |
+| -------------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------- |
+| [`each while`](/commands/docs/each_while.md) | built-in | Run a closure on each row of the input list until a null is found, then create a new list with the results. |

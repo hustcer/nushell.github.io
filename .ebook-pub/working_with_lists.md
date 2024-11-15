@@ -1,14 +1,31 @@
-# Working with lists
+# Working with Lists
+
+:::tip
+Lists are equivalent to the individual columns of tables. You can think of a list as essentially being a "one-column table" (with no column name). Thus, any command which operates on a column _also_ operates on a list. For instance, [`where`](/commands/docs/where.md) can be used with lists:
+
+```nu
+> [bell book candle] | where ($it =~ 'b')
+╭───┬──────╮
+│ 0 │ bell │
+│ 1 │ book │
+╰───┴──────╯
+```
+
+:::
 
 ## Creating lists
 
 A list is an ordered collection of values.
-You can create a `list` with square brackets, surrounded values separated by spaces and/or commas (for readability).
+A list is created using square brackets surrounding values separated by spaces, linebreaks, and/or commas.
 For example, `[foo bar baz]` or `[foo, bar, baz]`.
+
+::: tip
+Nushell lists are similar to JSON arrays. The same `[ "Item1", "Item2", "Item3" ]` that represents a JSON array can also be used to create a Nushell list.
+:::
 
 ## Updating lists
 
-You can [`update`](/commands/docs/update.md) and [`insert`](/commands/docs/insert.md) values into lists as they flow through the pipeline, for example let's insert the value `10` into the middle of a list:
+We can [`insert`](/commands/docs/insert.md) values into lists as they flow through the pipeline, for example let's insert the value `10` into the middle of a list:
 
 ```nu
 > [1, 2, 3, 4] | insert 2 10
@@ -22,7 +39,7 @@ We can also use [`update`](/commands/docs/update.md) to replace the 2nd element 
 # [1, 10, 3, 4]
 ```
 
-## Removing or adding items from list
+## Removing or Adding Items from List
 
 In addition to [`insert`](/commands/docs/insert.md) and [`update`](/commands/docs/update.md), we also have [`prepend`](/commands/docs/prepend.md) and [`append`](/commands/docs/append.md). These let you insert to the beginning of a list or at the end of the list, respectively.
 
@@ -62,18 +79,39 @@ let colors = ($colors | first 2)
 $colors # [yellow green]
 ```
 
-## Iterating over lists
+### Using the Spread Operator
+
+To append one or more lists together, optionally with values interspersed in between, you can also use the
+[spread operator](/book/operators#spread-operator) (`...`):
+
+```nu
+> let x = [1 2]
+> [
+    ...$x
+    3
+    ...(4..7 | take 2)
+  ]
+╭───┬───╮
+│ 0 │ 1 │
+│ 1 │ 2 │
+│ 2 │ 3 │
+│ 3 │ 4 │
+│ 4 │ 5 │
+╰───┴───╯
+```
+
+## Iterating over Lists
 
 To iterate over the items in a list, use the [`each`](/commands/docs/each.md) command with a [block](types_of_data.html#blocks)
-of Nu code that specifies what to do to each item. The block parameter (e.g. `|it|` in `{ |it| print $it }`) is the current list
+of Nu code that specifies what to do to each item. The block parameter (e.g. `|elt|` in `{ |elt| print $elt }`) is the current list
 item, but the [`enumerate`](/commands/docs/enumerate.md) filter can be used to provide `index` and `item` values if needed. For example:
 
 ```nu
 let names = [Mark Tami Amanda Jeremy]
-$names | each { |it| $"Hello, ($it)!" }
+$names | each { |elt| $"Hello, ($elt)!" }
 # Outputs "Hello, Mark!" and three more similar lines.
 
-$names | enumerate | each { |it| $"($it.index + 1) - ($it.item)" }
+$names | enumerate | each { |elt| $"($elt.index + 1) - ($elt.item)" }
 # Outputs "1 - Mark", "2 - Tami", etc.
 ```
 
@@ -96,23 +134,27 @@ $scores | where $it > 7 # [10 8]
 ```
 
 The [`reduce`](/commands/docs/reduce.md) command computes a single value from a list.
-It uses a block which takes 2 parameters: the current item (conventionally named `it`) and an accumulator
+It uses a block which takes 2 parameters: the current item (conventionally named `elt`) and an accumulator
 (conventionally named `acc`). To specify an initial value for the accumulator, use the `--fold` (`-f`) flag.
-To change `it` to have `index` and `item` values, use the [`enumerate`](/commands/docs/enumerate.md) filter.
+To change `elt` to have `index` and `item` values, use the [`enumerate`](/commands/docs/enumerate.md) filter.
 For example:
 
 ```nu
 let scores = [3 8 4]
-$"total = ($scores | reduce { |it, acc| $acc + $it })" # total = 15
+$"total = ($scores | reduce { |elt, acc| $acc + $elt })" # total = 15
 
 $"total = ($scores | math sum)" # easier approach, same result
 
-$"product = ($scores | reduce --fold 1 { |it, acc| $acc * $it })" # product = 96
+$"product = ($scores | reduce --fold 1 { |elt, acc| $acc * $elt })" # product = 96
 
-$scores | enumerate | reduce --fold 0 { |it, acc| $acc + $it.index * $it.item } # 0*3 + 1*8 + 2*4 = 16
+$scores | enumerate | reduce --fold 0 { |elt, acc| $acc + $elt.index * $elt.item } # 0*3 + 1*8 + 2*4 = 16
 ```
 
-## Accessing the list
+## Accessing the List
+
+::: tip Note
+The following is a basic overview. For a more in-depth discussion of this topic, see the chapter, [Navigating and Accessing Structured Data](/book/navigating_structured_data.md).
+:::
 
 To access a list item at a given index, use the `$name.index` form where `$name` is a variable that holds a list.
 
@@ -161,17 +203,17 @@ For example:
 ```nu
 let colors = [red green blue]
 # Do any color names end with "e"?
-$colors | any {|it| $it | str ends-with "e" } # true
+$colors | any {|elt| $elt | str ends-with "e" } # true
 
 # Is the length of any color name less than 3?
-$colors | any {|it| ($it | str length) < 3 } # false
+$colors | any {|elt| ($elt | str length) < 3 } # false
 
 let scores = [3 8 4]
 # Are any scores greater than 7?
-$scores | any {|it| $it > 7 } # true
+$scores | any {|elt| $elt > 7 } # true
 
 # Are any scores odd?
-$scores | any {|it| $it mod 2 == 1 } # true
+$scores | any {|elt| $elt mod 2 == 1 } # true
 ```
 
 The [`all`](/commands/docs/all.md) command determines if every item in a list
@@ -181,20 +223,20 @@ For example:
 ```nu
 let colors = [red green blue]
 # Do all color names end with "e"?
-$colors | all {|it| $it | str ends-with "e" } # false
+$colors | all {|elt| $elt | str ends-with "e" } # false
 
 # Is the length of all color names greater than or equal to 3?
-$colors | all {|it| ($it | str length) >= 3 } # true
+$colors | all {|elt| ($elt | str length) >= 3 } # true
 
 let scores = [3 8 4]
 # Are all scores greater than 7?
-$scores | all {|it| $it > 7 } # false
+$scores | all {|elt| $elt > 7 } # false
 
 # Are all scores even?
-$scores | all {|it| $it mod 2 == 0 } # false
+$scores | all {|elt| $elt mod 2 == 0 } # false
 ```
 
-## Converting the list
+## Converting the List
 
 The [`flatten`](/commands/docs/flatten.md) command creates a new list from an existing list
 by adding items in nested lists to the top-level list.
@@ -214,5 +256,5 @@ be converted to a separate row with a single column:
 let zones = [UTC CET Europe/Moscow Asia/Yekaterinburg]
 
 # Show world clock for selected time zones
-$zones | wrap 'Zone' | upsert Time {|it| (date now | date to-timezone $it.Zone | format date '%Y.%m.%d %H:%M')}
+$zones | wrap 'Zone' | upsert Time {|row| (date now | date to-timezone $row.Zone | format date '%Y.%m.%d %H:%M')}
 ```

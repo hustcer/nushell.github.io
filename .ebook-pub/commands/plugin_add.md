@@ -1,6 +1,6 @@
 # plugin add
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -39,7 +39,8 @@ Run the `nu_plugin_polars` plugin from the current directory or $env.NU_PLUGIN_D
 ## Notes
 
 ```text
-This does not load the plugin commands into the scope - see `register` for that.
+This does not load the plugin commands into the scope - see `plugin use` for
+that.
 
 Instead, it runs the plugin to get its command signatures, and then edits the
 plugin registry file (by default, `$nu.plugin-path`). The changes will be

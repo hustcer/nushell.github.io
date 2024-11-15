@@ -1,6 +1,6 @@
 # random
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -24,11 +24,12 @@ You must use one of the following subcommands. Using this command as-is will onl
 
 ## Subcommands:
 
-| name                                             | type    | usage                                              |
-| ------------------------------------------------ | ------- | -------------------------------------------------- |
-| [`random bool`](/commands/docs/random_bool.md)   | Builtin | Generate a random boolean value.                   |
-| [`random chars`](/commands/docs/random_chars.md) | Builtin | Generate random chars.                             |
-| [`random dice`](/commands/docs/random_dice.md)   | Builtin | Generate a random dice roll.                       |
-| [`random float`](/commands/docs/random_float.md) | Builtin | Generate a random float within a range [min..max]. |
-| [`random int`](/commands/docs/random_int.md)     | Builtin | Generate a random integer [min..max].              |
-| [`random uuid`](/commands/docs/random_uuid.md)   | Builtin | Generate a random uuid4 string.                    |
+| name                                               | type     | usage                                                                                         |
+| -------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------- |
+| [`random binary`](/commands/docs/random_binary.md) | built-in | Generate random bytes.                                                                        |
+| [`random bool`](/commands/docs/random_bool.md)     | built-in | Generate a random boolean value.                                                              |
+| [`random chars`](/commands/docs/random_chars.md)   | built-in | Generate random chars uniformly distributed over ASCII letters and numbers: a-z, A-Z and 0-9. |
+| [`random dice`](/commands/docs/random_dice.md)     | built-in | Generate a random dice roll.                                                                  |
+| [`random float`](/commands/docs/random_float.md)   | built-in | Generate a random float within a range [min..max].                                            |
+| [`random int`](/commands/docs/random_int.md)       | built-in | Generate a random integer [min..max].                                                         |
+| [`random uuid`](/commands/docs/random_uuid.md)     | built-in | Generate a random uuid4 string.                                                               |

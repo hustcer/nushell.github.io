@@ -1,6 +1,6 @@
 # debug profile
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -8,7 +8,7 @@ Profile pipeline elements in a closure.
 
 ## Signature
 
-`> debug profile (closure) --spans --expand-source --values --expr --max-depth`
+`> debug profile (closure) --spans --expand-source --values --expr --instructions --lines --max-depth`
 
 ## Parameters
 
@@ -17,6 +17,8 @@ Profile pipeline elements in a closure.
 - `--expand-source`: Collect full source fragments of profiled elements
 - `--values`: Collect pipeline element output values
 - `--expr`: Collect expression types
+- `--instructions`: Collect IR instructions
+- `--lines`: Collect line numbers
 - `--max-depth {int}`: How many blocks/closures deep to step into (default 2)
 
 ## Input/output types:

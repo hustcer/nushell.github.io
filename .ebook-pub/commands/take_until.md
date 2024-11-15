@@ -1,6 +1,6 @@
 # take until
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -19,7 +19,6 @@ Take elements of the input until a predicate is true.
 | input       | output      |
 | ----------- | ----------- |
 | list\<any\> | list\<any\> |
-| table       | table       |
 
 ## Examples
 

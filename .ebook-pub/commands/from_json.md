@@ -1,6 +1,6 @@
 # from json
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -39,4 +39,11 @@ Parse json strictly which will error on comments and trailing commas
 
 ```bash
 > '{ "a": 1, "b": 2 }' | from json -s
+```
+
+Parse a stream of line-delimited JSON values
+
+```bash
+> '{ "a": 1 }
+{ "b": 2 }' | from json --objects
 ```

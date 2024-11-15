@@ -1,6 +1,6 @@
 # touch
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -8,15 +8,16 @@ Creates one or more files.
 
 ## Signature
 
-`> touch ...rest --reference --modified --access --no-create`
+`> touch ...rest --reference --modified --access --no-create --no-deref`
 
 ## Parameters
 
 - `...rest`: The file(s) to create.
 - `--reference {string}`: change the file or directory time to the time of the reference file/directory
-- `--modified`: change the modification time of the file or directory. If no timestamp, date or reference file/directory is given, the current time is used
-- `--access`: change the access time of the file or directory. If no timestamp, date or reference file/directory is given, the current time is used
+- `--modified`: change the modification time of the file or directory. If no reference file/directory is given, the current time is used
+- `--access`: change the access time of the file or directory. If no reference file/directory is given, the current time is used
 - `--no-create`: do not create the file if it does not exist
+- `--no-deref`: do not follow symlinks
 
 ## Input/output types:
 
@@ -44,20 +45,8 @@ Changes the last modified time of "fixture.json" to today's date
 > touch -m fixture.json
 ```
 
-Changes the last modified time of files a, b and c to a date
-
-```bash
-> touch -m -d "yesterday" a b c
-```
-
 Changes the last modified time of file d and e to "fixture.json"'s last modified time
 
 ```bash
 > touch -m -r fixture.json d e
-```
-
-Changes the last accessed time of "fixture.json" to a date
-
-```bash
-> touch -a -d "August 24, 2019; 12:30:30" fixture.json
 ```

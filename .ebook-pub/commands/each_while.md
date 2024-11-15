@@ -1,10 +1,10 @@
 # each while
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
-Run a block on each row of the input list until a null is found, then create a new list with the results.
+Run a closure on each row of the input list until a null is found, then create a new list with the results.
 
 ## Signature
 

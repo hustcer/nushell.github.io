@@ -1,6 +1,6 @@
 # match
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -61,4 +61,11 @@ Match with a guard
         _ => { 'not a very good list' }
     }
 
+```
+
+## Notes
+
+```text
+This command is a parser keyword. For details, check:
+  https://www.nushell.sh/book/thinking_in_nu.html
 ```

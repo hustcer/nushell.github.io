@@ -1,6 +1,6 @@
 # ansi
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -131,8 +131,8 @@ Operating system commands:
 
 ## Subcommands:
 
-| name                                               | type    | usage                                                              |
-| -------------------------------------------------- | ------- | ------------------------------------------------------------------ |
-| [`ansi gradient`](/commands/docs/ansi_gradient.md) | Builtin | Add a color gradient (using ANSI color codes) to the given string. |
-| [`ansi link`](/commands/docs/ansi_link.md)         | Builtin | Add a link (using OSC 8 escape sequence) to the given string.      |
-| [`ansi strip`](/commands/docs/ansi_strip.md)       | Builtin | Strip ANSI escape sequences from a string.                         |
+| name                                               | type     | usage                                                              |
+| -------------------------------------------------- | -------- | ------------------------------------------------------------------ |
+| [`ansi gradient`](/commands/docs/ansi_gradient.md) | built-in | Add a color gradient (using ANSI color codes) to the given string. |
+| [`ansi link`](/commands/docs/ansi_link.md)         | built-in | Add a link (using OSC 8 escape sequence) to the given string.      |
+| [`ansi strip`](/commands/docs/ansi_strip.md)       | built-in | Strip ANSI escape sequences from a string.                         |

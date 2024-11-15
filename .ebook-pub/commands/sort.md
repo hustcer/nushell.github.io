@@ -1,6 +1,6 @@
 # sort
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -26,25 +26,25 @@ Sort in increasing order.
 
 ## Examples
 
-sort the list by increasing value
+Sort the list by increasing value
 
 ```bash
 > [2 0 1] | sort
 ```
 
-sort the list by decreasing value
+Sort the list by decreasing value
 
 ```bash
 > [2 0 1] | sort --reverse
 ```
 
-sort a list of strings
+Sort a list of strings
 
 ```bash
 > [betty amy sarah] | sort
 ```
 
-sort a list of strings in reverse
+Sort a list of strings in reverse
 
 ```bash
 > [betty amy sarah] | sort --reverse
@@ -60,6 +60,12 @@ Sort strings (reversed case-insensitive)
 
 ```bash
 > [airplane Truck Car] | sort -i -r
+```
+
+Sort alphanumeric strings in natural order
+
+```bash
+> [foo1 foo10 foo9] | sort -n
 ```
 
 Sort record by key (case-insensitive)

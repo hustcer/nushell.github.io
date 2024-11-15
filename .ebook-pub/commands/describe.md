@@ -1,6 +1,6 @@
 # describe
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -8,13 +8,12 @@ Describe the type and structure of the value(s) piped in.
 
 ## Signature
 
-`> describe --no-collect --detailed --collect-lazyrecords`
+`> describe --no-collect --detailed`
 
 ## Parameters
 
 - `--no-collect`: do not collect streams of structured data
 - `--detailed`: show detailed information about the value
-- `--collect-lazyrecords`: collect lazy records
 
 ## Input/output types:
 
@@ -33,7 +32,7 @@ Describe the type of a string
 Describe the type of a record in a detailed way
 
 ```bash
-> {shell:'true', uwu:true, features: {bugs:false, multiplatform:true, speed: 10}, fib: [1 1 2 3 5 8], on_save: {|x| print $'Saving ($x)'}, first_commit: 2019-05-10, my_duration: (4min + 20sec)} | describe -d
+> {shell:'true', uwu:true, features: {bugs:false, multiplatform:true, speed: 10}, fib: [1 1 2 3 5 8], on_save: {|x| $'Saving ($x)'}, first_commit: 2019-05-10, my_duration: (4min + 20sec)} | describe -d
 ```
 
 Describe the type of a stream with detailed information

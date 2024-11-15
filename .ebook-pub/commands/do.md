@@ -1,6 +1,6 @@
 # do
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -64,16 +64,28 @@ Abort the pipeline if a program returns a non-zero exit code
 > do --capture-errors { nu --commands 'exit 1' } | myscarycommand
 ```
 
-Run the closure, with a positional parameter
+Run the closure with a positional, type-checked parameter
 
 ```bash
-> do {|x| 100 + $x } 77
+> do {|x:int| 100 + $x } 77
 ```
 
-Run the closure, with input
+Run the closure with pipeline input
 
 ```bash
-> 77 | do {|x| 100 + $in }
+> 77 | do { 100 + $in }
+```
+
+Run the closure with a default parameter value
+
+```bash
+> 77 | do {|x=100| $x + $in }
+```
+
+Run the closure with two positional parameters
+
+```bash
+> do {|x,y| $x + $y } 77 100
 ```
 
 Run the closure and keep changes to the environment

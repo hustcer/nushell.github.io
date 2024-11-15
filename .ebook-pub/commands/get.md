@@ -1,6 +1,6 @@
 # get
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -45,7 +45,7 @@ Get a cell from a table
 > [{A: A0}] | get 0.A
 ```
 
-Extract the name of the 3rd record in a list (same as `ls | $in.name`)
+Extract the name of the 3rd record in a list (same as `ls | $in.name.2`)
 
 ```bash
 > ls | get name.2
@@ -55,12 +55,6 @@ Extract the name of the 3rd record in a list
 
 ```bash
 > ls | get 2.name
-```
-
-Extract the cpu list from the sys information record
-
-```bash
-> sys | get cpu
 ```
 
 Getting Path/PATH in a case insensitive way

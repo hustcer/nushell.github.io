@@ -191,7 +191,7 @@ $env.config = ($env.config | upsert hooks {
 
 ## Examples
 
-### Adding a single hook to existing config
+### Adding a Single Hook to Existing Config
 
 An example for PWD env change hook:
 
@@ -209,7 +209,7 @@ $env.config = ($env.config | upsert hooks.env_change.PWD {|config|
 })
 ```
 
-### Automatically activating an environment when entering a directory
+### Automatically Activating an Environment when Entering a Directory
 
 This one looks for `test-env.nu` in a directory
 
@@ -235,7 +235,7 @@ $env.config = ($env.config | upsert hooks.env_change.PWD {
 })
 ```
 
-### Filtering or diverting command output
+### Filtering or Diverting Command Output
 
 You can use the `display_output` hook to redirect the output of commands.
 You should define a block that works on all value types.
@@ -257,7 +257,7 @@ a browser that automatically reloads when the file changes.
 Instead of the [`save`](/commands/docs/save.md) command, you would normally customize this
 to send the HTML output to a desired window.
 
-### Changing how output is displayed
+### Changing how Output is Displayed
 
 You can change to default behavior of how output is displayed by using the `display_output` hook.
 Here is an example that changes the default display behavior to show a table 1 layer deep if the terminal is wide enough, or collapse otherwise:
@@ -268,7 +268,7 @@ $env.config = ($env.config | upsert hooks {
 })
 ```
 
-### `command_not_found` hook in _Arch Linux_
+### `command_not_found` Hook in _Arch Linux_
 
 The following hook uses the `pkgfile` command, to find which packages commands belong to in _Arch Linux_.
 
@@ -290,6 +290,41 @@ $env.config = {
                         $"(ansi $env.config.color_config.shape_external)($cmd_name)(ansi reset) " +
                         $"may be found in the following packages:\n($pkgs)"
                     )
+                }
+            )
+        }
+    }
+}
+```
+
+### `command_not_found` Hook in _Windows_
+
+The following hook uses the `ftype` command, to find program paths in _Windows_ that might be relevant to the user for `alias`-ing.
+
+```nu
+$env.config = {
+    ...other config...
+
+    hooks: {
+        ...other hooks...
+
+        command_not_found: {
+            |cmd_name| (
+                try {
+                    let attrs = (
+                        ftype | find $cmd_name | to text | lines | reduce -f [] { |line, acc|
+                            $line | parse "{type}={path}" | append $acc
+                        } | group-by path | transpose key value | each { |row|
+                            { path: $row.key, types: ($row.value | get type | str join ", ") }
+                        }
+                    )
+                    let len = ($attrs | length)
+
+                    if $len == 0 {
+                        return null
+                    } else {
+                        return ($attrs | table --collapse)
+                    }
                 }
             )
         }

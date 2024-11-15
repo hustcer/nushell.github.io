@@ -1,6 +1,6 @@
 # group-by
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -51,4 +51,20 @@ You can also output a table instead of a record
 
 ```bash
 > ['1' '3' '1' '3' '2' '1' '1'] | group-by --to-table
+```
+
+Group bools, whether they are strings or actual bools
+
+```bash
+> [true "true" false "false"] | group-by
+```
+
+## Notes
+
+```text
+the group-by command makes some assumptions:
+    - if the input data is not a string, the grouper will convert the key to string but the values will remain in their original format. e.g. with bools, "true" and true would be in the same group (see example).
+    - datetime is formatted based on your configuration setting. use `format date` to change the format.
+    - filesize is formatted based on your configuration setting. use `format filesize` to change the format.
+    - some nushell values are not supported, such as closures.
 ```

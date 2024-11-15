@@ -1,10 +1,10 @@
 # reduce
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
-Aggregate a list to a single value using an accumulator closure.
+Aggregate a list (starting from the left) to a single value using an accumulator closure.
 
 ## Signature
 
@@ -31,6 +31,12 @@ Sum values of a list (same as 'math sum')
 > [ 1 2 3 4 ] | reduce {|it, acc| $it + $acc }
 ```
 
+`reduce` accumulates value from left to right, equivalent to (((1 - 2) - 3) - 4).
+
+```bash
+> [ 1 2 3 4 ] | reduce {|it, acc| $acc - $it }
+```
+
 Sum values of a list, plus their indexes
 
 ```bash
@@ -41,6 +47,12 @@ Sum values with a starting value (fold)
 
 ```bash
 > [ 1 2 3 4 ] | reduce --fold 10 {|it, acc| $acc + $it }
+```
+
+Iteratively perform string replace (from left to right): 'foobar' -> 'bazbar' -> 'quuxbar'
+
+```bash
+> [[foo baz] [baz quux]] | reduce --fold "foobar" {|it, acc| $acc | str replace $it.0 $it.1}
 ```
 
 Replace selected characters in a string with 'X'

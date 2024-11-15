@@ -1,6 +1,6 @@
 # split column
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -8,13 +8,14 @@ Split a string into multiple columns using a separator.
 
 ## Signature
 
-`> split column (separator) ...rest --collapse-empty --regex`
+`> split column (separator) ...rest --collapse-empty --number --regex`
 
 ## Parameters
 
 - `separator`: The character or string that denotes what separates columns.
 - `...rest`: Column names to give the new columns.
 - `--collapse-empty`: remove empty columns
+- `--number {int}`: Split into maximum number of items
 - `--regex`: separator is a regular expression
 
 ## Input/output types:
@@ -48,4 +49,10 @@ Split a list of strings into a table, ignoring padding
 
 ```bash
 > ['a -  b' 'c  -    d'] | split column --regex '\s*-\s*'
+```
+
+Split into columns, last column may contain the delimiter
+
+```bash
+> ['author: Salina Yoon' r#'title: Where's Ellie?: A Hide-and-Seek Book'#] | split column --number 2 ': ' key value
 ```

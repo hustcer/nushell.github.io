@@ -1,6 +1,6 @@
 # drop
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -49,7 +49,7 @@ Remove the last row in a table
 
 ## Subcommands:
 
-| name                                           | type    | usage                                                                                               |
-| ---------------------------------------------- | ------- | --------------------------------------------------------------------------------------------------- |
-| [`drop column`](/commands/docs/drop_column.md) | Builtin | Remove N columns at the right-hand end of the input table. To remove columns by name, use `reject`. |
-| [`drop nth`](/commands/docs/drop_nth.md)       | Builtin | Drop the selected rows.                                                                             |
+| name                                           | type     | usage                                                                                               |
+| ---------------------------------------------- | -------- | --------------------------------------------------------------------------------------------------- |
+| [`drop column`](/commands/docs/drop_column.md) | built-in | Remove N columns at the right-hand end of the input table. To remove columns by name, use `reject`. |
+| [`drop nth`](/commands/docs/drop_nth.md)       | built-in | Drop the selected rows.                                                                             |

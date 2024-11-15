@@ -1,6 +1,6 @@
 # into datetime
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -31,22 +31,28 @@ Convert text or timestamp into a datetime.
 
 ## Examples
 
-Convert any standard timestamp string to datetime
+Convert timestamp string to datetime with timezone offset
 
 ```bash
 > '27.02.2021 1:55 pm +0000' | into datetime
 ```
 
-Convert any standard timestamp string to datetime
+Convert standard timestamp string to datetime with timezone offset
 
 ```bash
 > '2021-02-27T13:55:40.2246+00:00' | into datetime
 ```
 
-Convert non-standard timestamp string to datetime using a custom format
+Convert non-standard timestamp string, with timezone offset, to datetime using a custom format
 
 ```bash
 > '20210227_135540+0000' | into datetime --format '%Y%m%d_%H%M%S%z'
+```
+
+Convert non-standard timestamp string, without timezone offset, to datetime with custom formatting
+
+```bash
+> '16.11.1984 8:00 am' | into datetime --format '%d.%m.%Y %H:%M %P'
 ```
 
 Convert nanosecond-precision unix timestamp to a datetime with offset from UTC

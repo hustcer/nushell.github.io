@@ -1,6 +1,6 @@
 # bytes build
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -26,4 +26,10 @@ Builds binary data from 0x[01 02], 0x[03], 0x[04]
 
 ```bash
 > bytes build 0x[01 02] 0x[03] 0x[04]
+```
+
+Builds binary data from byte numbers
+
+```bash
+> bytes build 255 254 253 252
 ```

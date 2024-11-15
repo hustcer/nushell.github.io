@@ -1,6 +1,6 @@
 # fill
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -44,10 +44,10 @@ Fill a string on the right side to a width of 15 with the character '─'
 > 'nushell' | fill --alignment r --character '─' --width 15
 ```
 
-Fill a string on both sides to a width of 15 with the character '─'
+Fill an empty string with 10 '─' characters
 
 ```bash
-> 'nushell' | fill --alignment m --character '─' --width 15
+> '' | fill --character '─' --width 10
 ```
 
 Fill a number on the left side to a width of 5 with the character '0'
@@ -62,7 +62,7 @@ Fill a number on both sides to a width of 5 with the character '0'
 > 1.1 | fill --alignment center --character '0' --width 5
 ```
 
-Fill a filesize on the left side to a width of 5 with the character '0'
+Fill a filesize on both sides to a width of 10 with the character '0'
 
 ```bash
 > 1kib | fill --alignment middle --character '0' --width 10

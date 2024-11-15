@@ -1,6 +1,6 @@
 # update
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -65,6 +65,6 @@ When updating a specific index, the closure will instead be run once. The first 
 
 ## Subcommands:
 
-| name                                             | type    | usage                   |
-| ------------------------------------------------ | ------- | ----------------------- |
-| [`update cells`](/commands/docs/update_cells.md) | Builtin | Update the table cells. |
+| name                                             | type     | usage                   |
+| ------------------------------------------------ | -------- | ----------------------- |
+| [`update cells`](/commands/docs/update_cells.md) | built-in | Update the table cells. |

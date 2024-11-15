@@ -1,10 +1,10 @@
 # parse
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
-Parse columns from string data using a simple pattern.
+Parse columns from string data using a simple pattern or a supplied regular expression.
 
 ## Signature
 
@@ -30,10 +30,10 @@ Parse a string into two named columns
 > "hi there" | parse "{foo} {bar}"
 ```
 
-Parse a string using regex pattern
+This is how the first example is interpreted in the source code
 
 ```bash
-> "hi there" | parse --regex '(?P<foo>\w+) (?P<bar>\w+)'
+> "hi there" | parse --regex '(?s)\A(?P<foo>.*?) (?P<bar>.*?)\z'
 ```
 
 Parse a string using fancy-regex named capture group pattern
@@ -58,4 +58,10 @@ Parse a string using fancy-regex look ahead atomic group pattern
 
 ```bash
 > "abcd" | parse --regex '^a(bc(?=d)|b)cd$'
+```
+
+## Notes
+
+```text
+The parse command always uses regular expressions even when you use a simple pattern. If a simple pattern is supplied, parse will transform that pattern into a regular expression.
 ```

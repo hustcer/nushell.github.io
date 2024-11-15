@@ -1,6 +1,6 @@
 # url parse
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -27,5 +27,5 @@ Parses a url.
 Parses a url
 
 ```bash
-> 'http://user123:pass567@www.example.com:8081/foo/bar?param1=section&p2=&f[name]=vldc#hello' | url parse
+> 'http://user123:pass567@www.example.com:8081/foo/bar?param1=section&p2=&f[name]=vldc&f[no]=42#hello' | url parse
 ```

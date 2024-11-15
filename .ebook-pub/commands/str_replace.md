@@ -1,6 +1,6 @@
 # str replace
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -49,19 +49,25 @@ Find and replace contents with capture group using regular expression
 > 'my_library.rb' | str replace -r '(.+).rb' '$1.nu'
 ```
 
-Find and replace all occurrences of find string using regular expression
+Find and replace contents with capture group using regular expression, with escapes
+
+```bash
+> 'hello=world' | str replace -r '\$?(?<varname>.*)=(?<value>.*)' '$$$varname = $value'
+```
+
+Find and replace all occurrences of found string using regular expression
 
 ```bash
 > 'abc abc abc' | str replace --all --regex 'b' 'z'
 ```
 
-Find and replace all occurrences of find string in table using regular expression
+Find and replace all occurrences of found string in table using regular expression
 
 ```bash
 > [[ColA ColB ColC]; [abc abc ads]] | str replace --all --regex 'b' 'z' ColA ColC
 ```
 
-Find and replace all occurrences of find string in record using regular expression
+Find and replace all occurrences of found string in record using regular expression
 
 ```bash
 > { KeyA: abc, KeyB: abc, KeyC: ads } | str replace --all --regex 'b' 'z' KeyA KeyC

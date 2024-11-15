@@ -29,25 +29,33 @@ The default config files aren't required. If you prefer to start with an empty `
 :::
 
 Control which directory Nushell reads config files from with the `XDG_CONFIG_HOME` environment variable. When you set it to
-an absolute path, Nushell will read config files from `$"($env.XDG_CONFIG_HOME)/nushell"`.
+an absolute path, Nushell will read config files from `$"($env.XDG_CONFIG_HOME)/nushell"`. For example, if you set it to
+`C:\Users\bob\.config`, Nushell will read config files from `C:\Users\bob\.config\nushell\`.
 
 ::: warning
-`XDG_CONFIG_HOME` must be set **before** starting Nushell. Do not set it in `env.nu`.
+`XDG_CONFIG_HOME` must be set **before** starting Nushell. Setting it in `env.nu` or `config.nu` won't change where Nushell
+looks for configuration files.
 :::
 
-Here's an example for reading config files from `~/.config/nushell` rather than the default directory for Windows, which is `C:\Users\username\AppData\Roaming\nushell`.
+On Windows, you can persistently set the `XDG_CONFIG_HOME` environment variable through the Control Panel. To get there, just
+search for "environment variable" in the Start menu.
 
-```nu
-> $env.XDG_CONFIG_HOME = "C:\Users\username\.config"
-> nu
-> $nu.default-config-dir
-C:\Users\username\.config\nushell
+On other platforms, if Nushell isn't your login shell, then you can set `XDG_CONFIG_HOME` before launching Nushell. For example, if you
+use MacOS and your login shell is Zsh, you could add the following to your `.zshrc`:
+
+```zsh
+export XDG_CONFIG_HOME="/Users/bob/.config"
 ```
 
+If Nushell is your login shell, then ways to set `XDG_CONFIG_HOME` will depend on your OS.
+Some Linux distros will let you set environment variables in `/etc/profile` or `/etc/profile.d`.
+On modern Linux distros, you can also set it through PAM in `/etc/environment`.
+
 ::: warning
-[`XDG_CONFIG_HOME`](https://xdgbasedirectoryspecification.com) is not a Nushell-specific environment variable and should not be set to the directory that contains Nushell config files.
-It should be the directory _above_ the `nushell` directory. If you set it to `/Users/username/dotfiles/nushell`, Nushell will look for
-config files in `/Users/username/dotfiles/nushell/nushell` instead. In this case, you would want to set it to `/Users/username/dotfiles`.
+[`XDG_CONFIG_HOME`](https://xdgbasedirectoryspecification.com) is not a Nushell-specific environment variable and should not be set to the
+directory that contains Nushell config files. It should be the directory _above_ the `nushell` directory. If you set it to
+`/Users/username/dotfiles/nushell`, Nushell will look for config files in `/Users/username/dotfiles/nushell/nushell` instead.
+In this case, you would want to set it to `/Users/username/dotfiles`.
 :::
 
 ## Configuring `$env.config`
@@ -60,7 +68,7 @@ $env.config = {
 }
 ```
 
-Note that setting any key overwrites its previous value. Likewise it's an error to reference any missing key. If `$env.config` already exists you can update or gracefully insert a [`cell-path`](/lang-guide/lang-guide.md#cellpath) at any depth using [`upsert`](/commands/docs/upsert.md):
+Note that setting any key overwrites its previous value. Likewise it's an error to reference any missing key. If `$env.config` already exists you can update or gracefully insert a [`cell-path`](/book/types_of_data.html#cell-paths) at any depth using [`upsert`](/commands/docs/upsert.md):
 
 ```nu
 $env.config = ($env.config | upsert <field name> <field value>)
@@ -88,15 +96,15 @@ These are some important variables to look at for Nushell-specific settings:
 - `PROMPT_INDICATOR_VI_NORMAL = "〉 "`
 - `PROMPT_MULTILINE_INDICATOR = "::: "`
 
-### Configurations with built-in commands
+### Configurations with Built-in Commands
 
 The ([`config nu`](/commands/docs/config_nu.md) and [`config env`](/commands/docs/config_env.md)) commands open their respective configurations for quick editing in your preferred text editor or IDE. Nu determines your editor from the following environment variables in order:
 
 1. `$env.config.buffer_editor`
-2. `$env.EDITOR`
-3. `$env.VISUAL`
+2. `$env.VISUAL`
+3. `$env.EDITOR`
 
-### Color Config section
+### Color Config Section
 
 You can learn more about setting up colors and theming in the [associated chapter](coloring_and_theming.md).
 
@@ -104,7 +112,7 @@ You can learn more about setting up colors and theming in the [associated chapte
 
 To remove the welcome message, you need to edit your `config.nu` by typing `config nu` in your terminal, then you go to the global configuration `$env.config` and set `show_banner` option to false, like this:
 
-## Configuring Nu as a login shell
+## Configuring Nu as a Login Shell
 
 To use Nu as a login shell, you'll need to configure the `$env` variable. This sets up the environment for external programs.
 
@@ -171,11 +179,14 @@ Note the `split row (char esep)` step. We need to add it because in `env.nu`, th
 To add multiple paths only if not already listed, one can add to `env.nu`:
 
 ```nu
-$env.PATH = $env.PATH | split row (char esep)
+$env.PATH = (
+  $env.PATH
+  | split row (char esep)
   | append /usr/local/bin
   | append ($env.CARGO_HOME | path join bin)
   | append ($env.HOME | path join .local bin)
   | uniq # filter so the paths are unique
+)
 ```
 
 This will add `/usr/local/bin`, the `bin` directory of CARGO_HOME, the `.local/bin` of HOME to PATH. It will also remove duplicates from PATH.

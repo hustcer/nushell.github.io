@@ -1,6 +1,6 @@
 # hash sha256
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -19,6 +19,7 @@ Hash a value using the sha256 hash algorithm.
 
 | input  | output |
 | ------ | ------ |
+| binary | any    |
 | record | record |
 | string | any    |
 | table  | table  |

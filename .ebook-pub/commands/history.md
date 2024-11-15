@@ -1,6 +1,6 @@
 # history
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -43,6 +43,7 @@ Search all the commands from history that contains 'cargo'
 
 ## Subcommands:
 
-| name                                                   | type    | usage                            |
-| ------------------------------------------------------ | ------- | -------------------------------- |
-| [`history session`](/commands/docs/history_session.md) | Builtin | Get the command history session. |
+| name                                                   | type     | usage                            |
+| ------------------------------------------------------ | -------- | -------------------------------- |
+| [`history import`](/commands/docs/history_import.md)   | built-in | Import command line history      |
+| [`history session`](/commands/docs/history_session.md) | built-in | Get the command history session. |

@@ -4,11 +4,13 @@ There are lots of ways to get Nu up and running. You can download pre-built bina
 
 The main Nushell binary is named `nu` (or `nu.exe` on Windows). After installation, you can launch it by typing `nu`.
 
-## Pre-built binaries
+[[toc]]
+
+## Pre-built Binaries
 
 Nu binaries are published for Linux, macOS, and Windows [with each GitHub release](https://github.com/nushell/nushell/releases). Just download, extract the binaries, then copy them to a location on your PATH.
 
-## Package managers
+## Package Managers
 
 Nu is available via several package managers:
 
@@ -26,11 +28,37 @@ Cross Platform installation:
 
 - [npm](https://www.npmjs.com/) (`npm install -g nushell` Note that nu plugins are not included if you install in this way)
 
-## Build from source
+## Docker Container Images
+
+Docker images are available from the GitHub Container Registry. An image for the latest release is built regularly
+for Alpine and Debian. You can run the image in interactive mode using:
+
+```nu
+docker run -it --rm ghcr.io/nushell/nushell:<version>-<distro>
+```
+
+Where `<version>` is the version of Nushell you want to run and `<distro>` is `alpine` or the latest supported Debian release, such as `bookworm`.
+
+To run a specific command, use:
+
+```nu
+docker run --rm ghcr.io/nushell/nushell:latest-alpine -c "ls /usr/bin | where size > 10KiB"
+```
+
+To run a script from the current directory using Bash, use:
+
+```nu
+docker run --rm \
+    -v $(pwd):/work \
+    ghcr.io/nushell/nushell:latest-alpine \
+    "/work/script.nu"
+```
+
+## Build from Source
 
 You can also build Nu from source. First, you will need to set up the Rust toolchain and its dependencies.
 
-### Installing a compiler suite
+### Installing a Compiler Suite
 
 For Rust to work properly, you'll need to have a compatible compiler suite installed on your system. These are the recommended compiler suites:
 
@@ -54,7 +82,7 @@ If you'd rather not install Rust via `rustup`, you can also install it via other
 
 #### Debian/Ubuntu
 
-You will need to install the "pkg-config" and "libssl-dev" package:
+You will need to install the "pkg-config", "build-essential" and "libssl-dev" packages:
 
 #### RHEL based distros
 
@@ -64,13 +92,17 @@ You will need to install "libxcb", "openssl-devel" and "libX11-devel":
 
 Using [Homebrew](https://brew.sh/), you will need to install "openssl" and "cmake" using:
 
-### Build using [crates.io](https://crates.io)
+### Build from [crates.io](https://crates.io) using Cargo
 
-Nu releases are published as source to the popular Rust package registry [crates.io](https://crates.io/). This makes it easy to build and install the latest Nu release with `cargo`:
+Nushell releases are published as source to the popular Rust package registry [crates.io](https://crates.io/). This makes it easy to build and install the latest Nu release with `cargo`:
 
-That's it! The `cargo` tool will do the work of downloading Nu and its source dependencies, building it, and installing it into the cargo bin path.
+```nu
+cargo install nu
+```
 
-If you want to install with support for [dataframes](dataframes.md), you can install using the `--features=dataframe` flag.
+The `cargo` tool will do the work of downloading Nu and its source dependencies, building it, and installing it into the cargo bin path.
+
+Note that the default plugins must be installed separately when using `cargo`. See the [Plugins Installation](./plugins.html#core-plugins) section of the Book for instructions.
 
 ### Building from the GitHub repository
 

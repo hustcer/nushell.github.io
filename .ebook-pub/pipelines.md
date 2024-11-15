@@ -7,14 +7,14 @@ One of the core designs of Nu is the pipeline, a design idea that traces its roo
 A pipeline is composed of three parts: the input, the filter, and the output.
 
 ```nu
-> open "Cargo.toml" | inc package.version --minor | save "Cargo_new.toml"
+open Cargo.toml | update workspace.dependencies.base64 0.24.2 | save Cargo_new.toml
 ```
 
-The first command, `open "Cargo.toml"`, is an input (sometimes also called a "source" or "producer"). This creates or loads data and feeds it into a pipeline. It's from input that pipelines have values to work with. Commands like [`ls`](/commands/docs/ls.md) are also inputs, as they take data from the filesystem and send it through the pipelines so that it can be used.
+The first command, `open Cargo.toml`, is an input (sometimes also called a "source" or "producer"). This creates or loads data and feeds it into a pipeline. It's from input that pipelines have values to work with. Commands like [`ls`](/commands/docs/ls.md) are also inputs, as they take data from the filesystem and send it through the pipelines so that it can be used.
 
-The second command, `inc package.version --minor`, is a filter. Filters take the data they are given and often do something with it. They may change it (as with the [`inc`](/commands/docs/inc.md) command in our example), or they may do another operation, like logging, as the values pass through.
+The second command, `update workspace.dependencies.base64 0.24.2`, is a filter. Filters take the data they are given and often do something with it. They may change it (as with the [`update`](/commands/docs/update.md) command in our example), or they may perform other operations, like logging, as the values pass through.
 
-The last command, `save "Cargo_new.toml"`, is an output (sometimes called a "sink"). An output takes input from the pipeline and does some final operation on it. In our example, we save what comes through the pipeline to a file as the final step. Other types of output commands may take the values and view them for the user.
+The last command, `save Cargo_new.toml`, is an output (sometimes called a "sink"). An output takes input from the pipeline and does some final operation on it. In our example, we save what comes through the pipeline to a file as the final step. Other types of output commands may take the values and view them for the user.
 
 The `$in` variable will collect the pipeline into a value for you, allowing you to access the whole stream as a parameter:
 
@@ -48,7 +48,238 @@ Here, semicolons are used in conjunction with pipelines. When a semicolon is use
 - As there is a semicolon after `line1`, the command will run to completion and get displayed on the screen.
 - `line2` | `line3` is a normal pipeline. It runs, and its contents are displayed after `line1`'s contents.
 
-## Working with external commands
+## Pipeline Input and the Special `$in` Variable
+
+Much of Nu's composability comes from the special `$in` variable, which holds the current pipeline input.
+
+`$in` is particular useful when used in:
+
+- Command or external parameters
+- Filters
+- Custom command definitions or scripts that accept pipeline input
+
+### `$in` as a Command Argument or as Part of an Expression
+
+Compare the following two command-lines that create a directory with tomorrow's date as part of the name. The following are equivalent:
+
+Using subexpressions:
+
+```nushell
+mkdir $'((date now) + 1day | format date '%F') Report'
+```
+
+or using pipelines:
+
+```nushell
+date now                    # 1: today
+| $in + 1day                # 2: tomorrow
+| format date '%F'          # 3: Format as YYYY-MM-DD
+| $'($in) Report'           # 4: Format the directory name
+| mkdir $in                 # 5: Create the directory
+```
+
+While the second form may be overly verbose for this contrived example, you'll notice several advantages:
+
+- It can be composed step-by-step with a simple <kbd>↑</kbd> (up arrow) to repeat the previous command and add the next stage of the pipeline.
+- It's arguably more readable.
+- Each step can, if needed, be commented.
+- Each step in the pipeline can be [`inspect`ed for debugging](/commands/docs/inspect.html).
+
+Let's examine the contents of `$in` on each line of the above example:
+
+- On line 2, `$in` refers to the results of line 1's `date now` (a datetime value).
+- On line 4, `$in` refers to tomorrow's formatted date from line 3 and is used in an interpolated string
+- On line 5, `$in` refers to the results of line 4's interpolated string, e.g. '2024-05-14 Report'
+
+### Pipeline Input in Filter Closures
+
+Certain [filter commands](/commands/categories/filters.html) may modify the pipeline input to their closure in order to provide more convenient access to the expected context. For example:
+
+```nushell
+1..10 | each {$in * 2}
+```
+
+Rather than referring to the entire range of 10 digits, the `each` filter modifies `$in` to refer to the value of the _current iteration_.
+
+In most filters, the pipeline input and its resulting `$in` will be the same as the closure parameter. For the `each` filter, the following example is equivalent to the one above:
+
+```nushell
+1..10 | each {|value| $value * 2}
+```
+
+However, some filters will assign an even more convenient value to their closures' input. The `update` filter is one example. The pipeline input to the `update` command's closure (as well as `$in`) refers to the _column_ being updated, while the closure parameter refers to the entire record. As a result, the following two examples are also equivalent:
+
+```nushell
+ls | update name {|file| $file.name | str upcase}
+ls | update name {str upcase}
+```
+
+With most filters, the second version would refer to the entire `file` record (with `name`, `type`, `size`, and `modified` columns). However, with `update`, it refers specifically to the contents of the _column_ being updated, in this case `name`.
+
+### Pipeline Input in Custom Command Definitions and Scripts
+
+See: [Custom Commands -> Pipeline Input](custom_commands.html#pipeline-input)
+
+### When Does `$in` Change (and when can it be reused)?
+
+- **_Rule 1:_** When used in the first position of a pipeline in a closure or block, `$in` refers to the pipeline (or filter) input to the closure/block.
+
+  Example:
+
+  ```nushell
+  def echo_me [] {
+    print $in
+  }
+
+  > true | echo_me
+  true
+  ```
+
+  - **_Rule 1.5:_** This is true throughout the current scope. Even on subsequent lines in a closure or block, `$in` is the same value when used in the first position of _any pipeline_ inside that scope.
+
+    Example:
+
+    ```nu
+    [ a b c ] | each {
+        print $in
+        print $in
+        $in
+    }
+    ```
+
+    All three of the `$in` values are the same on each iteration, so this outputs:
+
+    ```nu
+    a
+    a
+    b
+    b
+    c
+    c
+    ╭───┬───╮
+    │ 0 │ a │
+    │ 1 │ b │
+    │ 2 │ c │
+    ╰───┴───╯
+    ```
+
+* **_Rule 2:_** When used anywhere else in a pipeline (other than the first position), `$in` refers to the previous expression's result:
+
+  Example:
+
+  ```nushell
+  > 4               # Pipeline input
+    | $in * $in     # $in is 4 in this expression
+    | $in / 2       # $in is now 16 in this expression
+    | $in           # $in is now 8
+
+  8
+  ```
+
+  - **_Rule 2.5:_** Inside a closure or block, Rule 2 usage occurs inside a new scope (a sub-expression) where that "new" `$in` value is valid. This means that Rule 1 and Rule 2 usage can coexist in the same closure or block.
+
+    Example:
+
+    ```nushell
+    4 | do {
+      print $in            # closure-scope $in is 4
+
+      let p = (            # explicit sub-expression, but one will be created regardless
+        $in * $in          # initial-pipeline position $in is still 4 here
+        | $in / 2          # $in is now 16
+      )                    # $p is the result, 8 - Sub-expression scope ends
+
+      print $in            # At the closure-scope, the "original" $in is still 4
+      print $p
+    }
+    ```
+
+    So the output from the 3 `print` statements is:
+
+    ```nu
+    4
+    4
+    8
+    ```
+
+    Again, this would hold true even if the command above used the more compact, implicit sub-expression form:
+
+    Example:
+
+    ```nushell
+    4 | do {
+      print $in                       # closure-scope $in is 4
+      let p = $in * $in | $in / 2     # Implicit let sub-expression
+      print $in                       # At the closure-scope, $in is still 4
+      print $p
+    }
+
+    4
+    4
+    8
+    ```
+
+* **_Rule 3:_** When used with no input, `$in` is null.
+
+  Example:
+
+  ```nushell
+  > # Input
+  > 1 | do { $in | describe }
+  int
+  > "Hello, Nushell" | do { $in | describe }
+  string
+  > {||} | do { $in | describe }
+  closure
+
+  > # No input
+  > do { $in | describe }
+  nothing
+  ```
+
+* **_Rule 4:_** In a multi-statement line separated by semicolons, `$in` cannot be used to capture the results of the previous _statement_.
+
+  This is the same as having no-input:
+
+  ```nushell
+  > ls / | get name; $in | describe
+  nothing
+  ```
+
+  Instead, simply continue the pipeline:
+
+  ```nushell
+  > ls / | get name | $in | describe
+  list<string>
+  ```
+
+### Best practice for `$in` in Multiline Code
+
+While `$in` can be reused as demonstrated above, assigning its value to another variable in the first line of your closure/block will often aid in readability and debugging.
+
+Example:
+
+```nushell
+def "date info" [] {
+  let day = $in
+  print ($day | format date '%v')
+  print $'... was a ($day | format date '%A')'
+  print $'... was day ($day | format date '%j') of the year'
+}
+
+> '2000-01-01' | date info
+ 1-Jan-2000
+... was a Saturday
+... was day 001 of the year
+```
+
+### Collectability of `$in`
+
+Currently, the use of `$in` on a stream in a pipeline results in a "collected" value, meaning the pipeline "waits" on the stream to complete before handling `$in` with the full results. However, this behavior is not guaranteed in future releases. To ensure that a stream is collected into a single variable, use the [`collect` command](/commands/docs/collect.html).
+
+Likewise, avoid using `$in` when normal pipeline input will suffice, as internally `$in` forces a conversion from `PipelineData` to `Value` and _may_ result in decreased performance and/or increased memory usage.
+
+## Working with External Commands
 
 Nu commands communicate with each other using the Nu data types (see [types of data](types_of_data.md)), but what about commands outside of Nu? Let's look at some examples of working with external commands:
 
@@ -64,7 +295,7 @@ Data coming from an external command into Nu will come in as bytes that Nushell 
 
 Nu works with data piped between two external commands in the same way as other shells, like Bash would. The `stdout` of external_command_1 is connected to the `stdin` of external_command_2. This lets data flow naturally between the two commands.
 
-### Notes on errors when piping commands
+### Notes on Errors when Piping Commands
 
 Sometimes, it might be unclear as to why you cannot pipe to a command.
 
@@ -122,7 +353,7 @@ In this case, sleep takes `nothing` and instead expects an argument.
 So, we can supply the output of the `echo` command as an argument to it:
 `echo 1sec | sleep $in` or `sleep (echo 1sec)`
 
-## Behind the scenes
+## Behind the Scenes
 
 You may have wondered how we see a table if [`ls`](/commands/docs/ls.md) is an input and not an output. Nu adds this output for us automatically using another command called [`table`](/commands/docs/table.md). The [`table`](/commands/docs/table.md) command is appended to any pipeline that doesn't have an output. This allows us to see the result.
 
@@ -140,18 +371,18 @@ And the pipeline:
 
 Are one and the same.
 
-> **Note**
-> the sentence _are one and the same_ above only applies for the graphical output in the shell,
-> it does not mean the two data structures are them same
->
-> ```nushell
-> > (ls) == (ls | table)
-> false
-> ```
->
-> `ls | table` is not even structured data!
+::: tip Note
+The phrase _"are one and the same"_ above only applies to the graphical output in the shell, it does not mean the two data structures are the same:
 
-## Output result to external commands
+```nushell
+(ls) == (ls | table)
+# => false
+```
+
+`ls | table` is not even structured data!
+:::
+
+## Output Result to External Commands
 
 Sometimes you want to output Nushell structured data to an external command for further processing. However, Nushell's default formatting options for structured data may not be what you want.
 For example, you want to find a file named "tutor" under "/usr/share/vim/runtime" and check its ownership

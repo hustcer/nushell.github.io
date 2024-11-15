@@ -1,6 +1,6 @@
 # cp
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -62,17 +62,23 @@ Move many files into a directory
 Copy only if source file is newer than target file
 
 ```bash
-> cp -u a b
+> cp -u myfile newfile
 ```
 
 Copy file preserving mode and timestamps attributes
 
 ```bash
-> cp --preserve [ mode timestamps ] a b
+> cp --preserve [ mode timestamps ] myfile newfile
 ```
 
 Copy file erasing all attributes
 
 ```bash
-> cp --preserve [] a b
+> cp --preserve [] myfile newfile
+```
+
+Copy file to a directory three levels above its current location
+
+```bash
+> cp myfile ....
 ```

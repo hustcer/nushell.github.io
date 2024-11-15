@@ -1,21 +1,21 @@
-# Working with strings
+# Working with Strings
 
-Strings in Nushell help to hold text data for later use. This can include file names, file paths, names of columns,
-and much more. Strings are so common that Nushell offers a couple ways to work with them, letting you pick what best
-matches your needs.
+As with most languages, strings are a collection of 0 or more characters that represent text. This can include file names, file paths, names of columns,
+and much more. Strings are so common that Nushell offers multiple string formats to match your use-case:
 
-## String formats at a glance
+## String Formats at a Glance
 
-| Format of string            | Example                 | Escapes                   | Notes                                                                  |
-| --------------------------- | ----------------------- | ------------------------- | ---------------------------------------------------------------------- |
-| Single-quoted string        | `'[^\n]+'`              | None                      | Cannot contain any `'`                                                 |
-| Backtick string             | <code>\`[^\n]+\`</code> | None                      | Cannot contain any backticks `                                         |
-| Double-quoted string        | `"The\nEnd"`            | C-style backslash escapes | All backslashes must be escaped                                        |
-| Bare string                 | `ozymandias`            | None                      | Can only contain "word" characters; Cannot be used in command position |
-| Single-quoted interpolation | `$'Captain ($name)'`    | None                      | Cannot contain any `'` or unmatched `()`                               |
-| Double-quoted interpolation | `$"Captain ($name)"`    | C-style backslash escapes | All backslashes and `()` must be escaped                               |
+| Format of string                                     | Example                 | Escapes                   | Notes                                                                  |
+| ---------------------------------------------------- | ----------------------- | ------------------------- | ---------------------------------------------------------------------- |
+| [Single-quoted string](#single-quoted-strings)       | `'[^\n]+'`              | None                      | Cannot contain single quotes within the string                         |
+| [Double-quoted string](#double-quoted-strings)       | `"The\nEnd"`            | C-style backslash escapes | All literal backslashes must be escaped                                |
+| [Raw strings](#raw-strings)                          | `r#'Raw string'#`       | None                      | May include single quotes                                              |
+| [Bare word string](#bare-word-strings)               | `ozymandias`            | None                      | Can only contain "word" characters; Cannot be used in command position |
+| [Backtick string](#backtick-quoted-strings)          | <code>\`[^\n]+\`</code> | None                      | Bare string that can include whitespace. Cannot contain any backticks  |
+| [Single-quoted interpolation](#string-interpolation) | `$'Captain ($name)'`    | None                      | Cannot contain any `'` or unmatched `()`                               |
+| [Double-quoted interpolation](#string-interpolation) | `$"Captain ($name)"`    | C-style backslash escapes | All literal backslashes and `()` must be escaped                       |
 
-## Single-quoted strings
+## Single-quoted Strings
 
 The simplest string in Nushell is the single-quoted string. This string uses the `'` character to surround some text. Here's the text for hello world as a single-quoted string:
 
@@ -29,21 +29,6 @@ end
 ```
 
 Single-quoted strings don't do anything to the text they're given, making them ideal for holding a wide range of text data.
-
-## Backtick-quoted strings
-
-Single-quoted strings, due to not supporting any escapes, cannot contain any single-quote characters themselves. As an alternative, backtick strings using the <code>`</code> character also exist:
-
-```nu
-> `no man's land`
-no man's land
-> `no man's
-land`
-no man's
-land
-```
-
-Of course, backtick strings cannot contain any backticks themselves. Otherwise, they are identical to single-quoted strings.
 
 ## Double-quoted Strings
 
@@ -72,7 +57,28 @@ Nushell currently supports the following escape characters:
 - `\t` - tab
 - `\u{X...}` - a single unicode character, where X... is 1-6 hex digits (0-9, A-F)
 
-## Bare strings
+## Raw Strings
+
+Raw strings behave the same as a single quoted strings, except that raw strings
+may also contain single quotes. This is possible because raw strings are enclosed
+by a starting `r#'` and a closing `'#`. This syntax should look familiar to users
+of Rust.
+
+```nu
+> r#'Raw strings can contain 'quoted' text.'#
+Raw strings can contain 'quoted' text.
+```
+
+Additional `#` symbols can be added to the start and end of the raw string to enclose
+one less than the same number of `#` symbols next to a `'` symbol in the string. This can
+be used to nest raw strings:
+
+```nu
+> r###'r##'This is an example of a raw string.'##'###
+r##'This is an example of a raw string.'##
+```
+
+## Bare Word Strings
 
 Like other shell languages (but unlike most other programming languages) strings consisting of a single 'word' can also be written without any quotes:
 
@@ -121,6 +127,41 @@ Error: nu::shell::external_command
 
 So, while bare strings are useful for informal command line usage, when programming more formally in nu, you should generally use quotes.
 
+## Backtick-quoted Strings
+
+Bare word strings, by their nature, cannot include spaces or quotes. As an alternative, Nushell also includes backtick-quoted
+strings using the <code>`</code> character. In most cases, these should operate the same as a bare word string.
+
+For instance, as with a bare word, a backtick-quoted string in the first position of an expression will be interpreted as a _command_ or _path_.
+For example:
+
+```nu
+# Run the external ls binary found on the path
+`ls`
+
+# Move up one directory
+`..`
+
+# Change to the "my dir" subdirectory, if it exists
+`./my dir`
+```
+
+Backtick-quoted strings can be useful for combining globs with files or directories which include spaces:
+
+```nu
+ls `./my dir/*`
+```
+
+Backtick-quoted strings cannot contain _unmatched_ backticks in the string itself. For example:
+
+`````nu
+> echo ````
+``
+
+> echo ```
+# Unterminated string which will start a new line in the CLI
+`````
+
 ## Strings as external commands
 
 You can place the `^` sigil in front of any string (including a variable) to have Nushell execute the string as if it was an external command:
@@ -159,7 +200,7 @@ If you want to get one string out of the end then `str join` is your friend:
 You can also use reduce:
 
 ```nu
-1..10 | reduce -f "" {|it, acc| $acc + ($it | into string) + " + "} # 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 +
+1..10 | reduce -f "" {|elt, acc| $acc + ($elt | into string) + " + "} # 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 +
 ```
 
 Though in the cases of strings, especially if you don't have to operate on the strings, it's usually easier and more correct (notice the extra + at the end in the example above) to use `str join`.
@@ -200,7 +241,7 @@ So if you have something like this in your `config.nu`, `x` will be `"2.0 KB"` e
 > const x = $"(2kb)"
 ```
 
-## Splitting strings
+## Splitting Strings
 
 The [`split row`](/commands/docs/split_row.md) command creates a list from a string based on a delimiter.
 
@@ -250,7 +291,7 @@ true
 
 (You might also prefer, for brevity, the `=~` operator (described below).)
 
-### Trimming strings
+### Trimming Strings
 
 You can trim the sides of a string with the [`str trim`](/commands/docs/str_trim.md) command. By default, the [`str trim`](/commands/docs/str_trim.md) commands trims whitespace from both sides of the string. For example:
 
@@ -283,7 +324,7 @@ Substrings are slices of a string. They have a startpoint and an endpoint. Here'
 o Wo
 ```
 
-### String padding
+### String Padding
 
 With the [`fill`](/commands/docs/fill.md) command you can add padding to a string. Padding adds characters to string until it's a certain length. For example:
 
@@ -294,7 +335,7 @@ With the [`fill`](/commands/docs/fill.md) command you can add padding to a strin
 10
 ```
 
-### Reversing strings
+### Reversing Strings
 
 This can be done easily with the [`str reverse`](/commands/docs/str_reverse.md) command.
 
@@ -309,7 +350,7 @@ llehsuN
 ╰───┴─────────╯
 ```
 
-## String parsing
+## String Parsing
 
 With the [`parse`](/commands/docs/parse.md) command you can parse a string into columns. For example:
 
@@ -352,7 +393,7 @@ If a string is known to contain comma-separated, tab-separated or multi-space-se
 ╰───┴──────┴────────╯
 ```
 
-## String comparison
+## String Comparison
 
 In addition to the standard `==` and `!=` operators, a few operators exist for specifically comparing strings to one another.
 
@@ -374,7 +415,7 @@ true
 true
 ```
 
-## Converting strings
+## Converting Strings
 
 There are multiple ways to convert strings to and from other types.
 
@@ -387,7 +428,7 @@ There are multiple ways to convert strings to and from other types.
 
 1. Using [`into <type>`](/commands/docs/into.md). e.g. `'123' | into int`
 
-## Coloring strings
+## Coloring Strings
 
 You can color strings with the [`ansi`](/commands/docs/ansi.md) command. For example:
 

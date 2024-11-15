@@ -1,6 +1,6 @@
 # generate
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -8,32 +8,37 @@ Generate a list of values by successively invoking a closure.
 
 ## Signature
 
-`> generate (initial) (closure)`
+`> generate (closure) (initial)`
 
 ## Parameters
 
-- `initial`: Initial value.
 - `closure`: Generator function.
+- `initial`: Initial value.
 
 ## Input/output types:
 
-| input       | output      |
-| ----------- | ----------- |
-| list\<any\> | list\<any\> |
-| nothing     | list\<any\> |
+| input   | output      |
+| ------- | ----------- |
+| nothing | list\<any\> |
 
 ## Examples
 
 Generate a sequence of numbers
 
 ```bash
-> generate 0 {|i| if $i <= 10 { {out: $i, next: ($i + 2)} }}
+> generate {|i| if $i <= 10 { {out: $i, next: ($i + 2)} }} 0
 ```
 
-Generate a stream of fibonacci numbers
+Generate a continuous stream of Fibonacci numbers
 
 ```bash
-> generate [0, 1] {|fib| {out: $fib.0, next: [$fib.1, ($fib.0 + $fib.1)]} } | first 10
+> generate {|fib| {out: $fib.0, next: [$fib.1, ($fib.0 + $fib.1)]} } [0, 1]
+```
+
+Generate a continuous stream of Fibonacci numbers, using default parameters
+
+```bash
+> generate {|fib=[0, 1]| {out: $fib.0, next: [$fib.1, ($fib.0 + $fib.1)]} }
 ```
 
 ## Notes

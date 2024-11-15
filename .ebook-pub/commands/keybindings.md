@@ -1,6 +1,6 @@
 # keybindings
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
@@ -27,8 +27,8 @@ For more information on input and keybindings, check:
 
 ## Subcommands:
 
-| name                                                           | type    | usage                                                          |
-| -------------------------------------------------------------- | ------- | -------------------------------------------------------------- |
-| [`keybindings default`](/commands/docs/keybindings_default.md) | Builtin | List default keybindings.                                      |
-| [`keybindings list`](/commands/docs/keybindings_list.md)       | Builtin | List available options that can be used to create keybindings. |
-| [`keybindings listen`](/commands/docs/keybindings_listen.md)   | Builtin | Get input from the user.                                       |
+| name                                                           | type     | usage                                                          |
+| -------------------------------------------------------------- | -------- | -------------------------------------------------------------- |
+| [`keybindings default`](/commands/docs/keybindings_default.md) | built-in | List default keybindings.                                      |
+| [`keybindings list`](/commands/docs/keybindings_list.md)       | built-in | List available options that can be used to create keybindings. |
+| [`keybindings listen`](/commands/docs/keybindings_listen.md)   | built-in | Get input from the user.                                       |

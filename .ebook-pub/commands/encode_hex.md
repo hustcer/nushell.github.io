@@ -1,32 +1,42 @@
 # encode hex
 
-**version**: 0.93.0
+**version**: 0.100.1
 
 ## **usage**:
 
-Encode a binary value using hex.
+Hex encode a binary value or a string.
 
 ## Signature
 
-`> encode hex ...rest`
+`> encode hex --lower`
 
 ## Parameters
 
-- `...rest`: For a data structure input, encode data at the given cell paths
+- `--lower`: Encode to lowercase hex.
 
 ## Input/output types:
 
-| input          | output         |
-| -------------- | -------------- |
-| binary         | string         |
-| list\<binary\> | list\<string\> |
-| record         | record         |
-| table          | table          |
+| input  | output |
+| ------ | ------ |
+| binary | string |
+| string | string |
 
 ## Examples
 
-Encode binary data
+Encode a binary value
 
 ```bash
-> 0x[09 F9 11 02 9D 74 E3 5B D8 41 56 C5 63 56 88 C0] | encode hex
+> 0x[C3 06] | encode hex
+```
+
+Encode a string
+
+```bash
+> "hello" | encode hex
+```
+
+Output a Lowercase version of the encoding
+
+```bash
+> 0x[AD EF] | encode hex --lower
 ```
