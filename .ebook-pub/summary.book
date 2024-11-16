@@ -14,46 +14,46 @@ output.base_path: /Users/hustcer/iWork/github/open-books
 
 + README.md
 + getting_started.md
--- installation.md
+# -- installation.md
 -- default_shell.md
 -- quick_tour.md
 -- moving_around.md
 -- thinking_in_nu.md
 -- cheat_sheet.md
 + nu_fundamentals.md
--- types_of_data.md
+# -- types_of_data.md
 -- loading_data.md
 -- pipelines.md
 -- working_with_strings.md
 -- working_with_lists.md
 -- working_with_records.md
--- working_with_tables.md
--- navigating_structured_data.md
+# -- working_with_tables.md
+# -- navigating_structured_data.md
 + programming_in_nu.md
--- custom_commands.md
+# -- custom_commands.md
 -- aliases.md
 -- operators.md
--- variables.md
--- control_flow.md
+# -- variables.md
+# -- control_flow.md
 -- scripts.md
 -- modules.md
 -- modules/using_modules.md
 -- modules/creating_modules.md
--- overlays.md
+# -- overlays.md
 -- sorting.md
 -- testing.md
--- style_guide.md
+# -- style_guide.md
 + nu_as_a_shell.md
--- configuration.md
+# -- configuration.md
 -- environment.md
 -- stdout_stderr_exit_codes.md
 -- escaping.md
 -- 3rdpartyprompts.md
 -- shells_in_shells.md
--- line_editor.md
+# -- line_editor.md
 -- custom_completions.md
 -- externs.md
--- coloring_and_theming.md
+# -- coloring_and_theming.md
 -- hooks.md
 -- background_task.md
 + coming_to_nu.md
@@ -66,18 +66,18 @@ output.base_path: /Users/hustcer/iWork/github/open-books
 + design_notes.md
 -- how_nushell_code_gets_run.md
 + advanced.md
--- standard_library.md
+# -- standard_library.md
 -- dataframes.md
 -- metadata.md
 -- creating_errors.md
 -- parallelism.md
--- plugins.md
--- explore.md
+# -- plugins.md
+# -- explore.md
 -- regular_expressions.md
 + command_reference.md
 -- commands/alias.md
 -- commands/all.md
--- commands/ansi.md
+# -- commands/ansi.md
 -- commands/ansi_gradient.md
 -- commands/ansi_link.md
 -- commands/ansi_strip.md
@@ -194,7 +194,7 @@ output.base_path: /Users/hustcer/iWork/github/open-books
 -- commands/from_ics.md
 -- commands/from_ini.md
 -- commands/from_json.md
--- commands/from_msgpack.md
+# -- commands/from_msgpack.md
 -- commands/from_msgpackz.md
 -- commands/from_nuon.md
 -- commands/from_ods.md
