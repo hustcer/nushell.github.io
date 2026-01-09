@@ -1,10 +1,16 @@
 ---
-home: true
-heroImage: null
-heroText: Nushell
-tagline: A new type of shell.
-actionText: Get Started →
-actionLink: /tr/book/
+layout: home
+hero:
+  name: Nushell
+  text: A new type of shell
+  tagline: Pipelines with structured data
+  actions:
+    - theme: brand
+      text: Get Started
+      link: /tr/book/
+    - theme: alt
+      text: GitHub
+      link: https://github.com/nushell/nushell
 features:
   - title: Pipelines to control any OS
     details: Nu works on Linux, macOS, and Windows. Learn it once, then use it anywhere.

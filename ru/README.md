@@ -1,10 +1,16 @@
 ---
-home: true
-heroImage: null
-heroText: Nushell
-tagline: Новый тип оболочки
-actionText: Начать →
-actionLink: /book/
+layout: home
+hero:
+  name: Nushell
+  text: Новый тип оболочки
+  tagline: Конвейеры со структурированными данными
+  actions:
+    - theme: brand
+      text: Начать
+      link: /ru/book/
+    - theme: alt
+      text: GitHub
+      link: https://github.com/nushell/nushell
 features:
   - title: Конвейеры для управления любой ОС
     details: Nu работает на Linux, macOS, BSD и Windows. Выучите его один раз, а затем используйте везде.

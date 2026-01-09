@@ -6,25 +6,20 @@
   "type": "module",
   "scripts": {
     "update": "nu make_docs.nu",
-    "dev": "vuepress dev",
-    "build": "vuepress build",
-    "postinstall": "patch-package",
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
     "prepare": "git config --unset core.hooksPath && rm -rf .husky || true; npx lefthook install",
     "pretty": "prettier --write ."
   },
   "license": "MIT",
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-rc.26",
-    "@vuepress/plugin-docsearch": "2.0.0-rc.118",
-    "@vuepress/plugin-feed": "2.0.0-rc.118",
-    "@vuepress/plugin-shiki": "2.0.0-rc.118",
-    "@vuepress/plugin-sitemap": "2.0.0-rc.118",
-    "@vuepress/theme-default": "2.0.0-rc.118",
-    "lefthook": "1.8.2",
-    "patch-package": "^8.0.1",
-    "prettier": "^3.3.3",
-    "sass-embedded": "^1.81.0",
-    "vuepress": "^2.0.0-rc.26"
+    "feed": "^5.1.0",
+    "lefthook": "1.13.6",
+    "prettier": "^3.7.3",
+    "sass": "^1.97.2",
+    "sitemap": "^9.0.0",
+    "vitepress": "2.0.0-alpha.15"
   },
   "engines": {
     "npm": ">=9.0.0",

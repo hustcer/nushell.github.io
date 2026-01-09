@@ -1,0 +1,121 @@
+/**
+ * VitePress Custom Styles
+ */
+
+/* Custom font */
+@font-face {
+  font-family: 'Fira Code';
+  src:
+    url('/fonts/FiraCode-Regular.woff2') format('woff2'),
+    url('/fonts/FiraCode-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Theme colors */
+:root {
+  --vp-c-brand-1: #3eaf7c;
+  --vp-c-brand-2: #42b883;
+  --vp-c-brand-3: #35a06c;
+  --vp-c-brand-soft: rgba(62, 175, 124, 0.14);
+
+  --vp-code-line-height: 1.1;
+  --vp-font-family-mono:
+    'Fira Code', Consolas, Monaco, 'Andale Mono', 'DejaVu Sans Mono',
+    'Ubuntu Mono', monospace;
+}
+
+/* Dark theme adjustments */
+.dark {
+  --vp-c-brand-1: #42b883;
+  --vp-c-brand-2: #3eaf7c;
+  --vp-c-brand-3: #35a06c;
+}
+
+/* Code font settings */
+:root {
+  --vp-code-font-size: 0.875em;
+}
+
+body {
+  font-variant-ligatures: none;
+}
+
+/* Code block line height */
+.vp-doc [class*='language-'] code,
+.vp-doc [class*='language-'] pre {
+  line-height: 1.1;
+}
+
+/* Line numbers */
+.vp-doc [class*='language-'].line-numbers-mode .line-numbers {
+  line-height: 1.1;
+}
+
+/* Command title styling */
+.command-title {
+  margin-top: 15px;
+  white-space: pre-wrap;
+}
+
+/* Content width adjustments */
+@media screen and (min-width: 1280px) {
+  :root {
+    --vp-layout-max-width: 1440px;
+  }
+  .VPDoc .content-container {
+    max-width: 960px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .VPDoc .content-container {
+    max-width: 1060px;
+  }
+}
+
+/* Title link styles */
+.vp-doc h2.title a {
+  color: var(--vp-c-text-1);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.dark .vp-doc h2.title a {
+  text-decoration: underline;
+}
+
+/* Copy button styling for dark code blocks */
+.vp-doc [class*='language-'] .vp-copy {
+  color: white !important;
+}
+
+/* Hero image styling */
+.vp-doc img.hero {
+  max-width: 100%;
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+
+/* Blog page specific styles */
+.blog-post {
+  margin-bottom: 2.5rem;
+}
+
+/* Navbar items wrapper */
+.VPNavBar .VPNavBarMenu {
+  flex-direction: row-reverse;
+}
+
+/* Search box sizing */
+@media screen and (min-width: 720px) and (max-width: 815px) {
+  .VPNavBarSearch {
+    width: 150px;
+  }
+}
+
+@media screen and (min-width: 816px) {
+  .VPNavBarSearch {
+    width: 239px;
+  }
+}

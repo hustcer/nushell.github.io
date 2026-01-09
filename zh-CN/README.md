@@ -1,10 +1,16 @@
 ---
-home: true
-heroImage: null
-heroText: Nushell
-tagline: 一种新的 Shell
-actionText: 点此了解更多 →
-actionLink: /zh-CN/book/
+layout: home
+hero:
+  name: Nushell
+  text: 一种新的 Shell
+  tagline: 使用管道处理结构化数据
+  actions:
+    - theme: brand
+      text: 点此了解更多
+      link: /zh-CN/book/
+    - theme: alt
+      text: GitHub
+      link: https://github.com/nushell/nushell
 features:
   - title: 利用管道控制任意系统
     details: Nu 可以在 Linux、macOS、BSD 和 Windows 上运行。一次学习，处处可用。

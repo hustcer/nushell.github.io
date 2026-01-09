@@ -1,10 +1,16 @@
 ---
-home: true
-heroImage: null
-heroText: Nushell
-tagline: 새로운 종류의 셸
-actionText: 시작하기 →
-actionLink: /ko/book/
+layout: home
+hero:
+  name: Nushell
+  text: 새로운 종류의 셸
+  tagline: 구조화된 데이터를 사용하는 파이프라인
+  actions:
+    - theme: brand
+      text: 시작하기
+      link: /ko/book/
+    - theme: alt
+      text: GitHub
+      link: https://github.com/nushell/nushell
 features:
   - title: 모든 OS를 제어하는 파이프라인
     details: Nu는 Linux, macOS, Windows에서 작동합니다. 한 번 배우면 어디서든 사용할 수 있습니다.

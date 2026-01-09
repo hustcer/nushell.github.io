@@ -1,10 +1,16 @@
 ---
-home: true
-heroImage: null
-heroText: Nushell
-tagline: 新しいタイプのシェル
-actionText: 始める →
-actionLink: /ja/book/
+layout: home
+hero:
+  name: Nushell
+  text: 新しいタイプのシェル
+  tagline: 構造化データを使ったパイプライン
+  actions:
+    - theme: brand
+      text: 始める
+      link: /ja/book/
+    - theme: alt
+      text: GitHub
+      link: https://github.com/nushell/nushell
 features:
   - title: あらゆるOSを制御するパイプライン
     details: Nuは、Linux、macOS、Windowsで動作します。一度身に付ければ、どこでも使えるようになります。

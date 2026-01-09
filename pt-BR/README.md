@@ -1,10 +1,16 @@
 ---
-home: true
-heroImage: null
-heroText: Nushell
-tagline: Um novo tipo de shell.
-actionText: Começar →
-actionLink: /pt-BR/book/
+layout: home
+hero:
+  name: Nushell
+  text: Um novo tipo de shell
+  tagline: Pipelines com dados estruturados
+  actions:
+    - theme: brand
+      text: Começar
+      link: /pt-BR/book/
+    - theme: alt
+      text: GitHub
+      link: https://github.com/nushell/nushell
 features:
   - title: Controle seu sistema com pipelines poderosos
     details: Pipelines permitem que você comande seu sistema como nunca antes. Seu sistema pertence a você, e ele aguarda seu comando.
@@ -12,7 +18,6 @@ features:
     details: Em vez de ter que lembrar todos os parâmetros de todos os comandos, nós podemos usar apenas os mesmos, independentemente de onde ele veio.
   - title: Plugins Poderosos
     details: Nu pode não vir com tudo que você possa querer fazer com ele. Por isso, você pode extendê-lo com seu poderoso sistema de plugins.
-footer: Se você tem sugestões ou deseja mudar algo, por favor nos dê feedback
 ---
 
 ### Instalação Rápida

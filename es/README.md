@@ -1,10 +1,16 @@
 ---
-home: true
-heroImage: null
-heroText: Nushell
-tagline: Un nuevo tipo de shell
-actionText: Empezar →
-actionLink: /es/book/
+layout: home
+hero:
+  name: Nushell
+  text: Un nuevo tipo de shell
+  tagline: Pipelines con datos estructurados
+  actions:
+    - theme: brand
+      text: Empezar
+      link: /es/book/
+    - theme: alt
+      text: GitHub
+      link: https://github.com/nushell/nushell
 features:
   - title: Pipelines para controlar cualquier sistema operativo
     details: Nu funciona en Linux, macOS, BSD, y Windows. Aprende una vez, y úsalo en cualquier parte.
@@ -18,7 +24,7 @@ features:
 
 ### Nu trabaja con datos existentes
 
-Nu admite [JSON, YAML, SQLite, Excel, y mucho más](/book/loading_data.html) de serie. Es fácil introducir datos en un *pipeline* de Nu, ya sea en un archivo, una base de datos o una API web.:
+Nu admite [JSON, YAML, SQLite, Excel, y mucho más](/book/loading_data.html) de serie. Es fácil introducir datos en un _pipeline_ de Nu, ya sea en un archivo, una base de datos o una API web.:
 
 <img src="https://www.nushell.sh/frontpage/fetch-example.png" alt="Captura de pantalla mostrando fetch con una web API" class="hero"/>
 
