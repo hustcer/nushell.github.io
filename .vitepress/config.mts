@@ -35,6 +35,7 @@ export default defineConfig({
   description: 'A new type of shell.',
   lastUpdated: false,
   cleanUrls: true,
+  ignoreDeadLinks: true,
 
   head: [
     [

@@ -3,7 +3,7 @@
 .DS_Store
 node_modules
 npm-debug.log
-.vuepress/dist/
+.vitepress/dist/
 
 # ignore the git mailmap file
 .mailmap
