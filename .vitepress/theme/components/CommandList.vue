@@ -1,17 +1,21 @@
 <template>
   <table>
-    <tr>
-      <th>Command</th>
-      <th>Categories</th>
-      <th>Description</th>
-    </tr>
-    <tr v-for="command in commands" :key="command.path">
-      <td>
-        <a :href="command.path">{{ command.title }}</a>
-      </td>
-      <td style="white-space: pre-wrap">{{ command.categories }}</td>
-      <td style="white-space: pre-wrap">{{ command.usage }}</td>
-    </tr>
+    <thead>
+      <tr>
+        <th>Command</th>
+        <th>Categories</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="command in commands" :key="command.path">
+        <td>
+          <a :href="command.path">{{ command.title }}</a>
+        </td>
+        <td style="white-space: pre-wrap">{{ command.categories }}</td>
+        <td style="white-space: pre-wrap">{{ command.usage }}</td>
+      </tr>
+    </tbody>
   </table>
 </template>
 

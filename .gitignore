@@ -4,6 +4,7 @@
 node_modules
 npm-debug.log
 .vitepress/dist/
+.vitepress/cache/
 
 # ignore the git mailmap file
 .mailmap
